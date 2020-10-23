@@ -1,8 +1,13 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <a class="navbar-brand" routerLink="/home" routerLinkActive="active">Home</a>
     <a class="navbar-brand" routerLink="/chi-siamo" routerLinkActive="active">Chi siamo</a>
     <a class="navbar-brand" routerLink="/mappa" routerLinkActive="active">Mappa</a>
     <a class="navbar-brand" routerLink="/poesia" routerLinkActive="active">Poesie</a>
     <a class="navbar-brand" routerLink="/login" routerLinkActive="active">Login</a>
+</div>
 </nav>
 <router-outlet></router-outlet>
