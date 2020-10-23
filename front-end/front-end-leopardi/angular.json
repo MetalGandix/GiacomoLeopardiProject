@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "front-end-leopardi"
+    }
+  },
+  "defaultProject": "front-end-leopardi",
+  "cli": {
+    "analytics": "e8a72ea7-977b-4672-ab28-38b2d0154166"
+  }
 }
