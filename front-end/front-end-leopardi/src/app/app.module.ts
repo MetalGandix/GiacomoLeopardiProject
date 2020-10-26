@@ -10,6 +10,8 @@ import { ChiSiamoComponent } from './chi-siamo/chi-siamo.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { RegistrazionePageComponent } from './registrazione-page/registrazione-page.component';
 import { AgmCoreModule } from '@agm/core';
+import { CasaLeopardiComponent } from './componenti-percorso/casa-leopardi/casa-leopardi.component';
+import { ChiesaDeiCappucciniComponent } from './componenti-percorso/chiesa-dei-cappuccini/chiesa-dei-cappuccini.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { AgmCoreModule } from '@agm/core';
     ChiSiamoComponent,
     LoginPageComponent,
     RegistrazionePageComponent,
+    CasaLeopardiComponent,
+    ChiesaDeiCappucciniComponent,
   ],
   imports: [
     BrowserModule,
