@@ -5,11 +5,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './mappa.component.html',
   styleUrls: ['./mappa.component.css']
 })
-export class MappaComponent implements OnInit {
-
+export class MappaComponent{
   constructor() { }
+  title = "Mappa Leopardi"
+  lat = 51.678418;
+  lng = 7.809007;
 
-  ngOnInit(): void {
-  }
 
 }

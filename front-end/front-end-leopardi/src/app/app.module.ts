@@ -9,6 +9,7 @@ import { PoesiaComponent } from './poesia/poesia.component';
 import { ChiSiamoComponent } from './chi-siamo/chi-siamo.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { RegistrazionePageComponent } from './registrazione-page/registrazione-page.component';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,10 @@ import { RegistrazionePageComponent } from './registrazione-page/registrazione-p
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AgmCoreModule.forRoot({
+      apiKey:"AIzaSyDtUuNjvdTgbdXb66c9ueQyupu8_pqVa_s"
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
