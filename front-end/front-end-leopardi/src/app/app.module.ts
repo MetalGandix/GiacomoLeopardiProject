@@ -18,6 +18,7 @@ import { IlColleDellInfinitoComponent } from './componenti-percorso/il-colle-del
 import { CasaAdelaideAnticiComponent } from './componenti-percorso/casa-adelaide-antici/casa-adelaide-antici.component';
 import { TorrePasseroSolitarioComponent } from './componenti-percorso/torre-passero-solitario/torre-passero-solitario.component';
 import { LetteraDellaBefanaComponent } from './componenti-percorso/lettera-della-befana/lettera-della-befana.component';
+import { PrenotazioneVisitaComponent } from './prenotazione-visita/prenotazione-visita.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { LetteraDellaBefanaComponent } from './componenti-percorso/lettera-della
     CasaAdelaideAnticiComponent,
     TorrePasseroSolitarioComponent,
     LetteraDellaBefanaComponent,
+    PrenotazioneVisitaComponent,
   ],
   imports: [
     BrowserModule,

@@ -18,6 +18,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { MappaComponent } from './mappa/mappa.component';
 import { PoesiaComponent } from './poesia/poesia.component';
+import { PrenotazioneVisitaComponent } from './prenotazione-visita/prenotazione-visita.component';
 import { RegistrazionePageComponent } from './registrazione-page/registrazione-page.component';
 
 const routes: Routes = [
@@ -39,7 +40,8 @@ const routes: Routes = [
   { path: 'torre-passero-solitario', component: TorrePasseroSolitarioComponent },
   { path: 'lettera-della-befana', component: LetteraDellaBefanaComponent },
   { path: 'palazzo-venieri', component: PalazzoVenieriComponent },
-  { path: 'piazza-torre-del-borgo', component: PiazzaTorreDelBorgoComponent }
+  { path: 'piazza-torre-del-borgo', component: PiazzaTorreDelBorgoComponent },
+  { path: 'prenotazione-visita', component: PrenotazioneVisitaComponent },
 ];
 
 @NgModule({
