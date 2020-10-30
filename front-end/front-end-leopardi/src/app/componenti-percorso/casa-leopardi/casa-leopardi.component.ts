@@ -17,14 +17,14 @@ export class CasaLeopardiComponent implements OnInit{
     private router: Router) {
   }
 
-  zoom = 12
+  zoom = 5
   center: google.maps.LatLngLiteral
   options: google.maps.MapOptions = {
     zoomControl: false,
     scrollwheel: false,
     disableDoubleClickZoom: true,
     mapTypeId: 'hybrid',
-    maxZoom: 15,
+    maxZoom: 30,
     minZoom: 8,
   }
   markers = []
