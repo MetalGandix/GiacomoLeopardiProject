@@ -1,3 +1,4 @@
+<div class="container">
 <h1>Percorso Leopardiano</h1>
 
 <!-- this creates a google map on the page with the given lat/lng from -->
@@ -25,12 +26,12 @@
   <map-info-window>{{ infoContent }}</map-info-window>
 </google-map>
 
-<button (click)="zoomIn()">Zoom in</button>
-<button (click)="zoomOut()">Zoom out</button>
-<button (click)="logCenter()">Log center</button>
-<button (click)="addMarker()">Add marker</button>
+<div class="Container">
+  <button class="bottone-class" id="in" (click)="zoomIn()">Zoom in</button>
+  <button class="bottone-class" id="out" (click)="zoomOut()">Zoom out</button>
+  </div>
 
-<ul class="list-group">
+<ul class="list-group" style="margin-top: 40px">
   <a routerLink="/casa-leopardi"><li class="list-group-item">Punto di interesse 1: Casa Leopardi</li></a>
   <a routerLink="/chiesa-dei-cappuccini"><li class="list-group-item">Punto di interesse 2: Chiesa dei Cappuccini</li></a>
   <a routerLink="/piazzuola-sabato-del-villaggio"><li class="list-group-item">Punto di interesse 3: Piazzuola del sabato del villaggio</li></a>
@@ -45,3 +46,4 @@
   <a routerLink="/palazzo-venieri"><li class="list-group-item">Punto di interesse 12: Palazzo Venieri</li></a>
   <a routerLink="/piazza-torre-del-borgo"><li class="list-group-item">Punto di interesse 13: Piazza della torre del Borgo</li></a>
 </ul>
+</div>

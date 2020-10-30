@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { GoogleMap, MapInfoWindow, MapMarker } from '@angular/google-maps';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-casa-leopardi',
@@ -10,6 +11,11 @@ export class CasaLeopardiComponent implements OnInit{
 
   @ViewChild(GoogleMap, { static: false }) map: GoogleMap
   @ViewChild(MapInfoWindow, { static: false }) info: MapInfoWindow
+
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router) {
+  }
 
   zoom = 12
   center: google.maps.LatLngLiteral
@@ -25,6 +31,9 @@ export class CasaLeopardiComponent implements OnInit{
   infoContent = ''
 
   ngOnInit() {
+    this.router.navigateByUrl('/casa-leopardi', { skipLocationChange: true }).then(() => {
+      this.router.navigate(['/casa-leopardi']);
+  }); 
     navigator.geolocation.watchPosition(() => {
       this.center = {
         lat: 43.398125,

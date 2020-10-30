@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { GoogleMap, MapInfoWindow, MapMarker } from '@angular/google-maps';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-mappa',
@@ -9,6 +10,12 @@ import { GoogleMap, MapInfoWindow, MapMarker } from '@angular/google-maps';
 export class MappaComponent implements OnInit{
   @ViewChild(GoogleMap, { static: false }) map: GoogleMap
   @ViewChild(MapInfoWindow, { static: false }) info: MapInfoWindow
+
+  constructor( 
+    private route: ActivatedRoute,
+    private router: Router) {
+
+  }
 
   zoom = 12
   center: google.maps.LatLngLiteral
@@ -24,12 +31,22 @@ export class MappaComponent implements OnInit{
   infoContent = ''
 
   ngOnInit() {
+    this.router.navigateByUrl('/mappa', { skipLocationChange: true }).then(() => {
+      this.router.navigate(['/mappa']);
+  }); 
     navigator.geolocation.getCurrentPosition((position) => {
       this.center = {
         lat: position.coords.latitude,
         lng: position.coords.longitude,
       }
+      this.markers.push({
+        position: {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        }
+      })
     })
+
     this.markers.push({
       position: {
         lat: 43.398125,
