@@ -30,29 +30,6 @@ export class MappaComponent implements OnInit{
   markers = []
   infoContent = ''
 
-  arrayPOI = [
-    {
-      label: 
-      {
-        color: 'red',
-        text: 'Casa Leopardi ' + (this.markers.length + 1),
-      },
-      position:
-      { lat: 43.398125, lng: 13.551801 }, 
-      options: {
-        animation: google.maps.Animation.BOUNCE,
-      },
-    },
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {}
-  ]
-
   ngOnInit() {
     this.router.navigateByUrl('/mappa', { skipLocationChange: true }).then(() => {
       this.router.navigate(['/mappa']);
@@ -84,9 +61,6 @@ export class MappaComponent implements OnInit{
       },
       title: 'Casa Leopardi' + (this.markers.length + 1),
       info: 'Marker info ' + (this.markers.length + 1),
-      options: {
-        animation: google.maps.Animation.BOUNCE,
-      },
     })
     this.markers.push({
       position: {
@@ -99,9 +73,6 @@ export class MappaComponent implements OnInit{
       },
       title: 'Casa Adelaide' + (this.markers.length + 1),
       info: 'Marker info ' + (this.markers.length + 1),
-      options: {
-        animation: google.maps.Animation.BOUNCE,
-      },
     })
     this.markers.push({
       position: {
@@ -114,9 +85,6 @@ export class MappaComponent implements OnInit{
       },
       title: 'Centro Nazionale Studi Leopardiano' + (this.markers.length + 1),
       info: 'Marker info ' + (this.markers.length + 1),
-      options: {
-        animation: google.maps.Animation.BOUNCE,
-      },
     })
     this.markers.push({
       position: {
@@ -129,9 +97,6 @@ export class MappaComponent implements OnInit{
       },
       title: 'Chiesa dei Cappuccini ' + (this.markers.length + 1),
       info: 'Marker info ' + (this.markers.length + 1),
-      options: {
-        animation: google.maps.Animation.BOUNCE,
-      },
     })
     this.markers.push({
       position: {
@@ -144,9 +109,6 @@ export class MappaComponent implements OnInit{
       },
       title: "Colle dell'infinito " + (this.markers.length + 1),
       info: 'Marker info ' + (this.markers.length + 1),
-      options: {
-        animation: google.maps.Animation.BOUNCE,
-      },
     })
     this.markers.push({
       position: {
@@ -159,9 +121,6 @@ export class MappaComponent implements OnInit{
       },
       title: "La lettera della Befana " + (this.markers.length + 1),
       info: 'Marker info ' + (this.markers.length + 1),
-      options: {
-        animation: google.maps.Animation.BOUNCE,
-      },
     })
     this.markers.push({
       position: {
@@ -174,9 +133,6 @@ export class MappaComponent implements OnInit{
       },
       title: "Verso il Monte Tabor " + (this.markers.length + 1),
       info: 'Marker info ' + (this.markers.length + 1),
-      options: {
-        animation: google.maps.Animation.BOUNCE,
-      },
     })
     this.markers.push({
       position: {
@@ -189,9 +145,6 @@ export class MappaComponent implements OnInit{
       },
       title: "Palazzo Venieri " + (this.markers.length + 1),
       info: 'Marker info ' + (this.markers.length + 1),
-      options: {
-        animation: google.maps.Animation.BOUNCE,
-      },
     })
     this.markers.push({
       position: {
@@ -204,9 +157,6 @@ export class MappaComponent implements OnInit{
       },
       title: "Piazza della Torre del Borgo " + (this.markers.length + 1),
       info: 'Marker info ' + (this.markers.length + 1),
-      options: {
-        animation: google.maps.Animation.BOUNCE,
-      },
     })
     this.markers.push({
       position: {
@@ -219,9 +169,6 @@ export class MappaComponent implements OnInit{
       },
       title: "Piazzuola del Sabato del Villaggio " + (this.markers.length + 1),
       info: 'Marker info ' + (this.markers.length + 1),
-      options: {
-        animation: google.maps.Animation.BOUNCE,
-      },
     })
     this.markers.push({
       position: {
@@ -234,9 +181,6 @@ export class MappaComponent implements OnInit{
       },
       title: "La Torre del Passero Solitario " + (this.markers.length + 1),
       info: 'Marker info ' + (this.markers.length + 1),
-      options: {
-        animation: google.maps.Animation.BOUNCE,
-      },
     })
     this.markers.push({
       position: {
@@ -249,9 +193,6 @@ export class MappaComponent implements OnInit{
       },
       title: "Via Roma " + (this.markers.length + 1),
       info: 'Marker info ' + (this.markers.length + 1),
-      options: {
-        animation: google.maps.Animation.BOUNCE,
-      },
     })
     this.markers.push({
       position: {
@@ -264,9 +205,6 @@ export class MappaComponent implements OnInit{
       },
       title: "La vista sui Monti Azzurri " + (this.markers.length + 1),
       info: 'Marker info ' + (this.markers.length + 1),
-      options: {
-        animation: google.maps.Animation.BOUNCE,
-      },
     })
   }
 
@@ -298,9 +236,6 @@ export class MappaComponent implements OnInit{
       },
       title: 'Marker title ' + (this.markers.length + 1),
       info: 'Marker info ' + (this.markers.length + 1),
-      options: {
-        animation: google.maps.Animation.BOUNCE,
-      },
     })
   }
 

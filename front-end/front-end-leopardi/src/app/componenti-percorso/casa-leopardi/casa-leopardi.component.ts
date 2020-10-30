@@ -31,9 +31,6 @@ export class CasaLeopardiComponent implements OnInit{
   infoContent = ''
 
   ngOnInit() {
-    this.router.navigateByUrl('/casa-leopardi', { skipLocationChange: true }).then(() => {
-      this.router.navigate(['/casa-leopardi']);
-  }); 
     navigator.geolocation.watchPosition(() => {
       this.center = {
         lat: 43.398125,
