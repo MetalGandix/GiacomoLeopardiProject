@@ -25,11 +25,26 @@ export class CasaLeopardiComponent implements OnInit{
   infoContent = ''
 
   ngOnInit() {
-    navigator.geolocation.getCurrentPosition((position) => {
+    navigator.geolocation.watchPosition(() => {
       this.center = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude,
+        lat: 43.398125,
+        lng: 13.551801,
       }
+    })
+    this.markers.push({
+      position: {
+        lat: 43.398125,
+        lng: 13.551801,
+      },
+      label: {
+        color: 'red',
+        text: 'Marker label ' + (this.markers.length + 1),
+      },
+      title: 'Casa Leopardi' + (this.markers.length + 1),
+      info: 'Marker info ' + (this.markers.length + 1),
+      options: {
+        animation: google.maps.Animation.BOUNCE,
+      },
     })
   }
 
@@ -52,8 +67,8 @@ export class CasaLeopardiComponent implements OnInit{
   addMarker() {
     this.markers.push({
       position: {
-        lat: 43.398125,
-        lng: 13.551801,
+        lat: this.center.lat + ((Math.random() - 0.5) * 2) / 10,
+        lng: this.center.lng + ((Math.random() - 0.5) * 2) / 10,
       },
       label: {
         color: 'red',
@@ -71,6 +86,4 @@ export class CasaLeopardiComponent implements OnInit{
     this.infoContent = content
     this.info.open(marker)
   }
-
-
 }
