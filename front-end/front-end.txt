@@ -1,0 +1,3 @@
+npm install --save @types/googlemaps
+
+npm i @types/googlemaps@3.39.12

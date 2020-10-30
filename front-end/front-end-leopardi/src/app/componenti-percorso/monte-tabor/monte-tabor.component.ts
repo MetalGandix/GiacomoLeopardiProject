@@ -5,11 +5,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './monte-tabor.component.html',
   styleUrls: ['./monte-tabor.component.css']
 })
-export class MonteTaborComponent implements OnInit {
 
+export class MonteTaborComponent{
+
+  
   constructor() { }
 
-  ngOnInit(): void {
-  }
 
 }
