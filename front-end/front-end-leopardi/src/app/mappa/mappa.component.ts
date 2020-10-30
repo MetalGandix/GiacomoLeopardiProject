@@ -37,7 +37,7 @@ export class MappaComponent implements OnInit{
       },
       label: {
         color: 'red',
-        text: 'Marker label ' + (this.markers.length + 1),
+        text: 'Casa Leopardi ' + (this.markers.length + 1),
       },
       title: 'Casa Leopardi' + (this.markers.length + 1),
       info: 'Marker info ' + (this.markers.length + 1),

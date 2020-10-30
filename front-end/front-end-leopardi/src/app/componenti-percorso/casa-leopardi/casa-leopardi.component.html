@@ -24,8 +24,11 @@
   <map-info-window>{{ infoContent }}</map-info-window>
 </google-map>
 
-<button (click)="zoomIn()">Zoom in</button>
-<button (click)="zoomOut()">Zoom out</button>
-<button (click)="logCenter()">Log center</button>
-<button (click)="addMarker()">Add marker</button>
+<div class="Container">
+<button class="bottone-class" id="in" (click)="zoomIn()">Zoom in</button>
+<button class="bottone-class" id="out" (click)="zoomOut()">Zoom out</button>
+<button class="bottone-class" id="log" (click)="logCenter()">Log center</button>
+<button class="bottone-class" id="marker" (click)="addMarker()">Add marker</button>
+</div>
+
 </div>

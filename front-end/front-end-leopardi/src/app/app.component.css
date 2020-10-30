@@ -1,0 +1,10 @@
+footer{
+    margin-top: 15px; 
+    max-height: 5px;
+}
+
+@media all and (max-width: 500px){
+    footer{
+        margin-top: 70px;
+    }
+  }

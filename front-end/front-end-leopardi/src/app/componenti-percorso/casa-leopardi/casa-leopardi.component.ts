@@ -38,7 +38,7 @@ export class CasaLeopardiComponent implements OnInit{
       },
       label: {
         color: 'red',
-        text: 'Marker label ' + (this.markers.length + 1),
+        text: 'Casa Leopardi ',
       },
       title: 'Casa Leopardi' + (this.markers.length + 1),
       info: 'Marker info ' + (this.markers.length + 1),
@@ -72,12 +72,12 @@ export class CasaLeopardiComponent implements OnInit{
       },
       label: {
         color: 'red',
-        text: 'Marker label ' + (this.markers.length + 1),
+        text: 'Marker ' + (this.markers.length + 1),
       },
       title: 'Marker title ' + (this.markers.length + 1),
       info: 'Marker info ' + (this.markers.length + 1),
       options: {
-        animation: google.maps.Animation.BOUNCE,
+        animation: google.maps.Animation.DROP,
       },
     })
   }

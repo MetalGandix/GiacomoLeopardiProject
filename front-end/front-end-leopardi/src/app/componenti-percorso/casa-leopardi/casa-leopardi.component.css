@@ -1,3 +1,31 @@
-agm-map {
-    height: 300px;
+.bottone-class{
+  margin-right: 15px;
+}
+
+.Container{
+  margin-top: 20px;
+}
+
+@media all and (max-width: 500px){
+  .bottone-class{
+    margin-top: 10px;
+    font-size: 13px;
+    margin-bottom: -20px;
   }
+
+  #in{
+    width: 50px;
+  }
+
+  #out{
+    width: 50px;
+  }
+
+  #log{
+    width: 50px;
+  }
+
+  #marker{
+    width: 50px;
+  }
+}
