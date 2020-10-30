@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -23,6 +24,9 @@ import { LetteraDellaBefanaComponent } from './componenti-percorso/lettera-della
 import { PalazzoVenieriComponent } from './componenti-percorso/palazzo-venieri/palazzo-venieri.component';
 import { PiazzaTorreDelBorgoComponent } from './componenti-percorso/piazza-torre-del-borgo/piazza-torre-del-borgo.component';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { FormsModule } from '@angular/forms';
+import { PrenotazioneVisitaComponent } from './prenotazione-visita/prenotazione-visita.component';
+
 
 @NgModule({
   declarations: [
@@ -45,12 +49,15 @@ import { GoogleMapsModule } from '@angular/google-maps';
     VistaMontiAzzurriComponent,
     ViaRomaComponent,
     PalazzoVenieriComponent,
-    PiazzaTorreDelBorgoComponent
+    PiazzaTorreDelBorgoComponent,
+    PrenotazioneVisitaComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
