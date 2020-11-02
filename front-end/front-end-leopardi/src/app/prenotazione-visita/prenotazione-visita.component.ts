@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-prenotazione-visita',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrenotazioneVisitaComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute,
+    private router: Router,) { }
 
-  ngOnInit(): void {
+  loginEffettuato: boolean = false
+  logRicevuto: boolean
+
+  ngOnInit(){
+    this.logRicevuto = window.history.state.logEffettuato
+    console.log("Questo è l'oggetto che ricevo " + this.logRicevuto)
+    if(this.logRicevuto == true){
+      this.loginEffettuato = true
+      console.log(this.loginEffettuato)
+    }
   }
+
+
 
 }
