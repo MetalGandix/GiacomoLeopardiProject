@@ -17,8 +17,9 @@ export class MappaComponent implements OnInit{
 
   }
 
+  bottoneCliccato: boolean = false
   visita: boolean
-
+  aggiunta: boolean
   zoom = 12
   center: google.maps.LatLngLiteral
   options: google.maps.MapOptions = {
@@ -34,10 +35,14 @@ export class MappaComponent implements OnInit{
 
   visitaGuidataMethod(){
     this.visita = true
+    this.aggiunta = true
+    this.bottoneCliccato = true
   }
 
   visitaSingolaMethod(){
-    this.visita = false
+    this.visita = true
+    this.aggiunta = false
+    this.bottoneCliccato = true
   }
 
   ngOnInit() {

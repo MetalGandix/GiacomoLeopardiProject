@@ -4,7 +4,7 @@
 <!-- this creates a google map on the page with the given lat/lng from -->
 <!-- the component as the initial center of the map: -->
 
-<div>
+<div *ngIf="bottoneCliccato == false">
   <button (click)="visitaSingolaMethod()">
     Visita in singolo
   </button>
@@ -56,6 +56,7 @@
   <a routerLink="/lettera-della-befana"><li class="list-group-item">Punto di interesse 11: Lettera della befana</li></a>
   <a routerLink="/palazzo-venieri"><li class="list-group-item">Punto di interesse 12: Palazzo Venieri</li></a>
   <a routerLink="/piazza-torre-del-borgo"><li class="list-group-item">Punto di interesse 13: Piazza della torre del Borgo</li></a>
+  <a routerLink="/piazza-torre-del-borgo"><li *ngIf="aggiunta == true" class="list-group-item">Punto di interesse 14: Piazza della torre del Borgo</li></a>
 </ul>
 </div>
 </div>
