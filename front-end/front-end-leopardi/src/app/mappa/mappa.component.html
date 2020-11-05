@@ -4,6 +4,17 @@
 <!-- this creates a google map on the page with the given lat/lng from -->
 <!-- the component as the initial center of the map: -->
 
+<div>
+  <button (click)="visitaSingolaMethod()">
+    Visita in singolo
+  </button>
+
+  <button (click)="visitaGuidataMethod()">
+    Visita con guida
+  </button>
+</div>
+
+<div *ngIf="visita == true">
 <google-map
   height="500px"
   width="100%"
@@ -46,4 +57,5 @@
   <a routerLink="/palazzo-venieri"><li class="list-group-item">Punto di interesse 12: Palazzo Venieri</li></a>
   <a routerLink="/piazza-torre-del-borgo"><li class="list-group-item">Punto di interesse 13: Piazza della torre del Borgo</li></a>
 </ul>
+</div>
 </div>

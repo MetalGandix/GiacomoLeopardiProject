@@ -17,6 +17,8 @@ export class MappaComponent implements OnInit{
 
   }
 
+  visita: boolean
+
   zoom = 12
   center: google.maps.LatLngLiteral
   options: google.maps.MapOptions = {
@@ -29,6 +31,14 @@ export class MappaComponent implements OnInit{
   }
   markers = []
   infoContent = ''
+
+  visitaGuidataMethod(){
+    this.visita = true
+  }
+
+  visitaSingolaMethod(){
+    this.visita = false
+  }
 
   ngOnInit() {
     this.router.navigateByUrl('/mappa', { skipLocationChange: true }).then(() => {
