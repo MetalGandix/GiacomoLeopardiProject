@@ -15,21 +15,52 @@ h5{
     font-size: 15px;
 }
 
-.card-img-top{
-    
+.display-4{
+    color: white;
+    font-size: xxx-large;
+}
+
+.carousel-inner{
+    margin-top: 750px;
+    text-align: center;
+    width: 900px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .image{
-    height:40em; background-size:cover; width:auto;
+    height:1500px; background-size:cover; width:auto;
     background-image:url('C:\Users\User\Desktop\Repository GitHub\GiacomoLeopardi\GiacomoLeopardiProject\front-end\front-end-leopardi\src\assets\images\Giacomo_Leopardi_Morelli.jpg');
     background-position:50% 50%;
     opacity: 85%;
     margin-bottom: -20px;
   }
 
+
+
 @media all and (max-width: 500px){
     .card{
         width: 250px;
+    }
+
+    .display-4{
+        color: white;
+        font-size: xx-large;
+    }
+
+    img{
+        width: 300px;
+        height: 220px;
+    }
+
+    .carousel-inner{
+        width: 300px;
+        height: 220px;
+        margin-top: 290px; 
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .card-deck{

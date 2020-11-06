@@ -20,7 +20,7 @@ export class CasaLeopardiComponent implements OnInit{
   isCollapsedChiesaSantaMaria = true;
   isCollapsedSilvia = true;
 
-  zoom = 5
+  zoom = 25
   center: google.maps.LatLngLiteral
   options: google.maps.MapOptions = {
     zoomControl: false,

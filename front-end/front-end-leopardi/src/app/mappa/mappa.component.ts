@@ -20,14 +20,14 @@ export class MappaComponent implements OnInit{
   bottoneCliccato: boolean = false
   visita: boolean
   aggiunta: boolean
-  zoom = 12
+  zoom = 25
   center: google.maps.LatLngLiteral
   options: google.maps.MapOptions = {
     zoomControl: false,
     scrollwheel: false,
     disableDoubleClickZoom: true,
     mapTypeId: 'hybrid',
-    maxZoom: 30,
+    maxZoom: 60,
     minZoom: 8,
   }
   markers = []
@@ -237,21 +237,6 @@ export class MappaComponent implements OnInit{
 
   logCenter() {
     console.log(JSON.stringify(this.map.getCenter()))
-  }
-
-  addMarker() {
-    this.markers.push({
-      position: {
-        lat: this.center.lat + ((Math.random() - 0.5) * 2) / 10,
-        lng: this.center.lng + ((Math.random() - 0.5) * 2) / 10,
-      },
-      label: {
-        color: 'red',
-        text: 'Marker label ' + (this.markers.length + 1),
-      },
-      title: 'Marker title ' + (this.markers.length + 1),
-      info: 'Marker info ' + (this.markers.length + 1),
-    })
   }
 
   openInfo(marker: MapMarker, content) {
