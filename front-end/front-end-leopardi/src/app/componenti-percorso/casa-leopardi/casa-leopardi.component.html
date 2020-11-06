@@ -34,10 +34,8 @@
         chiesa di Santa Maria in Montemorello
       </a>-->
 
-      <a routerLink="/casa-leopardi" (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed"> chiesa di Santa Maria in Montemorello
-      </a>
-
-      <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+      <a data-toggle="collapse" href="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">chiesa di Santa Maria in Montemorello</a>
+      <div class="collapse multi-collapse" id="multiCollapseExample2">
         <img style="width: 300px;margin-bottom: 30px;"
         src="assets\images\Casa Leopardi_IGP0936 copia_DxOFP.jpg">
       </div>
@@ -55,7 +53,15 @@
       sentire del poeta. Il primo segno che è vinta la distrazione, è proprio una attenzione nuova ai rintocchi, come se
       questi fossero un’allerta, e poi discretamente, ma via via in modo sempre più chiaro, ci si accorgerà anche di
       quanto sia bella la produzione poetica leopardiana.
-      Sull'altro lato della piazza di fronte al "palazzo natio" c’è la casa di "Silvia", Teresa Fattorini, figlia del
+      Sull'altro lato della piazza di fronte al "palazzo natio" c’è la 
+
+        <a data-toggle="collapse" href="#multiCollapseExample1" aria-expanded="false" aria-controls="multiCollapseExample1">la casa di "Silvia"</a>
+          <div class="collapse multi-collapse" id="multiCollapseExample1">
+            <img style="width: 300px;margin-bottom: 30px;"
+            src="assets\images\Giacomo-Leopardi-A-Silvia.jpg">
+          </div>
+
+      , Teresa Fattorini, figlia del
       cocchiere dei Leopardi, che morì giovane di tisi nel 1818 e che venne immortalata nella poesia A Silvia, composta
       a Pisa nel 1828. Il componimento, tutto concepito nel ricordo, è un ipotetico dialogo con la giovane, che Giacomo
       avrà forse visto o ascoltato a distanza, da dietro le sue finestre. È tra le poesie più conosciute perché ci sono

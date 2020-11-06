@@ -17,7 +17,9 @@ export class CasaLeopardiComponent implements OnInit{
     private router: Router) {
   }
 
-  public isCollapsed = true;
+  isCollapsedChiesaSantaMaria = true;
+  isCollapsedSilvia = true;
+
   zoom = 5
   center: google.maps.LatLngLiteral
   options: google.maps.MapOptions = {
