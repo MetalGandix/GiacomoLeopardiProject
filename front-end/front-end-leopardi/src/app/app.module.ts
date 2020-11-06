@@ -26,6 +26,7 @@ import { PiazzaTorreDelBorgoComponent } from './componenti-percorso/piazza-torre
 import { GoogleMapsModule } from '@angular/google-maps';
 import { FormsModule } from '@angular/forms';
 import { PrenotazioneVisitaComponent } from './prenotazione-visita/prenotazione-visita.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -58,6 +59,7 @@ import { PrenotazioneVisitaComponent } from './prenotazione-visita/prenotazione-
     AppRoutingModule,
     GoogleMapsModule,
     FormsModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -17,6 +17,7 @@ export class CasaLeopardiComponent implements OnInit{
     private router: Router) {
   }
 
+  public isCollapsed = true;
   zoom = 5
   center: google.maps.LatLngLiteral
   options: google.maps.MapOptions = {
@@ -29,6 +30,7 @@ export class CasaLeopardiComponent implements OnInit{
   }
   markers = []
   infoContent = ''
+
 
   ngOnInit() {
     navigator.geolocation.watchPosition(() => {
