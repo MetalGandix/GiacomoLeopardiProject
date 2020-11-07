@@ -1,15 +1,15 @@
 <div class="container">
-<h1>Percorso Leopardiano</h1>
+<h1><i>Percorso Leopardiano</i></h1>
 
 <!-- this creates a google map on the page with the given lat/lng from -->
 <!-- the component as the initial center of the map: -->
 
 <div *ngIf="bottoneCliccato == false">
-  <button (click)="visitaSingolaMethod()">
+  <button class="btn btn-success" style="margin-right: 20px" (click)="visitaSingolaMethod()">
     Visita in singolo
   </button>
 
-  <button (click)="visitaGuidataMethod()">
+  <button class="btn btn-success" (click)="visitaGuidataMethod()">
     Visita con guida
   </button>
 </div>

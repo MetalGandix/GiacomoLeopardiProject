@@ -2,6 +2,10 @@
     --input-padding-x: 1.5rem;
     --input-padding-y: .75rem;
   }
+
+  h5{
+    font-family: "Times New Roman", Times, serif;
+  }
   
   body {
     background: #87c1ff;
