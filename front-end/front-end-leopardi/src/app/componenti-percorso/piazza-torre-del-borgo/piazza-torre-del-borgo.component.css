@@ -16,6 +16,15 @@
     font-size: 13px;
     margin-bottom: -20px;
   }
+  
+  .text{
+    font-family: "Times New Roman", Times, serif;
+    margin-top: 20px;
+  }
+
+  h1{
+    font-size: 30px;
+  }
 
   #in{
     width: 50px;

@@ -21,6 +21,15 @@
     width: 50px;
   }
 
+  h1{
+    font-size: 30px;
+  }
+
+  .text{
+    font-family: "Times New Roman", Times, serif;
+    margin-top: 20px;
+  }
+
   #out{
     width: 50px;
   }
