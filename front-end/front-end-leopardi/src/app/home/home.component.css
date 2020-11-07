@@ -32,7 +32,7 @@ h5{
 
 .image{
     height:1500px; background-size:cover; width:auto;
-    background-image:url('C:\Users\User\Desktop\Repository GitHub\GiacomoLeopardi\GiacomoLeopardiProject\front-end\front-end-leopardi\src\assets\images\Giacomo_Leopardi_Morelli.jpg');
+    background-image:url('src\assets\images\Giacomo_Leopardi_Morelli.jpg');
     background-position:50% 50%;
     opacity: 85%;
     margin-bottom: -20px;
@@ -70,7 +70,7 @@ h5{
 
     .image{
         height:40em; background-size:cover; width:auto;
-        background-image:url('C:\Users\User\Desktop\Repository GitHub\GiacomoLeopardi\GiacomoLeopardiProject\front-end\front-end-leopardi\src\assets\images\Giacomo_Leopardi_Morelli.jpg');
+        background-image:url('src\assets\images\Giacomo_Leopardi_Morelli.jpg');
         background-position:50% 50%;
         opacity: 85%;
         margin-bottom: -80px;
