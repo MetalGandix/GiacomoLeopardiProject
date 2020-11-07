@@ -1,3 +1,56 @@
-<h1>La Torre del Passero Solitario</h1>>
+<div class="container" style="text-align-last: center;">
+    <h1><i>Torre del Passero Solitario</i></h1>
+    <img class="card-img-top" style="width: 300px;margin-bottom: 30px;"
+        src="assets\images\La torre del passero solitario sovrasta il chiostro di S. Agostino_IGP1035 copia_DxOFP.jpg"
+        alt="Card image cap">
 
-<google-map></google-map>
+    <google-map height="500px" width="100%" [zoom]="zoom" [center]="center" [options]="options"
+        (mapClick)="click($event)">
+        <map-marker #markerElem *ngFor="let marker of markers" [position]="marker.position" [label]="marker.label"
+            [title]="marker.title" [options]="marker.options" (mapClick)="openInfo(markerElem, marker.info)">
+        </map-marker>
+
+        <map-info-window>{{ infoContent }}</map-info-window>
+    </google-map>
+
+    <div class="text">
+
+        Dopo la tappa di San Vito riprendiamo via Roma che termina pochi metri più avanti allorché voltando a sinistra
+        si fiancheggia la maestosa chiesa di Sant’Agostino, fino a giungere nell’angusto piazzale antistante l’ingresso
+        della chiesa. Davanti a noi si staglia la torre dell’acquedotto comunale scambiata dai più per la
+
+        <a data-toggle="collapse" href="#multiCollapseExample1" aria-expanded="false"
+            aria-controls="multiCollapseExample1">Torre del passero solitario</a>
+        <div class="collapse multi-collapse" id="multiCollapseExample1">
+            <img style="width: 300px;"
+                src="assets\images\La torre del passero solitario sovrasta il chiostro di S. Agostino_IGP1035 copia_DxOFP.jpg">
+        </div>
+
+        che invece si trova all’interno del
+
+        <a data-toggle="collapse" href="#multiCollapseExample2" aria-expanded="false"
+            aria-controls="multiCollapseExample2">chiostro di Sant’Agostino</a>
+        <div class="collapse multi-collapse" id="multiCollapseExample2">
+            <img style="width: 300px;" src="assets\images\Il chiostro  di S. Agostino_IGP1036 copia_DxOFP.jpg">
+        </div>
+
+        il cui accesso non è immediatamente visibile al passante.
+
+        Entriamo nel chiostro fortificato risalente al XIV secolo, sulle cui lunette sono visibili tracce di affreschi
+        che risalgono alla seconda metà del 1400 e dove campeggia una torre che aveva in passato la copertura a forma
+        conica, oggi crollata a causa di un fulmine: è questa la torre menzionata nel primo verso del canto Il passero
+        solitario
+
+        A dimostrazione dell’importanza che il poeta gli attribuisce, “Il passero Solitario” si trova all’inizio dei
+        canti pur essendo stato composto probabilmente nel giugno del 1829. In questa poesia Leopardi fa una
+        similitudine tra un passero, che aveva il suo nido sulla torre antica, e la sua esistenza. Leopardi dice che
+        l’uccello non ha coscienza del proprio vivere e vola contento, così come la gioventù che si ritrova in paese per
+        festeggiare il santo patrono. I ragazzi cercano compagnia, si vestono a festa, guardano e vengono guardati e il
+        cor s’allegra perché spensierati godono dei doni della giovinezza. Il poeta invece è spettatore e senza motivo
+        decide di essere strano cioè straniero. Sceglie la solitudine nonostante accusi il dolore di una esclusione
+        senza ragione. Un dolore sconsolato che gli fa chiedere: che di quest’anni miei? che di me stesso? Si potrebbe
+        dire con Divo Barsotti che siamo di fronte ad una “religione della solitudine umana”, in cui l’attaccamento a
+        sé, alla propria posizione dolorosamente prevale rispetto a ciò che viene riconosciuto vero.
+
+    </div>
+</div>

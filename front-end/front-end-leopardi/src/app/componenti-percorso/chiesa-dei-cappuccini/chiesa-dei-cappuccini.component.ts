@@ -37,14 +37,14 @@ export class ChiesaDeiCappucciniComponent implements OnInit {
   ngOnInit() {
     navigator.geolocation.watchPosition(() => {
       this.center = {
-        lat: 43.398125,
-        lng: 13.551801,
+        lat: 43.397976,
+        lng: 13.552959,
       }
     })
     this.markers.push({
       position: {
-        lat: 43.398125,
-        lng: 13.551801,
+        lat: 43.397976,
+        lng: 13.552959,
       },
       label: {
         color: 'red',

@@ -1,3 +1,54 @@
-<h1>Piazza della Torre del Borgo</h1>>
+<div class="container" style="text-align-last: center;">
+    <h1><i>Piazza della Torre del Borgo</i></h1>
+    <img class="card-img-top" style="width: 300px;margin-bottom: 30px;"
+        src="assets\images\Piazza della torre del Borgo con la statua di G. Leopardi._IGP1059_DxOFP.JPG"
+        alt="Card image cap">
 
-<google-map></google-map>
+    <google-map height="500px" width="100%" [zoom]="zoom" [center]="center" [options]="options"
+        (mapClick)="click($event)">
+        <map-marker #markerElem *ngFor="let marker of markers" [position]="marker.position" [label]="marker.label"
+            [title]="marker.title" [options]="marker.options" (mapClick)="openInfo(markerElem, marker.info)">
+        </map-marker>
+
+        <map-info-window>{{ infoContent }}</map-info-window>
+    </google-map>
+
+    <div class="text">
+
+        Uscendo dal Palazzo degli Studi ci troviamo già in
+
+        <a data-toggle="collapse" href="#multiCollapseExample1" aria-expanded="false"
+            aria-controls="multiCollapseExample1">piazza G. Leopardi </a>
+        <div class="collapse multi-collapse" id="multiCollapseExample1">
+            <img style="width: 300px;"
+                src="assets\images\Piazza della torre del Borgo con la statua di G. Leopardi._IGP1059_DxOFP.JPG">
+        </div>
+
+        dominata dalla statua imponente del poeta collocata qui nel 1871 e che volge le spalle al Palazzo Comunale. Sul
+        lato nord della piazza campeggia una torre ghibellina risalente al XII secolo: è la
+
+        <a data-toggle="collapse" href="#multiCollapseExample2" aria-expanded="false"
+            aria-controls="multiCollapseExample2">Torre del Borgo.</a>
+        <div class="collapse multi-collapse" id="multiCollapseExample2">
+            <img style="width: 300px;"
+                src="assets\images\La torre del Borgo e la statua di G. Leopardi_IGP1061 copia_DxOFP.jpg">
+        </div>
+
+        Presi dall’intenso dialogo svolto lungo il percorso con “Buccio”, così lo chiamava Carlo, non ci siamo accorti
+        che è l’imbrunire. I rintocchi della campana ci richiamano al tempo che passa e ci obbligano ad alzare lo
+        sguardo: alta in cielo posa la luna e già si vedono alcune stelle appena accennate nel blu del cielo terso.
+
+        Riviviamo allora anche noi la stessa esperienza descritta da Giacomo nel Canto notturno di un pastore errante
+        dell’Asia recitando i versi E quando miro in cielo arder le stelle;/Dico fra me pensando:/A che tante
+        facelle?/Che fa l'aria infinita, e quel profondo/Infinito Seren? che vuol dir questa/Solitudine immensa? ed io
+        che sono?: è questa l’ esperienza inevitabile che fa sorgere il fattore religioso, quello che “coincide con quel
+        radicale impegno del nostro io con la vita che si documenta in queste domande” . Anche noi quindi siamo chiamati
+        ad avere sempre acceso “un desiderio inesausto” e a vivere alla stessa grandezza di Leopardi, cuore sicuramente
+        infelice perché pessimista e perché nulla può compierne l’incommensurabile infinitezza.
+
+        Apriamoci allora alla scoperta dell’altra Bellezza, quella che è sottesa a tutti i suoi versi, quella che, come
+        abbiamo verificato, da “scettico ti fa credente”.
+
+        Buon lavoro!
+    </div>
+</div>

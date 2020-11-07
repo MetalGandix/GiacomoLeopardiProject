@@ -1,20 +1,52 @@
-<div class="container">
-<h1>Piazzuola del Sabato del Villaggio</h1>
-<google-map height="500px" width="100%" [zoom]="zoom" [center]="center" [options]="options"
-(mapClick)="click($event)">
-<map-marker #markerElem *ngFor="let marker of markers" [position]="marker.position" [label]="marker.label"
-  [title]="marker.title" [options]="marker.options" (mapClick)="openInfo(markerElem, marker.info)">
-</map-marker>
+<div class="container" style="text-align-last: center;">
+  <h1><i>Piazzuola del Sabato del Villaggio</i></h1>
+  <img class="card-img-top" style="width: 300px;margin-bottom: 30px;"
+    src="assets\images\Piazzuola del Sabato del villaggio_IGP0946 copia_DxOFP.jpg" alt="Card image cap">
 
-<map-info-window>{{ infoContent }}</map-info-window>
-</google-map>
 
-Ritornando sui propri passi verso la <a data-toggle="collapse" href="#multiCollapseExample1" aria-expanded="false" aria-controls="multiCollapseExample1">Piazzuola del Sabato del Villaggio</a>
-<div class="collapse multi-collapse" id="multiCollapseExample1">
-  <img style="width: 300px;margin-bottom: 30px;"
-  src="assets\images\Casa Leopardi_IGP0936 copia_DxOFP.jpg">
-</div>, i più riandranno ai ricordi scolastici e al volto della maestra, l’antica e cara maestra, la quale spiegava i versi che da questa piazza prendono spunto. La nota poesia è stata composta nel settembre del 1829, negli ultimi mesi di permanenza del poeta nel natio borgo selvaggio, luogo che dal 29 aprile del 1830 non rivedrà mai più. Recanati è per Giacomo la terra dalla quale fuggire e nella quale voler sempre ritornare, il paese odiato e nel contempo desiderato: sentimenti che appartengono all’uomo mai naturalizzato in luogo alcuno,  all’uomo “senza patria”.
-Qui può capitare, agli estremi del giorno, specialmente nelle stagioni fredde, di camminare in solitudine, senza il rumore delle auto che circolano. Ci si trova allora immersi nel silenzio e in una illuminazione soffusa, dove con l’immaginazione è possibile vedere la donzelletta che vien dalla campagna in sul calar del sole […] o la vecchierella che siede con le vicine su la scala a filare. Ci si sorprende di non essersi accorti prima, che ci sono anche i fanciulli che gridando su la piazzuola in frotta, e qua e là saltando, fanno un lieto romore mentre riede alla sua parca mensa, fischiando, il zappatore. L'idillio come emerge da questi spunti è festoso e dolce, eppure c'è, sotteso in chi annota i fatti, un amaro struggimento. Il protagonista non partecipa e guarda gli eventi in disparte, l’unico ad essere cosciente che il sabato passa.  
-Questa presa di coscienza - dell’essere cioè parte della realtà e contemporaneamente il voler esserne fuori - è ben rappresentata dal pittore tedesco Caspar David Friedrich che ci aiuta con un suo quadro a capire meglio la posizione umana di Leopardi. Nel 1818 Friedrich realizza il Viandante su un mare di nebbia: un uomo che dà le spalle all’osservatore, con i capelli scompigliati dal vento, mentre contempla il panorama sottostante coperto da un mare di nebbia che si espande in modo indefinito fino a confondersi con l’orizzonte. La posizione del viandante sul precipizio rappresenta la grande contraddizione umana dettagliata da Leopardi. Il quadro infatti lascia intendere, da una parte il dominio della persona sul paesaggio, ma anche l'irrilevanza dell'individuo all'interno di esso, la contrapposizione tra il mondo che si contempla e il proprio mondo interiore, la lotta continua tra l’uomo che aspira alla felicità e la natura che sembra escludere questa possibilità.
+  <google-map height="500px" width="100%" [zoom]="zoom" [center]="center" [options]="options"
+    (mapClick)="click($event)">
+    <map-marker #markerElem *ngFor="let marker of markers" [position]="marker.position" [label]="marker.label"
+      [title]="marker.title" [options]="marker.options" (mapClick)="openInfo(markerElem, marker.info)">
+    </map-marker>
+
+    <map-info-window>{{ infoContent }}</map-info-window>
+  </google-map>
+
+  <div class="text">
+    Ritornando sui propri passi verso la <a data-toggle="collapse" href="#multiCollapseExample1" aria-expanded="false"
+      aria-controls="multiCollapseExample1">Piazzuola del Sabato del Villaggio</a>
+    <div class="collapse multi-collapse" id="multiCollapseExample1">
+      <img style="width: 300px;margin-bottom: 30px;"
+        src="assets\images\Piazzuola del Sabato del villaggio_IGP0946 copia_DxOFP.jpg">
+    </div>, i più riandranno ai ricordi scolastici e al volto della maestra, l’antica e cara maestra, la quale spiegava
+    i
+    versi che da questa piazza prendono spunto. La nota poesia è stata composta nel settembre del 1829, negli ultimi
+    mesi
+    di permanenza del poeta nel natio borgo selvaggio, luogo che dal 29 aprile del 1830 non rivedrà mai più. Recanati è
+    per Giacomo la terra dalla quale fuggire e nella quale voler sempre ritornare, il paese odiato e nel contempo
+    desiderato: sentimenti che appartengono all’uomo mai naturalizzato in luogo alcuno, all’uomo “senza patria”.
+    Qui può capitare, agli estremi del giorno, specialmente nelle stagioni fredde, di camminare in solitudine, senza il
+    rumore delle auto che circolano. Ci si trova allora immersi nel silenzio e in una illuminazione soffusa, dove con
+    l’immaginazione è possibile vedere la donzelletta che vien dalla campagna in sul calar del sole […] o la
+    vecchierella
+    che siede con le vicine su la scala a filare. Ci si sorprende di non essersi accorti prima, che ci sono anche i
+    fanciulli che gridando su la piazzuola in frotta, e qua e là saltando, fanno un lieto romore mentre riede alla sua
+    parca mensa, fischiando, il zappatore. L'idillio come emerge da questi spunti è festoso e dolce, eppure c'è, sotteso
+    in chi annota i fatti, un amaro struggimento. Il protagonista non partecipa e guarda gli eventi in disparte, l’unico
+    ad essere cosciente che il sabato passa.
+    Questa presa di coscienza - dell’essere cioè parte della realtà e contemporaneamente il voler esserne fuori - è ben
+    rappresentata dal pittore tedesco Caspar David Friedrich che ci aiuta con un suo quadro a capire meglio la posizione
+    umana di Leopardi. Nel 1818 Friedrich realizza il Viandante su un mare di nebbia: un uomo che dà le spalle
+    all’osservatore, con i capelli scompigliati dal vento, mentre contempla il panorama sottostante coperto da un mare
+    di
+    nebbia che si espande in modo indefinito fino a confondersi con l’orizzonte. La posizione del viandante sul
+    precipizio
+    rappresenta la grande contraddizione umana dettagliata da Leopardi. Il quadro infatti lascia intendere, da una parte
+    il dominio della persona sul paesaggio, ma anche l'irrilevanza dell'individuo all'interno di esso, la
+    contrapposizione
+    tra il mondo che si contempla e il proprio mondo interiore, la lotta continua tra l’uomo che aspira alla felicità e
+    la
+    natura che sembra escludere questa possibilità.
+  </div>
 </div>
-

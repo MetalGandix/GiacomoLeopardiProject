@@ -7,7 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './casa-leopardi.component.html',
   styleUrls: ['./casa-leopardi.component.css']
 })
-export class CasaLeopardiComponent implements OnInit{
+export class CasaLeopardiComponent implements OnInit {
 
   @ViewChild(GoogleMap, { static: false }) map: GoogleMap
   @ViewChild(MapInfoWindow, { static: false }) info: MapInfoWindow

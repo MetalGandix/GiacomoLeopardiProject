@@ -39,14 +39,14 @@ export class PiazzuolaSabatoDelVillaggioComponent implements OnInit {
   ngOnInit() {
     navigator.geolocation.watchPosition(() => {
       this.center = {
-        lat: 43.398011,
-        lng: 13.551891,
+        lat: 43.398014,
+        lng: 13.551883,
       }
     })
     this.markers.push({
       position: {
-        lat: 43.398011,
-        lng: 13.551891,
+        lat: 43.398014,
+        lng: 13.551883,
       },
       label: {
         color: 'red',

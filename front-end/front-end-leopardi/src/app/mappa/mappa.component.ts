@@ -7,11 +7,11 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './mappa.component.html',
   styleUrls: ['./mappa.component.css']
 })
-export class MappaComponent implements OnInit{
+export class MappaComponent implements OnInit {
   @ViewChild(GoogleMap, { static: false }) map: GoogleMap
   @ViewChild(MapInfoWindow, { static: false }) info: MapInfoWindow
 
-  constructor( 
+  constructor(
     private route: ActivatedRoute,
     private router: Router) {
 
@@ -33,13 +33,13 @@ export class MappaComponent implements OnInit{
   markers = []
   infoContent = ''
 
-  visitaGuidataMethod(){
+  visitaGuidataMethod() {
     this.visita = true
     this.aggiunta = true
     this.bottoneCliccato = true
   }
 
-  visitaSingolaMethod(){
+  visitaSingolaMethod() {
     this.visita = true
     this.aggiunta = false
     this.bottoneCliccato = true
@@ -48,7 +48,7 @@ export class MappaComponent implements OnInit{
   ngOnInit() {
     this.router.navigateByUrl('/mappa', { skipLocationChange: true }).then(() => {
       this.router.navigate(['/mappa']);
-  }); 
+    });
     navigator.geolocation.getCurrentPosition((position) => {
       this.center = {
         lat: position.coords.latitude,
@@ -139,8 +139,8 @@ export class MappaComponent implements OnInit{
     })
     this.markers.push({
       position: {
-        lat: 43.397976,
-        lng: 13.552959,
+        lat: 43.398037,
+        lng: 13.549731,
       },
       label: {
         color: 'red',

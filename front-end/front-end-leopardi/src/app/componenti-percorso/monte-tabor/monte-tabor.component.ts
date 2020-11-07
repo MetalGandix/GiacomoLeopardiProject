@@ -8,7 +8,8 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./monte-tabor.component.css']
 })
 
-export class MonteTaborComponent{
+export class MonteTaborComponent implements OnInit {
+
   @ViewChild(GoogleMap, { static: false }) map: GoogleMap
   @ViewChild(MapInfoWindow, { static: false }) info: MapInfoWindow
 
@@ -37,24 +38,21 @@ export class MonteTaborComponent{
   ngOnInit() {
     navigator.geolocation.watchPosition(() => {
       this.center = {
-        lat: 43.398055,
-        lng: 13.549707,
+        lat: 43.398037,
+        lng: 13.549731,
       }
     })
     this.markers.push({
       position: {
-        lat: 43.398055,
-        lng: 13.549707,
+        lat: 43.398037,
+        lng: 13.549731,
       },
       label: {
         color: 'red',
-        text: 'Monte Tabor ',
+        text: "Verso il Monte Tabor " + (this.markers.length + 1),
       },
-      title: 'Monte Tabor ' + (this.markers.length + 1),
+      title: "Verso il Monte Tabor " + (this.markers.length + 1),
       info: 'Marker info ' + (this.markers.length + 1),
-      options: {
-        animation: google.maps.Animation.BOUNCE,
-      },
     })
   }
 
