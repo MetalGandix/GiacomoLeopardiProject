@@ -6,6 +6,13 @@
   margin-top: 20px;
 }
 
+.text{
+  font-family: "Times New Roman", Times, serif;
+}
+
+h1{
+}
+
 @media all and (max-width: 500px){
   .bottone-class{
     margin-top: 10px;
