@@ -27,6 +27,8 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { FormsModule } from '@angular/forms';
 import { PrenotazioneVisitaComponent } from './prenotazione-visita/prenotazione-visita.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -54,6 +56,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     PrenotazioneVisitaComponent
   ],
   imports: [
+    HttpClientModule, 
+    FormsModule,
     CommonModule,
     BrowserModule,
     AppRoutingModule,
