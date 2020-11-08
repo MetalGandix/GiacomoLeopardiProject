@@ -8,25 +8,25 @@
                     <form class="form-signin">
                         <div class="form-label-group">
                                 <p style="color:rgb(184, 17, 17);">Username</p>
-                            <input type="username" name="username" id="inputUsername" class="form-control" placeholder="Email address"
+                            <input type="username" name="username" [(ngModel)]="username" id="inputUsername" class="form-control" placeholder="Email address"
                                 required autofocus>
                             <label for="inputUsername"></label>
                         </div>
                         <div class="form-label-group">
                             <p style="color:rgb(184, 17, 17);">Password</p>
-                            <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password"
+                            <input type="password" name="password" [(ngModel)]="password" id="inputPassword" class="form-control" placeholder="Password"
                                 required>
                             <label for="inputPassword"></label>
                         </div>
                         <div class="custom-control custom-checkbox mb-3">
                             <input type="checkbox" class="custom-control-input" id="customCheck1">
                         </div>
-                        <button class="btn btn-lg btn-primary btn-block text-uppercase" (click)="effettuatoLogin()" type="submit">Login</button>
+                        <button class="btn btn-lg btn-primary btn-block text-uppercase" (click)=checkLogin() type="submit">Login</button>
                         <hr class="my-4">
                     </form>
 
                     <form class="form-signin">
-                        <button routerLink="/registrazione" class="btn btn-lg btn-google btn-block text-uppercase"><i class="fab fa-google mr-2"></i>Registrati</button>
+                        <button routerLink="/user-form" class="btn btn-lg btn-google btn-block text-uppercase"><i class="fab fa-google mr-2"></i>Registrati</button>
                     </form>
                 </div>
             </div>
