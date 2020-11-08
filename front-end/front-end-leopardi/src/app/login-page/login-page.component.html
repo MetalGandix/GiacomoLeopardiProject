@@ -21,12 +21,17 @@
                         <div class="custom-control custom-checkbox mb-3">
                             <input type="checkbox" class="custom-control-input" id="customCheck1">
                         </div>
+
+                        <div style="margin-bottom: 20px; color: red; text-align: center;" *ngIf="message1">
+                            Il login è errato
+                        </div>
                         <button class="btn btn-lg btn-primary btn-block text-uppercase" (click)=checkLogin() type="submit">Login</button>
                         <hr class="my-4">
+                     
                     </form>
 
                     <form class="form-signin">
-                        <button routerLink="/user-form" class="btn btn-lg btn-google btn-block text-uppercase"><i class="fab fa-google mr-2"></i>Registrati</button>
+                        <button routerLink="/registrazione" class="btn btn-lg btn-google btn-block text-uppercase"><i class="fab fa-google mr-2"></i>Registrati</button>
                     </form>
                 </div>
             </div>

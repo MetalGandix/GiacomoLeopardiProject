@@ -18,6 +18,7 @@ export class LoginPageComponent implements OnInit {
   username = ''
   password = ''
   invalidLogin = false
+  message1: boolean = false
 
   ngOnInit(): void {
   }
@@ -42,7 +43,7 @@ export class LoginPageComponent implements OnInit {
       },
       error => {
         if (this.invalidLogin = true) {
-          alert("Il login è errato")
+          this.message1 = true
         }
       }
     )
