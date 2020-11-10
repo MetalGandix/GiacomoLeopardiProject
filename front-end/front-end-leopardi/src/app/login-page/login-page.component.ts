@@ -23,19 +23,11 @@ export class LoginPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  effettuatoLogin() {
-    this.router.navigate(['/prenotazione-visita'], {
-      state: {
-        logEffettuato: this.logEffettuato = true
-      }
-    })
-  }
-
   checkLogin() {
     (this.loginservice.authenticate(this.username, this.password).subscribe(
       data => {
         this.invalidLogin = false
-        this.router.navigate(['/prenotazione-visita'], {
+        this.router.navigate(['/scelta-utente'], {
           state: {
             logEffettuato: this.logEffettuato = true
           }

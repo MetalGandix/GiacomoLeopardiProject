@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AreaRiservataComponent } from './area-riservata/area-riservata.component';
 import { ChiSiamoComponent } from './chi-siamo/chi-siamo.component';
 import { CasaAdelaideAnticiComponent } from './componenti-percorso/casa-adelaide-antici/casa-adelaide-antici.component';
 import { CasaLeopardiComponent } from './componenti-percorso/casa-leopardi/casa-leopardi.component';
@@ -20,6 +21,7 @@ import { MappaComponent } from './mappa/mappa.component';
 import { PoesiaComponent } from './poesia/poesia.component';
 import { PrenotazioneVisitaComponent } from './prenotazione-visita/prenotazione-visita.component';
 import { RegistrazionePageComponent } from './registrazione-page/registrazione-page.component';
+import { SceltaUtenteComponent } from './scelta-utente/scelta-utente.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -42,6 +44,8 @@ const routes: Routes = [
   { path: 'palazzo-venieri', component: PalazzoVenieriComponent },
   { path: 'piazza-torre-del-borgo', component: PiazzaTorreDelBorgoComponent },
   { path: 'prenotazione-visita', component: PrenotazioneVisitaComponent },
+  { path: 'scelta-utente', component: SceltaUtenteComponent },
+  { path: 'area-riservata', component: AreaRiservataComponent }
 ];
 
 @NgModule({
