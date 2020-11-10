@@ -22,6 +22,7 @@ import { PoesiaComponent } from './poesia/poesia.component';
 import { PrenotazioneVisitaComponent } from './prenotazione-visita/prenotazione-visita.component';
 import { RegistrazionePageComponent } from './registrazione-page/registrazione-page.component';
 import { SceltaUtenteComponent } from './scelta-utente/scelta-utente.component';
+import { TariffaComponent } from './tariffa/tariffa.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -45,7 +46,8 @@ const routes: Routes = [
   { path: 'piazza-torre-del-borgo', component: PiazzaTorreDelBorgoComponent },
   { path: 'prenotazione-visita', component: PrenotazioneVisitaComponent },
   { path: 'scelta-utente', component: SceltaUtenteComponent },
-  { path: 'area-riservata', component: AreaRiservataComponent }
+  { path: 'area-riservata', component: AreaRiservataComponent },
+  { path: 'tariffa', component: TariffaComponent },
 ];
 
 @NgModule({
