@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AreaRiservataComponent } from './area-riservata/area-riservata.component';
+import { AutografoInnoComponent } from './componenti-percorso/autografo-inno/autografo-inno.component';
 import { ChiSiamoComponent } from './chi-siamo/chi-siamo.component';
 import { CasaAdelaideAnticiComponent } from './componenti-percorso/casa-adelaide-antici/casa-adelaide-antici.component';
 import { CasaLeopardiComponent } from './componenti-percorso/casa-leopardi/casa-leopardi.component';
@@ -44,6 +45,7 @@ const routes: Routes = [
   { path: 'lettera-della-befana', component: LetteraDellaBefanaComponent },
   { path: 'palazzo-venieri', component: PalazzoVenieriComponent },
   { path: 'piazza-torre-del-borgo', component: PiazzaTorreDelBorgoComponent },
+  { path: 'autografo-inno', component: AutografoInnoComponent },
   { path: 'prenotazione-visita', component: PrenotazioneVisitaComponent },
   { path: 'scelta-utente', component: SceltaUtenteComponent },
   { path: 'area-riservata', component: AreaRiservataComponent },

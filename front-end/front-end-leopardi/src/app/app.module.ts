@@ -31,6 +31,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AreaRiservataComponent } from './area-riservata/area-riservata.component';
 import { SceltaUtenteComponent } from './scelta-utente/scelta-utente.component';
 import { TariffaComponent } from './tariffa/tariffa.component';
+import { AutografoInnoComponent } from './componenti-percorso/autografo-inno/autografo-inno.component';
 
 
 
@@ -59,7 +60,8 @@ import { TariffaComponent } from './tariffa/tariffa.component';
     PrenotazioneVisitaComponent,
     AreaRiservataComponent,
     SceltaUtenteComponent,
-    TariffaComponent
+    TariffaComponent,
+    AutografoInnoComponent
   ],
   imports: [
     HttpClientModule, 
