@@ -30,6 +30,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AreaRiservataComponent } from './area-riservata/area-riservata.component';
 import { SceltaUtenteComponent } from './scelta-utente/scelta-utente.component';
+import { TariffaComponent } from './tariffa/tariffa.component';
+import { AutografoInnoComponent } from './componenti-percorso/autografo-inno/autografo-inno.component';
 
 
 
@@ -57,7 +59,9 @@ import { SceltaUtenteComponent } from './scelta-utente/scelta-utente.component';
     PiazzaTorreDelBorgoComponent,
     PrenotazioneVisitaComponent,
     AreaRiservataComponent,
-    SceltaUtenteComponent
+    SceltaUtenteComponent,
+    TariffaComponent,
+    AutografoInnoComponent
   ],
   imports: [
     HttpClientModule, 
