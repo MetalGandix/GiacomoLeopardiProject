@@ -1,7 +1,5 @@
 package leopardiproject.csd.controller;
 
-import javax.mail.MessagingException;
-import leopardiproject.csd.SmtpMailSender;
 import leopardiproject.csd.dto.UserDTO;
 import leopardiproject.csd.jwt.JwtUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,17 +18,9 @@ public class UserController {
     private JwtUserDetailsService userRepository;
 
     @PostMapping("/user")
-    void addUser(@RequestBody UserDTO user) {
+    String addUser(@RequestBody UserDTO user) {
         userRepository.save(user);
-    }
-
-    @Autowired
-	private SmtpMailSender smtpMailSender;
-
-    @GetMapping("/users")
-    public void emergenza(UserDTO donazione) throws MessagingException
-    {
-        smtpMailSender.send("leonardo.mogianesi@studenti.unicam.it" , "Bella zio", "Messaggio");
+        return "ciao";
     }
 
    @GetMapping("/existUser/{username}")
@@ -42,6 +32,3 @@ public class UserController {
         }
     }
 }
-
-
-
