@@ -1,10 +1,8 @@
 package leopardiproject.csd.security;
 
 import javax.annotation.Resource;
-
 import leopardiproject.csd.jwt.JwtAuthenticationEntryPoint;
 import leopardiproject.csd.jwt.JwtRequestFilter;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -65,7 +63,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		// We don't need CSRF for this example
 		httpSecurity.csrf().disable()
 				// dont authenticate this particular request
-				.authorizeRequests().antMatchers("/authenticate","/visita", "/register","/user").permitAll().
+				.authorizeRequests().antMatchers("/authenticate", "/register","/user").permitAll().
 				/*.permitAll().antMatchers(HttpMethod.OPTIONS, "/**")
 				.permitAll().*/
 				// all other requests need to be authenticated

@@ -71,14 +71,4 @@ public class JwtUserDetailsService implements UserDetailsService {
 		return saved;
 	}
 
-	/*public String getRoleByUsername(String username){
-		DAOUser user = userDao.findByUsername(username);
-	}*/
-
-	/*
-	public void delete(String username) {
-		DAOUser user = userDao.findByUsername(username);
-		userDao.delete(user);
-	}
-	*/
 }
