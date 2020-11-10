@@ -28,6 +28,8 @@ import { FormsModule } from '@angular/forms';
 import { PrenotazioneVisitaComponent } from './prenotazione-visita/prenotazione-visita.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AreaRiservataComponent } from './area-riservata/area-riservata.component';
+import { SceltaUtenteComponent } from './scelta-utente/scelta-utente.component';
 
 
 
@@ -53,7 +55,9 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     ViaRomaComponent,
     PalazzoVenieriComponent,
     PiazzaTorreDelBorgoComponent,
-    PrenotazioneVisitaComponent
+    PrenotazioneVisitaComponent,
+    AreaRiservataComponent,
+    SceltaUtenteComponent
   ],
   imports: [
     HttpClientModule, 
