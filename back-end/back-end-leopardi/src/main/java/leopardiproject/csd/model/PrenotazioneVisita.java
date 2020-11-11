@@ -26,9 +26,6 @@ public class PrenotazioneVisita {
     private int numcomponenti;
 
     @Column
-    private String info;
-
-    @Column
     private String nome;
 
     @Column
@@ -85,14 +82,6 @@ public class PrenotazioneVisita {
 
     public void setNumcomponenti(int numcomponenti) {
         this.numcomponenti = numcomponenti;
-    }
-
-    public String getInfo() {
-        return info;
-    }
-
-    public void setInfo(String info) {
-        this.info = info;
     }
 
     public String getNome() {
