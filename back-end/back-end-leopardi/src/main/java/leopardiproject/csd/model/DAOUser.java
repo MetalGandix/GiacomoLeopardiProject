@@ -28,6 +28,15 @@ public class DAOUser {
 	@Column
 	private String email;
 
+	@Column
+	private boolean checkbox1;
+
+	@Column
+	private boolean checkbox2;
+
+	@Column
+	private boolean checkbox3;
+
 	// role based
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 
@@ -88,6 +97,30 @@ public class DAOUser {
 
 	public void setlastname(final String lastname) {
 		this.lastname = lastname;
+	}
+
+	public boolean isCheckbox1() {
+		return checkbox1;
+	}
+
+	public void setCheckbox1(boolean checkbox1) {
+		this.checkbox1 = checkbox1;
+	}
+
+	public boolean isCheckbox2() {
+		return checkbox2;
+	}
+
+	public void setCheckbox2(boolean checkbox2) {
+		this.checkbox2 = checkbox2;
+	}
+
+	public boolean isCheckbox3() {
+		return checkbox3;
+	}
+
+	public void setCheckbox3(boolean checkbox3) {
+		this.checkbox3 = checkbox3;
 	}
 
 }

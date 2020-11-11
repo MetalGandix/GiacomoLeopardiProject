@@ -4,4 +4,7 @@ export class User {
     name: string
     lastname: string
     email: string
+    checkbox1: boolean
+    checkbox2: boolean
+    checkbox3: boolean
 }

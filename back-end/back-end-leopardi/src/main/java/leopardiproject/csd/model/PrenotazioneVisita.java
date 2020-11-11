@@ -43,14 +43,6 @@ public class PrenotazioneVisita {
     @Column
     private String infoAggiuntiva;
 
-    @Column
-    private boolean check1;
-
-    @Column
-    private boolean check2;
-
-    @Column
-    private boolean check3;
 
     public long getId() {
         return id;
@@ -132,27 +124,4 @@ public class PrenotazioneVisita {
         this.infoAggiuntiva = infoAggiuntiva;
     }
 
-    public boolean isCheck1() {
-        return check1;
-    }
-
-    public void setCheck1(boolean check1) {
-        this.check1 = check1;
-    }
-
-    public boolean isCheck2() {
-        return check2;
-    }
-
-    public void setCheck2(boolean check2) {
-        this.check2 = check2;
-    }
-
-    public boolean isCheck3() {
-        return check3;
-    }
-
-    public void setCheck3(boolean check3) {
-        this.check3 = check3;
-    }
 }

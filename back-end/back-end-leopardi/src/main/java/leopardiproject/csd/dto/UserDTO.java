@@ -7,6 +7,9 @@ public class UserDTO {
 	private String name;
 	private String lastname;
 	private String email;
+	private boolean checkbox1;
+	private boolean checkbox2;
+	private boolean checkbox3;
 
 	public UserDTO() {
 
@@ -49,6 +52,30 @@ public class UserDTO {
 
 	public void setemail(String email) {
 		this.email = email;
+	}
+
+	public boolean isCheckbox1() {
+		return checkbox1;
+	}
+
+	public void setCheckbox1(boolean checkbox1) {
+		this.checkbox1 = checkbox1;
+	}
+
+	public boolean isCheckbox2() {
+		return checkbox2;
+	}
+
+	public void setCheckbox2(boolean checkbox2) {
+		this.checkbox2 = checkbox2;
+	}
+
+	public boolean isCheckbox3() {
+		return checkbox3;
+	}
+
+	public void setCheckbox3(boolean checkbox3) {
+		this.checkbox3 = checkbox3;
 	}
 
 }
