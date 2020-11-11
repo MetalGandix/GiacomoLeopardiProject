@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Prenotazione } from '../class/prenotazione';
+import { PrenotazioneService } from '../service/prenotazione.service';
 
 @Component({
   selector: 'app-prenotazione-visita',
@@ -9,10 +11,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class PrenotazioneVisitaComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
-    private router: Router,) { }
+    private router: Router,
+    private service: PrenotazioneService,) {
+      this.prenotazione = new Prenotazione()
+     }
 
   loginEffettuato: boolean = false
   logRicevuto: boolean
+  prenotazione: Prenotazione
 
   ngOnInit(){
     this.logRicevuto = window.history.state.logEffettuato
@@ -23,6 +29,8 @@ export class PrenotazioneVisitaComponent implements OnInit {
     }
   }
 
-
+  onSubmit(){
+    this.service.save(this.prenotazione).subscribe()
+  }
 
 }

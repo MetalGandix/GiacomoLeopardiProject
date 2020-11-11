@@ -1,4 +1,5 @@
-    <div class="container" style="margin-top: 20px;">
+<div class="container" style="margin-top: 20px;">
+    <form (ngSubmit)="onSubmit()" #userForm="ngForm">
         <div class="row">
             <div style="margin-bottom: 20px;" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb30 text-center">
                 <h1 style="font-size: 30px;">Prenota il tuo Tour per il magnifico percorso leopardiano</h1>
@@ -18,8 +19,8 @@
                                 <div class="form-group">
                                     <label class="control-label" for="datepicker">Data del tour</label>
                                     <div class="input-group">
-                                        <input id="datepicker" name="datepicker" type="date" placeholder="Data desiderata"
-                                            class="form-control" required>
+                                        <input id="datepicker" name="datepicker" type="date" [(ngModel)]="prenotazione.date" 
+                                            placeholder="Data desiderata" class="form-control" required>
                                         <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
                                 </div>
                             </div>
@@ -27,7 +28,7 @@
                                 <div class="form-group">
                                     <label class="control-label" for="time">Orario desiderato</label>
                                     <div class="input-group">
-                                        <input id="time" name="time" type="time" placeholder="Orario"
+                                        <input id="time" name="time" type="time" placeholder="Orario" [(ngModel)]="prenotazione.orario" 
                                             class="form-control" required>
                                         <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
                                 </div>
@@ -37,7 +38,7 @@
                                     <label class="control-label required" for="select">Numero dei componenti del
                                         gruppo:</label>
                                     <div class="input">
-                                        <input id="number" type="number" placeholder="0-30" min="1" max="30"
+                                        <input id="number" type="number" placeholder="0-30" min="1" max="30" [(ngModel)]="prenotazione.numcomponenti"
                                             class="form-control" required>
                                     </div>
                                 </div>
@@ -48,53 +49,53 @@
                             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                                 <div class="form-group">
                                     <label class="control-label" for="name">Nome</label>
-                                    <input id="name" type="text" placeholder="Inserisci il tuo nome"
+                                    <input id="name" type="text" placeholder="Inserisci il tuo nome" [(ngModel)]="prenotazione.nome"
                                         class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                                 <div class="form-group">
                                     <label class="control-label" for="name">Cognome</label>
-                                    <input id="name" type="text" placeholder="Inserisci il tuo cognome"
+                                    <input id="name" type="text" placeholder="Inserisci il tuo cognome" [(ngModel)]="prenotazione.cognome"
                                         class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                                 <div class="form-group">
                                     <label class="control-label" for="email"> Email</label>
-                                    <input id="email" type="text" placeholder="xxxx@xxxx.xxx" class="form-control"
+                                    <input id="email" type="text" placeholder="xxxx@xxxx.xxx" class="form-control" [(ngModel)]="prenotazione.email"
                                         required>
                                 </div>
                             </div>
                             <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
                                 <div class="form-group">
-                                    <label class="control-label" for="phone"> Cellulare</label>
-                                    <input id="phone" type="text" placeholder="Inserisci il tuo numero di cellulare"
+                                    <label class="control-label" for="phone"> Numero di telefono</label>
+                                    <input id="phone" type="text" placeholder="Inserisci il tuo numero di cellulare" [(ngModel)]="prenotazione.cellulare"
                                         class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
                                 <div class="form-group">
                                     <label class="control-label" for="country">Paese</label>
-                                    <input id="country" type="text" placeholder="Inserisci il tuo paese"
+                                    <input id="country" type="text" placeholder="Inserisci il tuo paese" [(ngModel)]="prenotazione.paese"
                                         class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
                                 <div class="form-group">
                                     <label class="control-label" for="city">Città</label>
-                                    <input id="city" type="text" placeholder="Inserisci la tua città"
+                                    <input id="city" type="text" placeholder="Inserisci la tua città" [(ngModel)]="prenotazione.citta"
                                         class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                 <div class="form-group">
                                     <label class="control-label" for="textarea">Informazioni aggiuntive</label>
-                                    <textarea class="form-control" id="textarea" name="textarea" rows="4"></textarea>
+                                    <textarea class="form-control" id="textarea" name="textarea" rows="4" [(ngModel)]="prenotazione.infoAggiuntiva"></textarea>
                                 </div>
                             </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                <button type="submit" name="singlebutton" class="btn btn-primary">Invia
+                                <button type="submit" [disabled]="!prenotazione.form.valid" name="singlebutton" class="btn btn-primary">Invia
                                     richiesta</button>
                             </div>
                         </div>
@@ -103,4 +104,5 @@
 
             </div>
         </div>
-    </div>
+    </form>
+</div>
