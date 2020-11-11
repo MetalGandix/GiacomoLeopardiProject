@@ -7,4 +7,13 @@ footer{
     footer{
         margin-top: 70px;
     }
+    .router-link-active {
+        color: rgb(255, 255, 255);
+        font-weight: bold;
+    }
   }
+
+  .router-link-active {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}

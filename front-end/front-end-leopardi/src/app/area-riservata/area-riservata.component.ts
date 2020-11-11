@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Prenotazione } from '../class/prenotazione';
+import { PrenotazioneService } from '../service/prenotazione.service';
 
 @Component({
   selector: 'app-area-riservata',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AreaRiservataComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: PrenotazioneService) { }
 
-  ngOnInit(): void {
+  prenotazione: Prenotazione[]
+
+  vediVisite() {
+    
   }
+
+  ngOnInit() {
+    this.service.findAll().subscribe(p => 
+      {
+        this.prenotazione = p
+      })
+  }
+
 
 }
