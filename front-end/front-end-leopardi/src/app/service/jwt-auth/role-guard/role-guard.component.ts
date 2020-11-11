@@ -16,23 +16,21 @@ export class RoleGuardComponent implements OnInit {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     switch (route.routeConfig.path) {
-      case 'prenotazione-visita': {
+      case 'prenotazione-visita':
+      case 'scelta-utente': 
         if (this.authService.getRole().authority == 'ROLE_ADMIN') {
           return true;
         } else {
           return false;
         }
 
-      }
       case 'prenotazione-visita':
       case 'scelta-utente':
-      case '': {
         if (this.authService.getRole().authority == 'ROLE_VISITATORE') {
           return true;
         } else {
           return false;
         }
-      }
       default: return false;
     }
 

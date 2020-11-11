@@ -17,20 +17,15 @@ export class PrenotazioneVisitaComponent implements OnInit {
      }
 
   loginEffettuato: boolean = false
-  logRicevuto: boolean
+  logRicevuto: boolean = false
   prenotazione: Prenotazione
 
   ngOnInit(){
-    this.logRicevuto = window.history.state.logEffettuato
-    console.log("Questo è l'oggetto che ricevo " + this.logRicevuto)
-    if(this.logRicevuto == true){
-      this.loginEffettuato = true
-      console.log(this.loginEffettuato)
-    }
   }
 
   onSubmit(){
     this.service.save(this.prenotazione).subscribe()
+    this.logRicevuto = true
   }
 
 }
