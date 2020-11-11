@@ -13,13 +13,13 @@ import leopardiproject.csd.model.PrenotazioneVisita;
 import leopardiproject.csd.repository.PrenotazioneVisitaRepository;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin
 public class PrenotazioneVisitaController {
 
     @Autowired
     private PrenotazioneVisitaRepository visitaRep;
 
-    // Metodo per inviare ad DB la visita con le info
+    // Metodo per inviare al DB la visita con le info
     @PostMapping("/visita")
     String addUser(@RequestBody PrenotazioneVisita visita) {
         visitaRep.save(visita);

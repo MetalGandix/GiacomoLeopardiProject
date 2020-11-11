@@ -33,6 +33,12 @@ import { AreaRiservataComponent } from './area-riservata/area-riservata.componen
 import { SceltaUtenteComponent } from './scelta-utente/scelta-utente.component';
 import { TariffaComponent } from './tariffa/tariffa.component';
 import { AutografoInnoComponent } from './componenti-percorso/autografo-inno/autografo-inno.component';
+import { RoleGuardComponent } from './service/jwt-auth/role-guard/role-guard.component';
+import { AuthGuardComponent } from './service/jwt-auth/auth-guard/auth-guard.component';
+import { AuthenticationService } from './service/authentication.service';
+import { BasicAuthHttpInterceptorService } from './service/basic-auth-http-interceptor.service';
+
+
 
 
 
@@ -62,7 +68,8 @@ import { AutografoInnoComponent } from './componenti-percorso/autografo-inno/aut
     AreaRiservataComponent,
     SceltaUtenteComponent,
     TariffaComponent,
-    AutografoInnoComponent
+    AutografoInnoComponent,
+    AuthGuardComponent
   ],
   imports: [
     HttpClientModule, 
@@ -74,7 +81,11 @@ import { AutografoInnoComponent } from './componenti-percorso/autografo-inno/aut
     FormsModule,
     NgbModule,
   ],
-  providers: [CookieService],
+  providers: [AuthGuardComponent,RoleGuardComponent,AuthenticationService,
+    {
+      provide: HTTP_INTERCEPTORS, useClass:BasicAuthHttpInterceptorService, multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

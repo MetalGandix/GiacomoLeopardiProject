@@ -2,6 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { CanActivate, RouteConfigLoadEnd, Router } from '@angular/router';
+import jwt_decode from 'jwt-decode';
+
+export class JwtResponse{
+  constructor(
+    public jwttoken:string,
+     ) {}
+}
 
 export class User{
   constructor(
@@ -10,17 +17,9 @@ export class User{
   ) {}
 }
 
-export class JwtResponse{
-  constructor(
-    public jwttoken:string,
-     ) {}
-}
-
 @Injectable({
   providedIn: 'root'
 })
-
-
 export class AuthenticationService {
 
   constructor(private httpClient:HttpClient, private router: Router) { 
@@ -49,5 +48,10 @@ export class AuthenticationService {
     sessionStorage.removeItem('username');
     sessionStorage.removeItem('token');
     this.router.navigate(['/home']);
+  }
+
+  getRole(){
+    let token = jwt_decode(sessionStorage.getItem('token'));
+    return token['role'];
   }
 }

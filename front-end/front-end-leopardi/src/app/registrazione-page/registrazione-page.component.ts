@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../class/user';
-import { AuthenticationService } from '../service/jwt-auth/authentication.service';
+import { AuthenticationService } from '../service/authentication.service';
 import { RegistrazioneService } from '../service/registrazione.service';
 
 @Component({

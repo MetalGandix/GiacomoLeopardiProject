@@ -26,6 +26,7 @@
     "@capacitor/cli": "^2.4.2",
     "@capacitor/core": "^2.4.2",
     "@ng-bootstrap/ng-bootstrap": "^8.0.0",
+    "@types/jwt-decode": "^3.1.0",
     "bootstrap": "^4.5.0",
     "ngx-cookie-service": "^10.1.1",
     "rxjs": "~6.6.0",

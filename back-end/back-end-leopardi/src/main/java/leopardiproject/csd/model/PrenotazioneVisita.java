@@ -20,7 +20,7 @@ public class PrenotazioneVisita {
     private Date data;
 
     @Column
-    private Date orario;
+    private String orario;
 
     @Column
     private int numcomponenti;
@@ -35,7 +35,7 @@ public class PrenotazioneVisita {
     private String cognome;
 
     @Column
-    private int cellulare;
+    private String cellulare;
 
     @Column
     private String paese;
@@ -71,11 +71,11 @@ public class PrenotazioneVisita {
         this.data = data;
     }
 
-    public Date getOrario() {
+    public String getOrario() {
         return orario;
     }
 
-    public void setOrario(Date orario) {
+    public void setOrario(String orario) {
         this.orario = orario;
     }
 
@@ -111,11 +111,11 @@ public class PrenotazioneVisita {
         this.cognome = cognome;
     }
 
-    public int getCellulare() {
+    public String getCellulare() {
         return cellulare;
     }
 
-    public void setCellulare(int cellulare) {
+    public void setCellulare(String cellulare) {
         this.cellulare = cellulare;
     }
 
