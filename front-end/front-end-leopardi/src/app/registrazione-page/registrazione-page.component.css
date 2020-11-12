@@ -5,6 +5,11 @@
     max-width: 100%;
 }
 
+
+body{
+  font-family: "Times New Roman", Times, serif;
+}
+
 :root {
     --input-padding-x: 1.5rem;
     --input-padding-y: .75rem;
