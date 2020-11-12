@@ -33,6 +33,10 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 			<exclusions>
@@ -56,17 +60,17 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
-		  </dependency>
-		  <dependency>
+		</dependency>
+		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<scope>annotationProcessor</scope>
-		  </dependency>	
-		  <dependency>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 			<scope>compile</scope>
-		  </dependency>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -78,10 +82,10 @@
 		</plugins>
 		<resources>
 			<resource>
-			  <directory>src/main/resources</directory>
-			  <filtering>true</filtering>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
 			</resource>
-		  </resources>
+		</resources>
 	</build>
 
 </project>
