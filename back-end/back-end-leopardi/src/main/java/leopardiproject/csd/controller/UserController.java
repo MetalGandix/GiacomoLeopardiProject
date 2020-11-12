@@ -4,9 +4,7 @@ import leopardiproject.csd.SmtpMailSender;
 import leopardiproject.csd.dto.UserDTO;
 import leopardiproject.csd.jwt.JwtUserDetailsService;
 
-import javax.mail.MessageRemovedException;
 import javax.mail.MessagingException;
-import javax.mail.search.MessageIDTerm;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -15,8 +13,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import antlr.debug.MessageEvent;
 
 @RestController
 @CrossOrigin
@@ -30,7 +26,7 @@ public class UserController {
 
     @PostMapping("/user")
     String addUser(@RequestBody UserDTO user) throws MessagingException {
-        smtpMailSender.send("leonardo.mogianesi@studenti.unicam.it", "Prova",
+        smtpMailSender.send(user.getemail(), "Prova",
                 "Conferma la tua email");
         userRepository.save(user);
         return "ciao";
