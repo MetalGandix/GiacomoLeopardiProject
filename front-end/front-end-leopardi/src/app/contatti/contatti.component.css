@@ -1,7 +1,13 @@
 .material-icons{
-    color: orange;
+    color: #ebbc39;
 }
 
 h2{
-    color: orange;
+    text-transform: uppercase;
+    font-size: 28px;
+    color: #ebbc39;
+}
+
+hr{
+    color: #ebbc39;
 }
