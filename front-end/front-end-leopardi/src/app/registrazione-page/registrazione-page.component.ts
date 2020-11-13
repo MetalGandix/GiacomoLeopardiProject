@@ -24,8 +24,8 @@ export class RegistrazionePageComponent{
   }
 
   onSubmit() {
-    this.registrazione.save(this.user).subscribe(data =>{this.showMsg= true;
-    })
+    this.registrazione.save(this.user).subscribe(data =>{})
+    this.showMsg= true;
   }
 
 
