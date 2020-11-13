@@ -37,6 +37,7 @@ import { RoleGuardComponent } from './service/jwt-auth/role-guard/role-guard.com
 import { AuthGuardComponent } from './service/jwt-auth/auth-guard/auth-guard.component';
 import { AuthenticationService } from './service/authentication.service';
 import { BasicAuthHttpInterceptorService } from './service/basic-auth-http-interceptor.service';
+import { ContattiComponent } from './contatti/contatti.component';
 
 
 
@@ -69,7 +70,8 @@ import { BasicAuthHttpInterceptorService } from './service/basic-auth-http-inter
     SceltaUtenteComponent,
     TariffaComponent,
     AutografoInnoComponent,
-    AuthGuardComponent
+    AuthGuardComponent,
+    ContattiComponent
   ],
   imports: [
     HttpClientModule, 
