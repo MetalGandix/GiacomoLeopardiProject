@@ -6,7 +6,6 @@ public class UserDTO {
 	private String password;
 	private String name;
 	private String lastname;
-	private String email;
 	private boolean checkbox1;
 	private boolean checkbox2;
 	private boolean checkbox3;
@@ -44,14 +43,6 @@ public class UserDTO {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getemail() {
-		return email;
-	}
-
-	public void setemail(String email) {
-		this.email = email;
 	}
 
 	public boolean isCheckbox1() {

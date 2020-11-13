@@ -26,7 +26,7 @@ public class UserController {
 
     @PostMapping("/user")
     String addUser(@RequestBody UserDTO user) throws MessagingException {
-        smtpMailSender.send(user.getemail(), "Prova",
+        smtpMailSender.send(user.getUsername(), "Prova",
                 "Conferma la tua email");
         userRepository.save(user);
         return "ciao";

@@ -26,9 +26,6 @@ public class DAOUser {
 	private String lastname;
 
 	@Column
-	private String email;
-
-	@Column
 	private boolean checkbox1;
 
 	@Column
@@ -81,14 +78,6 @@ public class DAOUser {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getemail() {
-		return email;
-	}
-
-	public void setemail(final String email) {
-		this.email = email;
 	}
 
 	public String getlastname() {

@@ -60,7 +60,6 @@ public class JwtUserDetailsService implements UserDetailsService {
 		newUser.setUsername(user.getUsername());
 		newUser.setName(user.getName());
 		newUser.setlastname(user.getLastname());
-		newUser.setemail(user.getemail());
 		newUser.setCheckbox1(user.isCheckbox1());
 		newUser.setCheckbox2(user.isCheckbox2());
 		newUser.setCheckbox3(user.isCheckbox3());

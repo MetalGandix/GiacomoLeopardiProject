@@ -2,25 +2,24 @@
 <body>
     <div class="card-body">
       <form (ngSubmit)="onSubmit()" #userForm="ngForm" style="text-align: -webkit-center; ">
-  
-          <div class="form-group">
-              <label for="userName">Username*</label>
-              <input type="text" [(ngModel)]="user.username" required minlength="2" class="form-control" id="userName" name="userName"
-                placeholder="Enter your username" required #username="ngModel">
-                <div *ngIf="(username.invalid && (username.dirty || username.touched)) " class="alert alert-danger">
-                    <div *ngIf="username.errors.required">
-                        Devi scrivere l'username.
-                    </div>
-                    <div *ngIf="username.errors.minlength">
-                        Il nome deve essere lungo almeno 2 caratteri.
-                    </div>
-                    <div *ngIf="userExist && !username.errors">
-                      Questo username è già utilizzato.
-                  </div>
+
+        <div class="form-group">
+          <label for="username">Email*</label>
+          <input type="text" [(ngModel)]="user.username" class="form-control" id="username" name="username"
+            placeholder="Enter your email address" required #username="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+            <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
+                <div *ngIf="username.errors.required">
+                    Devi scrivere una e-mail.
                 </div>
-          </div>
-      
-  
+                <div *ngIf = "username.errors?.pattern">
+                   L'email non sembra essere corretta.
+                </div>
+                <div *ngIf="userExist && !username.errors">
+                  Questa email è già utilizzata.
+              </div>
+            </div>
+        </div>
+
         <div class="form-group">
           <label for="name">Name*</label>
           <input type="text" [(ngModel)]="user.name" required minlength="2" class="form-control" id="name" name="name"
@@ -48,20 +47,7 @@
                 </div>
             </div>
         </div>
-  
-        <div class="form-group">
-          <label for="email">Email*</label>
-          <input type="text" [(ngModel)]="user.email" class="form-control" id="email" name="email"
-            placeholder="Enter your email address" required #email="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
-            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
-                <div *ngIf="email.errors.required">
-                    Devi scrivere una e-mail.
-                </div>
-                <div *ngIf = "email.errors?.pattern">
-                   L'email non sembra essere corretta.
-                </div>
-            </div>
-        </div>
+
          
         <div class="form-group">
           <label for="password">Password*</label>

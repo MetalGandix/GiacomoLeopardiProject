@@ -23,10 +23,14 @@
                                         class="form-control" required>
                                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                 </div>
-                                <div [hidden]="!data.pristine" class="alert alert-danger">Inserisci la data della visita
+                                <div *ngIf="data.invalid && (data.dirty || data.touched)" class="alert alert-danger">
+                                <div *ngIf="data.errors.required">
+                                    Devi inserire una data.
+                                </div>
                                 </div>
                             </div>
                         </div>
+
                         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                             <div class="form-group">
                                 <label class="control-label" for="time">Orario desiderato*</label>
@@ -36,10 +40,14 @@
                                         required>
                                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                 </div>
-                                <div [hidden]="!orario.pristine" class="alert alert-danger">Inserisci l'orario della
-                                    visita</div>
+                                <div *ngIf="orario.invalid && (orario.dirty || orario.touched)" class="alert alert-danger">
+                                    <div *ngIf="orario.errors.required">
+                                        Devi inserire un orario.
+                                    </div>
+                                    </div>
                             </div>
                         </div>
+
                         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                             <div class="form-group">
                                 <label class="control-label required" for="select">Numero dei componenti del
@@ -51,9 +59,13 @@
                                 </div>
                                 <span class="input-group-addon"></span>
                             </div>
-                            <div [hidden]="!numcomponenti.pristine" class="alert alert-danger">Inserisci il numero di
-                                componenti</div>
+                            <div *ngIf="numcomponenti.invalid && (numcomponenti.dirty || numcomponenti.touched)" class="alert alert-danger">
+                                <div *ngIf="numcomponenti.errors.required">
+                                    Devi inserire il numero di componenti che verranno alla visita.
+                                </div>
+                                </div>
                         </div>
+
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt30">
                             <h4 class="tour-form-title">Informazioni generali referente del gruppo</h4>
                         </div>
@@ -64,8 +76,13 @@
                                     placeholder="Inserisci il tuo nome" [(ngModel)]="prenotazione.nome"
                                     class="form-control" required>
                             </div>
-                            <div [hidden]="!nome.pristine" class="alert alert-danger">Inserisci il nome</div>
+                            <div *ngIf="nome.invalid && (nome.dirty || nome.touched)" class="alert alert-danger">
+                                <div *ngIf="nome.errors.required">
+                                    Devi inserire il nome del visitatore. In caso di visite di gruppo, il nome del referente.
+                                </div>
+                                </div>
                         </div>
+
                         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                             <div class="form-group">
                                 <label class="control-label">Cognome*</label>
@@ -73,8 +90,13 @@
                                     placeholder="Inserisci il tuo cognome" [(ngModel)]="prenotazione.cognome"
                                     class="form-control" required>
                             </div>
-                            <div [hidden]="!cognome.pristine" class="alert alert-danger">Inserisci il cognome</div>
+                            <div *ngIf="cognome.invalid && (cognome.dirty || cognome.touched)" class="alert alert-danger">
+                                <div *ngIf="cognome.errors.required">
+                                    Devi inserire il cognome del visitatore. In caso di visite di gruppo, il cognome del referente.
+                                </div>
+                                </div>
                         </div>
+
                         <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
                             <div class="form-group">
                                 <label class="control-label" for="phone"> Numero di telefono*</label>
@@ -82,9 +104,13 @@
                                     placeholder="Inserisci il tuo numero di cellulare"
                                     [(ngModel)]="prenotazione.cellulare" class="form-control" required>
                             </div>
-                            <div [hidden]="!cellulare.pristine" class="alert alert-danger">Inserisci il tuo numero di
-                                cellulare</div>
+                            <div *ngIf="cellulare.invalid && (cellulare.dirty || cellulare.touched)" class="alert alert-danger">
+                                <div *ngIf="cellulare.errors.required">
+                                    Inserisci il numero di cellulare del visitatore.
+                                </div>
+                                </div>
                         </div>
+
                         <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
                             <div class="form-group">
                                 <label class="control-label" for="country">Paese*</label>
@@ -92,8 +118,13 @@
                                     placeholder="Inserisci il tuo paese" [(ngModel)]="prenotazione.paese"
                                     class="form-control" required>
                             </div>
-                            <div [hidden]="!paese.pristine" class="alert alert-danger">Inserisci il tuo paese</div>
+                            <div *ngIf="paese.invalid && (paese.dirty || paese.touched)" class="alert alert-danger">
+                                <div *ngIf="paese.errors.required">
+                                    Inserisci il tuo paese di provenienza
+                                </div>
+                                </div>
                         </div>
+
                         <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
                             <div class="form-group">
                                 <label class="control-label" for="city">Città*</label>
@@ -101,15 +132,21 @@
                                     placeholder="Inserisci la tua città" [(ngModel)]="prenotazione.citta"
                                     class="form-control" required>
                             </div>
-                            <div [hidden]="!citta.pristine" class="alert alert-danger">Inserisci la tua città</div>
+                            <div *ngIf="citta.invalid && (citta.dirty || citta.touched)" class="alert alert-danger">
+                                <div *ngIf="citta.errors.required">
+                                    Inserisci la tua città
+                                </div>
+                                </div>
                         </div>
+
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="form-group">
-                                <label class="control-label" for="textarea">Informazioni aggiuntive</label>
+                                <label class="control-label" for="textarea">Informazioni aggiuntive (Non obbligatorio)</label>
                                 <input class="form-control" name="infoAggiuntiva" id="textarea" rows="4"
                                     [(ngModel)]="prenotazione.infoAggiuntiva">
                             </div>
                         </div>
+
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <button [disabled]="!prenotazioneForm.form.valid" type="submit"
                                 class="btn btn-primary">Invia richiesta</button>
