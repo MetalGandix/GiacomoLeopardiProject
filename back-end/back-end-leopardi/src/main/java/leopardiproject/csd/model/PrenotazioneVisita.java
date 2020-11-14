@@ -1,5 +1,6 @@
 package leopardiproject.csd.model;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -17,7 +18,7 @@ public class PrenotazioneVisita {
     private long id;
     
     @Column
-    private Date data;
+    private LocalDate data;
 
     @Column
     private String orario;
@@ -52,11 +53,11 @@ public class PrenotazioneVisita {
         this.id = id;
     }
 
-    public Date getData() {
+    public LocalDate getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(LocalDate data) {
         this.data = data;
     }
 
