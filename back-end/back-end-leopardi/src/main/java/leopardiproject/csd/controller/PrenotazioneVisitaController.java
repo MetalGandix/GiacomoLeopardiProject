@@ -18,11 +18,14 @@ public class PrenotazioneVisitaController {
 
     @Autowired
     private PrenotazioneVisitaRepository visitaRep;
+    
+    private OTPSystemController otpController;
 
     // Metodo per inviare al DB la visita con le info
     @PostMapping("/visita")
     String addUser(@RequestBody PrenotazioneVisita visita) {
         visitaRep.save(visita);
+        otpController.sendOTP(visita.getCellulare());
         return "Visita correttamente inviata";
     }
 
