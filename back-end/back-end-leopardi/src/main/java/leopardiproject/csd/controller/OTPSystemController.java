@@ -23,8 +23,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class OTPSystemController {
     
     private Map<String, OTPSystemModel>otp_data = new HashMap<>();
-    private final static String ACCOUNT_SID = "ACbb8987281b4fe0d112289b9151aa2e98";
-    private final static String AUTH_ID = "ace0f69e4a6c8da8576b5d0b644061dc";
+    private final static String ACCOUNT_SID = "ACf26ecd7c46476a79c78ba8086c2b7df0";
+    private final static String AUTH_ID = "c917d52b02108d627b0b1ff70c6cc5d9";
 
     static {
         Twilio.init(ACCOUNT_SID, AUTH_ID);
@@ -38,7 +38,7 @@ public class OTPSystemController {
         otpSystemModel.setExpirytime(System.currentTimeMillis()+20000);
         otp_data.put(mobilenumber, otpSystemModel);
         //otpSystemModel.getPhone()) questo andrà al posto del "to"
-        Message.creator(new PhoneNumber("NUMERO DESTINATARIO (METODO COMMENTATO SOPRA)"), new PhoneNumber("INSERT TWILIO PHONE NUMBER"), "Your OTP is: " + otpSystemModel.getOtp()).create();
+        Message.creator(new PhoneNumber(mobilenumber), new PhoneNumber("+1 361 301 2179"), "Your OTP is: " + otpSystemModel.getOtp()).create();
         return new ResponseEntity<> ("OTP is send successfully", HttpStatus.OK);
     }
 
