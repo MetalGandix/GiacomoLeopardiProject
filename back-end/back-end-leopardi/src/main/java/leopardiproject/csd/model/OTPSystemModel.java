@@ -1,16 +1,21 @@
 package leopardiproject.csd.model;
 
 public class OTPSystemModel {
-    private PrenotazioneVisita cellulare;
+    private String cellulare;
     private String otp;
     private long expirytime;
 
     public String getPhone() {
-        return cellulare.getCellulare();
+        PrenotazioneVisita phone = new PrenotazioneVisita();
+        return phone.getCellulare();
     }
 
-    public void setPhone(String cellulare) {
-       this.cellulare.setCellulare(cellulare);
+    public String getCellulare() {
+        return cellulare;
+    }
+
+    public void setCellulare(String cellulare) {
+        this.cellulare = cellulare;
     }
 
     public String getOtp() {
@@ -28,4 +33,6 @@ public class OTPSystemModel {
     public void setExpirytime(long expirytime) {
         this.expirytime = expirytime;
     }
+
+
 }

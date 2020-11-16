@@ -33,11 +33,12 @@ public class OTPSystemController {
     @RequestMapping(value="/mobilenumbers/{mobilenumber}/otp", method=RequestMethod.POST)
     public ResponseEntity<Object>sendOTP(@PathVariable("mobilenumber")String mobilenumber){
         OTPSystemModel otpSystemModel = new OTPSystemModel();
-        otpSystemModel.setPhone(mobilenumber);
+        otpSystemModel.setCellulare(mobilenumber);
         otpSystemModel.setOtp(String.valueOf(((int) (Math.random()*(10000 - 1000))) + 1000));
         otpSystemModel.setExpirytime(System.currentTimeMillis()+20000);
         otp_data.put(mobilenumber, otpSystemModel);
-        Message.creator(new PhoneNumber(otpSystemModel.getPhone()), new PhoneNumber("+39 3663467422"), "Your OTP is: " + otpSystemModel.getOtp()).create();
+        //otpSystemModel.getPhone()) questo andrà al posto del "to"
+        Message.creator(new PhoneNumber("NUMERO DESTINATARIO (METODO COMMENTATO SOPRA)"), new PhoneNumber("INSERT TWILIO PHONE NUMBER"), "Your OTP is: " + otpSystemModel.getOtp()).create();
         return new ResponseEntity<> ("OTP is send successfully", HttpStatus.OK);
     }
 
