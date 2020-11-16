@@ -1,54 +1,25 @@
-<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-
-  <nav class="navbar navbar">
-    <span class="material-icons" style="color: whitesmoke;">home</span>
-    <a class="navbar-brand" routerLink="/home" style="color:whitesmoke; margin-left: 40px;">Giacomo Leopardi APP</a>
-  </nav>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <ul class="collapse navbar-collapse" id="navbarSupportedContent">
-    <li><a class="navbar-brand" routerLink="/chi-siamo" routerLinkActive="active">
-        <p>Chi siamo</p>
-      </a></li>
-    <li><a class="navbar-brand" routerLink="/contatti" routerLinkActive="active">
-        <p>Contatti</p>
-      </a></li>
-    <li><a class="navbar-brand" routerLink="/mappa" routerLinkActive="active">
-        <p>Percorso</p>
-      </a></li>
-    <li><a class="navbar-brand" routerLink="/poesia" routerLinkActive="active">
-        <p>Testi</p>
-      </a></li>
-    <li><a class="navbar-brand" routerLink="/tariffa" routerLinkActive="active">
-        <p>Scopri le nostre tariffe</p>
-      </a></li>
-      <li class="nav-item dropdown">
-        <a class="navbar-brand dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          Area Riservata
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" routerLink="/area-riservata">Gestione Profilo</a>
-          <a class="dropdown-item" routerLink="/prenotazione-visita">Prenota la tua visita</a>
-        </div>
-      </li>
-    <li><a class="navbar-brand" routerLink="/login" routerLinkActive="active">
-        <p>Login</p>
-      </a></li>
-  </ul>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <p style="color:whitesmoke;">
+  Giacomo Leopardi APP
+</p>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    <ul class="collapse navbar-collapse" id="navbarSupportedContent">
+    <li><a class="navbar-brand" routerLink="/home" routerLinkActive="active"><p>Home</p></a></li>
+    <li><a class="navbar-brand" routerLink="/chi-siamo" routerLinkActive="active"><p>Chi siamo</p></a></li>
+    <li><a class="navbar-brand" routerLink="/contatti" routerLinkActive="active"><p>Contatti</p></a></li>
+    <li><a class="navbar-brand" routerLink="/mappa" routerLinkActive="active"><p>Percorso</p></a></li>
+    <li><a class="navbar-brand" routerLink="/poesia" routerLinkActive="active"><p>Testi</p></a></li>
+    <li><a class="navbar-brand" routerLink="/tariffa" routerLinkActive="active"><p>Scopri le nostre tariffe</p></a></li>
+    <li><a class="navbar-brand" routerLink="/login" routerLinkActive="active"><p>Area riservata</p></a></li>
+    </ul>
 </nav>
-
-
 <router-outlet></router-outlet>
-
-<!-- Footer -->
-<footer class="py-5 bg-dark">
-  <div class="container">
-    <p class="m-0 text-center text-white">Copyright &copy; Centro Culturale Giacomo Leopardi</p>
-  </div>
-  <!-- /.container -->
-</footer>
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Centro Culturale Giacomo Leopardi</p>
+    </div>
+    <!-- /.container -->
+  </footer>
