@@ -38,6 +38,14 @@ import { AuthGuardComponent } from './service/jwt-auth/auth-guard/auth-guard.com
 import { AuthenticationService } from './service/authentication.service';
 import { BasicAuthHttpInterceptorService } from './service/basic-auth-http-interceptor.service';
 import { ContattiComponent } from './contatti/contatti.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 
 
 
@@ -71,7 +79,8 @@ import { ContattiComponent } from './contatti/contatti.component';
     TariffaComponent,
     AutografoInnoComponent,
     AuthGuardComponent,
-    ContattiComponent
+    ContattiComponent,
+    SidenavComponent
   ],
   imports: [
     HttpClientModule, 
@@ -82,6 +91,13 @@ import { ContattiComponent } from './contatti/contatti.component';
     GoogleMapsModule,
     FormsModule,
     NgbModule,
+    BrowserAnimationsModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
   ],
   providers: [AuthGuardComponent,RoleGuardComponent,AuthenticationService,
     {
