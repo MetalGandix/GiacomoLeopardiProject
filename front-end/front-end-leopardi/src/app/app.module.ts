@@ -47,6 +47,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { PlyrModule } from 'ngx-plyr';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -96,6 +97,7 @@ import { PlyrModule } from 'ngx-plyr';
     MatSidenavModule,
     MatIconModule,
     PlyrModule,
+    MatCardModule,
     MatListModule,
   ],
   providers: [AuthGuardComponent,RoleGuardComponent,AuthenticationService,
