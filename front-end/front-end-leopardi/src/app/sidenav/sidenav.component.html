@@ -3,15 +3,15 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'" 
       [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menù</mat-toolbar>
+    <mat-toolbar style="color: white;"><i>Menù</i></mat-toolbar>
     <mat-nav-list>
-      <a style="color: red;" mat-list-item routerLink="/home" routerLinkActive="active" (click)="onSidenavClose()"><mat-icon>home</mat-icon> <span style="margin-left: 10px;" class="nav-caption">Home</span></a>
-      <a mat-list-item routerLink="/chi-siamo"><mat-icon>account_circle</mat-icon> <span style="margin-left: 10px;" class="nav-caption">Chi siamo</span></a>
-      <a mat-list-item routerLink="/contatti"><mat-icon>call</mat-icon> <span style="margin-left: 10px;" class="nav-caption">Contatti</span></a>
-      <a mat-list-item routerLink="/mappa"><mat-icon>location_on</mat-icon> <span style="margin-left: 10px;" class="nav-caption">Percorso</span></a>
-      <a mat-list-item routerLink="/poesia"><mat-icon>audiotrack</mat-icon> <span style="margin-left: 10px;" class="nav-caption">Testi</span></a>
-      <a mat-list-item routerLink="/tariffa"><mat-icon>euro_symbol</mat-icon> <span style="margin-left: 10px;" class="nav-caption">Scopri le nostre tariffe</span></a>
-      <a style="color: blue;" mat-list-item routerLink="/login"><mat-icon>person</mat-icon> <span style="margin-left: 10px;" class="nav-caption">Area riservata</span></a>
+      <a style="color: red;" mat-list-item routerLink="/home" routerLinkActive="active" (click)="onSidenavClose()"><mat-icon>home</mat-icon> <span style="margin-left: 10px;" class="nav-caption"><i>Home</i></span></a>
+      <a mat-list-item routerLink="/chi-siamo"><mat-icon>account_circle</mat-icon> <span style="margin-left: 10px;" class="nav-caption"><i>Chi siamo</i></span></a>
+      <a mat-list-item routerLink="/contatti"><mat-icon>call</mat-icon> <span style="margin-left: 10px;" class="nav-caption"><i>Contatti</i></span></a>
+      <a mat-list-item routerLink="/mappa"><mat-icon>location_on</mat-icon> <span style="margin-left: 10px;" class="nav-caption"><i>Percorso</i></span></a>
+      <a mat-list-item routerLink="/poesia"><mat-icon>audiotrack</mat-icon> <span style="margin-left: 10px;" class="nav-caption"><i>Testi</i></span></a>
+      <a mat-list-item routerLink="/tariffa"><mat-icon>euro_symbol</mat-icon> <span style="margin-left: 10px;" class="nav-caption"><i>Scopri le nostre tariffe</i></span></a>
+      <a style="color: blue;" mat-list-item routerLink="/login"><mat-icon>person</mat-icon> <span style="margin-left: 10px;" class="nav-caption"><i>Area riservata</i></span></a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -24,7 +24,7 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>Centro Culturale Giacomo Leopardi</span>
+      <span style="margin-left: 10px;"><i>Centro Culturale Giacomo Leopardi</i></span>
     </mat-toolbar>
   </mat-sidenav-content>
 </mat-sidenav-container>
