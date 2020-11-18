@@ -16,7 +16,7 @@ export class RoleGuardComponent implements OnInit {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     switch (route.routeConfig.path) {
-      case '':
+      case 'area-riservata':
         if (this.authService.getRole().authority == 'ROLE_ADMIN') {
           return true;
         } else {

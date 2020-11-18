@@ -26,6 +26,11 @@ export class RegistrazionePageComponent{
   onSubmit() {
     this.registrazione.save(this.user).subscribe(data =>{})
     this.showMsg= true;
+    this.mettiRuolo()
+  }
+
+  mettiRuolo(){
+    this.authenticate.getRole().authority=='ROLE_VISITATORE'
   }
 
 
