@@ -25,19 +25,20 @@
     h1{
       font-size: 30px;
     }
-
-    p{
-      text-align: center;
-      font-size: large;
-      margin-top: auto;
-      font-style: italic;
+  
+    #in{
+      width: 50px;
     }
-
-    pre{
-      text-align: center;
-      font-size: large;
-      margin-top: auto;
-      font-style: italic;
+  
+    #out{
+      width: 50px;
     }
-
+  
+    #log{
+      width: 50px;
+    }
+  
+    #marker{
+      width: 50px;
+    }
   }
