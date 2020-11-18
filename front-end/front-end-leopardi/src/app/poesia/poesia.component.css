@@ -24,6 +24,7 @@
   
     h1{
       font-size: 30px;
+      text-align: center;
     }
 
     p{
@@ -32,12 +33,12 @@
       margin-top: auto;
       font-style: italic;
     }
-
     pre{
+      line-height: 30px;
       text-align: center;
-      font-size: large;
+      font-size: medium;
       margin-top: auto;
       font-style: italic;
+      font-family: 'Times New Roman', Times, serif;
     }
-
   }
