@@ -5,11 +5,18 @@
 
   <div class="text">
 
-    <h1><b><i>A Silvia</i></b></h1>
+    <h1><b><i>A Silvia</i></b>
+      <button class="button" data-toggle="collapse" href="#multiCollapseExample1" aria-expanded="false"
+        aria-controls="multiCollapseExample1" style="vertical-align:middle"><span>
+          <mat-icon>menu_book</mat-icon>
+        </span></button>
 
-    <button class="button" data-toggle="collapse" href="#multiCollapseExample1" aria-expanded="false"
-      aria-controls="multiCollapseExample1" style="vertical-align:middle"><span>Clicca qui per leggere la
-        poesia</span></button>
+      <button class="button1" data-toggle="collapse" href="#multiCollapseExample2" aria-expanded="false"
+        aria-controls="multiCollapseExample2" style="vertical-align:middle"><span>
+          <mat-icon>audiotrack</mat-icon>
+        </span></button>
+    </h1>
+
     <div class="collapse multi-collapse" id="multiCollapseExample1">
       <pre>
         Silvia, rimembri ancora
@@ -80,12 +87,12 @@
         la fredda morte ed una tomba ignuda
         mostravi di lontano.
       </pre>
+      <button class="button" data-toggle="collapse" href="#multiCollapseExample1" aria-expanded="false"
+        aria-controls="multiCollapseExample1" style="vertical-align:middle; margin-left: 50%;"><span><i
+            class="arrow up"></i></span></button>
     </div>
   </div>
 
-  <button class="button1" data-toggle="collapse" href="#multiCollapseExample2" aria-expanded="false"
-    aria-controls="multiCollapseExample2" style="vertical-align:middle; margin-top: 10px;"><span>Clicca qui per ascoltare la
-      poesia</span></button>
   <div class="collapse multi-collapse" id="multiCollapseExample2">
     <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column" fxLayoutGap="32px">
       <mat-card style="width: responsive; height: 50px;">
@@ -97,8 +104,19 @@
 
   <div class="text">
 
-    <h1><b><i>Sopra il ritratto di una bella donna scolpito nel monumento sepolcrale della medesima</i></b></h1>
-    <pre>
+    <h1><b><i>Sopra il ritratto di una bella donna scolpito nel monumento sepolcrale della medesima</i></b>
+
+      <button class="button" data-toggle="collapse" href="#multiCollapseExample3" aria-expanded="false"
+        aria-controls="multiCollapseExample3" style="vertical-align:middle"><span>
+          <mat-icon>menu_book</mat-icon>
+        </span></button>
+      <button class="button1" data-toggle="collapse" href="#multiCollapseExample4" aria-expanded="false"
+        aria-controls="multiCollapseExample4" style="vertical-align:middle; margin-top: 10px;"><span>
+          <mat-icon>audiotrack</mat-icon>
+        </span></button>
+    </h1>
+    <div class="collapse multi-collapse" id="multiCollapseExample3">
+      <pre>
     Tal fosti: or qui sotterra
     Polve e scheletro sei. Su l'ossa e il fango
     Immobilmente collocato invano,
@@ -160,19 +178,35 @@
     Son così di leggeri
     Da sì basse cagioni e desti e spenti?
   </pre>
+      <button class="button" data-toggle="collapse" href="#multiCollapseExample3" aria-expanded="false"
+        aria-controls="multiCollapseExample3" style="vertical-align:middle; margin-left: 50%;"><span><i
+            class="arrow up"></i></span></button>
+    </div>
   </div>
 
-  <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column" fxLayoutGap="32px">
-    <mat-card style="width: responsive; height: 50px;">
-      <div mat-card-image plyr plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true" [plyrCrossOrigin]="true"
-        [plyrSources]="'./assets/audio/Inquietudine della vita.mp3'"></div>
-    </mat-card>
+  <div class="collapse multi-collapse" id="multiCollapseExample4">
+    <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column" fxLayoutGap="32px">
+      <mat-card style="width: responsive; height: 50px;">
+        <div mat-card-image plyr plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true" [plyrCrossOrigin]="true"
+          [plyrSources]="'./assets/audio/Inquietudine della vita.mp3'"></div>
+      </mat-card>
+    </div>
   </div>
 
   <div class="text">
 
-    <h1><b><i>Il sabato del villaggio</i></b></h1>
-    <pre>
+    <h1><b><i>Il sabato del villaggio</i></b>
+      <button class="button" data-toggle="collapse" href="#multiCollapseExample5" aria-expanded="false"
+        aria-controls="multiCollapseExample5" style="vertical-align:middle"><span>
+          <mat-icon>menu_book</mat-icon>
+        </span></button>
+      <button class="button1" data-toggle="collapse" href="#multiCollapseExample6" aria-expanded="false"
+        aria-controls="multiCollapseExample6" style="vertical-align:middle; margin-top: 10px;"><span>
+          <mat-icon>audiotrack</mat-icon>
+        </span></button>
+    </h1>
+    <div class="collapse multi-collapse" id="multiCollapseExample5">
+      <pre>
     La donzelletta vien dalla campagna
     in sul calar del sole,
     col suo fascio dell'erba; e reca in mano
@@ -227,19 +261,35 @@
     Altro dirti non vo'; ma la tua festa
     ch'anco tardi a venir non ti sia grave.
     </pre>
+      <button class="button" data-toggle="collapse" href="#multiCollapseExample5" aria-expanded="false"
+        aria-controls="multiCollapseExample5" style="vertical-align:middle; margin-left: 50%;"><span><i
+            class="arrow up"></i></span></button>
+    </div>
   </div>
 
-  <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column" fxLayoutGap="32px">
-    <mat-card style="width: responsive; height: 50px;">
-      <div mat-card-image plyr plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true" [plyrCrossOrigin]="true"
-        [plyrSources]="'./assets/audio/Inquietudine della vita.mp3'"></div>
-    </mat-card>
+  <div class="collapse multi-collapse" id="multiCollapseExample6">
+    <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column" fxLayoutGap="32px">
+      <mat-card style="width: responsive; height: 50px;">
+        <div mat-card-image plyr plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true" [plyrCrossOrigin]="true"
+          [plyrSources]="'./assets/audio/Inquietudine della vita.mp3'"></div>
+      </mat-card>
+    </div>
   </div>
 
   <div class="text">
 
-    <h1><b><i>L'infinito</i></b></h1>
-    <pre>
+    <h1><b><i>L'infinito</i></b>
+      <button class="button" data-toggle="collapse" href="#multiCollapseExample7" aria-expanded="false"
+        aria-controls="multiCollapseExample7" style="vertical-align:middle"><span>
+          <mat-icon>menu_book</mat-icon>
+        </span></button>
+      <button class="button1" data-toggle="collapse" href="#multiCollapseExample8" aria-expanded="false"
+        aria-controls="multiCollapseExample8" style="vertical-align:middle; margin-top: 10px;"><span>
+          <mat-icon>audiotrack</mat-icon>
+        </span></button>
+    </h1>
+    <div class="collapse multi-collapse" id="multiCollapseExample7">
+      <pre>
     Sempre caro mi fu quest'ermo colle,
     e questa siepe, che da tanta parte
     dell'ultimo orizzonte il guardo esclude.
@@ -256,19 +306,34 @@
     immensità s'annega il pensier mio:
     e il naufragar m'è dolce in questo mare
   </pre>
+      <button class="button" data-toggle="collapse" href="#multiCollapseExample7" aria-expanded="false"
+        aria-controls="multiCollapseExample7" style="vertical-align:middle; margin-left: 50%;"><span><i
+            class="arrow up"></i></span></button>
+    </div>
   </div>
-
-  <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column" fxLayoutGap="32px">
-    <mat-card style="width: responsive; height: 50px;">
-      <div mat-card-image plyr plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true" [plyrCrossOrigin]="true"
-        [plyrSources]="'./assets/audio/Inquietudine della vita.mp3'"></div>
-    </mat-card>
+  <div class="collapse multi-collapse" id="multiCollapseExample8">
+    <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column" fxLayoutGap="32px">
+      <mat-card style="width: responsive; height: 50px;">
+        <div mat-card-image plyr plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true" [plyrCrossOrigin]="true"
+          [plyrSources]="'./assets/audio/Inquietudine della vita.mp3'"></div>
+      </mat-card>
+    </div>
   </div>
 
   <div class="text">
 
-    <h1><b><i>Le ricordanze VV 50-70</i></b></h1>
-    <pre>
+    <h1><b><i>Le ricordanze VV 50-70</i></b>
+      <button class="button" data-toggle="collapse" href="#multiCollapseExample9" aria-expanded="false"
+        aria-controls="multiCollapseExample9" style="vertical-align:middle"><span>
+          <mat-icon>menu_book</mat-icon>
+        </span></button>
+      <button class="button1" data-toggle="collapse" href="#multiCollapseExample10" aria-expanded="false"
+        aria-controls="multiCollapseExample10" style="vertical-align:middle; margin-top: 10px;"><span>
+          <mat-icon>audiotrack</mat-icon>
+        </span></button>
+    </h1>
+    <div class="collapse multi-collapse" id="multiCollapseExample9">
+      <pre>
     Viene il vento recando il suon dell'ora
     Dalla torre del borgo. Era conforto
     Questo suon, mi rimembra, alle mie notti,
@@ -278,19 +343,35 @@
     Ch'io vegga o senta, onde un'immagin dentro
     Non torni, e un dolce rimembrar non sorga.
   </pre>
+      <button class="button" data-toggle="collapse" href="#multiCollapseExample9" aria-expanded="false"
+        aria-controls="multiCollapseExample9" style="vertical-align:middle; margin-left: 50%;"><span><i
+            class="arrow up"></i></span></button>
+    </div>
   </div>
 
-  <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column" fxLayoutGap="32px">
-    <mat-card style="width: responsive; height: 50px;">
-      <div mat-card-image plyr plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true" [plyrCrossOrigin]="true"
-        [plyrSources]="'./assets/audio/Inquietudine della vita.mp3'"></div>
-    </mat-card>
+  <div class="collapse multi-collapse" id="multiCollapseExample10">
+    <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column" fxLayoutGap="32px">
+      <mat-card style="width: responsive; height: 50px;">
+        <div mat-card-image plyr plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true" [plyrCrossOrigin]="true"
+          [plyrSources]="'./assets/audio/Inquietudine della vita.mp3'"></div>
+      </mat-card>
+    </div>
   </div>
 
   <div class="text">
 
-    <h1><b><i>Il passero solitario</i></b></h1>
-    <pre>
+    <h1><b><i>Il passero solitario</i></b>
+      <button class="button" data-toggle="collapse" href="#multiCollapseExample11" aria-expanded="false"
+        aria-controls="multiCollapseExample11" style="vertical-align:middle"><span>
+          <mat-icon>menu_book</mat-icon>
+        </span></button>
+      <button class="button1" data-toggle="collapse" href="#multiCollapseExample12" aria-expanded="false"
+        aria-controls="multiCollapseExample12" style="vertical-align:middle; margin-top: 10px;"><span>
+          <mat-icon>audiotrack</mat-icon>
+        </span></button>
+    </h1>
+    <div class="collapse multi-collapse" id="multiCollapseExample11">
+      <pre>
     D'in su la vetta della torre antica,
     Passero solitario, alla campagna
     Cantando vai finché non more il giorno;
@@ -325,8 +406,8 @@
     Odi per lo sereno un suon di squilla,
     Odi spesso un tonar di ferree canne,
     Che rimbomba lontan di villa in villa.
-    Tutta vestita a festa>
-    La gioventù del loco>
+    Tutta vestita a festa
+    La gioventù del loco
     Lascia le case, e per le vie si spande;
     E mira ed è mirata, e in cor s'allegra.
 
@@ -356,19 +437,34 @@
     Ahi pentirommi, e spesso,
     Ma sconsolato, volgerommi indietro.
   </pre>
+      <button class="button" data-toggle="collapse" href="#multiCollapseExample11" aria-expanded="false"
+        aria-controls="multiCollapseExample11" style="vertical-align:middle; margin-left: 50%;"><span><i
+            class="arrow up"></i></span></button>
+    </div>
   </div>
-
-  <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column" fxLayoutGap="32px">
-    <mat-card style="width: responsive; height: 50px;">
-      <div mat-card-image plyr plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true" [plyrCrossOrigin]="true"
-        [plyrSources]="'./assets/audio/Inquietudine della vita.mp3'"></div>
-    </mat-card>
+  <div class="collapse multi-collapse" id="multiCollapseExample12">
+    <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column" fxLayoutGap="32px">
+      <mat-card style="width: responsive; height: 50px;">
+        <div mat-card-image plyr plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true" [plyrCrossOrigin]="true"
+          [plyrSources]="'./assets/audio/Inquietudine della vita.mp3'"></div>
+      </mat-card>
+    </div>
   </div>
 
   <div class="text">
 
-    <h1><b><i>Alla sua donna</i></b></h1>
-    <pre>
+    <h1><b><i>Alla sua donna</i></b>
+      <button class="button" data-toggle="collapse" href="#multiCollapseExample13" aria-expanded="false"
+        aria-controls="multiCollapseExample13" style="vertical-align:middle"><span>
+          <mat-icon>menu_book</mat-icon>
+        </span></button>
+      <button class="button1" data-toggle="collapse" href="#multiCollapseExample14" aria-expanded="false"
+        aria-controls="multiCollapseExample14" style="vertical-align:middle; margin-top: 10px;"><span>
+          <mat-icon>audiotrack</mat-icon>
+        </span></button>
+    </h1>
+    <div class="collapse multi-collapse" id="multiCollapseExample13">
+      <pre>
     Cara beltà che amore
     Lunge m’inspiri o nascondendo il viso,
     Fuor se nel sonno il core
@@ -429,19 +525,34 @@
     Di qua dove son gli anni infausti e brevi,
     Questo d’ignoto amante inno ricevi.
     </pre>
+      <button class="button" data-toggle="collapse" href="#multiCollapseExample13" aria-expanded="false"
+        aria-controls="multiCollapseExample13" style="vertical-align:middle; margin-left: 50%;"><span><i
+            class="arrow up"></i></span></button>
+    </div>
   </div>
-
-  <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column" fxLayoutGap="32px">
-    <mat-card style="width: responsive; height: 50px;">
-      <div mat-card-image plyr plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true" [plyrCrossOrigin]="true"
-        [plyrSources]="'./assets/audio/Inquietudine della vita.mp3'"></div>
-    </mat-card>
+  <div class="collapse multi-collapse" id="multiCollapseExample14">
+    <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column" fxLayoutGap="32px">
+      <mat-card style="width: responsive; height: 50px;">
+        <div mat-card-image plyr plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true" [plyrCrossOrigin]="true"
+          [plyrSources]="'./assets/audio/Inquietudine della vita.mp3'"></div>
+      </mat-card>
+    </div>
   </div>
 
   <div class="text">
 
-    <h1><b><i>La sera del dì di festa</i></b></h1>
-    <pre>
+    <h1><b><i>La sera del dì di festa</i></b>
+      <button class="button" data-toggle="collapse" href="#multiCollapseExample15" aria-expanded="false"
+        aria-controls="multiCollapseExample15" style="vertical-align:middle"><span>
+          <mat-icon>menu_book</mat-icon>
+        </span></button>
+      <button class="button1" data-toggle="collapse" href="#multiCollapseExample16" aria-expanded="false"
+        aria-controls="multiCollapseExample16" style="vertical-align:middle; margin-top: 10px;"><span>
+          <mat-icon>audiotrack</mat-icon>
+        </span></button>
+    </h1>
+    <div class="collapse multi-collapse" id="multiCollapseExample15">
+      <pre>
     Dolce e chiara è la notte e senza vento,
     E queta sovra i tetti e in mezzo agli orti
     Posa la luna, e di lontan rivela
@@ -489,19 +600,34 @@
     Lontanando morire a poco a poco,
     Già similmente mi stringeva il core.
     </pre>
+      <button class="button" data-toggle="collapse" href="#multiCollapseExample15" aria-expanded="false"
+        aria-controls="multiCollapseExample15" style="vertical-align:middle; margin-left: 50%;"><span><i
+            class="arrow up"></i></span></button>
+    </div>
   </div>
-
-  <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column" fxLayoutGap="32px">
-    <mat-card style="width: responsive; height: 50px;">
-      <div mat-card-image plyr plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true" [plyrCrossOrigin]="true"
-        [plyrSources]="'./assets/audio/Inquietudine della vita.mp3'"></div>
-    </mat-card>
+  <div class="collapse multi-collapse" id="multiCollapseExample16">
+    <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column" fxLayoutGap="32px">
+      <mat-card style="width: responsive; height: 50px;">
+        <div mat-card-image plyr plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true" [plyrCrossOrigin]="true"
+          [plyrSources]="'./assets/audio/Inquietudine della vita.mp3'"></div>
+      </mat-card>
+    </div>
   </div>
 
   <div class="text">
 
-    <h1><b><i>Il risorgimento</i></b></h1>
-    <pre>
+    <h1><b><i>Il risorgimento</i></b>
+      <button class="button" data-toggle="collapse" href="#multiCollapseExample17" aria-expanded="false"
+        aria-controls="multiCollapseExample17" style="vertical-align:middle"><span>
+          <mat-icon>menu_book</mat-icon>
+        </span></button>
+      <button class="button1" data-toggle="collapse" href="#multiCollapseExample18" aria-expanded="false"
+        aria-controls="multiCollapseExample18" style="vertical-align:middle; margin-top: 10px;"><span>
+          <mat-icon>audiotrack</mat-icon>
+        </span></button>
+    </h1>
+    <div class="collapse multi-collapse" id="multiCollapseExample17">
+      <pre>
     Credei ch'al tutto fossero
     In me, sul fior degli anni,
     Mancati i dolci affanni
@@ -682,19 +808,34 @@
     Non chiamerò spietato
     chi lo spirar mi dà.
     </pre>
+      <button class="button" data-toggle="collapse" href="#multiCollapseExample17" aria-expanded="false"
+        aria-controls="multiCollapseExample17" style="vertical-align:middle; margin-left: 50%;"><span><i
+            class="arrow up"></i></span></button>
+    </div>
   </div>
-
-  <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column" fxLayoutGap="32px">
-    <mat-card style="width: responsive; height: 50px;">
-      <div mat-card-image plyr plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true" [plyrCrossOrigin]="true"
-        [plyrSources]="'./assets/audio/Inquietudine della vita.mp3'"></div>
-    </mat-card>
+  <div class="collapse multi-collapse" id="multiCollapseExample18">
+    <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column" fxLayoutGap="32px">
+      <mat-card style="width: responsive; height: 50px;">
+        <div mat-card-image plyr plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true" [plyrCrossOrigin]="true"
+          [plyrSources]="'./assets/audio/Inquietudine della vita.mp3'"></div>
+      </mat-card>
+    </div>
   </div>
 
   <div class="text">
 
-    <h1><b><i>Le ricordanze</i></b></h1>
-    <pre>
+    <h1><b><i>Le ricordanze</i></b>
+      <button class="button" data-toggle="collapse" href="#multiCollapseExample19" aria-expanded="false"
+        aria-controls="multiCollapseExample19" style="vertical-align:middle"><span>
+          <mat-icon>menu_book</mat-icon>
+        </span></button>
+      <button class="button1" data-toggle="collapse" href="#multiCollapseExample20" aria-expanded="false"
+        aria-controls="multiCollapseExample20" style="vertical-align:middle; margin-top: 10px;"><span>
+          <mat-icon>audiotrack</mat-icon>
+        </span></button>
+    </h1>
+    <div class="collapse multi-collapse" id="multiCollapseExample19">
+      <pre>
     Vaghe stelle dell'Orsa, io non credea
     Tornare ancor per uso a contemplarvi
     Sul paterno giardino scintillanti,
@@ -877,19 +1018,34 @@
     I miei teneri sensi, i tristi e cari
     Moti del cor, la rimembranza acerba.
     </pre>
+      <button class="button" data-toggle="collapse" href="#multiCollapseExample19" aria-expanded="false"
+        aria-controls="multiCollapseExample19" style="vertical-align:middle; margin-left: 50%;"><span><i
+            class="arrow up"></i></span></button>
+    </div>
   </div>
-
-  <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column" fxLayoutGap="32px">
-    <mat-card style="width: responsive; height: 50px;">
-      <div mat-card-image plyr plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true" [plyrCrossOrigin]="true"
-        [plyrSources]="'./assets/audio/Inquietudine della vita.mp3'"></div>
-    </mat-card>
+  <div class="collapse multi-collapse" id="multiCollapseExample20">
+    <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column" fxLayoutGap="32px">
+      <mat-card style="width: responsive; height: 50px;">
+        <div mat-card-image plyr plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true" [plyrCrossOrigin]="true"
+          [plyrSources]="'./assets/audio/Inquietudine della vita.mp3'"></div>
+      </mat-card>
+    </div>
   </div>
 
   <div class="text">
 
-    <h1><b><i>Canto notturno di un pastore errante dell'asia</i></b></h1>
-    <pre>
+    <h1><b><i>Canto notturno di un pastore errante dell'asia</i></b>
+      <button class="button" data-toggle="collapse" href="#multiCollapseExample21" aria-expanded="false"
+        aria-controls="multiCollapseExample21" style="vertical-align:middle"><span>
+          <mat-icon>menu_book</mat-icon>
+        </span></button>
+      <button class="button1" data-toggle="collapse" href="#multiCollapseExample22" aria-expanded="false"
+        aria-controls="multiCollapseExample22" style="vertical-align:middle; margin-top: 10px;"><span>
+          <mat-icon>audiotrack</mat-icon>
+        </span></button>
+    </h1>
+    <div class="collapse multi-collapse" id="multiCollapseExample21">
+      <pre>
     Che fai tu, luna, in ciel? dimmi, che fai,
     Silenziosa luna?
     Sorgi la sera, e vai,
@@ -1038,19 +1194,34 @@
     Stato che sia, dentro covile o cuna,
     E' funesto a chi nasce il dì natale.
     </pre>
+      <button class="button" data-toggle="collapse" href="#multiCollapseExample21" aria-expanded="false"
+        aria-controls="multiCollapseExample21" style="vertical-align:middle; margin-left: 50%;"><span><i
+            class="arrow up"></i></span></button>
+    </div>
   </div>
-
-  <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column" fxLayoutGap="32px">
-    <mat-card style="width: responsive; height: 50px;">
-      <div mat-card-image plyr plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true" [plyrCrossOrigin]="true"
-        [plyrSources]="'./assets/audio/Inquietudine della vita.mp3'"></div>
-    </mat-card>
+  <div class="collapse multi-collapse" id="multiCollapseExample22">
+    <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column" fxLayoutGap="32px">
+      <mat-card style="width: responsive; height: 50px;">
+        <div mat-card-image plyr plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true" [plyrCrossOrigin]="true"
+          [plyrSources]="'./assets/audio/Inquietudine della vita.mp3'"></div>
+      </mat-card>
+    </div>
   </div>
 
   <div class="text">
 
-    <h1><b><i>Il pensiero dominante</i></b></h1>
-    <pre>
+    <h1><b><i>Il pensiero dominante</i></b>
+      <button class="button" data-toggle="collapse" href="#multiCollapseExample23" aria-expanded="false"
+        aria-controls="multiCollapseExample23" style="vertical-align:middle"><span>
+          <mat-icon>menu_book</mat-icon>
+        </span></button>
+      <button class="button1" data-toggle="collapse" href="#multiCollapseExample24" aria-expanded="false"
+        aria-controls="multiCollapseExample24" style="vertical-align:middle; margin-top: 10px;"><span>
+          <mat-icon>audiotrack</mat-icon>
+        </span></button>
+    </h1>
+    <div class="collapse multi-collapse" id="multiCollapseExample23">
+      <pre>
       Dolcissimo, possente
       Dominator di mia profonda mente;
       Terribile, ma caro
@@ -1212,19 +1383,34 @@
       Altro che gli occhi tuoi veder più vago?
       Altro più dolce aver che il tuo pensiero?
     </pre>
+      <button class="button" data-toggle="collapse" href="#multiCollapseExample23" aria-expanded="false"
+        aria-controls="multiCollapseExample23" style="vertical-align:middle; margin-left: 50%;"><span><i
+            class="arrow up"></i></span></button>
+    </div>
   </div>
-
-  <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column" fxLayoutGap="32px">
-    <mat-card style="width: responsive; height: 50px;">
-      <div mat-card-image plyr plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true" [plyrCrossOrigin]="true"
-        [plyrSources]="'./assets/audio/Inquietudine della vita.mp3'"></div>
-    </mat-card>
+  <div class="collapse multi-collapse" id="multiCollapseExample24">
+    <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column" fxLayoutGap="32px">
+      <mat-card style="width: responsive; height: 50px;">
+        <div mat-card-image plyr plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true" [plyrCrossOrigin]="true"
+          [plyrSources]="'./assets/audio/Inquietudine della vita.mp3'"></div>
+      </mat-card>
+    </div>
   </div>
 
   <div class="text">
 
-    <h1><b><i>A se stesso</i></b></h1>
-    <pre>
+    <h1><b><i>A se stesso</i></b>
+      <button class="button" data-toggle="collapse" href="#multiCollapseExample25" aria-expanded="false"
+        aria-controls="multiCollapseExample25" style="vertical-align:middle"><span>
+          <mat-icon>menu_book</mat-icon>
+        </span></button>
+      <button class="button1" data-toggle="collapse" href="#multiCollapseExample26" aria-expanded="false"
+        aria-controls="multiCollapseExample26" style="vertical-align:middle; margin-top: 10px;"><span>
+          <mat-icon>audiotrack</mat-icon>
+        </span></button>
+    </h1>
+    <div class="collapse multi-collapse" id="multiCollapseExample25">
+      <pre>
       Or poserai per sempre,
       Stanco mio cor. Perì l'inganno estremo,
       Ch'eterno io mi credei. Perì. Ben sento,
@@ -1358,19 +1544,34 @@
       Qui neghittoso immobile giacendo,
       Il mar la terra e il ciel miro e sorrido.
     </pre>
+      <button class="button" data-toggle="collapse" href="#multiCollapseExample25" aria-expanded="false"
+        aria-controls="multiCollapseExample25" style="vertical-align:middle; margin-left: 50%;"><span><i
+            class="arrow up"></i></span></button>
+    </div>
   </div>
-
-  <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column" fxLayoutGap="32px">
-    <mat-card style="width: responsive; height: 50px;">
-      <div mat-card-image plyr plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true" [plyrCrossOrigin]="true"
-        [plyrSources]="'./assets/audio/Inquietudine della vita.mp3'"></div>
-    </mat-card>
+  <div class="collapse multi-collapse" id="multiCollapseExample26">
+    <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column" fxLayoutGap="32px">
+      <mat-card style="width: responsive; height: 50px;">
+        <div mat-card-image plyr plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true" [plyrCrossOrigin]="true"
+          [plyrSources]="'./assets/audio/Inquietudine della vita.mp3'"></div>
+      </mat-card>
+    </div>
   </div>
 
   <div class="text">
 
-    <h1><b><i>La ginestra, o fiore del deserto</i></b></h1>
-    <pre>
+    <h1><b><i>La ginestra, o fiore del deserto</i></b>
+      <button class="button" data-toggle="collapse" href="#multiCollapseExample27" aria-expanded="false"
+        aria-controls="multiCollapseExample27" style="vertical-align:middle"><span>
+          <mat-icon>menu_book</mat-icon>
+        </span></button>
+      <button class="button1" data-toggle="collapse" href="#multiCollapseExample28" aria-expanded="false"
+        aria-controls="multiCollapseExample28" style="vertical-align:middle; margin-top: 10px;"><span>
+          <mat-icon>audiotrack</mat-icon>
+        </span></button>
+    </h1>
+    <div class="collapse multi-collapse" id="multiCollapseExample27">
+      <pre>
       Qui su l'arida schiena
       Del formidabil monte
       Sterminator Vesevo,
@@ -1697,19 +1898,34 @@
       Tue stirpi non credesti
       O dal fato o da te fatte immortali.
     </pre>
+      <button class="button" data-toggle="collapse" href="#multiCollapseExample27" aria-expanded="false"
+        aria-controls="multiCollapseExample27" style="vertical-align:middle; margin-left: 50%;"><span><i
+            class="arrow up"></i></span></button>
+    </div>
   </div>
-
-  <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column" fxLayoutGap="32px">
-    <mat-card style="width: responsive; height: 50px;">
-      <div mat-card-image plyr plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true" [plyrCrossOrigin]="true"
-        [plyrSources]="'./assets/audio/Inquietudine della vita.mp3'"></div>
-    </mat-card>
+  <div class="collapse multi-collapse" id="multiCollapseExample28">
+    <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column" fxLayoutGap="32px">
+      <mat-card style="width: responsive; height: 50px;">
+        <div mat-card-image plyr plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true" [plyrCrossOrigin]="true"
+          [plyrSources]="'./assets/audio/Inquietudine della vita.mp3'"></div>
+      </mat-card>
+    </div>
   </div>
 
   <div class="text">
 
-    <h1><b><i>Contro la minestra</i></b></h1>
-    <pre>
+    <h1><b><i>Contro la minestra</i></b>
+      <button class="button" data-toggle="collapse" href="#multiCollapseExample29" aria-expanded="false"
+        aria-controls="multiCollapseExample29" style="vertical-align:middle"><span>
+          <mat-icon>menu_book</mat-icon>
+          <button class="button1" data-toggle="collapse" href="#multiCollapseExample30" aria-expanded="false"
+            aria-controls="multiCollapseExample30" style="vertical-align:middle; margin-top: 10px;"><span>
+              <mat-icon>audiotrack</mat-icon>
+            </span></button>
+        </span></button>
+    </h1>
+    <div class="collapse multi-collapse" id="multiCollapseExample29">
+      <pre>
       Apri, o canora Musa, i boschi di Elicona,
       E la tua cetra cinga d’alloro una corona.
       Non or d’Eroi tu devi, o degli Dei cantare,
@@ -1743,13 +1959,17 @@
       Sia pur la selva opaca del tuo Elicone chiusa.
       Io forse da qualcuno talor sarò burlato,
       Ma non m’importa bastami, d’essermi un po’ sfogato.
-    </pre>
+      </pre>
+      <button class="button" data-toggle="collapse" href="#multiCollapseExample29" aria-expanded="false"
+        aria-controls="multiCollapseExample29" style="vertical-align:middle; margin-left: 50%;"><span><i
+            class="arrow up"></i></span></button>
+    </div>
   </div>
-
-  <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column" fxLayoutGap="32px">
-    <mat-card style="width: responsive; height: 50px;">
-      <div mat-card-image plyr plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true" [plyrCrossOrigin]="true"
-        [plyrSources]="'./assets/audio/Inquietudine della vita.mp3'"></div>
-    </mat-card>
+  <div class="collapse multi-collapse" id="multiCollapseExample30">
+    <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column" fxLayoutGap="32px">
+      <mat-card style="width: responsive; height: 50px;">
+        <div mat-card-image plyr plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true" [plyrCrossOrigin]="true"
+          [plyrSources]="'./assets/audio/Inquietudine della vita.mp3'"></div>
+      </mat-card>
+    </div>
   </div>
-</div>
