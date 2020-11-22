@@ -1,10 +1,12 @@
 package leopardiproject.csd.controller;
 
+import java.security.Principal;
 import java.util.List;
 
 import javax.mail.MessagingException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -41,7 +43,7 @@ public class PrenotazioneVisitaController {
 
     // Metodo per vedere TUTTE le visite (Deve essere accessibile solo all'admin)
     @GetMapping("/vediVisite")
-    public List<PrenotazioneVisita> getVisite() {
+    public List<PrenotazioneVisita> getVisite(Authentication a) {
         return (List<PrenotazioneVisita>) visitaRep.findAll();
     }
 

@@ -13,7 +13,7 @@ export class BasicAuthHttpInterceptorService {
     if (sessionStorage.getItem('username') && sessionStorage.getItem('token')) {
       req = req.clone({
         setHeaders: {
-          Authorization: sessionStorage.getItem('token')
+          Authorization: "Bearer " + sessionStorage.getItem('token')
         }
       })
     }

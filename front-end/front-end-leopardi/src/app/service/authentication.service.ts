@@ -29,9 +29,11 @@ export class AuthenticationService {
     return this.httpClient.post<any>('http://localhost:8080/authenticate',{username,password}).pipe(
       map(
         userData => {
+        console.log(" AAAAAAAAAAAAAA " , userData)
         sessionStorage.setItem('username',username);
         let tokenStr= userData.token;
         sessionStorage.setItem('token', tokenStr);
+        sessionStorage.setItem('Role', userData.utente.authorities[0].authority);
         return userData;
         }
       )
@@ -47,6 +49,7 @@ export class AuthenticationService {
   logOut() {
     sessionStorage.removeItem('username');
     sessionStorage.removeItem('token');
+    sessionStorage.removeItem('Role');
     this.router.navigate(['/home']);
   }
 
