@@ -14,6 +14,7 @@ export class RegistrazionePageComponent{
   user: User;
   showMsg: boolean = false;
   userExist: boolean = false;
+  b1: boolean = false
 
   constructor(
     private route: ActivatedRoute,
@@ -26,11 +27,28 @@ export class RegistrazionePageComponent{
   onSubmit() {
     this.registrazione.save(this.user).subscribe(data =>{})
     this.showMsg= true;
-    this.mettiRuolo()
   }
 
   mettiRuolo(){
     this.authenticate.getRole().authority=='ROLE_VISITATORE'
+  }
+
+  existUser(){
+    if(this.user.username!=''){
+      this.registrazione.existUser(this.user.username).subscribe(res=>{
+        if(res){
+          this.userExist=true;
+          alert("Email già presente nel database, inseriscine una diversa.")
+          if(this.userExist == true){
+            this.b1 = false
+          }
+        }else{
+          this.userExist=false;
+          this.b1 = true
+        }
+      })
+     
+    }
   }
 
 

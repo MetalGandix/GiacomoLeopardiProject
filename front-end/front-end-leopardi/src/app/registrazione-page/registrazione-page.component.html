@@ -6,7 +6,7 @@
         <div class="form-group">
           <label for="username">Email*</label>
           <input type="text" [(ngModel)]="user.username" class="form-control" id="username" name="username"
-            placeholder="Enter your email address" required #username="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+            placeholder="Enter your email address" required #username="ngModel" (keyup)="existUser()" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
             <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
                 <div *ngIf="username.errors.required">
                     Devi scrivere una e-mail.
@@ -85,7 +85,7 @@
           </div>
       </div>
 
-        <button type="submit" class="btn btn-primary"
+        <button *ngIf="b1 == true"  type="submit" class="btn btn-primary"
         [disabled]="!userForm.form.valid" class="btn btn-info">Submit</button>
   
         <div class="container">
