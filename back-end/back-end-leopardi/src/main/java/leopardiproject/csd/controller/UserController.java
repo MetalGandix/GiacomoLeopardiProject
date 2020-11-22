@@ -3,15 +3,10 @@ package leopardiproject.csd.controller;
 import leopardiproject.csd.SmtpMailSender;
 import leopardiproject.csd.dto.UserDTO;
 import leopardiproject.csd.jwt.JwtUserDetailsService;
-import leopardiproject.csd.model.DAOUser;
-import leopardiproject.csd.repository.UserDao;
-
-import java.util.List;
 
 import javax.mail.MessagingException;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,9 +22,6 @@ public class UserController {
     private JwtUserDetailsService userRepository;
 
     @Autowired
-    private UserDao repository;
-
-    @Autowired
     private SmtpMailSender smtpMailSender;
 
     @PostMapping("/user")
@@ -38,11 +30,6 @@ public class UserController {
                 "Conferma la tua email");
         userRepository.save(user);
         return "ciao";
-    }
-
-    @GetMapping("/vediVisite")
-    public List<DAOUser> getVisite(Authentication a) {
-        return (List<DAOUser>) repository.findAll();
     }
 
     @GetMapping("/existUser/{username}")

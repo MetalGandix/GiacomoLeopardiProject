@@ -1,6 +1,10 @@
 package leopardiproject.csd.controller;
+
+import java.security.Principal;
 import java.util.List;
+
 import javax.mail.MessagingException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -8,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
 import leopardiproject.csd.SmtpMailSender;
 import leopardiproject.csd.model.PrenotazioneVisita;
 import leopardiproject.csd.repository.PrenotazioneVisitaRepository;
