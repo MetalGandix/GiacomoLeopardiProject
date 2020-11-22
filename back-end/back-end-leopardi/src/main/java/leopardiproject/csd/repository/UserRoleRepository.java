@@ -8,5 +8,4 @@ import leopardiproject.csd.model.UserRole;
 
 @Repository
 public interface UserRoleRepository extends JpaRepository<UserRole, Integer> {
-
 }
