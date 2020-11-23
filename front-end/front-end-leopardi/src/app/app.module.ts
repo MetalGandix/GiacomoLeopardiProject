@@ -49,6 +49,7 @@ import { MatListModule } from '@angular/material/list';
 import { PlyrModule } from 'ngx-plyr';
 import { MatCardModule } from '@angular/material/card';
 import { FooterComponent } from './footer/footer.component';
+import { UtentiRegistratiComponent } from './utenti-registrati/utenti-registrati.component';
 
 
 @NgModule({
@@ -81,7 +82,8 @@ import { FooterComponent } from './footer/footer.component';
     AuthGuardComponent,
     ContattiComponent,
     SidenavComponent,
-    FooterComponent
+    FooterComponent,
+    UtentiRegistratiComponent
   ],
   imports: [
     HttpClientModule, 

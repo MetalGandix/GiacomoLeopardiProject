@@ -29,7 +29,6 @@ export class AuthenticationService {
     return this.httpClient.post<any>('http://localhost:8080/authenticate',{username,password}).pipe(
       map(
         userData => {
-        console.log(" AAAAAAAAAAAAAA " , userData)
         sessionStorage.setItem('username',username);
         let tokenStr= userData.token;
         sessionStorage.setItem('token', tokenStr);
