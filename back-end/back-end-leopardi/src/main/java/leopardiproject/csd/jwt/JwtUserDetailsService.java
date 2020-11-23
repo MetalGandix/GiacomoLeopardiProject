@@ -46,6 +46,11 @@ public class JwtUserDetailsService implements UserDetailsService {
 	public DAOUser findUserByUsername(String username){
 		return userDao.findByUsername(username);
 	}
+
+	public List<DAOUser> findAllTheUser(){
+		return (List<DAOUser>) userDao.findAll();
+	}
+
 	//role based
 	private Set<GrantedAuthority> getAuthority(DAOUser user) { //Prende i ruoli
         Set<GrantedAuthority> authorities = new HashSet<>();

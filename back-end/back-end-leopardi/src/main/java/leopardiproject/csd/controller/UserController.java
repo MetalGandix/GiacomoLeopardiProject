@@ -3,10 +3,14 @@ package leopardiproject.csd.controller;
 import leopardiproject.csd.SmtpMailSender;
 import leopardiproject.csd.dto.UserDTO;
 import leopardiproject.csd.jwt.JwtUserDetailsService;
+import leopardiproject.csd.model.DAOUser;
+
+import java.util.List;
 
 import javax.mail.MessagingException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -39,5 +43,10 @@ public class UserController {
         } else {
             return true;
         }
+    }
+
+    @GetMapping("/vediUtenti")
+    public List<DAOUser> vediUtenti(Authentication a){
+    return (List<DAOUser>) userRepository.findAllTheUser();
     }
 }
