@@ -28,6 +28,7 @@ import { ContattiComponent } from './contatti/contatti.component';
 import { UtentiRegistratiComponent } from './utenti-registrati/utenti-registrati.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'mappa', component: MappaComponent },
   { path: 'poesia', component: PoesiaComponent },
