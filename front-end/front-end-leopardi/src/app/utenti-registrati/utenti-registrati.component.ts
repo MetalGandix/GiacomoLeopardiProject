@@ -13,14 +13,16 @@ export class UtentiRegistratiComponent implements OnInit {
   constructor(private route: Router,
     private service: GestioneUtenteService) { }
 
-    admin: boolean = false
-    utente: User[]
+  admin: boolean = false
+  utente: User[]
 
 
-    ngOnInit() {
-      this.admin = sessionStorage.getItem("Role") === "ROLE_ADMIN"
-      this.service.findAll().subscribe(data => {
-      })
-    }
+  ngOnInit() {
+    this.admin = sessionStorage.getItem("Role") === "ROLE_ADMIN"
+    this.service.findAll().subscribe(data => 
+    {
+      this.utente = data
+    })
+  }
 
 }

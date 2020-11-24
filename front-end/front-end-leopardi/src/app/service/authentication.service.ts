@@ -13,7 +13,12 @@ export class JwtResponse{
 export class User{
   constructor(
     public username: string,
-    public password: string
+    public password: string,
+    public name: string,
+    public lastname: string,
+    public checkbox1: boolean,
+    public checkbox2: boolean,
+    public checkbox3: boolean,
   ) {}
 }
 

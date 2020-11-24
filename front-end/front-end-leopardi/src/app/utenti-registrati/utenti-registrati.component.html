@@ -1,5 +1,25 @@
-<div class="container" style="margin-bottom: 30px;">
-    <div *ngFor="">
-
+<div *ngIf="admin" class="container">
+    Elenco degli utenti iscritti
+    <div class="card my-5">
+        <div class="overflow-auto">
+            <div class="card-body">
+                <table class="table table-bordered table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Email</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Cognome</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let u of utente">
+                            <td>{{ u.username }}</td>
+                            <td>{{ u.name }}</td>
+                            <td>{{ u.lastname }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>
