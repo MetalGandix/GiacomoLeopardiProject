@@ -7,12 +7,14 @@
 
     <h1><b><i>A Silvia</i></b>
       <button class="button" data-toggle="collapse" href="#multiCollapseExample1" aria-expanded="false"
-        aria-controls="multiCollapseExample1" style="vertical-align:middle"><span>
+        aria-controls="multiCollapseExample1" style="vertical-align:middle" (click)="enableDisableRule()"
+        [ngClass]="{'button' : toggle, 'buttonClicked': !toggle}"><span>
           <mat-icon>menu_book</mat-icon>
         </span></button>
 
       <button class="button1" data-toggle="collapse" href="#multiCollapseExample2" aria-expanded="false"
-        aria-controls="multiCollapseExample2" style="vertical-align:middle"><span>
+        aria-controls="multiCollapseExample2" style="vertical-align:middle" (click)="enableDisableRule1()"
+        [ngClass]="{'button1' : toggle1, 'button1Clicked': !toggle1}"><span>
           <mat-icon>audiotrack</mat-icon>
         </span></button>
     </h1>
@@ -107,11 +109,13 @@
     <h1><b><i>Sopra il ritratto di una bella donna scolpito nel monumento sepolcrale della medesima</i></b>
 
       <button class="button" data-toggle="collapse" href="#multiCollapseExample3" aria-expanded="false"
-        aria-controls="multiCollapseExample3" style="vertical-align:middle"><span>
+        aria-controls="multiCollapseExample3" style="vertical-align:middle" (click)="enableDisableRule2()"
+        [ngClass]="{'button' : toggle2, 'buttonClicked': !toggle2}"><span>
           <mat-icon>menu_book</mat-icon>
         </span></button>
       <button class="button1" data-toggle="collapse" href="#multiCollapseExample4" aria-expanded="false"
-        aria-controls="multiCollapseExample4" style="vertical-align:middle; margin-top: 10px;"><span>
+        aria-controls="multiCollapseExample4" style="vertical-align:middle; margin-top: 10px;"
+        (click)="enableDisableRule3()" [ngClass]="{'button1' : toggle3, 'button1Clicked': !toggle3}"><span>
           <mat-icon>audiotrack</mat-icon>
         </span></button>
     </h1>
@@ -197,11 +201,13 @@
 
     <h1><b><i>Il sabato del villaggio</i></b>
       <button class="button" data-toggle="collapse" href="#multiCollapseExample5" aria-expanded="false"
-        aria-controls="multiCollapseExample5" style="vertical-align:middle"><span>
+        aria-controls="multiCollapseExample5" style="vertical-align:middle" (click)="enableDisableRule4()"
+        [ngClass]="{'button' : toggle4, 'buttonClicked': !toggle4}"><span>
           <mat-icon>menu_book</mat-icon>
         </span></button>
       <button class="button1" data-toggle="collapse" href="#multiCollapseExample6" aria-expanded="false"
-        aria-controls="multiCollapseExample6" style="vertical-align:middle; margin-top: 10px;"><span>
+        aria-controls="multiCollapseExample6" style="vertical-align:middle; margin-top: 10px;"
+        (click)="enableDisableRule5()" [ngClass]="{'button1' : toggle5, 'button1Clicked': !toggle5}"><span>
           <mat-icon>audiotrack</mat-icon>
         </span></button>
     </h1>
@@ -280,11 +286,13 @@
 
     <h1><b><i>L'infinito</i></b>
       <button class="button" data-toggle="collapse" href="#multiCollapseExample7" aria-expanded="false"
-        aria-controls="multiCollapseExample7" style="vertical-align:middle"><span>
+        aria-controls="multiCollapseExample7" style="vertical-align:middle" (click)="enableDisableRule6()"
+        [ngClass]="{'button' : toggle6, 'buttonClicked': !toggle6}"><span>
           <mat-icon>menu_book</mat-icon>
         </span></button>
       <button class="button1" data-toggle="collapse" href="#multiCollapseExample8" aria-expanded="false"
-        aria-controls="multiCollapseExample8" style="vertical-align:middle; margin-top: 10px;"><span>
+        aria-controls="multiCollapseExample8" style="vertical-align:middle; margin-top: 10px;"
+        (click)="enableDisableRule7()" [ngClass]="{'button1' : toggle7, 'button1Clicked': !toggle7}"><span>
           <mat-icon>audiotrack</mat-icon>
         </span></button>
     </h1>
@@ -324,11 +332,13 @@
 
     <h1><b><i>Le ricordanze VV 50-70</i></b>
       <button class="button" data-toggle="collapse" href="#multiCollapseExample9" aria-expanded="false"
-        aria-controls="multiCollapseExample9" style="vertical-align:middle"><span>
+        aria-controls="multiCollapseExample9" style="vertical-align:middle" (click)="enableDisableRule8()"
+        [ngClass]="{'button' : toggle8, 'buttonClicked': !toggle8}"><span>
           <mat-icon>menu_book</mat-icon>
         </span></button>
       <button class="button1" data-toggle="collapse" href="#multiCollapseExample10" aria-expanded="false"
-        aria-controls="multiCollapseExample10" style="vertical-align:middle; margin-top: 10px;"><span>
+        aria-controls="multiCollapseExample10" style="vertical-align:middle; margin-top: 10px;"
+        (click)="enableDisableRule9()" [ngClass]="{'button1' : toggle9, 'button1Clicked': !toggle9}"><span>
           <mat-icon>audiotrack</mat-icon>
         </span></button>
     </h1>
@@ -362,11 +372,13 @@
 
     <h1><b><i>Il passero solitario</i></b>
       <button class="button" data-toggle="collapse" href="#multiCollapseExample11" aria-expanded="false"
-        aria-controls="multiCollapseExample11" style="vertical-align:middle"><span>
+        aria-controls="multiCollapseExample11" style="vertical-align:middle" (click)="enableDisableRule10()"
+        [ngClass]="{'button' : toggle10, 'buttonClicked': !toggle10}"><span>
           <mat-icon>menu_book</mat-icon>
         </span></button>
       <button class="button1" data-toggle="collapse" href="#multiCollapseExample12" aria-expanded="false"
-        aria-controls="multiCollapseExample12" style="vertical-align:middle; margin-top: 10px;"><span>
+        aria-controls="multiCollapseExample12" style="vertical-align:middle; margin-top: 10px;"
+        (click)="enableDisableRule11()" [ngClass]="{'button1' : toggle11, 'button1Clicked': !toggle11}"><span>
           <mat-icon>audiotrack</mat-icon>
         </span></button>
     </h1>
@@ -455,11 +467,13 @@
 
     <h1><b><i>Alla sua donna</i></b>
       <button class="button" data-toggle="collapse" href="#multiCollapseExample13" aria-expanded="false"
-        aria-controls="multiCollapseExample13" style="vertical-align:middle"><span>
+        aria-controls="multiCollapseExample13" style="vertical-align:middle" (click)="enableDisableRule12()"
+        [ngClass]="{'button' : toggle12, 'buttonClicked': !toggle12}"><span>
           <mat-icon>menu_book</mat-icon>
         </span></button>
       <button class="button1" data-toggle="collapse" href="#multiCollapseExample14" aria-expanded="false"
-        aria-controls="multiCollapseExample14" style="vertical-align:middle; margin-top: 10px;"><span>
+        aria-controls="multiCollapseExample14" style="vertical-align:middle; margin-top: 10px;"
+        (click)="enableDisableRule13()" [ngClass]="{'button1' : toggle13, 'button1Clicked': !toggle13}"><span>
           <mat-icon>audiotrack</mat-icon>
         </span></button>
     </h1>
@@ -543,11 +557,13 @@
 
     <h1><b><i>La sera del dì di festa</i></b>
       <button class="button" data-toggle="collapse" href="#multiCollapseExample15" aria-expanded="false"
-        aria-controls="multiCollapseExample15" style="vertical-align:middle"><span>
+        aria-controls="multiCollapseExample15" style="vertical-align:middle" (click)="enableDisableRule14()"
+        [ngClass]="{'button' : toggle14, 'buttonClicked': !toggle14}"><span>
           <mat-icon>menu_book</mat-icon>
         </span></button>
       <button class="button1" data-toggle="collapse" href="#multiCollapseExample16" aria-expanded="false"
-        aria-controls="multiCollapseExample16" style="vertical-align:middle; margin-top: 10px;"><span>
+        aria-controls="multiCollapseExample16" style="vertical-align:middle; margin-top: 10px;"
+        (click)="enableDisableRule15()" [ngClass]="{'button1' : toggle15, 'button1Clicked': !toggle15}"><span>
           <mat-icon>audiotrack</mat-icon>
         </span></button>
     </h1>
@@ -618,11 +634,13 @@
 
     <h1><b><i>Il risorgimento</i></b>
       <button class="button" data-toggle="collapse" href="#multiCollapseExample17" aria-expanded="false"
-        aria-controls="multiCollapseExample17" style="vertical-align:middle"><span>
+        aria-controls="multiCollapseExample17" style="vertical-align:middle" (click)="enableDisableRule16()"
+        [ngClass]="{'button' : toggle16, 'buttonClicked': !toggle16}"><span>
           <mat-icon>menu_book</mat-icon>
         </span></button>
       <button class="button1" data-toggle="collapse" href="#multiCollapseExample18" aria-expanded="false"
-        aria-controls="multiCollapseExample18" style="vertical-align:middle; margin-top: 10px;"><span>
+        aria-controls="multiCollapseExample18" style="vertical-align:middle; margin-top: 10px;"
+        (click)="enableDisableRule17()" [ngClass]="{'button1' : toggle17, 'button1Clicked': !toggle17}"><span>
           <mat-icon>audiotrack</mat-icon>
         </span></button>
     </h1>
@@ -826,11 +844,13 @@
 
     <h1><b><i>Le ricordanze</i></b>
       <button class="button" data-toggle="collapse" href="#multiCollapseExample19" aria-expanded="false"
-        aria-controls="multiCollapseExample19" style="vertical-align:middle"><span>
+        aria-controls="multiCollapseExample19" style="vertical-align:middle" (click)="enableDisableRule18()"
+        [ngClass]="{'button' : toggle18, 'buttonClicked': !toggle18}"><span>
           <mat-icon>menu_book</mat-icon>
         </span></button>
       <button class="button1" data-toggle="collapse" href="#multiCollapseExample20" aria-expanded="false"
-        aria-controls="multiCollapseExample20" style="vertical-align:middle; margin-top: 10px;"><span>
+        aria-controls="multiCollapseExample20" style="vertical-align:middle; margin-top: 10px;"
+        (click)="enableDisableRule19()" [ngClass]="{'button1' : toggle19, 'button1Clicked': !toggle19}"><span>
           <mat-icon>audiotrack</mat-icon>
         </span></button>
     </h1>
@@ -1036,11 +1056,13 @@
 
     <h1><b><i>Canto notturno di un pastore errante dell'asia</i></b>
       <button class="button" data-toggle="collapse" href="#multiCollapseExample21" aria-expanded="false"
-        aria-controls="multiCollapseExample21" style="vertical-align:middle"><span>
+        aria-controls="multiCollapseExample21" style="vertical-align:middle" (click)="enableDisableRule20()"
+        [ngClass]="{'button' : toggle20, 'buttonClicked': !toggle20}"><span>
           <mat-icon>menu_book</mat-icon>
         </span></button>
       <button class="button1" data-toggle="collapse" href="#multiCollapseExample22" aria-expanded="false"
-        aria-controls="multiCollapseExample22" style="vertical-align:middle; margin-top: 10px;"><span>
+        aria-controls="multiCollapseExample22" style="vertical-align:middle; margin-top: 10px;"
+        (click)="enableDisableRule21()" [ngClass]="{'button1' : toggle21, 'button1Clicked': !toggle21}"><span>
           <mat-icon>audiotrack</mat-icon>
         </span></button>
     </h1>
@@ -1212,11 +1234,13 @@
 
     <h1><b><i>Il pensiero dominante</i></b>
       <button class="button" data-toggle="collapse" href="#multiCollapseExample23" aria-expanded="false"
-        aria-controls="multiCollapseExample23" style="vertical-align:middle"><span>
+        aria-controls="multiCollapseExample23" style="vertical-align:middle" (click)="enableDisableRule22()"
+        [ngClass]="{'button' : toggle22, 'buttonClicked': !toggle22}"><span>
           <mat-icon>menu_book</mat-icon>
         </span></button>
       <button class="button1" data-toggle="collapse" href="#multiCollapseExample24" aria-expanded="false"
-        aria-controls="multiCollapseExample24" style="vertical-align:middle; margin-top: 10px;"><span>
+        aria-controls="multiCollapseExample24" style="vertical-align:middle; margin-top: 10px;"
+        (click)="enableDisableRule23()" [ngClass]="{'button1' : toggle23, 'button1Clicked': !toggle23}"><span>
           <mat-icon>audiotrack</mat-icon>
         </span></button>
     </h1>
@@ -1401,11 +1425,13 @@
 
     <h1><b><i>A se stesso</i></b>
       <button class="button" data-toggle="collapse" href="#multiCollapseExample25" aria-expanded="false"
-        aria-controls="multiCollapseExample25" style="vertical-align:middle"><span>
+        aria-controls="multiCollapseExample25" style="vertical-align:middle" (click)="enableDisableRule24()"
+        [ngClass]="{'button' : toggle24, 'buttonClicked': !toggle24}"><span>
           <mat-icon>menu_book</mat-icon>
         </span></button>
       <button class="button1" data-toggle="collapse" href="#multiCollapseExample26" aria-expanded="false"
-        aria-controls="multiCollapseExample26" style="vertical-align:middle; margin-top: 10px;"><span>
+        aria-controls="multiCollapseExample26" style="vertical-align:middle; margin-top: 10px;"
+        (click)="enableDisableRule25()" [ngClass]="{'button1' : toggle25, 'button1Clicked': !toggle25}"><span>
           <mat-icon>audiotrack</mat-icon>
         </span></button>
     </h1>
@@ -1562,11 +1588,13 @@
 
     <h1><b><i>La ginestra, o fiore del deserto</i></b>
       <button class="button" data-toggle="collapse" href="#multiCollapseExample27" aria-expanded="false"
-        aria-controls="multiCollapseExample27" style="vertical-align:middle"><span>
+        aria-controls="multiCollapseExample27" style="vertical-align:middle" (click)="enableDisableRule26()"
+        [ngClass]="{'button' : toggle26, 'buttonClicked': !toggle26}"><span>
           <mat-icon>menu_book</mat-icon>
         </span></button>
       <button class="button1" data-toggle="collapse" href="#multiCollapseExample28" aria-expanded="false"
-        aria-controls="multiCollapseExample28" style="vertical-align:middle; margin-top: 10px;"><span>
+        aria-controls="multiCollapseExample28" style="vertical-align:middle; margin-top: 10px;"
+        (click)="enableDisableRule27()" [ngClass]="{'button1' : toggle27, 'button1Clicked': !toggle27}"><span>
           <mat-icon>audiotrack</mat-icon>
         </span></button>
     </h1>
@@ -1916,12 +1944,14 @@
 
     <h1><b><i>Contro la minestra</i></b>
       <button class="button" data-toggle="collapse" href="#multiCollapseExample29" aria-expanded="false"
-        aria-controls="multiCollapseExample29" style="vertical-align:middle"><span>
+        aria-controls="multiCollapseExample29" style="vertical-align:middle" (click)="enableDisableRule28()"
+        [ngClass]="{'button' : toggle28, 'buttonClicked': !toggle28}"><span>
           <mat-icon>menu_book</mat-icon>
-          <button class="button1" data-toggle="collapse" href="#multiCollapseExample30" aria-expanded="false"
-            aria-controls="multiCollapseExample30" style="vertical-align:middle; margin-top: 10px;"><span>
-              <mat-icon>audiotrack</mat-icon>
-            </span></button>
+        </span></button>
+      <button class="button1" data-toggle="collapse" href="#multiCollapseExample30" aria-expanded="false"
+        aria-controls="multiCollapseExample30" style="vertical-align:middle; margin-top: 10px;"
+        (click)="enableDisableRule29()" [ngClass]="{'button1' : toggle29, 'button1Clicked': !toggle29}"><span>
+          <mat-icon>audiotrack</mat-icon>
         </span></button>
     </h1>
     <div class="collapse multi-collapse" id="multiCollapseExample29">
