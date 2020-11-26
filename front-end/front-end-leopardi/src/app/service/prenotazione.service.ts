@@ -22,4 +22,8 @@ export class PrenotazioneService {
     return this.http.post<Prenotazione>(this.url + "visita", prenotazione);
   }
 
+  public deletePrenotazione(id: number){
+    return this.http.delete<Prenotazione>(this.url + "cancellaVisita/" + id);
+  }
+
 }

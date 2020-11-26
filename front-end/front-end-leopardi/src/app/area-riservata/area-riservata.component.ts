@@ -13,6 +13,7 @@ export class AreaRiservataComponent implements OnInit {
   constructor(private service: PrenotazioneService) { }
 
   prenotazione: Prenotazione[]
+  p: Prenotazione
   admin: boolean = false
 
   vediVisite() {
@@ -27,6 +28,11 @@ export class AreaRiservataComponent implements OnInit {
       })
   }
 
+  cancellaPrenotazione(id: number){
+    debugger
+    console.log("id: ",id)
+    this.service.deletePrenotazione(id).subscribe()
+  }
 
 
 

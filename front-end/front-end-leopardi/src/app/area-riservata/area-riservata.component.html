@@ -18,6 +18,7 @@
                             <th scope="col">Paese</th>
                             <th scope="col">Città</th>
                             <th scope="col">Info aggiuntive</th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -32,6 +33,7 @@
                             <td>{{ p.paese }}</td>
                             <td>{{ p.citta }}</td>
                             <td>{{ p.infoAggiuntiva }}</td>
+                            <td><button (click)="cancellaPrenotazione(p.id)">ELIMINA LA VISITA</button></td>
                         </tr>
                     </tbody>
                 </table>
