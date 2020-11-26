@@ -27,13 +27,13 @@ import { TariffaComponent } from './tariffa/tariffa.component';
 import { ContattiComponent } from './contatti/contatti.component';
 import { UtentiRegistratiComponent } from './utenti-registrati/utenti-registrati.component';
 import { InfoVisitatoreComponent } from './info-visitatore/info-visitatore.component';
-import { PoesiaCasaLeopardiComponent } from './poesia-casa-leopardi/poesia-casa-leopardi.component';
-import { PoesiaChiesaCappucciniComponent } from './poesia-chiesa-cappuccini/poesia-chiesa-cappuccini.component';
-import { PoesiaSabatoVillaggioComponent } from './poesia-sabato-villaggio/poesia-sabato-villaggio.component';
-import { PoesiaColleInfinitoComponent } from './poesia-colle-infinito/poesia-colle-infinito.component';
-import { PoesiaTorrePasseroSolitarioComponent } from './poesia-torre-passero-solitario/poesia-torre-passero-solitario.component';
-import { PoesiaPalazzoVenieriComponent } from './poesia-palazzo-venieri/poesia-palazzo-venieri.component';
-import { PoesiaPiazzaTorreBorgoComponent } from './poesia-piazza-torre-borgo/poesia-piazza-torre-borgo.component';
+import { PoesiaColleInfinitoComponent } from './link-poesie/poesia-colle-infinito/poesia-colle-infinito.component';
+import { PoesiaCasaLeopardiComponent } from './link-poesie/poesia-casa-leopardi/poesia-casa-leopardi.component';
+import { PoesiaChiesaCappucciniComponent } from './link-poesie/poesia-chiesa-cappuccini/poesia-chiesa-cappuccini.component';
+import { PoesiaPalazzoVenieriComponent } from './link-poesie/poesia-palazzo-venieri/poesia-palazzo-venieri.component';
+import { PoesiaPiazzaTorreBorgoComponent } from './link-poesie/poesia-piazza-torre-borgo/poesia-piazza-torre-borgo.component';
+import { PoesiaSabatoVillaggioComponent } from './link-poesie/poesia-sabato-villaggio/poesia-sabato-villaggio.component';
+import { PoesiaTorrePasseroSolitarioComponent } from './link-poesie/poesia-torre-passero-solitario/poesia-torre-passero-solitario.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
