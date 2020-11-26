@@ -1,0 +1,104 @@
+<div class="container">
+    <h1><b><i>Capitolo 10: La torre del passero solitario</i></b></h1>
+    <div class="text">
+        <h1><b><i>Il passero solitario</i></b>
+            <button class="button" data-toggle="collapse" href="#multiCollapseExample11" aria-expanded="false"
+                aria-controls="multiCollapseExample11" style="vertical-align:middle" (click)="enableDisableRule()"
+                [ngClass]="{'button' : toggle, 'buttonClicked': !toggle}"><span>
+                    <mat-icon>menu_book</mat-icon>
+                </span></button>
+            <button class="button1" data-toggle="collapse" href="#multiCollapseExample12" aria-expanded="false"
+                aria-controls="multiCollapseExample12" style="vertical-align:middle; margin-top: 10px;"
+                (click)="enableDisableRule1()" [ngClass]="{'button1' : toggle1, 'button1Clicked': !toggle1}"><span>
+                    <mat-icon>audiotrack</mat-icon>
+                </span></button>
+        </h1>
+        <div class="collapse multi-collapse" id="multiCollapseExample11">
+            <pre>
+    D'in su la vetta della torre antica,
+    Passero solitario, alla campagna
+    Cantando vai finché non more il giorno;
+    Ed erra l'armonia per questa valle.
+    Primavera dintorno
+    Brilla nell'aria, e per li campi esulta,
+    Sì ch'a mirarla intenerisce il core.
+    Odi greggi belar, muggire armenti;
+    Gli altri augelli contenti, a gara insieme
+    Per lo libero ciel fan mille giri,
+    Pur festeggiando il lor tempo migliore:
+
+    Tu pensoso in disparte il tutto miri;
+    Non compagni, non voli,
+    Non ti cal d'allegria, schivi gli spassi;
+    Canti, e così trapassi
+    Dell'anno e di tua vita il più bel fiore.
+    Oimè, quanto somiglia
+    Al tuo costume il mio! Sollazzo e riso,
+    Della novella età dolce famiglia,
+
+    E te german di giovinezza, amore,
+    Sospiro acerbo de' provetti giorni,
+    Non curo, io non so come; anzi da loro
+    Quasi fuggo lontano;
+    Quasi romito, e strano
+    Al mio loco natio,
+    Passo del viver mio la primavera.
+    Questo giorno ch'omai cede la sera,
+    Festeggiar si costuma al nostro borgo.
+
+    Odi per lo sereno un suon di squilla,
+    Odi spesso un tonar di ferree canne,
+    Che rimbomba lontan di villa in villa.
+    Tutta vestita a festa
+    La gioventù del loco
+    Lascia le case, e per le vie si spande;
+    E mira ed è mirata, e in cor s'allegra.
+
+    Io solitario in questa
+    Rimota parte alla campagna uscendo,
+    Ogni diletto e gioco
+    Indugio in altro tempo: e intanto il guardo
+    Steso nell'aria aprica
+    Mi fere il Sol che tra lontani monti,
+    Dopo il giorno sereno,
+    Cadendo si dilegua, e par che dica
+    Che la beata gioventù vien meno.
+
+    Tu solingo augellin, venuto a sera
+    Del viver che daranno a te le stelle,
+    Certo del tuo costume
+    Non ti dorrai; che di natura è frutto
+    Ogni vostra vaghezza.
+    A me, se di vecchiezza
+    La detestata soglia
+    Evitar non impetro,
+    Quando muti questi occhi all'altrui core,
+    E lor fia voto il mondo, e il dì futuro
+    Del dì presente più noioso e tetro,
+    Che parrà di tal voglia?
+    Che di quest'anni miei? Che di me stesso?
+    Ahi pentirommi, e spesso,
+    Ma sconsolato, volgerommi indietro.
+  </pre>
+            <button class="button" data-toggle="collapse" href="#multiCollapseExample11" aria-expanded="false"
+                aria-controls="multiCollapseExample11" style="vertical-align:middle; margin-left: 50%;"><span><i
+                        class="arrow up"></i></span></button>
+        </div>
+    </div>
+    <div class="collapse multi-collapse" id="multiCollapseExample12">
+        <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column" fxLayoutGap="32px">
+            <mat-card style="width: responsive; height: 50px;">
+                <div mat-card-image plyr plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true"
+                    [plyrCrossOrigin]="true" [plyrSources]="'./assets/audio/Inquietudine della vita.mp3'"></div>
+            </mat-card>
+        </div>
+    </div>
+    <button><span>
+            <mat-icon>arrow_back_ios</mat-icon>
+            <p>Capitolo precedente: Il Colle dell'infinito</p>
+        </span></button>
+    <button><span>
+            <mat-icon>arrow_forward_ios</mat-icon>
+            <p>Prossimo capitolo: Palazzo Veneri</p>
+        </span></button>
+</div>

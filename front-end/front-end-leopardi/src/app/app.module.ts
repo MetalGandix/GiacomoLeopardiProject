@@ -51,6 +51,13 @@ import { MatCardModule } from '@angular/material/card';
 import { FooterComponent } from './footer/footer.component';
 import { UtentiRegistratiComponent } from './utenti-registrati/utenti-registrati.component';
 import { InfoVisitatoreComponent } from './info-visitatore/info-visitatore.component';
+import { PoesiaCasaLeopardiComponent } from './poesia-casa-leopardi/poesia-casa-leopardi.component';
+import { PoesiaChiesaCappucciniComponent } from './poesia-chiesa-cappuccini/poesia-chiesa-cappuccini.component';
+import { PoesiaSabatoVillaggioComponent } from './poesia-sabato-villaggio/poesia-sabato-villaggio.component';
+import { PoesiaColleInfinitoComponent } from './poesia-colle-infinito/poesia-colle-infinito.component';
+import { PoesiaTorrePasseroSolitarioComponent } from './poesia-torre-passero-solitario/poesia-torre-passero-solitario.component';
+import { PoesiaPalazzoVenieriComponent } from './poesia-palazzo-venieri/poesia-palazzo-venieri.component';
+import { PoesiaPiazzaTorreBorgoComponent } from './poesia-piazza-torre-borgo/poesia-piazza-torre-borgo.component';
 
 
 @NgModule({
@@ -85,7 +92,14 @@ import { InfoVisitatoreComponent } from './info-visitatore/info-visitatore.compo
     SidenavComponent,
     FooterComponent,
     UtentiRegistratiComponent,
-    InfoVisitatoreComponent
+    InfoVisitatoreComponent,
+    PoesiaCasaLeopardiComponent,
+    PoesiaChiesaCappucciniComponent,
+    PoesiaSabatoVillaggioComponent,
+    PoesiaColleInfinitoComponent,
+    PoesiaTorrePasseroSolitarioComponent,
+    PoesiaPalazzoVenieriComponent,
+    PoesiaPiazzaTorreBorgoComponent
   ],
   imports: [
     HttpClientModule, 

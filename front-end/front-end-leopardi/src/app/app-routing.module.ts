@@ -27,6 +27,13 @@ import { TariffaComponent } from './tariffa/tariffa.component';
 import { ContattiComponent } from './contatti/contatti.component';
 import { UtentiRegistratiComponent } from './utenti-registrati/utenti-registrati.component';
 import { InfoVisitatoreComponent } from './info-visitatore/info-visitatore.component';
+import { PoesiaCasaLeopardiComponent } from './poesia-casa-leopardi/poesia-casa-leopardi.component';
+import { PoesiaChiesaCappucciniComponent } from './poesia-chiesa-cappuccini/poesia-chiesa-cappuccini.component';
+import { PoesiaSabatoVillaggioComponent } from './poesia-sabato-villaggio/poesia-sabato-villaggio.component';
+import { PoesiaColleInfinitoComponent } from './poesia-colle-infinito/poesia-colle-infinito.component';
+import { PoesiaTorrePasseroSolitarioComponent } from './poesia-torre-passero-solitario/poesia-torre-passero-solitario.component';
+import { PoesiaPalazzoVenieriComponent } from './poesia-palazzo-venieri/poesia-palazzo-venieri.component';
+import { PoesiaPiazzaTorreBorgoComponent } from './poesia-piazza-torre-borgo/poesia-piazza-torre-borgo.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -56,7 +63,14 @@ const routes: Routes = [
   { path: 'tariffa', component: TariffaComponent },
   { path: 'contatti', component: ContattiComponent },
   { path: 'utenti-registrati', component: UtentiRegistratiComponent },
-  { path: 'info-visitatore', component: InfoVisitatoreComponent }
+  { path: 'info-visitatore', component: InfoVisitatoreComponent },
+  { path: 'poesia-casa-leopardi', component: PoesiaCasaLeopardiComponent },
+  { path: 'poesia-chiesa-cappuccini', component: PoesiaChiesaCappucciniComponent},
+  { path: 'poesia-sabato-villaggio', component: PoesiaSabatoVillaggioComponent},
+  { path: 'poesia-colle-infinito', component: PoesiaColleInfinitoComponent},
+  { path: 'poesia-torre-passero-solitario', component: PoesiaTorrePasseroSolitarioComponent},
+  { path: 'poesia-palazzo-venieri', component: PoesiaPalazzoVenieriComponent},
+  { path: 'poesia-piazza-torre-borgo', component: PoesiaPiazzaTorreBorgoComponent},
 ];
 
 @NgModule({
