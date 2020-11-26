@@ -26,6 +26,7 @@ import { SceltaUtenteComponent } from './scelta-utente/scelta-utente.component';
 import { TariffaComponent } from './tariffa/tariffa.component';
 import { ContattiComponent } from './contatti/contatti.component';
 import { UtentiRegistratiComponent } from './utenti-registrati/utenti-registrati.component';
+import { InfoVisitatoreComponent } from './info-visitatore/info-visitatore.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -54,7 +55,8 @@ const routes: Routes = [
   { path: 'area-riservata', component: AreaRiservataComponent },
   { path: 'tariffa', component: TariffaComponent },
   { path: 'contatti', component: ContattiComponent },
-  { path: 'utenti-registrati', component: UtentiRegistratiComponent }
+  { path: 'utenti-registrati', component: UtentiRegistratiComponent },
+  { path: 'info-visitatore', component: InfoVisitatoreComponent }
 ];
 
 @NgModule({

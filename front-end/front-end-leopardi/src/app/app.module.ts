@@ -50,6 +50,7 @@ import { PlyrModule } from 'ngx-plyr';
 import { MatCardModule } from '@angular/material/card';
 import { FooterComponent } from './footer/footer.component';
 import { UtentiRegistratiComponent } from './utenti-registrati/utenti-registrati.component';
+import { InfoVisitatoreComponent } from './info-visitatore/info-visitatore.component';
 
 
 @NgModule({
@@ -83,7 +84,8 @@ import { UtentiRegistratiComponent } from './utenti-registrati/utenti-registrati
     ContattiComponent,
     SidenavComponent,
     FooterComponent,
-    UtentiRegistratiComponent
+    UtentiRegistratiComponent,
+    InfoVisitatoreComponent
   ],
   imports: [
     HttpClientModule, 
