@@ -1,11 +1,15 @@
 package leopardiproject.csd.controller;
 
 import java.util.List;
+import java.util.Optional;
+
 import javax.mail.MessagingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,7 +32,7 @@ public class PrenotazioneVisitaController {
     // Metodo per inviare al DB la visita con le info
     // giacomoleopardi13@gmail.com
     @PostMapping("/visita")
-    String addVisit(@RequestBody PrenotazioneVisita visita) throws MessagingException{
+    String addVisit(Authentication a, @RequestBody PrenotazioneVisita visita) throws MessagingException{
         smtpMailSender.send("leonardo.mogianesi@studenti.unicam.it", "Visita prenotata da " + visita.getCognome(), "La visita è stata prenotata da " + visita.getNome() + " \ned il numero di componenti è di: " + visita.getNumcomponenti() + " \nper il giorno: " + visita.getData() + " alle ore: " + visita.getOrario() + "." + "\nIl numero di cellulare del visitatore è: " + visita.getCellulare());
         smtpMailSender.send("corrado.pallucchini@studenti.unicam.it", "Visita prenotata da " + visita.getCognome(), "La visita è stata prenotata da " + visita.getNome() + " \ned il numero di componenti è di: " + visita.getNumcomponenti() + " \nper il giorno: " + visita.getData() + " alle ore: " + visita.getOrario() + "." + "\nIl numero di cellulare del visitatore è: " + visita.getCellulare());
         smtpMailSender.send("riccardo.petracci@studenti.unicam.it", "Visita prenotata da " + visita.getCognome(), "La visita è stata prenotata da " + visita.getNome() + " \ned il numero di componenti è di: " + visita.getNumcomponenti() + " \nper il giorno: " + visita.getData() + " alle ore: " + visita.getOrario() + "." + "\nIl numero di cellulare del visitatore è: " + visita.getCellulare());
@@ -44,10 +48,16 @@ public class PrenotazioneVisitaController {
     }
 
     // Metodo per vedere una singola visita dell'utente
-    @GetMapping("/vediVisita{visitaid}")
-    public PrenotazioneVisita vediVisitaSingola(@RequestBody PrenotazioneVisita visita) {
-        visitaRep.save(visita);
-        return visita;
+    @GetMapping("/vediVisita/{id}")
+    public Optional<PrenotazioneVisita> vediVisitaSingola(Authentication a, @PathVariable Long id) {
+        return (Optional<PrenotazioneVisita>) visitaRep.findById(id);
+    }
+
+    @DeleteMapping("/cancellaVisita/{id}")
+    public String deletePrenotazione(Authentication a, @PathVariable long id){
+        PrenotazioneVisita prenotazione = visitaRep.getOne(id);
+        visitaRep.delete(prenotazione);
+        return "Prenotazione correttamente eliminata";
     }
 
 }

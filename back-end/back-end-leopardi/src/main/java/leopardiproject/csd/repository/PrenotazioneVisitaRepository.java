@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import leopardiproject.csd.model.PrenotazioneVisita;
 
 @Repository
-public interface PrenotazioneVisitaRepository extends JpaRepository<PrenotazioneVisita, Integer> {
+public interface PrenotazioneVisitaRepository extends JpaRepository<PrenotazioneVisita, Long> {
 
 }
