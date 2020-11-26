@@ -1,13 +1,15 @@
 <div class="container" style="margin-top: 20px;">
-<button routerLink="/area-riservata">
+<button *ngIf="admin" routerLink="/area-riservata">
     Vai alla tua area riservata
 </button>
 
-<button routerLink="/prenotazione-visita">
+<button *ngIf="visitor" routerLink="/prenotazione-visita">
     Vai alla prenotazione visita
 </button>
 
-<button routerLink="/utenti-registrati">
+<button *ngIf="admin" routerLink="/utenti-registrati">
     Vai alla pagina di utenti registrati
 </button>
+
+<button (click)="logOut()">Log out</button>
 </div>

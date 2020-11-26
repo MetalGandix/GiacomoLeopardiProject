@@ -64,8 +64,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		httpSecurity.cors();
 		httpSecurity.csrf().disable()
 				// dont authenticate this particular request
-				.authorizeRequests().antMatchers("/authenticate","/mobilenumbers/{mobilenumber}/otp", "/register","/user","/visita","/existUser/{username}","/vediVisite","/vediUtenti").permitAll()
+				.authorizeRequests().antMatchers("/authenticate","/mobilenumbers/{mobilenumber}/otp", "/register","/user","/visita","/existUser/{username}","/vediVisite","/vediUtenti","/visita").permitAll()
 				.antMatchers("/vediVisite","/vediUtenti").access("hasRole('ROLE_ADMIN')")
+				.antMatchers("/visita").access("hasRole('ROLE_VISITATORE')")
 				/*.permitAll().antMatchers(HttpMethod.OPTIONS, "/**")
 				.permitAll().*/
 				// all other requests need to be authenticated

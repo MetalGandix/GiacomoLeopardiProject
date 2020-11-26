@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../service/authentication.service';
 
 @Component({
   selector: 'app-scelta-utente',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SceltaUtenteComponent implements OnInit {
 
-  constructor() { }
+  admin: boolean = false
+  visitor: boolean = false
 
-  ngOnInit(): void {
+  constructor(private auth: AuthenticationService) { }
+
+
+
+  ngOnInit() {
+    if(sessionStorage.getItem("Role") === "ROLE_ADMIN"){
+    this.admin = true
+    }else if(sessionStorage.getItem("Role") === "ROLE_VISITATORE"){
+    this.visitor = true
+    }
+  }
+
+  logOut() {
+    this.auth.logOut()
   }
 
 }
