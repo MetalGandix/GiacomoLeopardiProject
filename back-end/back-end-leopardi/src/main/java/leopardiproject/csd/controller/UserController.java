@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin
 public class UserController {
 
+
     @Autowired
     private JwtUserDetailsService userRepository;
 
@@ -48,5 +49,10 @@ public class UserController {
     @GetMapping("/vediUtenti")
     public List<DAOUser> vediUtenti(Authentication a){
     return (List<DAOUser>) userRepository.findAllTheUser();
+    }
+
+    @GetMapping("/vediUtenti/{username}")
+    public DAOUser vediUtente(Authentication a, @PathVariable String username){
+    return (DAOUser) userRepository.findUserByUsername(username);
     }
 }

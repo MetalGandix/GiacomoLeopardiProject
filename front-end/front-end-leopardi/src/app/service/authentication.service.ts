@@ -47,7 +47,8 @@ export class AuthenticationService {
   
   isUserLoggedIn() {
     let user = sessionStorage.getItem('token');
-    return !(user === null)
+    let username = sessionStorage.getItem('username');
+    return !(user && username === null)
   }
 
   logOut() {

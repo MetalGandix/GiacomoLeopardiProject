@@ -19,4 +19,8 @@ export class GestioneUtenteService {
     return this.http.get<User[]>(this.url + "vediUtenti");
   }
 
+  public findUtenteSingolo(email: string): Observable<User[]> {
+    return this.http.get<User[]>(this.url + "vediUtenti/" + email);
+  }
+
 }
