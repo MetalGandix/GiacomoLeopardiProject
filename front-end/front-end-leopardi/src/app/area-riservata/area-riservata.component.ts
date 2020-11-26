@@ -29,7 +29,6 @@ export class AreaRiservataComponent implements OnInit {
   }
 
   cancellaPrenotazione(id: number){
-    debugger
     console.log("id: ",id)
     this.service.deletePrenotazione(id).subscribe()
   }
