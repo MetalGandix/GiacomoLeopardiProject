@@ -1,7 +1,8 @@
 <div class="container">
     <h1><b><i>Capitolo 12: Palazzo Venieri</i></b></h1>
     <div class="text">
-        <h1><b><i>Alla sua donna</i></b>
+        <h1><b><i>Alla sua donna</i></b></h1>
+        <p style="text-align: center;">
             <button class="button" data-toggle="collapse" href="#multiCollapseExample13" aria-expanded="false"
                 aria-controls="multiCollapseExample13" style="vertical-align:middle" (click)="enableDisableRule()"
                 [ngClass]="{'button' : toggle, 'buttonClicked': !toggle}"><span>
@@ -12,7 +13,17 @@
                 (click)="enableDisableRule1()" [ngClass]="{'button1' : toggle1, 'button1Clicked': !toggle1}"><span>
                     <mat-icon>audiotrack</mat-icon>
                 </span></button>
-        </h1>
+        </p>
+
+        <p>
+            <button class="back" routerLink="/poesia-torre-passero-solitario">
+                <mat-icon>arrow_back_ios</mat-icon>
+            </button>
+            <button class="forward" routerLink="/poesia-piazza-torre-borgo">
+                <mat-icon>arrow_forward_ios</mat-icon>
+            </button>
+        </p>
+
         <div class="collapse multi-collapse" id="multiCollapseExample13">
             <pre>
     Cara beltà che amore
@@ -88,12 +99,4 @@
             </mat-card>
         </div>
     </div>
-    <button><span>
-            <mat-icon>arrow_back_ios</mat-icon>
-            <p>Capitolo precedente: La torre del passero solitario</p>
-        </span></button>
-    <button><span>
-            <mat-icon>arrow_forward_ios</mat-icon>
-            <p>Prossimo capitolo: Piazza della torre del borgo</p>
-        </span></button>
 </div>
