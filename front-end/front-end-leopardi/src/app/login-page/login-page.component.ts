@@ -26,9 +26,9 @@ export class LoginPageComponent implements OnInit {
   checkLogin() {
     (this.loginservice.authenticate(this.username, this.password).subscribe(
       data => {
-            this.router.navigate(['/scelta-utente'])
-            this.invalidLogin = false
-          },
+        this.router.navigate(['/scelta-utente'])
+        this.invalidLogin = false
+      },
       error => {
         if (this.invalidLogin = true) {
           this.message1 = true

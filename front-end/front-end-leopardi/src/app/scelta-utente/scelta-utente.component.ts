@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthenticationService } from '../service/authentication.service';
 
 @Component({
@@ -13,8 +14,6 @@ export class SceltaUtenteComponent implements OnInit {
 
   constructor(private auth: AuthenticationService) { }
 
-
-
   ngOnInit() {
     if(sessionStorage.getItem("Role") === "ROLE_ADMIN"){
     this.admin = true
@@ -24,6 +23,7 @@ export class SceltaUtenteComponent implements OnInit {
   }
 
   logOut() {
+    window.location.reload()
     this.auth.logOut()
   }
 

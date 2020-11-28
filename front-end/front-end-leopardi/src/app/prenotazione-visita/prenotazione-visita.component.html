@@ -1,3 +1,8 @@
+<div *ngIf="!visitor">
+    Per prenotare la visita devi effettuare il login.
+    <button routerLink="/login" class="btn btn-success">Vai al login</button>
+</div>
+
 <div *ngIf="visitor" class="container" style="margin-top: 20px; margin-bottom: 50px;">
     <div class="row">
         <div style="margin-bottom: 20px;" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb30 text-center">
