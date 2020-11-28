@@ -10,9 +10,6 @@ public class UserDTO {
 	private boolean checkbox2;
 	private boolean checkbox3;
 
-	public UserDTO(String username) {
-		this.username = username;
-	}
 	public String getUsername() {
 		return username;
 	}
