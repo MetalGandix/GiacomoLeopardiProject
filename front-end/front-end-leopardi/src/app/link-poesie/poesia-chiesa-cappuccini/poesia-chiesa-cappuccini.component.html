@@ -1,20 +1,31 @@
-<div class="text">
-    <h1><b><i>Capitolo 2: Chiesa dei cappuccini</i></b></h1>
-    <h1><b><i>Sopra il ritratto di una bella donna scolpito nel monumento sepolcrale della medesima</i></b>
+<div class="container">
+    <div class="text">
+        <h1><b><i>Capitolo 2: Chiesa dei cappuccini</i></b></h1>
+        <h1><b><i>Sopra il ritratto di una bella donna scolpito nel monumento sepolcrale della medesima</i></b></h1>
+        <p style="text-align: center;">
+            <button class="button" data-toggle="collapse" href="#multiCollapseExample3" aria-expanded="false"
+                aria-controls="multiCollapseExample3" style="vertical-align:middle" (click)="enableDisableRule()"
+                [ngClass]="{'button' : toggle, 'buttonClicked': !toggle}"><span>
+                    <mat-icon>menu_book</mat-icon>
+                </span></button>
+            <button class="button1" data-toggle="collapse" href="#multiCollapseExample4" aria-expanded="false"
+                aria-controls="multiCollapseExample4" style="vertical-align:middle; margin-top: 10px;"
+                (click)="enableDisableRule1()" [ngClass]="{'button1' : toggle1, 'button1Clicked': !toggle1}"><span>
+                    <mat-icon>audiotrack</mat-icon>
+                </span></button>
+        </p>
 
-        <button class="button" data-toggle="collapse" href="#multiCollapseExample3" aria-expanded="false"
-            aria-controls="multiCollapseExample3" style="vertical-align:middle" (click)="enableDisableRule()"
-            [ngClass]="{'button' : toggle, 'buttonClicked': !toggle}"><span>
-                <mat-icon>menu_book</mat-icon>
-            </span></button>
-        <button class="button1" data-toggle="collapse" href="#multiCollapseExample4" aria-expanded="false"
-            aria-controls="multiCollapseExample4" style="vertical-align:middle; margin-top: 10px;"
-            (click)="enableDisableRule1()" [ngClass]="{'button1' : toggle1, 'button1Clicked': !toggle1}"><span>
-                <mat-icon>audiotrack</mat-icon>
-            </span></button>
-    </h1>
-    <div class="collapse multi-collapse" id="multiCollapseExample3">
-        <pre>
+        <p>
+            <button class="back" routerLink="/poesia-casa-leopardi">
+                <mat-icon>arrow_back_ios</mat-icon>
+            </button>
+            <button class="forward" routerLink="/poesia-sabato-villaggio">
+                <mat-icon>arrow_forward_ios</mat-icon>
+            </button>
+        </p>
+
+        <div class="collapse multi-collapse" id="multiCollapseExample3">
+            <pre>
     Tal fosti: or qui sotterra
     Polve e scheletro sei. Su l'ossa e il fango
     Immobilmente collocato invano,
@@ -76,17 +87,18 @@
     Son così di leggeri
     Da sì basse cagioni e desti e spenti?
   </pre>
-        <button class="button" data-toggle="collapse" href="#multiCollapseExample3" aria-expanded="false"
-            aria-controls="multiCollapseExample3" style="vertical-align:middle; margin-left: 50%;"><span><i
-                    class="arrow up"></i></span></button>
+            <button class="button" data-toggle="collapse" href="#multiCollapseExample3" aria-expanded="false"
+                aria-controls="multiCollapseExample3" style="vertical-align:middle; margin-left: 50%;"><span><i
+                        class="arrow up"></i></span></button>
+        </div>
     </div>
-</div>
 
-<div class="collapse multi-collapse" id="multiCollapseExample4">
-    <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column" fxLayoutGap="32px">
-        <mat-card style="width: responsive; height: 50px;">
-            <div mat-card-image plyr plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true"
-                [plyrCrossOrigin]="true" [plyrSources]="'./assets/audio/Inquietudine della vita.mp3'"></div>
-        </mat-card>
+    <div class="collapse multi-collapse" id="multiCollapseExample4">
+        <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column" fxLayoutGap="32px">
+            <mat-card style="width: responsive; height: 50px;">
+                <div mat-card-image plyr plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true"
+                    [plyrCrossOrigin]="true" [plyrSources]="'./assets/audio/Inquietudine della vita.mp3'"></div>
+            </mat-card>
+        </div>
     </div>
 </div>

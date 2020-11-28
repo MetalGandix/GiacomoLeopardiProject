@@ -1,7 +1,8 @@
 <div class="container">
     <h1><b><i>Capitolo 1: Casa Leopardi</i></b></h1>
     <div class="text">
-        <h1><b><i>A Silvia</i></b>
+        <h1><b><i>A Silvia</i></b></h1>
+        <p style="text-align: center;">
             <button class="button" data-toggle="collapse" href="#multiCollapseExample1" aria-expanded="false"
                 aria-controls="multiCollapseExample1" style="vertical-align:middle" (click)="enableDisableRule()"
                 [ngClass]="{'button' : toggle, 'buttonClicked': !toggle}"><span>
@@ -13,7 +14,16 @@
                 [ngClass]="{'button1' : toggle1, 'button1Clicked': !toggle1}"><span>
                     <mat-icon>audiotrack</mat-icon>
                 </span></button>
-        </h1>
+        </p>
+
+        <p>
+            <button class="back" routerLink="/poesia-piazza-torre-borgo">
+                <mat-icon>arrow_back_ios</mat-icon>
+            </button>
+            <button class="forward" routerLink="/poesia-chiesa-cappuccini">
+                <mat-icon>arrow_forward_ios</mat-icon>
+            </button>
+        </p>
 
         <div class="collapse multi-collapse" id="multiCollapseExample1">
             <pre>
@@ -99,12 +109,4 @@
             </mat-card>
         </div>
     </div>
-    <button><span>
-            <mat-icon>arrow_back_ios</mat-icon>
-            <p>Pagina elenco capitoli</p>
-        </span></button>
-    <button><span>
-            <mat-icon>arrow_forward_ios</mat-icon>
-            <p>Prossimo capitolo: Chiesa dei Cappuccini</p>
-        </span></button>
 </div>
