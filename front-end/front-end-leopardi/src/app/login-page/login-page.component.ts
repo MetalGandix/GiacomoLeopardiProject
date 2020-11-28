@@ -19,6 +19,7 @@ export class LoginPageComponent implements OnInit {
   password = ''
   invalidLogin = false
   message1: boolean = false
+  refresha: number = 1
 
   ngOnInit(): void {
   }
@@ -26,7 +27,11 @@ export class LoginPageComponent implements OnInit {
   checkLogin() {
     (this.loginservice.authenticate(this.username, this.password).subscribe(
       data => {
-        this.router.navigate(['/scelta-utente'])
+        this.router.navigate(['/scelta-utente'], {
+          state: {
+            refresha: this.refresha
+          }
+        })
         this.invalidLogin = false
       },
       error => {

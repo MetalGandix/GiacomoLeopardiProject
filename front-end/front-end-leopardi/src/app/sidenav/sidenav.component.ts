@@ -46,7 +46,6 @@ export class SidenavComponent implements OnInit{
     }
 
     logOut() {
-      window.location.reload()
       this.auth.logOut()
     }
 

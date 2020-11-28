@@ -56,6 +56,7 @@ export class AuthenticationService {
     sessionStorage.removeItem('token');
     sessionStorage.removeItem('Role');
     this.router.navigate(['/home']);
+    window.location.reload()
   }
 
   getRole(){

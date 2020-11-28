@@ -11,10 +11,16 @@ export class SceltaUtenteComponent implements OnInit {
 
   admin: boolean = false
   visitor: boolean = false
+  refresha: number
 
   constructor(private auth: AuthenticationService) { }
 
   ngOnInit() {
+    this.refresha = window.history.state.refresha
+    if(this.refresha == 1){
+      this.refresha++
+      window.location.reload()
+    }
     if(sessionStorage.getItem("Role") === "ROLE_ADMIN"){
     this.admin = true
     }else if(sessionStorage.getItem("Role") === "ROLE_VISITATORE"){
@@ -23,7 +29,6 @@ export class SceltaUtenteComponent implements OnInit {
   }
 
   logOut() {
-    window.location.reload()
     this.auth.logOut()
   }
 
