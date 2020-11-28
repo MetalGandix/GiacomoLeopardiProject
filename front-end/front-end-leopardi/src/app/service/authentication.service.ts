@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Location } from '@angular/common';
 import { map } from 'rxjs/operators';
 import { CanActivate, RouteConfigLoadEnd, Router } from '@angular/router';
 import jwt_decode from 'jwt-decode';
@@ -27,7 +28,7 @@ export class User{
 })
 export class AuthenticationService {
 
-  constructor(private httpClient:HttpClient, private router: Router) { 
+  constructor(private httpClient:HttpClient, private router: Router, private location: Location) { 
      }
 
   authenticate(username, password) {
@@ -52,11 +53,11 @@ export class AuthenticationService {
   }
 
   logOut() {
+    //window.location.reload()
     sessionStorage.removeItem('username');
     sessionStorage.removeItem('token');
     sessionStorage.removeItem('Role');
     this.router.navigate(['/home']);
-    window.location.reload()
   }
 
   getRole(){

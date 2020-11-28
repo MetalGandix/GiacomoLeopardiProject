@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from '../class/user';
 import { AuthenticationService } from '../service/authentication.service';
+import { GestioneUtenteService } from '../service/gestione-utente.service';
 
 @Component({
   selector: 'app-scelta-utente',
@@ -12,8 +14,9 @@ export class SceltaUtenteComponent implements OnInit {
   admin: boolean = false
   visitor: boolean = false
   refresha: number
+  utente: User[]
 
-  constructor(private auth: AuthenticationService) { }
+  constructor(private auth: AuthenticationService, private gestioneUtente: GestioneUtenteService) { }
 
   ngOnInit() {
     this.refresha = window.history.state.refresha
@@ -26,10 +29,12 @@ export class SceltaUtenteComponent implements OnInit {
     }else if(sessionStorage.getItem("Role") === "ROLE_VISITATORE"){
     this.visitor = true
     }
-  }
-
-  logOut() {
-    this.auth.logOut()
+    this.gestioneUtente.findUtenteSingolo(sessionStorage.getItem('username')).subscribe(data => 
+      {
+        this.utente = data
+        console.log(this.utente)
+      })
+    console.log("Session storage",sessionStorage.getItem('username'))
   }
 
 }
