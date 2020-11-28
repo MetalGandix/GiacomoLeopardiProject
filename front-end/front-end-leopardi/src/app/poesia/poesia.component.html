@@ -1,101 +1,129 @@
 <div class="container" style="margin-bottom: 40px;">
 
-  <h1><i>Sezione dedicata ai testi</i></h1>
-
-  <p><a routerLink="/poesia-casa-leopardi">
-      Poesie del capitolo 1: Casa Leopardi
-    </a></p>
-  <button class="button" data-toggle="collapse" href="#multiCollapseExample1" aria-expanded="false"
-    aria-controls="multiCollapseExample1" style="vertical-align:middle" (click)="enableDisableRule()"
-    [ngClass]="{'button' : toggle, 'buttonClicked': !toggle}"><span>
-      <mat-icon>menu_book</mat-icon>
-    </span></button>
+  <h1><i>In questa pagina sono presenti i capitoli dove sono presenti le poesie di Giacomo Leopardi</i></h1>
+  <p>Poesie del capitolo 1: Casa Leopardi</p>
+  <p class="pMiddle">
+    <button class="button" data-toggle="collapse" href="#multiCollapseExample1" aria-expanded="false"
+      aria-controls="multiCollapseExample1" style="vertical-align:middle" (click)="enableDisableRule()"
+      [ngClass]="{'button' : toggle, 'buttonClicked': !toggle}"><span>
+        <mat-icon>menu_book</mat-icon>
+      </span></button>
+    <button class="buttonCap" routerLink="/poesia-casa-leopardi">
+      <mat-icon>forward</mat-icon>
+    </button>
+  </p>
   <div class="collapse multi-collapse" id="multiCollapseExample1">
     <p>Nel primo capitolo è presente la poesia "A Silvia"</p>
   </div>
+  <img src="\assets\images\Casa Leopardi_IGP0936 copia_DxOFP.jpg" alt="CasaLeopardi">
 
 
-  <p>
-    <a routerLink="/poesia-chiesa-cappuccini">
-      Poesie del capitolo 2: Chiesa dei Cappuccini
-    </a></p>
-  <button class="button" data-toggle="collapse" href="#multiCollapseExample2" aria-expanded="false"
-    aria-controls="multiCollapseExample2" style="vertical-align:middle" (click)="enableDisableRule1()"
-    [ngClass]="{'button' : toggle1, 'buttonClicked': !toggle1}"><span>
-      <mat-icon>menu_book</mat-icon>
-    </span></button>
+
+  <p>Poesie del capitolo 2: Chiesa dei Cappuccini</p>
+  <p class="pMiddle">
+    <button class="button" data-toggle="collapse" href="#multiCollapseExample2" aria-expanded="false"
+      aria-controls="multiCollapseExample2" style="vertical-align:middle" (click)="enableDisableRule1()"
+      [ngClass]="{'button' : toggle1, 'buttonClicked': !toggle1}"><span>
+        <mat-icon>menu_book</mat-icon>
+      </span></button>
+    <button class="buttonCap" routerLink="/poesia-chiesa-cappuccini">
+      <mat-icon>forward</mat-icon>
+    </button>
+  </p>
   <div class="collapse multi-collapse" id="multiCollapseExample2">
     <p>Nel secondo capitolo è presente la poesia "Sopra il ritratto di una bella donna scolpito nel monumento sepolcrale
       della medesima"</p>
   </div>
+  <img src="\assets\images\Chiesa dei Cappuccini_IGP0958 copia_DxOFP.jpg" alt="Chiesa dei Cappuccini">
 
 
-  <p>
-    <a routerLink="/poesia-sabato-villaggio">
-      Poesie del capitolo 3: Piazzuola del sabato del villaggio: Silvia
-    </a></p>
-  <button class="button" data-toggle="collapse" href="#multiCollapseExample3" aria-expanded="false"
-    aria-controls="multiCollapseExample3" style="vertical-align:middle" (click)="enableDisableRule2()"
-    [ngClass]="{'button' : toggle2, 'buttonClicked': !toggle2}"><span>
-      <mat-icon>menu_book</mat-icon>
-    </span></button>
+  <p>Poesie del capitolo 3: Piazzuola del sabato del villaggio</p>
+  <p class="pMiddle">
+    <button class="button" data-toggle="collapse" href="#multiCollapseExample3" aria-expanded="false"
+      aria-controls="multiCollapseExample3" style="vertical-align:middle" (click)="enableDisableRule2()"
+      [ngClass]="{'button' : toggle2, 'buttonClicked': !toggle2}"><span>
+        <mat-icon>menu_book</mat-icon>
+      </span></button>
+    <button class="buttonCap" routerLink="/poesia-sabato-villaggio">
+      <mat-icon>forward</mat-icon>
+    </button>
+  </p>
   <div class="collapse multi-collapse" id="multiCollapseExample3">
     <p>Nel terzo capitolo capitolo è presente la poesia "Il sabato del villaggio"</p>
   </div>
+  <img src="\assets\images\Piazzuola del Sabato del villaggio_IGP0946 copia_DxOFP.jpg"
+    alt="Piazzuola del sabato del villaggio">
 
 
-  <p>
-    <a routerLink="/poesia-colle-infinito">
-      Poesie del capitolo 7: Il Colle dell'Infinito
-    </a></p>
-  <button class="button" data-toggle="collapse" href="#multiCollapseExample4" aria-expanded="false"
-    aria-controls="multiCollapseExample4" style="vertical-align:middle" (click)="enableDisableRule3()"
-    [ngClass]="{'button' : toggle3, 'buttonClicked': !toggle3}"><span>
-      <mat-icon>menu_book</mat-icon>
-    </span></button>
+  <p>Poesie del capitolo 7: Il Colle dell'Infinito </p>
+  <p class="pMiddle">
+    <button class="button" data-toggle="collapse" href="#multiCollapseExample4" aria-expanded="false"
+      aria-controls="multiCollapseExample4" style="vertical-align:middle" (click)="enableDisableRule3()"
+      [ngClass]="{'button' : toggle3, 'buttonClicked': !toggle3}"><span>
+        <mat-icon>menu_book</mat-icon>
+      </span></button>
+    <button class="buttonCap" routerLink="/poesia-colle-infinito">
+      <mat-icon>forward</mat-icon>
+    </button>
+  </p>
   <div class="collapse multi-collapse" id="multiCollapseExample4">
     <p>Nel settimo capitolo è presente la poesia "L'infinito" e la poesia "Le ricordanze"</p>
   </div>
+  <img src="assets\images\Il colle dell_Infinito_IGP0987 copia_DxOFP.jpg" alt="L'infinito">
 
 
-  <p>
-    <a routerLink="/poesia-torre-passero-solitario">
-      Poesie del capitolo 10: La torre del passero solitario
-    </a></p>
-  <button class="button" data-toggle="collapse" href="#multiCollapseExample5" aria-expanded="false"
-    aria-controls="multiCollapseExample5" style="vertical-align:middle" (click)="enableDisableRule4()"
-    [ngClass]="{'button' : toggle4, 'buttonClicked': !toggle4}"><span>
-      <mat-icon>menu_book</mat-icon>
-    </span></button>
+  <p>Poesie del capitolo 10: La torre del passero solitario</p>
+  <p class="pMiddle">
+    <button class="button" data-toggle="collapse" href="#multiCollapseExample5" aria-expanded="false"
+      aria-controls="multiCollapseExample5" style="vertical-align:middle" (click)="enableDisableRule4()"
+      [ngClass]="{'button' : toggle4, 'buttonClicked': !toggle4}"><span>
+        <mat-icon>menu_book</mat-icon>
+      </span></button>
+    <button class="buttonCap" routerLink="/poesia-torre-passero-solitario">
+      <mat-icon>forward</mat-icon>
+    </button>
+  </p>
   <div class="collapse multi-collapse" id="multiCollapseExample5">
     <p>Nel decimo capitolo capitolo è presente la poesia "Il passero solitario"</p>
   </div>
+  <img src="\assets\images\La torre del passero solitario sovrasta il chiostro di S. Agostino_IGP1035 copia_DxOFP.jpg"
+    alt="Torre del passero solitario">
 
-  <p>
-    <a routerLink="/poesia-torre-passero-solitario">
-      Poesie del capitolo 12: Palazzo Venieri
-    </a></p>
-  <button class="button" data-toggle="collapse" href="#multiCollapseExample6" aria-expanded="false"
-    aria-controls="multiCollapseExample6" style="vertical-align:middle" (click)="enableDisableRule5()"
-    [ngClass]="{'button' : toggle5, 'buttonClicked': !toggle5}"><span>
-      <mat-icon>menu_book</mat-icon>
-    </span></button>
+
+  <p>Poesie del capitolo 12: Palazzo Venieri</p>
+  <p class="pMiddle">
+    <button class="button" data-toggle="collapse" href="#multiCollapseExample6" aria-expanded="false"
+      aria-controls="multiCollapseExample6" style="vertical-align:middle" (click)="enableDisableRule5()"
+      [ngClass]="{'button' : toggle5, 'buttonClicked': !toggle5}"><span>
+        <mat-icon>menu_book</mat-icon>
+      </span></button>
+    <button class="buttonCap" routerLink="/poesia-palazzo-venieri">
+      <mat-icon>forward</mat-icon>
+    </button>
+  </p>
   <div class="collapse multi-collapse" id="multiCollapseExample6">
     <p>Nel dodicesimo capitolo capitolo è presente la poesia "Alla sua donna"</p>
   </div>
+  <img src="\assets\images\Palazzo Venieri_IGP1050_DxOFP.JPG" alt="Palazzo Venieri">
 
-  <p>
-    <a routerLink="/poesia-torre-passero-solitario">
-      Poesie del capitolo 13: Piazza della torre del borgo
-    </a></p>
-  <button class="button" data-toggle="collapse" href="#multiCollapseExample7" aria-expanded="false"
-    aria-controls="multiCollapseExample7" style="vertical-align:middle" (click)="enableDisableRule6()"
-    [ngClass]="{'button' : toggle6, 'buttonClicked': !toggle6}"><span>
-      <mat-icon>menu_book</mat-icon>
-    </span></button>
+
+  <p>Poesie del capitolo 13: Piazza della torre del borgo </p>
+  <p class="pMiddle">
+    <button class="button" data-toggle="collapse" href="#multiCollapseExample7" aria-expanded="false"
+      aria-controls="multiCollapseExample7" style="vertical-align:middle" (click)="enableDisableRule6()"
+      [ngClass]="{'button' : toggle6, 'buttonClicked': !toggle6}"><span>
+        <mat-icon>menu_book</mat-icon>
+      </span></button>
+    <button class="buttonCap" routerLink="/poesia-piazza-torre-borgo">
+      <mat-icon>forward</mat-icon>
+    </button>
+  </p>
   <div class="collapse multi-collapse" id="multiCollapseExample7">
     <p>Nel dodicesimo capitolo capitolo sono presenti le poesie "La sera del dì di festa", "Il risorgimento",
       "Le ricordanze", "Canto notturno di un pastore dell'Asia", "Il pensiero dominante", "A se stesso",
       "La ginestra, o fiore del deserto", "Contro la minestra"</p>
   </div>
+  <img src="\assets\images\Piazza della torre del Borgo con la statua di G. Leopardi._IGP1059_DxOFP.JPG"
+    alt="Piazza Torre del borgo">
+
 </div>
