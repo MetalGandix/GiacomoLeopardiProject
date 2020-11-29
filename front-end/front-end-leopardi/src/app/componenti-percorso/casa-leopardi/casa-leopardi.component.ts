@@ -9,6 +9,8 @@ import 'mapbox-gl-leaflet';
 })
 export class CasaLeopardiComponent implements OnInit, AfterViewInit {
 
+  private map: L.Map;
+
   @ViewChild('map')
   private mapContainer: ElementRef<HTMLElement>;
 
@@ -18,8 +20,8 @@ export class CasaLeopardiComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    const myAPIKey = "8ca7274441bb4ee39020c40fec79ec56";
-    const mapStyle = "https://maps.geoapify.com/v1/styles/osm-carto/style.json?apiKey=8ca7274441bb4ee39020c40fec79ec56";
+    const myAPIKey = "f1148686528a4ea488296c6f9f71041d";
+    const mapStyle = "https://maps.geoapify.com/v1/styles/osm-carto/style.json";
 
     const initialState = {
       lng: 11,
