@@ -1,16 +1,38 @@
+
 <div class="container" style="text-align-last: center;  margin-bottom: 40px;">
   <h1><i>Casa Leopardi</i></h1>
   <img class="card-img-top" style="width: 300px;margin-bottom: 30px;"
     src="assets\images\Casa Leopardi_IGP0936 copia_DxOFP.jpg" alt="Card image cap">
 
-  <google-map height="500px" width="100%" [zoom]="zoom" [center]="center" [options]="options"
-    (mapClick)="click($event)">
-    <map-marker #markerElem *ngFor="let marker of markers" [position]="marker.position" [label]="marker.label"
-      [title]="marker.title" [options]="marker.options" (mapClick)="openInfo(markerElem, marker.info)">
-    </map-marker>
+    
 
-    <map-info-window>{{ infoContent }}</map-info-window>
-  </google-map>
+    <!-- <script>
+      // const mymap = L.map('mapid').setView([43.39861718537509, 13.551727479224946], 13);
+      // L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+      //   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+      //   maxZoom: 18,
+      //   id: 'mapbox/streets-v11',
+      //   tileSize: 512,
+      //   zoomOffset: -1,
+      //   accessToken: 'pk.eyJ1IjoiY29wcGFjaW5vIiwiYSI6ImNraHZ2Y3k2bTAya3cycWxmMzRnMXVndTQifQ.Bweh7O9eInUwy5G5flSOyA'})
+      //   .addTo(mymap);
+//       var mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
+
+// mapboxgl.accessToken = 'pk.eyJ1IjoiY29wcGFjaW5vIiwiYSI6ImNraHZ2Y3k2bTAya3cycWxmMzRnMXVndTQifQ.Bweh7O9eInUwy5G5flSOyA';
+// var map = new mapboxgl.Map({
+//   container: 'mapid',
+//   style: 'mapbox://styles/mapbox/streets-v11'
+// });
+
+// var map = L.map('mapid', {
+//     center: [51.505, -0.09],
+//     zoom: 13
+// });
+</script> -->
+    
+
+<div class="map-container" #map></div>
+
 
   <div class="text">
     Occasione da non perdere per chi si trovasse a passare per Recanati è la visita di Casa Leopardi dove, in un

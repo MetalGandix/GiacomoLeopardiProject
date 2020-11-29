@@ -1,99 +1,50 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { GoogleMap, MapInfoWindow, MapMarker } from '@angular/google-maps';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import  * as L from 'leaflet';
+import 'mapbox-gl-leaflet';
 
 @Component({
   selector: 'app-casa-leopardi',
   templateUrl: './casa-leopardi.component.html',
   styleUrls: ['./casa-leopardi.component.css']
 })
-export class CasaLeopardiComponent implements OnInit {
+export class CasaLeopardiComponent implements OnInit, AfterViewInit {
 
-  @ViewChild(GoogleMap, { static: false }) map: GoogleMap
-  @ViewChild(MapInfoWindow, { static: false }) info: MapInfoWindow
+  @ViewChild('map')
+  private mapContainer: ElementRef<HTMLElement>;
 
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router) {
-  }
-
-  isCollapsedChiesaSantaMaria = true;
-  isCollapsedSilvia = true;
-
-  zoom = 25
-  center: google.maps.LatLngLiteral
-  options: google.maps.MapOptions = {
-    zoomControl: false,
-    scrollwheel: false,
-    disableDoubleClickZoom: true,
-    mapTypeId: 'hybrid',
-    maxZoom: 30,
-    minZoom: 8,
-  }
-  markers = []
-  infoContent = ''
-
+  constructor() { }
 
   ngOnInit() {
-    navigator.geolocation.watchPosition(() => {
-      this.center = {
-        lat: 43.398125,
-        lng: 13.551801,
-      }
-    })
-    this.markers.push({
-      position: {
-        lat: 43.398125,
-        lng: 13.551801,
-      },
-      label: {
-        color: 'red',
-        text: 'Casa Leopardi ',
-      },
-      title: 'Casa Leopardi' + (this.markers.length + 1),
-      info: 'Marker info ' + (this.markers.length + 1),
-      options: {
-        animation: google.maps.Animation.BOUNCE,
-      },
-    })
   }
 
-  zoomIn() {
-    if (this.zoom < this.options.maxZoom) this.zoom++
+  ngAfterViewInit() {
+    const myAPIKey = "8ca7274441bb4ee39020c40fec79ec56";
+    const mapStyle = "https://maps.geoapify.com/v1/styles/osm-carto/style.json?apiKey=8ca7274441bb4ee39020c40fec79ec56";
+
+    const initialState = {
+      lng: 11,
+      lat: 49,
+      zoom: 4
+    };
+
+    const map = new L.Map(this.mapContainer.nativeElement).setView(
+      [initialState.lat, initialState.lng],
+      initialState.zoom
+    );
+
+    // the attribution is required for the Geoapify Free tariff plan
+    map.attributionControl
+      .setPrefix("")
+      .addAttribution(
+        'Powered by <a href="https://www.geoapify.com/" target="_blank">Geoapify</a> | © OpenStreetMap <a href="https://www.openstreetmap.org/copyright" target="_blank">contributors</a>'
+      );
+
+    L.mapboxGL({
+      style: `${mapStyle}?apiKey=${myAPIKey}`,
+      accessToken: "no-token"
+    }).addTo(map);
   }
 
-  zoomOut() {
-    if (this.zoom > this.options.minZoom) this.zoom--
-  }
 
-  click(event: google.maps.MouseEvent) {
-    console.log(event)
-  }
-
-  logCenter() {
-    console.log(JSON.stringify(this.map.getCenter()))
-  }
-
-  addMarker() {
-    this.markers.push({
-      position: {
-        lat: this.center.lat + ((Math.random() - 0.5) * 2) / 10,
-        lng: this.center.lng + ((Math.random() - 0.5) * 2) / 10,
-      },
-      label: {
-        color: 'red',
-        text: 'Marker ' + (this.markers.length + 1),
-      },
-      title: 'Marker title ' + (this.markers.length + 1),
-      info: 'Marker info ' + (this.markers.length + 1),
-      options: {
-        animation: google.maps.Animation.DROP,
-      },
-    })
-  }
-
-  openInfo(marker: MapMarker, content) {
-    this.infoContent = content
-    this.info.open(marker)
-  }
+  
 }
