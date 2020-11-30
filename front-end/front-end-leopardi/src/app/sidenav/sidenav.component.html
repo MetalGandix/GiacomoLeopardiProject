@@ -1,4 +1,4 @@
-<mat-sidenav-container class="sidenav-container" style="margin-bottom: 20px;">
+<mat-sidenav-container class="sidenav-container" style="margin-bottom: 20px; position: sticky;">
   <mat-sidenav #drawer class="sidenav" fixedInViewport #sidenav (click)="sidenav.toggle()"
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'" 
