@@ -1,14 +1,6 @@
-<div style="margin-bottom: 20px;">
+<div style="margin-bottom: 20px;"></div>
 
-</div>
-
-<google-map height="300px" width="100%" [zoom]="zoom" [center]="center" [options]="options" (mapClick)="click($event)">
-  <map-marker #markerElem *ngFor="let marker of markers" [position]="marker.position" [label]="marker.label"
-    [title]="marker.title" [options]="marker.options" (mapClick)="openInfo(markerElem, marker.info)">
-  </map-marker>
-
-  <map-info-window>{{ infoContent }}</map-info-window>
-</google-map>
+<div class="map-container" #map></div>
 
 <div class="container" style="margin-top: 15px;">
 

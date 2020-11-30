@@ -11,3 +11,7 @@ h2{
 hr{
     color: #ebbc39;
 }
+
+.map-container{ 
+    height: 180px; 
+  }
