@@ -3,14 +3,8 @@
   <img class="card-img-top" style="width: 300px;margin-bottom: 30px;"
     src="assets\images\06_Centro_Nazionale_Leopardi_2_copia_DxOFP.jpg" alt="Card image cap">
 
-  <google-map height="500px" width="100%" [zoom]="zoom" [center]="center" [options]="options"
-    (mapClick)="click($event)">
-    <map-marker #markerElem *ngFor="let marker of markers" [position]="marker.position" [label]="marker.label"
-      [title]="marker.title" [options]="marker.options" (mapClick)="openInfo(markerElem, marker.info)">
-    </map-marker>
+    <div class="map-container" #map></div>
 
-    <map-info-window>{{ infoContent }}</map-info-window>
-  </google-map>
 
   <div class="text">
     Risalendo la "piazzuola" e costeggiando verso sinistra casa Leopardi, percorriamo per circa cinquanta metri una

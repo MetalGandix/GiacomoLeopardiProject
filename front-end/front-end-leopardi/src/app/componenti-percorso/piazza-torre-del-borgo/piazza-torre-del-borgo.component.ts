@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { GoogleMap, MapInfoWindow, MapMarker } from '@angular/google-maps';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import  * as L from 'leaflet';
+import 'mapbox-gl-leaflet';
 
 
 @Component({
@@ -8,90 +8,42 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './piazza-torre-del-borgo.component.html',
   styleUrls: ['./piazza-torre-del-borgo.component.css']
 })
-export class PiazzaTorreDelBorgoComponent implements OnInit{
+export class PiazzaTorreDelBorgoComponent implements OnInit, AfterViewInit {
 
-  @ViewChild(GoogleMap, { static: false }) map: GoogleMap
-  @ViewChild(MapInfoWindow, { static: false }) info: MapInfoWindow
+  private map: L.Map;
 
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router) {
-  }
+  @ViewChild('map')
+  private mapContainer: ElementRef<HTMLElement>;
 
-  isCollapsedChiesaSantaMaria = true;
-  isCollapsedSilvia = true;
-
-  zoom = 25
-  center: google.maps.LatLngLiteral
-  options: google.maps.MapOptions = {
-    zoomControl: false,
-    scrollwheel: false,
-    disableDoubleClickZoom: true,
-    mapTypeId: 'hybrid',
-    maxZoom: 30,
-    minZoom: 8,
-  }
-  markers = []
-  infoContent = ''
-
+  constructor() { }
 
   ngOnInit() {
-    navigator.geolocation.watchPosition(() => {
-      this.center = {
-        lat: 43.403816,
-        lng: 13.548187,
-      }
-    })
-    this.markers.push({
-      position: {
-        lat: 43.403816,
-        lng: 13.548187,
-      },
-      label: {
-        color: 'red',
-        text: "Piazza della Torre del Borgo " + (this.markers.length + 1),
-      },
-      title: "Piazza della Torre del Borgo " + (this.markers.length + 1),
-      info: 'Marker info ' + (this.markers.length + 1),
-    })
   }
 
-  zoomIn() {
-    if (this.zoom < this.options.maxZoom) this.zoom++
-  }
+  ngAfterViewInit() {
+    const myAPIKey = "f1148686528a4ea488296c6f9f71041d";
+    const mapStyle = "https://maps.geoapify.com/v1/styles/osm-carto/style.json";
 
-  zoomOut() {
-    if (this.zoom > this.options.minZoom) this.zoom--
-  }
+    const initialState = {
+      lng: 11,
+      lat: 49,
+      zoom: 4
+    };
 
-  click(event: google.maps.MouseEvent) {
-    console.log(event)
-  }
+    const map = new L.Map(this.mapContainer.nativeElement).setView(
+      [initialState.lat, initialState.lng],
+      initialState.zoom
+    );
 
-  logCenter() {
-    console.log(JSON.stringify(this.map.getCenter()))
-  }
+    map.attributionControl
+      .setPrefix("")
+      .addAttribution(
+        'Powered by <a href="https://www.geoapify.com/" target="_blank">Geoapify</a> | © OpenStreetMap <a href="https://www.openstreetmap.org/copyright" target="_blank">contributors</a>'
+      );
 
-  addMarker() {
-    this.markers.push({
-      position: {
-        lat: this.center.lat + ((Math.random() - 0.5) * 2) / 10,
-        lng: this.center.lng + ((Math.random() - 0.5) * 2) / 10,
-      },
-      label: {
-        color: 'red',
-        text: 'Marker ' + (this.markers.length + 1),
-      },
-      title: 'Marker title ' + (this.markers.length + 1),
-      info: 'Marker info ' + (this.markers.length + 1),
-      options: {
-        animation: google.maps.Animation.DROP,
-      },
-    })
-  }
-
-  openInfo(marker: MapMarker, content) {
-    this.infoContent = content
-    this.info.open(marker)
+    L.mapboxGL({
+      style: `${mapStyle}?apiKey=${myAPIKey}`,
+      accessToken: "no-token"
+    }).addTo(map);
   }
 }
