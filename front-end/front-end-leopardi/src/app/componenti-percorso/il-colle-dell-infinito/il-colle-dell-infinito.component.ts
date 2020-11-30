@@ -24,15 +24,20 @@ export class IlColleDellInfinitoComponent implements OnInit, AfterViewInit {
     const mapStyle = "https://maps.geoapify.com/v1/styles/osm-carto/style.json";
 
     const initialState = {
-      lng: 11,
-      lat: 49,
-      zoom: 4
+      lng: 13.549528702621632,
+      lat: 43.39811911961946,
+      zoom: 16
     };
 
     const map = new L.Map(this.mapContainer.nativeElement).setView(
       [initialState.lat, initialState.lng],
       initialState.zoom
     );
+
+    let icon = L.divIcon({
+      iconSize: [30, 42],
+      iconAnchor: [15, 42] // half of width + height
+  });
 
     map.attributionControl
       .setPrefix("")
@@ -44,5 +49,14 @@ export class IlColleDellInfinitoComponent implements OnInit, AfterViewInit {
       style: `${mapStyle}?apiKey=${myAPIKey}`,
       accessToken: "no-token"
     }).addTo(map);
+
+    icon = L.divIcon({
+      className: 'custom-div-icon',
+      html: "<div style='background-color:#c30b82;' class='marker-pin'></div><i class='material-icons'>place</i>",
+      iconSize: [30, 42],
+      iconAnchor: [15, 42]
+  });
+  
+L.marker([43.39811911961946, 13.549528702621632], { icon: icon }).addTo(map);
   }
 }

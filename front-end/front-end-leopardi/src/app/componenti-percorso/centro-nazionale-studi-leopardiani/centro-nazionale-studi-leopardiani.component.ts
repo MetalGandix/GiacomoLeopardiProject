@@ -24,9 +24,9 @@ export class CentroNazionaleStudiLeopardianiComponent implements OnInit, AfterVi
     const mapStyle = "https://maps.geoapify.com/v1/styles/osm-carto/style.json";
 
     const initialState = {
-      lng: 11,
-      lat: 49,
-      zoom: 4
+      lng: 13.551074298396365,
+      lat: 43.39813809447078, 
+      zoom: 16
     };
 
     const map = new L.Map(this.mapContainer.nativeElement).setView(
@@ -34,15 +34,29 @@ export class CentroNazionaleStudiLeopardianiComponent implements OnInit, AfterVi
       initialState.zoom
     );
 
-    map.attributionControl
-      .setPrefix("")
-      .addAttribution(
-        'Powered by <a href="https://www.geoapify.com/" target="_blank">Geoapify</a> | © OpenStreetMap <a href="https://www.openstreetmap.org/copyright" target="_blank">contributors</a>'
-      );
+    let icon = L.divIcon({
+      iconSize: [30, 42],
+      iconAnchor: [15, 42] // half of width + height
+  });
 
-    L.mapboxGL({
-      style: `${mapStyle}?apiKey=${myAPIKey}`,
-      accessToken: "no-token"
-    }).addTo(map);
-  }
+  map.attributionControl
+  .setPrefix("")
+  .addAttribution(
+    'Powered by <a href="https://www.geoapify.com/" target="_blank">Geoapify</a> | © OpenStreetMap <a href="https://www.openstreetmap.org/copyright" target="_blank">contributors</a>'
+  );
+
+L.mapboxGL({
+  style: `${mapStyle}?apiKey=${myAPIKey}`,
+  accessToken: "no-token"
+}).addTo(map);
+
+icon = L.divIcon({
+  className: 'custom-div-icon',
+  html: "<div style='background-color:#c30b82;' class='marker-pin'></div><i class='material-icons'>place</i>",
+  iconSize: [30, 42],
+  iconAnchor: [15, 42]
+});
+
+L.marker([43.39813809447078, 13.551074298396365], { icon: icon }).addTo(map);
+}
 }
