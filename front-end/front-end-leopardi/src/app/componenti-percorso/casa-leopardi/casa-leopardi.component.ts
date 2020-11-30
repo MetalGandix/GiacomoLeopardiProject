@@ -34,7 +34,6 @@ export class CasaLeopardiComponent implements OnInit, AfterViewInit {
       initialState.zoom
     );
 
-    // the attribution is required for the Geoapify Free tariff plan
     map.attributionControl
       .setPrefix("")
       .addAttribution(
@@ -46,7 +45,4 @@ export class CasaLeopardiComponent implements OnInit, AfterViewInit {
       accessToken: "no-token"
     }).addTo(map);
   }
-
-
-  
 }
