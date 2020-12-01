@@ -58,6 +58,9 @@ import { PoesiaPalazzoVenieriComponent } from './link-poesie/poesia-palazzo-veni
 import { PoesiaPiazzaTorreBorgoComponent } from './link-poesie/poesia-piazza-torre-borgo/poesia-piazza-torre-borgo.component';
 import { PoesiaSabatoVillaggioComponent } from './link-poesie/poesia-sabato-villaggio/poesia-sabato-villaggio.component';
 import { PoesiaTorrePasseroSolitarioComponent } from './link-poesie/poesia-torre-passero-solitario/poesia-torre-passero-solitario.component';
+import { PoesiaCentroNazionaleComponent } from './link-poesie/poesia-centro-nazionale/poesia-centro-nazionale.component';
+import { PoesiaCasaAdelaideComponent } from './link-poesie/poesia-casa-adelaide/poesia-casa-adelaide.component';
+import { PoesiaViaRomaComponent } from './link-poesie/poesia-via-roma/poesia-via-roma.component';
 
 
 
@@ -100,7 +103,10 @@ import { PoesiaTorrePasseroSolitarioComponent } from './link-poesie/poesia-torre
     PoesiaColleInfinitoComponent,
     PoesiaTorrePasseroSolitarioComponent,
     PoesiaPalazzoVenieriComponent,
-    PoesiaPiazzaTorreBorgoComponent
+    PoesiaPiazzaTorreBorgoComponent,
+    PoesiaCentroNazionaleComponent,
+    PoesiaCasaAdelaideComponent,
+    PoesiaViaRomaComponent
   ],
   imports: [
     HttpClientModule, 
