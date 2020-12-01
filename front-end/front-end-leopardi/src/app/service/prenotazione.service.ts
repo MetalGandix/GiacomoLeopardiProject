@@ -26,4 +26,12 @@ export class PrenotazioneService {
     return this.http.delete<Prenotazione>(this.url + "cancellaVisita/" + id);
   }
 
+  public saveVisiteCancellate(prenotazione: Prenotazione) {
+    return this.http.post<Prenotazione>(this.url + "visiteCancellate", prenotazione);
+  }
+
+  public findVisiteCancellate(): Observable<Prenotazione[]> {
+    return this.http.get<Prenotazione[]>(this.url + "visiteCancellate");
+  }
+
 }

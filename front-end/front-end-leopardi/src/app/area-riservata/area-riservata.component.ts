@@ -10,28 +10,38 @@ import { PrenotazioneService } from '../service/prenotazione.service';
 })
 export class AreaRiservataComponent implements OnInit {
 
-  constructor(private service: PrenotazioneService) { }
+  constructor(private service: PrenotazioneService) {
+   }
 
   prenotazione: Prenotazione[]
+  prenotazioniEliminate: Prenotazione[]
   p: Prenotazione
   admin: boolean = false
-
-  vediVisite() {
-    
-  }
 
   ngOnInit() {
   this.admin = sessionStorage.getItem("Role") === "ROLE_ADMIN"
     this.service.findAll().subscribe(p => 
       {
         this.prenotazione = p
+        console.log(this.prenotazione)
       })
+
+    this.service.findVisiteCancellate().subscribe(e => {
+        this.prenotazioniEliminate = e
+        console.log(this.prenotazioniEliminate)
+    })
   }
 
   cancellaPrenotazione(id: number){
     console.log("id: ",id)
     this.service.deletePrenotazione(id).subscribe()
   }
+
+  send(p: Prenotazione){
+    this.service.saveVisiteCancellate(p).subscribe()
+  }
+
+
 
 
 
