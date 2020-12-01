@@ -24,8 +24,8 @@ export class LetteraDellaBefanaComponent implements OnInit, AfterViewInit {
     const mapStyle = "https://maps.geoapify.com/v1/styles/osm-carto/style.json";
 
     const initialState = {
-      lng: 13.551309508145982,
-      lat: 43.402344788197304,
+      lng: 13.55145,
+      lat: 43.4024,
       zoom: 16
     };
 
@@ -57,6 +57,6 @@ export class LetteraDellaBefanaComponent implements OnInit, AfterViewInit {
       iconAnchor: [15, 42]
   });
   
-L.marker([43.402344788197304, 13.551309508145982], { icon: icon }).addTo(map);
+L.marker([43.4024, 13.55145], { icon: icon }).addTo(map);
   }
 }

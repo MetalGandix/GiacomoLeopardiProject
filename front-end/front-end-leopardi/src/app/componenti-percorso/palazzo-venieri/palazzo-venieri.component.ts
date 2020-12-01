@@ -24,8 +24,8 @@ export class PalazzoVenieriComponent implements OnInit, AfterViewInit {
     const mapStyle = "https://maps.geoapify.com/v1/styles/osm-carto/style.json";
 
     const initialState = {
-      lng: 13.549950899877905,
-      lat: 43.40262962477054,
+      lng: 13.55022,
+      lat: 43.40265,
       zoom: 16
     };
 
@@ -57,6 +57,6 @@ export class PalazzoVenieriComponent implements OnInit, AfterViewInit {
       iconAnchor: [15, 42]
   });
   
-L.marker([43.40262962477054, 13.549950899877905], { icon: icon }).addTo(map);
+L.marker([43.40265, 13.55022], { icon: icon }).addTo(map);
   }
 }

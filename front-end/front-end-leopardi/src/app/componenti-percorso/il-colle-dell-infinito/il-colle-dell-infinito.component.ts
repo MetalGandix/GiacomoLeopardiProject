@@ -24,8 +24,8 @@ export class IlColleDellInfinitoComponent implements OnInit, AfterViewInit {
     const mapStyle = "https://maps.geoapify.com/v1/styles/osm-carto/style.json";
 
     const initialState = {
-      lng: 13.549528702621632,
-      lat: 43.39811911961946,
+      lng: 13.54967,
+      lat: 43.39809,
       zoom: 16
     };
 
@@ -57,6 +57,6 @@ export class IlColleDellInfinitoComponent implements OnInit, AfterViewInit {
       iconAnchor: [15, 42]
   });
   
-L.marker([43.39811911961946, 13.549528702621632], { icon: icon }).addTo(map);
+L.marker([43.39809, 13.54967], { icon: icon }).addTo(map);
   }
 }

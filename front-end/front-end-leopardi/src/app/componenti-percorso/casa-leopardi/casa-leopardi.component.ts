@@ -24,8 +24,8 @@ export class CasaLeopardiComponent implements OnInit, AfterViewInit {
     const mapStyle = "https://maps.geoapify.com/v1/styles/osm-carto/style.json";
 
     const initialState = {
-      lng: 13.551756983052837,
-      lat: 43.398238607591544,
+      lng: 13.55196,
+      lat: 43.39816,
       zoom: 16
     };
 
@@ -57,6 +57,6 @@ export class CasaLeopardiComponent implements OnInit, AfterViewInit {
       iconAnchor: [15, 42]
   });
   
-L.marker([43.398238607591544, 13.551756983052837], { icon: icon }).addTo(map);
+L.marker([43.39816, 13.55196], { icon: icon }).addTo(map);
   }
 }

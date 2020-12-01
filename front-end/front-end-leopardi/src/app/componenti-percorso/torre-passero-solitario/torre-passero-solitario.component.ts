@@ -24,8 +24,8 @@ export class TorrePasseroSolitarioComponent implements OnInit, AfterViewInit {
     const mapStyle = "https://maps.geoapify.com/v1/styles/osm-carto/style.json";
 
     const initialState = {
-      lng: 13.551844917685042,
-      lat: 43.40196927641111,
+      lng: 13.5519,
+      lat: 43.40187,
       zoom: 16
     };
 
@@ -57,6 +57,6 @@ export class TorrePasseroSolitarioComponent implements OnInit, AfterViewInit {
       iconAnchor: [15, 42]
   });
   
-L.marker([43.40196927641111, 13.551844917685042], { icon: icon }).addTo(map);
+L.marker([43.40187, 13.5519], { icon: icon }).addTo(map);
   }
 }

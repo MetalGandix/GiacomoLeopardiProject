@@ -24,8 +24,8 @@ export class AutografoInnoComponent implements OnInit, AfterViewInit {
     const mapStyle = "https://maps.geoapify.com/v1/styles/osm-carto/style.json";
 
     const initialState = {
-      lng: 13.551443319229795,
-      lat: 43.402130758126546,
+      lng: 13.55142,
+      lat: 43.4021,
       zoom: 16
     };
 
@@ -57,6 +57,6 @@ export class AutografoInnoComponent implements OnInit, AfterViewInit {
       iconAnchor: [15, 42]
   });
   
-L.marker([43.402130758126546, 13.551443319229795], { icon: icon }).addTo(map);
+L.marker([43.4021, 13.55142], { icon: icon }).addTo(map);
   }
 }

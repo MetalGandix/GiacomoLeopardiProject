@@ -24,8 +24,8 @@ export class CentroNazionaleStudiLeopardianiComponent implements OnInit, AfterVi
     const mapStyle = "https://maps.geoapify.com/v1/styles/osm-carto/style.json";
 
     const initialState = {
-      lng: 13.551074298396365,
-      lat: 43.39813809447078, 
+      lng: 13.55112,
+      lat: 43.39799, 
       zoom: 16
     };
 
@@ -57,6 +57,6 @@ icon = L.divIcon({
   iconAnchor: [15, 42]
 });
 
-L.marker([43.39813809447078, 13.551074298396365], { icon: icon }).addTo(map);
+L.marker([43.39799, 13.55112], { icon: icon }).addTo(map);
 }
 }

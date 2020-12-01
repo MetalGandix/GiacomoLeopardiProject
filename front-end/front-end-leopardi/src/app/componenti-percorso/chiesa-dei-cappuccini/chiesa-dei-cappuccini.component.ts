@@ -24,8 +24,8 @@ export class ChiesaDeiCappucciniComponent implements OnInit, AfterViewInit {
     const mapStyle = "https://maps.geoapify.com/v1/styles/osm-carto/style.json";
 
     const initialState = {
-      lng: 13.55295469751914,
-      lat: 43.39794087164775, 
+      lng: 13.5528,
+      lat: 43.39793, 
       zoom: 16
     };
 
@@ -57,7 +57,7 @@ export class ChiesaDeiCappucciniComponent implements OnInit, AfterViewInit {
       iconAnchor: [15, 42]
   });
   
-L.marker([43.39794087164775, 13.55295469751914], { icon: icon }).addTo(map);
+L.marker([43.39793, 13.5528], { icon: icon }).addTo(map);
   }
   }
 

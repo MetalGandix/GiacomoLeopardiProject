@@ -24,8 +24,8 @@ export class PiazzuolaSabatoDelVillaggioComponent implements OnInit, AfterViewIn
     const mapStyle = "https://maps.geoapify.com/v1/styles/osm-carto/style.json";
 
     const initialState = {
-      lng: 13.551878021560912,
-      lat: 43.39801555450059, 
+      lng: 13.55185,
+      lat: 43.39803, 
       zoom: 16
     };
 
@@ -57,6 +57,6 @@ export class PiazzuolaSabatoDelVillaggioComponent implements OnInit, AfterViewIn
       iconAnchor: [15, 42]
   });
   
-L.marker([43.39801555450059, 13.551878021560912], { icon: icon }).addTo(map);
+L.marker([43.39803, 13.55185], { icon: icon }).addTo(map);
   }
   }
