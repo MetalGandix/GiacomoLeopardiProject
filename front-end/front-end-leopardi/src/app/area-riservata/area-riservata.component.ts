@@ -10,9 +10,12 @@ import { PrenotazioneService } from '../service/prenotazione.service';
 })
 export class AreaRiservataComponent implements OnInit {
 
-  constructor(private service: PrenotazioneService) { }
+  constructor(private service: PrenotazioneService) {
+    this.prenotazioneEliminata = new Prenotazione()
+   }
 
   prenotazione: Prenotazione[]
+  prenotazioneEliminata: Prenotazione
   p: Prenotazione
   admin: boolean = false
 
@@ -31,6 +34,11 @@ export class AreaRiservataComponent implements OnInit {
   cancellaPrenotazione(id: number){
     console.log("id: ",id)
     this.service.deletePrenotazione(id).subscribe()
+  }
+
+  send(p: Prenotazione){
+    debugger
+    this.service.saveVisiteCancellate(p).subscribe()
   }
 
 

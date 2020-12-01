@@ -28,6 +28,7 @@ export class SidenavComponent implements OnInit{
     utente: User[]
     visitor: boolean = false
     admin: boolean = false
+    session
 
   constructor(private breakpointObserver: BreakpointObserver, private gestioneUtente: GestioneUtenteService, private auth: AuthenticationService) {}
 
@@ -37,10 +38,12 @@ export class SidenavComponent implements OnInit{
     }else if(sessionStorage.getItem("Role") === "ROLE_VISITATORE"){
       this.visitor = true
     }
+    this.session = sessionStorage.getItem('username')
+    console.log("SESSION:" + this.session)
     this.gestioneUtente.findUtenteSingolo(sessionStorage.getItem('username')).subscribe(data => 
       {
         this.utente = data
-        console.log(this.utente)
+        console.log("utente: " + this.utente)
       })
     console.log("Session storage",sessionStorage.getItem('username'))
     }

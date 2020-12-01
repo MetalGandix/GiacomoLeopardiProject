@@ -24,16 +24,16 @@
                     <tbody>
                         <tr *ngFor="let p of prenotazione">
                             <td>{{ p.id }}</td>
-                            <td>{{ p.data }}</td>
-                            <td>{{ p.orario }}</td>
-                            <td>{{ p.numcomponenti }}</td>
-                            <td>{{ p.nome }}</td>
-                            <td>{{ p.cognome }}</td>
-                            <td>{{ p.cellulare }}</td>
-                            <td>{{ p.paese }}</td>
-                            <td>{{ p.citta }}</td>
-                            <td>{{ p.infoAggiuntiva }}</td>
-                            <td><button (click)="cancellaPrenotazione(p.id)">ELIMINA LA VISITA</button></td>
+                            <td name="data">{{ p.data }}</td>
+                            <td name="orario" >{{ p.orario }}</td>
+                            <td name="numcomponenti">{{ p.numcomponenti }}</td>
+                            <td name="nome">{{ p.nome }}</td>
+                            <td name="cognome">{{ p.cognome }}</td>
+                            <td name="cellulare">{{ p.cellulare }}</td>
+                            <td name="paese">{{ p.paese }}</td>
+                            <td name="citta">{{ p.citta }}</td>
+                            <td name="infoAggiuntiva">{{ p.infoAggiuntiva }}</td>
+                            <td><button (click)="send(p)" (click)="cancellaPrenotazione(p.id)">ELIMINA LA VISITA</button></td>
                         </tr>
                     </tbody>
                 </table>

@@ -10,5 +10,4 @@ import leopardiproject.csd.model.DAOUser;
 public interface UserDao extends JpaRepository<DAOUser, Integer> {
 	
 	DAOUser findByUsername(String username);
-	//long deleteByUsername(String username);
 }
