@@ -34,4 +34,8 @@ export class PrenotazioneService {
     return this.http.get<Prenotazione[]>(this.url + "visiteCancellate");
   }
 
+  public deleteVisiteCancellate(id: number){
+    return this.http.delete<Prenotazione>(this.url + "cancellaVisitaCancellata/" + id);
+  }
+
 }

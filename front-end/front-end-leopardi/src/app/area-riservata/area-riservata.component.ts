@@ -37,6 +37,10 @@ export class AreaRiservataComponent implements OnInit {
     this.service.deletePrenotazione(id).subscribe()
   }
 
+  cancellaVisitaCancellata(id: number){
+    this.service.deleteVisiteCancellate(id).subscribe()
+  }
+
   send(p: Prenotazione){
     this.service.saveVisiteCancellate(p).subscribe()
   }

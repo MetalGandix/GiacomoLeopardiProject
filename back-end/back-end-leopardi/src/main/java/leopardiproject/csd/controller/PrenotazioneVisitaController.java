@@ -1,11 +1,7 @@
 package leopardiproject.csd.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
-import leopardiproject.csd.model.VisiteEliminate;
-
 import javax.mail.MessagingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -19,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 import leopardiproject.csd.SmtpMailSender;
 import leopardiproject.csd.model.PrenotazioneVisita;
 import leopardiproject.csd.repository.PrenotazioneVisitaRepository;
-import leopardiproject.csd.repository.VisiteEliminateRepository;
 
 @RestController
 @CrossOrigin
@@ -28,8 +23,6 @@ public class PrenotazioneVisitaController {
     @Autowired
     private PrenotazioneVisitaRepository visitaRep;
 
-    private VisiteEliminateRepository visitaEliminataRep;
-    private VisiteEliminate visitaEliminata;
     
     private OTPSystemController otpController;
 
