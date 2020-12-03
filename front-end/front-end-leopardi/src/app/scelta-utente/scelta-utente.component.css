@@ -1,0 +1,40 @@
+.container {
+    margin-top: 20px;
+}
+
+@media all and (max-width: 500px) {
+
+    h1{
+        font-size: x-large;
+        font-family: 'Times New Roman', Times, serif;
+        font-style: oblique;
+        text-align: center;
+    }
+    .container {
+        margin-top: 20px;
+    }
+    mat-icon{
+        vertical-align: middle;
+        color: blue;
+    }
+    .button{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10%;
+        font-size: large;
+        background: none;
+        border: none;
+    }
+    img{
+        margin-top: 10%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+        border: 5px solid;
+        border-color: rgb(34, 34, 34);
+        padding: 5px;
+        box-shadow: 14px 7px rgba(0, 0, 0, 0.494);
+    }
+}
