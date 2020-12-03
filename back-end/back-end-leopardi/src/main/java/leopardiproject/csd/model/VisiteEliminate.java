@@ -33,6 +33,9 @@ public class VisiteEliminate {
     private String cognome;
 
     @Column
+    private String professione;
+
+    @Column
     private String cellulare;
 
     @Column
@@ -122,6 +125,14 @@ public class VisiteEliminate {
 
     public void setInfoAggiuntiva(String infoAggiuntiva) {
         this.infoAggiuntiva = infoAggiuntiva;
+    }
+
+    public String getProfessione() {
+        return professione;
+    }
+
+    public void setProfessione(String professione) {
+        this.professione = professione;
     }
 
 }

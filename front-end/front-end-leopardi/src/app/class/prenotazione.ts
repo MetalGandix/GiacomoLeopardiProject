@@ -6,6 +6,7 @@ export class Prenotazione {
     info: string
     nome: string
     cognome: string
+    professione: string
     cellulare: string
     paese: string
     citta: string

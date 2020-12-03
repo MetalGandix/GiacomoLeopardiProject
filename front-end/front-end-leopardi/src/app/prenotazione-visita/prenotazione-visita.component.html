@@ -110,6 +110,25 @@
                                 </div>
                             </div>
 
+                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                <div class="form-group">
+                                    <label class="control-label required" for="select">Professione*</label>
+                                    <select [(ngModel)]="prenotazione.professione" class="form-control" id="professione" name="professione" required
+                                    #professione="ngModel">
+                                        <option value="Studente">Studente</option>
+                                        <option value="Professore">Professore</option>
+                                        <option value="Appassionato">Appassionato</option>
+                                    </select>
+                                    <span class="input-group-addon"></span>
+                                </div>
+                                <div *ngIf="professione.invalid && (professione.dirty || professione.touched)"
+                                    class="alert alert-danger">
+                                    <div *ngIf="professione.errors.required">
+                                        Devi inserire il numero di componenti che verranno alla visita.
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
                                 <div class="form-group">
                                     <label class="control-label" for="phone"> Numero di telefono*</label>

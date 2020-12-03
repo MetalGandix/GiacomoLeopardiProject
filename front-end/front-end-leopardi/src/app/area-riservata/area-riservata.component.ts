@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Prenotazione } from '../class/prenotazione';
 import { AuthenticationService } from '../service/authentication.service';
 import { PrenotazioneService } from '../service/prenotazione.service';
@@ -10,7 +11,7 @@ import { PrenotazioneService } from '../service/prenotazione.service';
 })
 export class AreaRiservataComponent implements OnInit {
 
-  constructor(private service: PrenotazioneService) {
+  constructor(private service: PrenotazioneService, private router: Router) {
    }
 
   prenotazione: Prenotazione[]
@@ -39,10 +40,16 @@ export class AreaRiservataComponent implements OnInit {
 
   cancellaVisitaCancellata(id: number){
     this.service.deleteVisiteCancellate(id).subscribe()
+    this.router.navigate(['/area-riservata']).then(() => {
+      window.location.reload();
+    });
   }
 
   send(p: Prenotazione){
     this.service.saveVisiteCancellate(p).subscribe()
+    this.router.navigate(['/area-riservata']).then(() => {
+      window.location.reload();
+    });
   }
 
 
