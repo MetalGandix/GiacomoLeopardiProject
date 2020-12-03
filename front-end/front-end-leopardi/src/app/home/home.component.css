@@ -13,8 +13,9 @@ h1 {
 }
 
 .container {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     text-align: -webkit-center;
+    margin-top: 10px;
 }
 
 /* .image{
@@ -27,6 +28,11 @@ h1 {
   } */
 
 @media all and (max-width: 500px) {
+    .container {
+        margin-bottom: 10px;
+        text-align: -webkit-center;
+        margin-top: 10px;
+    }
     .LeopardiMorelli {
         background-image: url('src\assets\images\Giacomo_Leopardi_Morelli.jpg');
         height: 40em;

@@ -1,20 +1,19 @@
 <div *ngIf="visitor" class="container">
-<div style="margin-bottom: 20px; margin-top: 20px;">
-<h1>La tabella qua sotto indica i dati del tuo account</h1>
-</div>
-<table class="table table-bordered table-striped">
-        <tr>
-            <th>Email: </th>    
-            <td>{{ utente.username }} </td>     
-        </tr>
-        <tr>
-            <th>Nome: </th>    
-            <td>{{ utente.name }} </td>     
-        </tr>
-        <tr>
-            <th>Cognome: </th>    
-            <td>{{ utente.lastname }} </td>     
-        </tr>
-</table>
 
+    <h1>La tabella qua sotto indica i dati del tuo account</h1>
+
+    <table class="table table-bordered table-striped" style="margin-top: 10%">
+        <tr>
+            <th>Email: </th>
+            <td>{{ utente.username }} </td>
+        </tr>
+        <tr>
+            <th>Nome: </th>
+            <td>{{ utente.name }} </td>
+        </tr>
+        <tr>
+            <th>Cognome: </th>
+            <td>{{ utente.lastname }} </td>
+        </tr>
+    </table>
 </div>

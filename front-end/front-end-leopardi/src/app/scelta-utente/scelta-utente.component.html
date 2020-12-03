@@ -1,21 +1,33 @@
-<div class="container" style="margin-top: 20px;">
+<div class="container">
 
-    Salve e benvenuto nella tua area riservata
-    
-<button *ngIf="admin" routerLink="/area-riservata">
-    Vai alla tua area riservata
-</button>
+    <h1>Salve e benvenuto nella tua area riservata</h1>
 
-<button *ngIf="visitor" routerLink="/prenotazione-visita">
-    Vai alla prenotazione visita
-</button>
+    <button class="button" *ngIf="admin" routerLink="/area-riservata">
+        <span>
+            <mat-icon>account_circle</mat-icon>
+        </span>
+        Vai alla tua area riservata
+    </button>
 
-<button *ngIf="visitor" routerLink="/info-visitatore">
-    Vai alle tue informazioni dell'account
-</button>
+    <button class="button" *ngIf="visitor" routerLink="/prenotazione-visita">
+        <span>
+            <mat-icon style="color: orange;">location_on</mat-icon>
+        </span>
+        Vai alla prenotazione visita
+    </button>
 
-<button *ngIf="admin" routerLink="/utenti-registrati">
-    Vai alla pagina di utenti registrati
-</button>
+    <button class="button" *ngIf="visitor" routerLink="/info-visitatore">
+        <span>
+            <mat-icon>account_circle</mat-icon>
+        </span>
+        Vai alle tue informazioni dell'account
+    </button>
 
+    <button class="button" *ngIf="admin" routerLink="/utenti-registrati">
+        <span>
+            <mat-icon>supervisor_account</mat-icon>
+        </span>
+        Vai alla pagina di utenti registrati
+    </button>
+    <img src="\assets\images\Giacomo_Leopardi_Morelli.jpg" alt="Leopardi Morelli">
 </div>
