@@ -36,12 +36,7 @@ public class DAOUser {
 
 	// role based
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-
-	// role based
-	@JoinTable(name = "USER_ROLES", joinColumns = { @JoinColumn(name = "USER_ID") }, inverseJoinColumns = {
-			@JoinColumn(name = "ROLE_ID") })
-
-	// role based
+	@JoinTable(name = "USER_ROLES", joinColumns = { @JoinColumn(name = "USER_ID") }, inverseJoinColumns = {@JoinColumn(name = "ROLE_ID") })
 	private Set<Role> roles;
 
 	public long getId() {

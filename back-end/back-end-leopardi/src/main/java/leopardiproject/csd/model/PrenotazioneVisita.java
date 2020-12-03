@@ -1,12 +1,15 @@
 package leopardiproject.csd.model;
 
 import java.time.LocalDate;
-
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -45,6 +48,11 @@ public class PrenotazioneVisita {
 
     @Column
     private String infoAggiuntiva;
+
+
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "USER_USERNAME", referencedColumnName="username")
+    private DAOUser prenotazioneVisitatore;
 
 
     public long getId() {
@@ -133,6 +141,14 @@ public class PrenotazioneVisita {
 
     public void setProfessione(String professione) {
         this.professione = professione;
+    }
+
+    public DAOUser getPrenotazioneVisitatore() {
+        return prenotazioneVisitatore;
+    }
+
+    public void setPrenotazioneVisitatore(DAOUser prenotazioneVisitatore, String username) {
+        this.prenotazioneVisitatore = prenotazioneVisitatore;
     }
 
 }
