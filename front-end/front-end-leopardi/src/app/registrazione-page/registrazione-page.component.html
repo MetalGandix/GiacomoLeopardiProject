@@ -1,114 +1,120 @@
 <div class="container">
-<body>
+
+  <body>
     <div class="card-body">
       <form (ngSubmit)="onSubmit()" #userForm="ngForm" style="text-align: -webkit-center; ">
 
         <div class="form-group">
           <label for="username">Email*</label>
           <input type="text" [(ngModel)]="user.username" class="form-control" id="username" name="username"
-            placeholder="Enter your email address" required #username="ngModel" (keyup)="existUser()" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
-            <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
-                <div *ngIf="username.errors.required">
-                    Devi scrivere una e-mail.
-                </div>
-                <div *ngIf = "username.errors?.pattern">
-                   L'email non sembra essere corretta.
-                </div>
-                <div *ngIf="userExist && !username.errors">
-                  Questa email è già utilizzata.
-              </div>
+            placeholder="Enter your email address" required #username="ngModel" (keyup)="existUser()"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+          <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
+            <div *ngIf="username.errors.required">
+              Devi scrivere una e-mail.
             </div>
+            <div *ngIf="username.errors?.pattern">
+              L'email non sembra essere corretta.
+            </div>
+            <div *ngIf="userExist && !username.errors">
+              Questa email è già utilizzata.
+            </div>
+          </div>
         </div>
 
         <div class="form-group">
           <label for="name">Name*</label>
           <input type="text" [(ngModel)]="user.name" required minlength="2" class="form-control" id="name" name="name"
             placeholder="Enter your name" required #name="ngModel">
-            <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
-                <div *ngIf="name.errors.required">
-                    Devi scrivere Il nome.
-                </div>
-                <div *ngIf="name.errors.minlength">
-                    Il nome deve essere lungo almeno 2 caratteri.
-                </div>
+          <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+            <div *ngIf="name.errors.required">
+              Devi scrivere Il nome.
             </div>
-      </div>
-  
+            <div *ngIf="name.errors.minlength">
+              Il nome deve essere lungo almeno 2 caratteri.
+            </div>
+          </div>
+        </div>
+
         <div class="form-group">
           <label for="lastName">Cognome*</label>
-          <input type="text" [(ngModel)]="user.lastname" required minlength="2" class="form-control" id="lastName" name="lastName"
-            placeholder="Enter your last name" required #lastName="ngModel">
-            <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="alert alert-danger">
-                <div *ngIf="lastName.errors.required">
-                    Devi scrivere Il cognome.
-                </div>
-                <div *ngIf="lastName.errors.minlength">
-                    Il cognome deve essere lungo almeno 2 caratteri.
-                </div>
+          <input type="text" [(ngModel)]="user.lastname" required minlength="2" class="form-control" id="lastName"
+            name="lastName" placeholder="Enter your last name" required #lastName="ngModel">
+          <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="alert alert-danger">
+            <div *ngIf="lastName.errors.required">
+              Devi scrivere Il cognome.
             </div>
+            <div *ngIf="lastName.errors.minlength">
+              Il cognome deve essere lungo almeno 2 caratteri.
+            </div>
+          </div>
         </div>
 
-         
+
         <div class="form-group">
           <label for="password">Password*</label>
-          <input type="password" [(ngModel)]="user.password"  required minlength="7" class="form-control" id="password" name="password"
-            placeholder="Enter your password" required #password="ngModel">
-            <div *ngIf="password.invalid && (lastName.dirty || password.touched)" class="alert alert-danger">
+          <input type="password" [(ngModel)]="user.password" required minlength="7" class="form-control" id="password"
+            name="password" placeholder="Enter your password" required #password="ngModel">
+          <div *ngIf="password.invalid && (lastName.dirty || password.touched)" class="alert alert-danger">
             <div *ngIf="password.errors.required">
-                Devi scrivere la Password.
+              Devi scrivere la Password.
             </div>
-          <div *ngIf="password.errors.minlength">
-             La password deve essere lunga almeno 7 caratteri.
-          </div>
+            <div *ngIf="password.errors.minlength">
+              La password deve essere lunga almeno 7 caratteri.
+            </div>
           </div>
         </div>
-        
+
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
           <div class="form-check">
-              <input type="checkbox" #checkbox1="ngModel" class="form-check-input" id="exampleCheck1" name="check1"
-                  [(ngModel)]="user.checkbox1" required>
-              <label class="form-check-label" for="exampleCheck1">privacy 1*</label>
+            <input type="checkbox" #checkbox1="ngModel" class="form-check-input" id="exampleCheck1" name="check1"
+              [(ngModel)]="user.checkbox1" required>
+            <label class="form-check-label" for="exampleCheck1">privacy 1*</label>
           </div>
-      </div>
-      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        </div>
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
           <div class="form-check">
-              <input type="checkbox" #checkbox2="ngModel" class="form-check-input" id="exampleCheck2" name="check2"
-                  [(ngModel)]="user.checkbox2" required>
-              <label class="form-check-labe2" for="exampleCheck2">privacy 2*</label>
+            <input type="checkbox" #checkbox2="ngModel" class="form-check-input" id="exampleCheck2" name="check2"
+              [(ngModel)]="user.checkbox2" required>
+            <label class="form-check-labe2" for="exampleCheck2">privacy 2*</label>
           </div>
-      </div>
-      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        </div>
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
           <div class="form-check">
-              <input type="checkbox" #checkbox3="ngModel" class="form-check-input" id="exampleCheck3" name="check3"
-                  [(ngModel)]="user.checkbox3">
-              <label class="form-check-labe3" for="exampleCheck3">privacy 3</label>
+            <input type="checkbox" #checkbox3="ngModel" class="form-check-input" id="exampleCheck3" name="check3"
+              [(ngModel)]="user.checkbox3">
+            <label class="form-check-labe3" for="exampleCheck3">privacy 3</label>
           </div>
-      </div>
+        </div>
 
-        <button *ngIf="b1 == true"  type="submit" class="btn btn-primary"
-        [disabled]="!userForm.form.valid" class="btn btn-info">Submit</button>
-  
+        <button *ngIf="b1 == true" type="submit" class="btn btn-primary" [disabled]="!userForm.form.valid"
+          class="btn btn-info">Submit</button>
+
         <div class="container">
           * = campo obbligatorio
         </div>
-  
-        <div class="row" style="margin-top: 30px; width: 350px; height: 350px;" *ngIf="showMsg">
-            <div class="col-xs-12">
-              <div class="alert alert-success">
+
+        <div class="row" style="margin-top: 30px; display: block; margin-left: auto; margin-right: auto;" *ngIf="showMsg">
+          <div class="col-xs-12">
+            <div class="alert alert-success">
               <p>
-                  <strong>La registrazione è andata a buon fine.</strong>
+                <strong>La registrazione è andata a buon fine.</strong>
               </p>
-              <a routerLink="/login" >Vai alla pagina di login</a>
-            </div>
+              <button routerLink="/login" class="btn btn-success"
+                style="display:block; margin-left: auto; margin-right: auto;">Vai al login</button>
+              <!-- <a routerLink="/login" >Vai alla pagina di login</a> -->
             </div>
           </div>
-  
+        </div>
+
       </form>
       <div>
-        <a style="color: red;" routerLink="/home" >Torna alla home</a>
+        <button routerLink="/home" class="btn btn-success" style="display:block; margin-left: auto; margin-right: auto; margin-top: 5%;">Torna alla Home</button>
+        <!-- <a style="color: red;" routerLink="/home">Torna alla home</a> -->
       </div>
       <div>
-        <a style="color: red;" routerLink="/login" >Torna al login</a>
+        <button routerLink="/login" class="btn btn-success" style="display:block; margin-left: auto; margin-right: auto; margin-top: 5%;">Torna al login</button>
+        <!-- <a style="color: red;" routerLink="/login">Torna al login</a> -->
       </div>
     </div>
   </body>
