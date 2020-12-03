@@ -1,6 +1,7 @@
 .container {
-    margin-top: 20px;
-  }
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
   
   .bottone-class {
     margin-top: 10px;
@@ -114,6 +115,10 @@
   }
   
   @media all and (max-width: 500px) {
+    .container {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
     .bottone-class {
       margin-top: 10px;
       font-size: 13px;

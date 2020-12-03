@@ -1,17 +1,34 @@
-.material-icons{
+.container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.material-icons {
     color: #ebbc39;
 }
 
-h2{
+h2 {
     text-transform: uppercase;
     font-size: 28px;
     color: #ebbc39;
 }
 
-hr{
+hr {
     color: #ebbc39;
 }
 
-.map-container{ 
-    height: 180px; 
-  }
+.map-container {
+    height: 180px;
+    z-index: -1;
+}
+
+@media all and (max-width: 500px) {
+    .container {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .map-container {
+        height: 180px;
+        z-index: -1;
+    }
+}
