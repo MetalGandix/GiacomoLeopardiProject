@@ -8,4 +8,7 @@
         margin-top: 20px;
         margin-bottom: 20px;
     }
+    .overflow-auto{
+        z-index: 0;
+    }
 }
