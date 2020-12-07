@@ -147,7 +147,7 @@ public class PrenotazioneVisita {
         return prenotazioneVisitatore;
     }
 
-    public void setPrenotazioneVisitatore(DAOUser prenotazioneVisitatore, String username) {
+    public void setPrenotazioneVisitatore(DAOUser prenotazioneVisitatore) {
         this.prenotazioneVisitatore = prenotazioneVisitatore;
     }
 

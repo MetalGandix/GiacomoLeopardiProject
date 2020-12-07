@@ -5,6 +5,7 @@ import java.util.Optional;
 import javax.mail.MessagingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import leopardiproject.csd.SmtpMailSender;
+import leopardiproject.csd.jwt.JwtUserDetailsService;
 import leopardiproject.csd.model.DAOUser;
 import leopardiproject.csd.model.PrenotazioneVisita;
 import leopardiproject.csd.repository.PrenotazioneVisitaRepository;
@@ -24,12 +26,16 @@ public class PrenotazioneVisitaController {
     @Autowired
     private PrenotazioneVisitaRepository visitaRep;
 
-    
     private OTPSystemController otpController;
-    private DAOUser visitatore;
+
+    private DAOUser utenteLoggato;
 
     @Autowired
-	private SmtpMailSender smtpMailSender;
+    private JwtUserDetailsService userRepository;
+
+
+    @Autowired
+    private SmtpMailSender smtpMailSender;
 
     // Metodo per inviare al DB la visita con le info
     // giacomoleopardi13@gmail.com
@@ -38,10 +44,16 @@ public class PrenotazioneVisitaController {
         smtpMailSender.send("leonardo.mogianesi@studenti.unicam.it", "Visita prenotata da " + visita.getCognome(), "La visita è stata prenotata da " + visita.getNome() + " \ned il numero di componenti è di: " + visita.getNumcomponenti() + " \nper il giorno: " + visita.getData() + " alle ore: " + visita.getOrario() + "." + "\nIl numero di cellulare del visitatore è: " + visita.getCellulare());
         smtpMailSender.send("corrado.pallucchini@studenti.unicam.it", "Visita prenotata da " + visita.getCognome(), "La visita è stata prenotata da " + visita.getNome() + " \ned il numero di componenti è di: " + visita.getNumcomponenti() + " \nper il giorno: " + visita.getData() + " alle ore: " + visita.getOrario() + "." + "\nIl numero di cellulare del visitatore è: " + visita.getCellulare());
         smtpMailSender.send("riccardo.petracci@studenti.unicam.it", "Visita prenotata da " + visita.getCognome(), "La visita è stata prenotata da " + visita.getNome() + " \ned il numero di componenti è di: " + visita.getNumcomponenti() + " \nper il giorno: " + visita.getData() + " alle ore: " + visita.getOrario() + "." + "\nIl numero di cellulare del visitatore è: " + visita.getCellulare());
-        visita.setPrenotazioneVisitatore(visitatore, a.getPrincipal().toString());
+        visita.setPrenotazioneVisitatore(prendiUtenteLoggato(a));
         visitaRep.save(visita);
         otpController.sendOTP(visita.getCellulare());
         return "Visita correttamente inviata";
+    }
+
+    @GetMapping("/prendiUtenteLoggato/{username}")
+    public DAOUser prendiUtenteLoggato(Authentication a) {
+        UserDetails userPrincipal = (UserDetails)a.getPrincipal();
+        return (DAOUser) userRepository.findUserByUsername(userPrincipal.getUsername());
     }
 
     // Metodo per vedere TUTTE le visite (Deve essere accessibile solo all'admin)
