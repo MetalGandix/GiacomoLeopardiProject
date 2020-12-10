@@ -6,7 +6,7 @@ import * as Plyr from 'plyr';
 @Component({
   selector: 'app-poesia-torre-passero-solitario',
   templateUrl: './poesia-torre-passero-solitario.component.html',
-  styleUrls: ['./poesia-torre-passero-solitario.component.css']
+  styleUrls: ['../style_link_poesie.component.css']
 })
 export class PoesiaTorrePasseroSolitarioComponent {
   

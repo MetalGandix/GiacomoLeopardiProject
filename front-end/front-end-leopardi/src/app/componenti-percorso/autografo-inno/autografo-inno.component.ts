@@ -5,7 +5,7 @@ import 'mapbox-gl-leaflet';
 @Component({
   selector: 'app-autografo-inno',
   templateUrl: './autografo-inno.component.html',
-  styleUrls: ['./autografo-inno.component.css']
+  styleUrls: ['../style_componenti_percorso.component.css']
 })
 export class AutografoInnoComponent implements OnInit, AfterViewInit {
 

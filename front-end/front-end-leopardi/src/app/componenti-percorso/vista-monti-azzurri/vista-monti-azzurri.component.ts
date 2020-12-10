@@ -5,7 +5,7 @@ import 'mapbox-gl-leaflet';
 @Component({
   selector: 'app-vista-monti-azzurri',
   templateUrl: './vista-monti-azzurri.component.html',
-  styleUrls: ['./vista-monti-azzurri.component.css']
+  styleUrls: ['../style_componenti_percorso.component.css']
 })
 export class VistaMontiAzzurriComponent implements OnInit, AfterViewInit {
 

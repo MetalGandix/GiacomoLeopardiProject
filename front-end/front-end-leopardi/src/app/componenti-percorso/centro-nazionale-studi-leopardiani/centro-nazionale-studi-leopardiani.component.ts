@@ -5,7 +5,7 @@ import 'mapbox-gl-leaflet';
 @Component({
   selector: 'app-centro-nazionale-studi-leopardiani',
   templateUrl: './centro-nazionale-studi-leopardiani.component.html',
-  styleUrls: ['./centro-nazionale-studi-leopardiani.component.css']
+  styleUrls: ['../style_componenti_percorso.component.css']
 })
 export class CentroNazionaleStudiLeopardianiComponent implements OnInit, AfterViewInit {
 

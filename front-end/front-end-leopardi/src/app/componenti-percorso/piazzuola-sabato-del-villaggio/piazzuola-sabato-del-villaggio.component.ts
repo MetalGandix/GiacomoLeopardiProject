@@ -5,7 +5,7 @@ import 'mapbox-gl-leaflet';
 @Component({
   selector: 'app-piazzuola-sabato-del-villaggio',
   templateUrl: './piazzuola-sabato-del-villaggio.component.html',
-  styleUrls: ['./piazzuola-sabato-del-villaggio.component.css']
+  styleUrls: ['../style_componenti_percorso.component.css']
 })
 export class PiazzuolaSabatoDelVillaggioComponent implements OnInit, AfterViewInit {
 

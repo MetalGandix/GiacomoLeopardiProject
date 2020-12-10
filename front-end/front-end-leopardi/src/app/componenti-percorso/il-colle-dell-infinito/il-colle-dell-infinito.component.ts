@@ -5,7 +5,7 @@ import 'mapbox-gl-leaflet';
 @Component({
   selector: 'app-il-colle-dell-infinito',
   templateUrl: './il-colle-dell-infinito.component.html',
-  styleUrls: ['./il-colle-dell-infinito.component.css']
+  styleUrls: ['../style_componenti_percorso.component.css']
 })
 export class IlColleDellInfinitoComponent implements OnInit, AfterViewInit {
 

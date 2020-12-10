@@ -1,6 +1,6 @@
 .container {
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10%;
 }
 
 p {
@@ -52,7 +52,7 @@ h5 {
 @media all and (max-width: 500px) {
     .container {
         margin-top: 20px;
-        margin-bottom: 20px;
+        margin-bottom: 10%;
     }
     .card {
         width: 250px;

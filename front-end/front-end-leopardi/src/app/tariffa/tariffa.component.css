@@ -1,7 +1,8 @@
 .container {
     margin-top: 20px;
-    margin-bottom: 20px;
-  }
+    margin-bottom: 10%;
+}
+
 p {
     font-family: "Times New Roman", Times, serif;
 }
@@ -14,8 +15,8 @@ h1 {
 @media all and (max-width: 500px) {
     .container {
         margin-top: 20px;
-        margin-bottom: 20px;
-      }
+        margin-bottom: 10%;
+    }
     .card {
         width: 250px;
     }

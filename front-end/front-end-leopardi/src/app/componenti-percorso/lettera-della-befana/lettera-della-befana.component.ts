@@ -5,7 +5,7 @@ import 'mapbox-gl-leaflet';
 @Component({
   selector: 'app-lettera-della-befana',
   templateUrl: './lettera-della-befana.component.html',
-  styleUrls: ['./lettera-della-befana.component.css']
+  styleUrls: ['../style_componenti_percorso.component.css']
 })
 export class LetteraDellaBefanaComponent implements OnInit, AfterViewInit {
 

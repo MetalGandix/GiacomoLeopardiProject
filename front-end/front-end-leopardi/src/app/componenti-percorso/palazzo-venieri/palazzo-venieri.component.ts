@@ -5,7 +5,7 @@ import 'mapbox-gl-leaflet';
 @Component({
   selector: 'app-palazzo-venieri',
   templateUrl: './palazzo-venieri.component.html',
-  styleUrls: ['./palazzo-venieri.component.css']
+  styleUrls: ['../style_componenti_percorso.component.css']
 })
 export class PalazzoVenieriComponent implements OnInit, AfterViewInit {
 

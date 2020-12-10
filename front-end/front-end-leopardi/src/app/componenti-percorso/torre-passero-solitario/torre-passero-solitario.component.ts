@@ -5,7 +5,7 @@ import 'mapbox-gl-leaflet';
 @Component({
   selector: 'app-torre-passero-solitario',
   templateUrl: './torre-passero-solitario.component.html',
-  styleUrls: ['./torre-passero-solitario.component.css']
+  styleUrls: ['../style_componenti_percorso.component.css']
 })
 export class TorrePasseroSolitarioComponent implements OnInit, AfterViewInit {
 

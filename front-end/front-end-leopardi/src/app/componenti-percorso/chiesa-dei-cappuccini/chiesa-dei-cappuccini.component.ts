@@ -5,7 +5,7 @@ import 'mapbox-gl-leaflet';
 @Component({
   selector: 'app-chiesa-dei-cappuccini',
   templateUrl: './chiesa-dei-cappuccini.component.html',
-  styleUrls: ['./chiesa-dei-cappuccini.component.css']
+  styleUrls: ['../style_componenti_percorso.component.css']
 })
 export class ChiesaDeiCappucciniComponent implements OnInit, AfterViewInit {
 

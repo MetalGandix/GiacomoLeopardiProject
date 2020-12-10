@@ -6,7 +6,7 @@ import * as Plyr from 'plyr';
 @Component({
   selector: 'app-poesia-colle-infinito',
   templateUrl: './poesia-colle-infinito.component.html',
-  styleUrls: ['./poesia-colle-infinito.component.css']
+  styleUrls: ['../style_link_poesie.component.css']
 })
 export class PoesiaColleInfinitoComponent {
   

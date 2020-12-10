@@ -6,7 +6,7 @@ import * as Plyr from 'plyr';
 @Component({
   selector: 'app-poesia-casa-adelaide',
   templateUrl: './poesia-casa-adelaide.component.html',
-  styleUrls: ['./poesia-casa-adelaide.component.css']
+  styleUrls: ['../style_link_poesie.component.css']
 })
 export class PoesiaCasaAdelaideComponent {
   

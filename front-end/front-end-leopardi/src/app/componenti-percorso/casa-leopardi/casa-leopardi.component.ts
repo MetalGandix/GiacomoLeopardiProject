@@ -5,7 +5,7 @@ import 'mapbox-gl-leaflet';
 @Component({
   selector: 'app-casa-leopardi',
   templateUrl: './casa-leopardi.component.html',
-  styleUrls: ['./casa-leopardi.component.css']
+  styleUrls: ['../style_componenti_percorso.component.css']
 })
 export class CasaLeopardiComponent implements OnInit, AfterViewInit {
 

@@ -5,7 +5,7 @@ import 'mapbox-gl-leaflet';
 @Component({
   selector: 'app-monte-tabor',
   templateUrl: './monte-tabor.component.html',
-  styleUrls: ['./monte-tabor.component.css']
+  styleUrls: ['../style_componenti_percorso.component.css']
 })
 
 export class MonteTaborComponent implements OnInit, AfterViewInit {

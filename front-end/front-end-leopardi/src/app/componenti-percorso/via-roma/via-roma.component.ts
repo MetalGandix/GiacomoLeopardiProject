@@ -5,7 +5,7 @@ import 'mapbox-gl-leaflet';
 @Component({
   selector: 'app-via-roma',
   templateUrl: './via-roma.component.html',
-  styleUrls: ['./via-roma.component.css']
+  styleUrls: ['../style_componenti_percorso.component.css']
 })
 export class ViaRomaComponent implements OnInit, AfterViewInit {
 

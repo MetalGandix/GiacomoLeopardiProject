@@ -6,7 +6,7 @@ import * as Plyr from 'plyr';
 @Component({
   selector: 'app-poesia-piazza-torre-borgo',
   templateUrl: './poesia-piazza-torre-borgo.component.html',
-  styleUrls: ['./poesia-piazza-torre-borgo.component.css']
+  styleUrls: ['../style_link_poesie.component.css']
 })
 export class PoesiaPiazzaTorreBorgoComponent{
   

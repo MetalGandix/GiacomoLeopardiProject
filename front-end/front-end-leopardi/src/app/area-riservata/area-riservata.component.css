@@ -1,12 +1,13 @@
 .container {
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10%;
+
 }
 
 @media all and (max-width: 500px) {
     .container {
         margin-top: 20px;
-        margin-bottom: 20px;
+        margin-bottom: 10%;
     }
     .overflow-auto{
         z-index: 0;
