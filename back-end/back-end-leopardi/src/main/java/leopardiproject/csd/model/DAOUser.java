@@ -2,14 +2,13 @@ package leopardiproject.csd.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import java.util.List;
 import java.util.Set;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "user")
-public class DAOUser {
+public class DAOUser{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,7 +36,8 @@ public class DAOUser {
 
 	// role based
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JoinTable(name = "USER_ROLES", joinColumns = { @JoinColumn(name = "USER_ID") }, inverseJoinColumns = {@JoinColumn(name = "ROLE_ID") })
+	@JoinTable(name = "USER_ROLES", joinColumns = { @JoinColumn(name = "USER_ID") }, inverseJoinColumns = {
+			@JoinColumn(name = "ROLE_ID") })
 	private Set<Role> roles;
 
 	public long getId() {
@@ -68,8 +68,8 @@ public class DAOUser {
 		this.roles = roles;
 	}
 
-	public String getName() { 
-		return name; 
+	public String getName() {
+		return name;
 	}
 
 	public void setName(String name) {
