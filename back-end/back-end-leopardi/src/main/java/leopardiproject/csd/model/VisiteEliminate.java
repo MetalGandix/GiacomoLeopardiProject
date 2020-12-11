@@ -47,6 +47,9 @@ public class VisiteEliminate {
     @Column
     private String infoAggiuntiva;
 
+    @Column
+    private String motivo;
+
     public long getId() {
         return id;
     }
@@ -133,6 +136,14 @@ public class VisiteEliminate {
 
     public void setProfessione(String professione) {
         this.professione = professione;
+    }
+
+    public String getMotivo() {
+        return motivo;
+    }
+
+    public void setMotivo(String motivo) {
+        this.motivo = motivo;
     }
 
 }

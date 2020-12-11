@@ -28,8 +28,6 @@ public class PrenotazioneVisitaController {
 
     private OTPSystemController otpController;
 
-    private DAOUser utenteLoggato;
-
     @Autowired
     private JwtUserDetailsService userRepository;
 

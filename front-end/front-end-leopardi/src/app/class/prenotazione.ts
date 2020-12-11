@@ -11,7 +11,5 @@ export class Prenotazione {
     paese: string
     citta: string
     infoAggiuntiva: string
-    check1: boolean
-    check2: boolean
-    check3: boolean
+    motivo: string
 }
