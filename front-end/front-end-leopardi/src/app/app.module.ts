@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
+import { YouTubePlayerModule } from "@angular/youtube-player";
 
 import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
@@ -126,6 +127,7 @@ import { PoesiaViaRomaComponent } from './link-poesie/poesia-via-roma/poesia-via
     PlyrModule,
     MatCardModule,
     MatListModule,
+    YouTubePlayerModule,
   ],
   providers: [AuthGuardComponent,RoleGuardComponent,AuthenticationService,
     {
