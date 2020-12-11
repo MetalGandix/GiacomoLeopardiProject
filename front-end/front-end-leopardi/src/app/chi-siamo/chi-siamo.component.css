@@ -39,20 +39,9 @@ h5 {
     margin-right: auto;
 }
 
-.image {
-    height: 1500px;
-    background-size: cover;
-    width: auto;
-    background-image: url('src\assets\images\Giacomo_Leopardi_Morelli.jpg');
-    background-position: 50% 50%;
-    opacity: 85%;
-    margin-bottom: -20px;
-}
-
 @media all and (max-width: 500px) {
     .container {
         margin-top: 20px;
-        margin-bottom: 10%;
     }
     .card {
         width: 250px;
@@ -75,14 +64,5 @@ h5 {
     }
     .card-deck {
         text-align: -webkit-center;
-    }
-    .image {
-        height: 40em;
-        background-size: cover;
-        width: auto;
-        background-image: url('src\assets\images\Giacomo_Leopardi_Morelli.jpg');
-        background-position: 50% 50%;
-        opacity: 85%;
-        margin-bottom: -80px;
     }
 }
