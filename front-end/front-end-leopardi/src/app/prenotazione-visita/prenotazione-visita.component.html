@@ -113,18 +113,26 @@
                             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                                 <div class="form-group">
                                     <label class="control-label required" for="select">Professione*</label>
-                                    <select [(ngModel)]="prenotazione.professione" class="form-control" id="professione" name="professione" required
+                                    <select (change)="onChange($event.target.value)" [(ngModel)]="prenotazione.professione" class="form-control" id="professione" name="professione" required
                                     #professione="ngModel">
-                                        <option value="Studente">Studente</option>
-                                        <option value="Professore">Professore</option>
-                                        <option value="Appassionato">Appassionato</option>
+                                    <option [value]="default" disabled>Seleziona chi sei</option>
+                                        <option value="Gruppi scolastici">Gruppi scolastici</option>
+                                        <option value="Universitari">Universitari</option>
+                                        <option value="Associazioni culturali">Associazioni culturali</option>
+                                        <option value="Turisti">Turisti</option>
+                                        <option value=" ">Altro</option>
                                     </select>
+                                    <div *ngIf="input==true">
+                                        <p style="margin-top: 20px; color: red;">Inserisci la tua categorizzazione</p>
+                                        <input [(ngModel)]="prenotazione.professione" class="form-control" id="professione" name="professione" required
+                                        #professione="ngModel">
+                                    </div>
                                     <span class="input-group-addon"></span>
                                 </div>
                                 <div *ngIf="professione.invalid && (professione.dirty || professione.touched)"
                                     class="alert alert-danger">
                                     <div *ngIf="professione.errors.required">
-                                        Devi inserire il numero di componenti che verranno alla visita.
+                                        Devi inserire la professione.
                                     </div>
                                 </div>
                             </div>
