@@ -1,31 +1,96 @@
-h1 {
-    font-size: 15px;
-    font-family: "Times New Roman", Times, serif;
-    text-align: center;
-}
-
-.logo {
-    width: 300px;
-    height: 220px;
-    margin-top: 10%;
-    margin-left: 10%;
-    margin-right: 10%;
-}
-
 .container {
     margin-bottom: 10%;
     text-align: -webkit-center;
     margin-top: 10px;
 }
 
-/* .image{
-    margin-top: -20px;
-    height:1700px; background-size:cover; width:auto;
-    background-image:url('src\assets\images\LogoCentroCulturaleGL.png');
-    background-position:50% 50%;
-    opacity: 85%;
-    margin-bottom: -20px;
-  } */
+h1 {
+    font-size: 20px;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+    text-overflow: inherit;
+}
+
+.logo {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border: 2px solid #000000;
+    float: right;
+    float: top;
+    top: 1px;
+    right: 1px;
+}
+
+.logo1 {
+    width: 40%;
+}
+.fraseLeopardi {
+    width: 60%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-style: oblique;
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: 5px 5px 5px #CCC
+}
+.title {
+    font-size: xx-large;
+    font-style: bold;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    margin-bottom: 5%;
+    /* border: 5px solid;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    border-color: rgb(60, 223, 6); */
+    text-shadow: 5px 5px 5px #CCC
+}
+.img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 300px;
+}
+.sfondoLeo {
+    width: 100%;
+}
+.divButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    margin-top: 5%;
+}
+.button {
+    margin-top: 5%;
+    font-size: x-large;
+    background: none;
+    border: none;
+    vertical-align:middle;
+    margin-left: 5%;
+}
+.icon {
+    color: rgb(60, 223, 6);
+    vertical-align: middle;
+    font-size: xx-large;
+    margin-right: 10%;
+    margin-left: -10%;
+}
+.frase {
+    margin-top: 10%;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    text-shadow: 5px 5px 5px #CCC;
+    margin-right: 20%;
+    margin-left: 20%;
+}
+.player{
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 @media all and (max-width: 500px) {
     .container {
@@ -109,14 +174,23 @@ h1 {
     .sfondoLeo {
         width: 100%;
     }
+    .divButton{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .button {
+        margin-top: 5%;
+        font-size: medium;
         background: none;
         border: none;
+        vertical-align:middle;
     }
     .icon {
         color: rgb(60, 223, 6);
         vertical-align: middle;
-        margin-right: 3px;
+        margin-right: 10%;
+
     }
     .frase {
         margin-top: 10%;
@@ -125,8 +199,8 @@ h1 {
         text-shadow: 5px 5px 5px #CCC;
     }
     .player{
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
