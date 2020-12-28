@@ -55,11 +55,15 @@ h1 {
 .sfondoLeo {
     width: 100%;
 }
+.sfondodivButton{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 .divButton{
     display: flex;
     justify-content: center;
     align-items: center;
-    
     margin-top: 5%;
 }
 .button {
