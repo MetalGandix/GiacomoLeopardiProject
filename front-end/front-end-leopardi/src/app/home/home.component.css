@@ -208,9 +208,7 @@ h1 {
         align-items: center;
     }
     .evento{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        margin-top: 10%;
         font-size: large;
         font-family: 'Times New Roman', Times, serif;
     }
