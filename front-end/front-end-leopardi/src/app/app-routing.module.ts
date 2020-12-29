@@ -38,6 +38,7 @@ import { PoesiaCentroNazionaleComponent } from './link-poesie/poesia-centro-nazi
 import { PoesiaCasaAdelaideComponent } from './link-poesie/poesia-casa-adelaide/poesia-casa-adelaide.component';
 import { PoesiaViaRomaComponent } from './link-poesie/poesia-via-roma/poesia-via-roma.component';
 import { EventoComponent } from './evento/evento.component';
+import { BachecaEventiComponent } from './bacheca-eventi/bacheca-eventi.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -79,6 +80,8 @@ const routes: Routes = [
   { path: 'poesia-casa-adelaide', component: PoesiaCasaAdelaideComponent},
   { path: 'poesia-via-roma', component: PoesiaViaRomaComponent},
   { path: 'evento', component: EventoComponent},
+  { path: 'bacheca-eventi', component: BachecaEventiComponent},
+
 ];
 
 @NgModule({
