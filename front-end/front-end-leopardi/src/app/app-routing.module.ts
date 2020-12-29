@@ -37,6 +37,7 @@ import { PoesiaTorrePasseroSolitarioComponent } from './link-poesie/poesia-torre
 import { PoesiaCentroNazionaleComponent } from './link-poesie/poesia-centro-nazionale/poesia-centro-nazionale.component';
 import { PoesiaCasaAdelaideComponent } from './link-poesie/poesia-casa-adelaide/poesia-casa-adelaide.component';
 import { PoesiaViaRomaComponent } from './link-poesie/poesia-via-roma/poesia-via-roma.component';
+import { EventoComponent } from './evento/evento.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -77,6 +78,7 @@ const routes: Routes = [
   { path: 'poesia-centro-nazionale', component: PoesiaCentroNazionaleComponent},
   { path: 'poesia-casa-adelaide', component: PoesiaCasaAdelaideComponent},
   { path: 'poesia-via-roma', component: PoesiaViaRomaComponent},
+  { path: 'evento', component: EventoComponent},
 ];
 
 @NgModule({
