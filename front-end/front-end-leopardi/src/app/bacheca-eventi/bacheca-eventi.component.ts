@@ -5,11 +5,11 @@ import { AuthenticationService } from '../service/authentication.service';
 import { PrenotazioneService } from '../service/prenotazione.service';
 
 @Component({
-  selector: 'app-area-riservata',
-  templateUrl: './area-riservata.component.html',
-  styleUrls: ['./area-riservata.component.css']
+  selector: 'app-bacheca-eventi',
+  templateUrl: './bacheca-eventi.component.html',
+  styleUrls: ['./bacheca-eventi.component.css']
 })
-export class AreaRiservataComponent implements OnInit {
+export class BachecaEventiComponent implements OnInit {
 
   constructor(private service: PrenotazioneService, private router: Router) {
    }
