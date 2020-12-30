@@ -1,1 +1,37 @@
-<p>evento works!</p>
+<div class="container">
+    <h1>Crea un nuovo evento</h1>
+    <form>
+        <div class="title">
+            <div class="form-group">
+                <label class="control-label" for="textarea">Titolo Evento</label>
+                <input class="form-control" name="title" id="textarea" rows="3">
+            </div>
+        </div>
+
+        <div class="descrizione">
+            <label class="control-label" for="descrizione">Descrizione Evento</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
+        </div>
+
+
+        <div class="form-group">
+            <label for="exampleFormControlFile1">Carica qui la locandina dell'evento</label>
+            <input type="file" class="form-control-file" id="exampleFormControlFile1" (change)="onFileChanged($event)"
+                #fileInput>
+            <!-- <button (click)="onUpload()">Upload!</button> -->
+        </div>
+    </form>
+
+    <div>
+        <button [disabled]="!prenotazioneForm.form.valid" type="submit" class="btn btn-primary" (click)="onUpload()">Crea Evento</button>
+    </div>
+    <div class="row" style="margin-top: 10px; width: 350px; height: 350px;" *ngIf="logRicevuto">
+        <div class="col-xs-12">
+            <div class="alert alert-success">
+                <p>
+                    <strong>Evento creato con successo</strong>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
