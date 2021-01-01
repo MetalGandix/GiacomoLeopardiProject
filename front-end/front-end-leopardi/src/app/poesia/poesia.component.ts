@@ -9,6 +9,8 @@ import * as Plyr from 'plyr';
   styleUrls: ['./poesia.component.css']
 })
 export class PoesiaComponent{
+
+  isTextVisible = true;
   
   // get the component instance to have access to plyr instance
   @ViewChild(PlyrComponent, { static: true })

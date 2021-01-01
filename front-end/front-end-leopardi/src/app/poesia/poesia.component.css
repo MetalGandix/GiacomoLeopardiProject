@@ -104,7 +104,7 @@ pre {
 @media all and (max-width: 500px) {
   .container {
     margin-top: 20px;
-    margin-bottom: 10%;
+    margin-bottom: 20%;
   }
   .bottone-class {
     margin-top: 10px;
