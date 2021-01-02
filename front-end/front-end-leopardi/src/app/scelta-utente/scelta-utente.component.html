@@ -9,6 +9,13 @@
         Vai alla tua area riservata
     </button>
 
+    <button class="button" *ngIf="admin" routerLink="/evento">
+        <span>
+            <mat-icon>event_note</mat-icon>
+        </span>
+        Crea un nuovo evento
+    </button>
+
     <button class="button" *ngIf="visitor" routerLink="/prenotazione-visita">
         <span>
             <mat-icon style="color: orange;">location_on</mat-icon>
