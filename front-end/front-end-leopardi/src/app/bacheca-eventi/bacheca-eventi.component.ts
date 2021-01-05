@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Evento } from '../class/evento';
 import { Prenotazione } from '../class/prenotazione';
 import { AuthenticationService } from '../service/authentication.service';
-import { PrenotazioneService } from '../service/prenotazione.service';
+import { EventoService } from '../service/evento.service';
 
 @Component({
   selector: 'app-bacheca-eventi',
@@ -11,44 +12,18 @@ import { PrenotazioneService } from '../service/prenotazione.service';
 })
 export class BachecaEventiComponent implements OnInit {
 
-  constructor(private service: PrenotazioneService, private router: Router) {
+  constructor(private service: EventoService, private router: Router) {
    }
 
-  prenotazione: Prenotazione[]
+  eventi: Evento[]
   prenotazioniEliminate: Prenotazione[]
-  p: Prenotazione
   admin: boolean = false
 
   ngOnInit() {
-  this.admin = sessionStorage.getItem("Role") === "ROLE_ADMIN"
-    this.service.findAll().subscribe(p => 
+    this.service.findEvents().subscribe(p => 
       {
-        this.prenotazione = p
-        console.log(this.prenotazione)
+        this.eventi = p
+        console.log(this.eventi)
       })
-
-    this.service.findVisiteCancellate().subscribe(e => {
-        this.prenotazioniEliminate = e
-        console.log(this.prenotazioniEliminate)
-    })
-  }
-
-  cancellaPrenotazione(id: number){
-    console.log("id: ",id)
-    this.service.deletePrenotazione(id).subscribe()
-  }
-
-  cancellaVisitaCancellata(id: number){
-    this.service.deleteVisiteCancellate(id).subscribe()
-    this.router.navigate(['/area-riservata']).then(() => {
-      window.location.reload();
-    });
-  }
-
-  send(p: Prenotazione){
-    this.service.saveVisiteCancellate(p).subscribe()
-    this.router.navigate(['/area-riservata']).then(() => {
-      window.location.reload();
-    });
   }
 }
