@@ -19,6 +19,8 @@
       <mat-divider></mat-divider>
       <a mat-list-item routerLink="/bacheca-eventi"><mat-icon>event_note</mat-icon> <span style="margin-left: 10px;" class="nav-caption"><i>Bacheca Eventi</i></span></a>
       <mat-divider></mat-divider>
+      <a mat-list-item routerLink="/socio"><mat-icon>verified</mat-icon> <span style="margin-left: 10px;" class="nav-caption"><i>Diventa un Socio</i></span></a>
+      <mat-divider></mat-divider>
       <a *ngIf="!visitor && !admin" style="color: blue;" mat-list-item routerLink="/login"><mat-icon>person</mat-icon> <span style="margin-left: 10px;" class="nav-caption"><i>Area riservata</i></span></a>
       <a *ngIf="visitor || admin" style="color: blue;" mat-list-item routerLink="/scelta-utente"><mat-icon>person</mat-icon> <span style="margin-left: 10px;" class="nav-caption"><i>{{ utente.name }}</i></span></a>
       <mat-divider></mat-divider>

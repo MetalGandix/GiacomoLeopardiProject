@@ -39,6 +39,8 @@ import { PoesiaCasaAdelaideComponent } from './link-poesie/poesia-casa-adelaide/
 import { PoesiaViaRomaComponent } from './link-poesie/poesia-via-roma/poesia-via-roma.component';
 import { EventoComponent } from './evento/evento.component';
 import { BachecaEventiComponent } from './bacheca-eventi/bacheca-eventi.component';
+import { SocioComponent } from './socio/socio.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -81,6 +83,7 @@ const routes: Routes = [
   { path: 'poesia-via-roma', component: PoesiaViaRomaComponent},
   { path: 'evento', component: EventoComponent},
   { path: 'bacheca-eventi', component: BachecaEventiComponent},
+  { path: 'socio', component: SocioComponent},
 
 ];
 
