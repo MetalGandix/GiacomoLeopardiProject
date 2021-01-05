@@ -10,13 +10,17 @@
       Dell’ultimo orizzonte il guardo esclude."</h1>
   </div>
   <img class="img" src="\assets\images\LogoCentroCulturaleGL.png">
-  <div style="margin-top: 20px;">
-    <button class="button" routerLink="/mappa" style="margin-right: 4px">
-      <mat-icon class="icon">explore</mat-icon>ESPLORA IL PERCORSO
-    </button>
-    <button class="button" routerLink="/prenotazione-visita">
-      <mat-icon class="icon">add</mat-icon>PRENOTA UNA VISITA
-    </button>
+  <div class="sfondodivButton">
+    <div class="divButton">
+      <button class="button" routerLink="/mappa" style="margin-right: 4px">
+        <mat-icon class="icon">explore</mat-icon>ESPLORA IL PERCORSO
+      </button>
+    </div>
+    <div class="divButton">
+      <button class="button" routerLink="/prenotazione-visita">
+        <mat-icon class="icon">add</mat-icon>PRENOTA UNA VISITA
+      </button>
+    </div>
   </div>
   <div>
     <h1 class="frase">
@@ -26,17 +30,16 @@
 
       F. De Sanctis
     </h1>
-    <!--<video style="margin-bottom: 40px;" width="320" height="240" controls>
-      <source src="\assets\video\Visita ai luoghi leopardiani.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-  </video>-->
   </div>
-  <div class="player" style="margin-bottom: 20px;">
-    <youtube-player videoId="wG7r-cA1bLs" suggestedQuality="standard" [height]="200" [width]="300" [startSeconds]="1"
+  <div class="player">
+    <youtube-player videoId="RSxppSKMqjY" suggestedQuality="standard" [height]="200" [width]="300" [startSeconds]="1"
       [endSeconds]="200">
     </youtube-player>
   </div>
-  <div>
-    .
+  <div class="evento">
+    <p style="text-align: center;"> Ultimo Evento Aggiunto </p>
+    <button class="button" routerLink="/bacheca-eventi" style="margin-right: 4px">
+      <mat-icon class="icon">event_note</mat-icon>Vai alla bacheca eventi
+    </button>
   </div>
 </div>

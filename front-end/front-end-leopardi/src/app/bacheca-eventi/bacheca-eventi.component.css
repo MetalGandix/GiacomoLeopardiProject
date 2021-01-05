@@ -1,0 +1,12 @@
+.container {
+    margin-bottom: 10%;
+    text-align: -webkit-center;
+    margin-top: 10px;
+}
+@media all and (max-width: 500px) {
+    .container {
+        margin-bottom: 10%;
+        text-align: -webkit-center;
+        margin-top: 10px;
+    }
+}
