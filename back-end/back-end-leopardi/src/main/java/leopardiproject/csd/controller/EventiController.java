@@ -1,7 +1,6 @@
 package leopardiproject.csd.controller;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -16,7 +15,7 @@ import leopardiproject.csd.repository.EventiRepository;
 @RestController
 @CrossOrigin
 public class EventiController {
-    
+
     @Autowired
     private EventiRepository rep;
 
@@ -26,8 +25,9 @@ public class EventiController {
     }
 
     @PostMapping("/inserisciEventi")
-    String addEvent(Authentication a, @RequestBody Eventi event){
+    String addEvent(Authentication a, @RequestBody Eventi event) {
         rep.save(event);
         return "Evento inserito correttamente";
     }
+
 }

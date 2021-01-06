@@ -4,7 +4,8 @@
         <div class="title">
             <div class="form-group">
                 <label class="control-label" for="textarea">Titolo Evento*</label>
-                <input [(ngModel)]="evento.nomeEvento" #nomeEvento="ngModel" name="nomeEvento" class="form-control" required>
+                <input [(ngModel)]="evento.nomeEvento" #nomeEvento="ngModel" name="nomeEvento" class="form-control"
+                    required>
             </div>
         </div>
 
@@ -13,12 +14,10 @@
                 <label class="control-label" for="datepicker">Data dell'evento*</label>
                 <div class="input-group">
                     <input id="datepicker" #dataEvento="ngModel" name="dataEvento" type="date"
-                        [(ngModel)]="evento.dataEvento" placeholder="Data desiderata"
-                        class="form-control" required>
+                        [(ngModel)]="evento.dataEvento" placeholder="Data desiderata" class="form-control" required>
                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                 </div>
-                <div *ngIf="dataEvento.invalid && (dataEvento.dirty || dataEvento.touched)"
-                    class="alert alert-danger">
+                <div *ngIf="dataEvento.invalid && (dataEvento.dirty || dataEvento.touched)" class="alert alert-danger">
                     <div *ngIf="dataEvento.errors.required">
                         Devi inserire una data.
                     </div>
@@ -28,7 +27,29 @@
 
         <div class="descrizione">
             <label class="control-label" for="descrizione">Descrizione Evento</label>
-            <input [(ngModel)]="evento.descrizione" name="descrizione" #descrizione="ngModel" class="form-control" required>
+            <input [(ngModel)]="evento.descrizione" name="descrizione" #descrizione="ngModel" class="form-control"
+                required>
+        </div>
+
+        <!--PROVA DI UPLOAD IMMAGINE-->
+        <div class="container row">
+            <div class="col-md-12">
+                <h1>Upload Image</h1>
+            </div>
+        </div>
+        <div class="container row">
+            <div class="col-md-6">
+                <input type="file" (change)="onFileChanged($event)">
+            </div>
+            <div class="col-md-6">
+                <input type="button" (click)="onUpload()" value="upload">
+            </div>
+        </div>
+        <hr />
+        <div class="container row">
+            <div class="col-md-12">
+                <div *ngIf=message>{{message}}</div>
+            </div>
         </div>
 
         <div style="margin-bottom: 40px;" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -47,3 +68,28 @@
         </div>
     </form>
 </div>
+
+
+<!--<hr />
+    <div class="container row">
+        <div class="col-md-12">
+            <div *ngIf=message>{{message}}</div>
+        </div>
+    </div>
+    <div class="container row">
+        <div class="col-md-6">
+            <input type="text" class="form-control" id="name" placeholder="image name" [(ngModel)]="imageName"
+                name="name" />
+        </div>
+        <div class="col-md-6">
+            <input type="button" (click)="getImage()" value="Get Image">
+        </div>
+    </div>
+    <div class="container row">
+        <div class="col-md-12">
+            <div *ngIf=retrievedImage>
+                <img [src]="retrievedImage">
+            </div>
+        </div>
+    </div>
+    -->

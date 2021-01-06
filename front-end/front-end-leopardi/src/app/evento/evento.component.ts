@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Evento } from '../class/evento';
@@ -8,56 +9,53 @@ import { EventoService } from '../service/evento.service';
   templateUrl: './evento.component.html',
   styleUrls: ['./evento.component.css']
 })
-export class EventoComponent implements OnInit{
+export class EventoComponent implements OnInit {
   selectedFile: File;
   http: any;
   admin: boolean = false
   evento: Evento
   showMsg: boolean = false
-  url = "https://www.pngkit.com/bigpic/u2q8i1q8r5r5e6r5";
+  retrievedImage: any;
+  base64Data: any;
+  retrieveResonse: any;
+  message: string;
+  imageName: any;
 
-  constructor(private service: EventoService, private router: Router) {
+  constructor(private service: EventoService, private router: Router, private httpClient: HttpClient) {
     this.evento = new Evento()
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.admin = sessionStorage.getItem("Role") === "ROLE_ADMIN"
   }
 
-  // Mogia  
-  onSubmit(){
+  onSubmit() {
     this.service.saveEvents(this.evento).subscribe()
-    console.log("Nuovo evento",this.evento)
+    console.log("Nuovo evento", this.evento)
     this.showMsg = true
   }
 
-  // Petrac
-  selectFile(event) {
-    if(event.target.file){
-      var reader = new FileReader()
-      reader.readAsDataURL(event.target.file[0])
-      reader.onload = (event: any) => {
-        this.url = event.target.result
-      }
+  public onFileChanged(event) {
+    //Select File
+    this.selectedFile = event.target.files[0];
+  }
+
+    //Gets called when the user clicks on submit to upload the image
+    onUpload() {
+      console.log(this.selectedFile);
+      //FormData API provides methods and properties to allow us easily prepare form data to be sent with POST HTTP requests.
+      const uploadImageData = new FormData();
+      uploadImageData.append('imageFile', this.selectedFile, this.selectedFile.name);
+      //Make a call to the Spring Boot Application to save the image
+      this.httpClient.post('http://localhost:8080/image/upload', uploadImageData, { observe: 'response' })
+        .subscribe((response) => {
+          if (response.status === 200) {
+            this.message = 'Image uploaded successfully';
+          } else {
+            this.message = 'Image not uploaded successfully';
+          }
+        }
+        );
     }
-  }
-
-  onFileChanged(event) {
-    this.selectedFile = event.target.files[0]
-  }
-
-  //Listen to upload progress
-  onUpload() {
-    // this.http is the injected HttpClient
-    const uploadData = new FormData();
-    uploadData.append('myFile', this.selectedFile, this.selectedFile.name);
-    this.http.post('my-backend.com/file-upload', uploadData, {
-      reportProgress: true,
-      observe: 'events'
-    })
-      .subscribe(event => {
-        console.log(event); // handle event here
-      });
-  }
 
 }

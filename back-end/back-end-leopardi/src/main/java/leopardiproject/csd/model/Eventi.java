@@ -9,11 +9,13 @@ public class Eventi {
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    
+    @Column
     private String nomeEvento;
 
+    @Column
     private LocalDate dataEvento;
 
+    @Column
     private String descrizione;
 
     public long getId() {
