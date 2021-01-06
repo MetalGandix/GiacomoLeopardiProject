@@ -42,8 +42,13 @@ h5 {
 }
 
 @media all and (max-width: 500px) {
+    p {
+        font-family: "Times New Roman", Times, serif;
+        font-size: normal;
+        text-align: justify;
+    }
+
     .container {
-        margin-top: 20%;
         margin-bottom: 20%;
     }
     .card {
