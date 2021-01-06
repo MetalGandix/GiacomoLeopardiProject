@@ -90,10 +90,16 @@ h1 {
     margin-left: 20%;
 }
 .player{
-    margin-top: 10%;
+    margin-top: 5%;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.evento{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-size: xx-large;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 @media all and (max-width: 500px) {

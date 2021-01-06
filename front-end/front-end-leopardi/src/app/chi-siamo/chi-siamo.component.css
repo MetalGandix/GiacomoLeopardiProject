@@ -1,15 +1,17 @@
 .container {
-    margin-top: 20px;
     margin-bottom: 10%;
 }
 
 p {
     font-family: "Times New Roman", Times, serif;
+    font-size: large;
+    text-align: justify;
 }
 
 h1 {
-    font-size: 40px;
+    font-size: xx-large;
     font-family: "Times New Roman", Times, serif;
+    text-align: center;
 }
 
 .card-deck {
@@ -22,7 +24,7 @@ h1 {
 }
 
 h5 {
-    font-size: 15px;
+    font-size: x-large;
 }
 
 .display-4 {
@@ -41,7 +43,8 @@ h5 {
 
 @media all and (max-width: 500px) {
     .container {
-        margin-top: 20px;
+        margin-top: 20%;
+        margin-bottom: 20%;
     }
     .card {
         width: 250px;

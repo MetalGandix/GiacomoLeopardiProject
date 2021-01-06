@@ -15,17 +15,17 @@
 }
 
 h1 {
-  font-size: 25px;
+  font-size: xx-large;
   text-align: center;
+  font-family: 'Times New Roman', Times, serif;
 }
-
-/* p {
+p {
   text-align: center;
-  font-size: large;
+  font-size: x-large;
   margin-top: auto;
   font-style: italic;
-} */
-
+  font-family: 'Times New Roman', Times, serif;
+}
 pre {
   line-height: 30px;
   text-align: center;
@@ -34,71 +34,67 @@ pre {
   font-style: italic;
   font-family: 'Times New Roman', Times, serif;
 }
-
 .button {
-  /* background-color: white; */
   margin-left: 5px;
-  /* color: black;
-    border: 2px solid #4CAF50; Green */
   color: #4CAF50;
   padding: 0;
   border: none;
   background: none;
 }
-
 .buttonClicked {
-  /* background-color: white; */
   margin-left: 5px;
-  /* color: black;
-    border: 2px solid #4CAF50; Green */
   color: #4CAF50;
   padding: 0;
-  border: 2px;
-  border-color: black;
+  background: #4caf4f56;
+  border-radius: 100%;
 }
-
 .button1 {
-  /* background-color: white; */
   margin-left: 5px;
-  /* color: black; */
-  /* border: 2px solid #f8f32b; giallo zolfo */
   color: #f8f32b;
   padding: 0;
   border: none;
   background: none;
 }
-
 .button1Clicked {
-  /* background-color: white; */
   margin-left: 5px;
-  /* color: black; */
-  /* border: 2px solid #f8f32b; giallo zolfo */
   color: #f8f32b;
   padding: 0;
-  border: 2px;
-  border-color: black;
+  background: #f8f52b60;
+  border-radius: 100%;
 }
-
 .arrow {
   border: solid #4CAF50;
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 3px;
 }
-
 .down {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 }
-
 .up {
   transform: rotate(-135deg);
   -webkit-transform: rotate(-135deg);
 }
-
-.bottonCap {
+.buttonCap {
   margin-left: 5%;
   vertical-align: middle;
+  color: #4169e1;
+  padding: 0;
+  border: none;
+  background: none;
+}
+.pMiddle {
+  text-align: center;
+}
+img {
+  width: 30%;
+  height: 30%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 @media all and (max-width: 500px) {
