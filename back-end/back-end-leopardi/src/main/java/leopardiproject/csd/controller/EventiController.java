@@ -26,7 +26,7 @@ public class EventiController {
     }
 
     @PostMapping("/inserisciEventi")
-    String addUser(Authentication a, @RequestBody Eventi event){
+    String addEvent(Authentication a, @RequestBody Eventi event){
         rep.save(event);
         return "Evento inserito correttamente";
     }

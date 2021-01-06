@@ -43,7 +43,7 @@ export class SidenavComponent implements OnInit{
     this.gestioneUtente.findUtenteSingolo(sessionStorage.getItem('username')).subscribe(data => 
       {
         this.utente = data
-        console.log("utente: " + this.utente)
+        console.log("utente: ",this.utente)
       })
     console.log("Session storage",sessionStorage.getItem('username'))
     }

@@ -13,7 +13,7 @@ export class PrenotazioneVisitaComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
     private router: Router,
-    private service: PrenotazioneService,) {
+    private service: PrenotazioneService) {
       this.prenotazione = new Prenotazione()
      }
 

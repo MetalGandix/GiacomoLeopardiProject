@@ -1,38 +1,49 @@
-<div class="container">
+<div class="container" *ngIf="admin">
     <h1>Crea un nuovo evento</h1>
-    <form>
+    <form (ngSubmit)="onSubmit()" #eventoForm="ngForm">
         <div class="title">
             <div class="form-group">
-                <label class="control-label" for="textarea">Titolo Evento</label>
-                <input class="form-control" name="title" id="textarea" rows="3">
+                <label class="control-label" for="textarea">Titolo Evento*</label>
+                <input [(ngModel)]="evento.nomeEvento" #nomeEvento="ngModel" name="nomeEvento" class="form-control" required>
+            </div>
+        </div>
+
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+            <div class="form-group">
+                <label class="control-label" for="datepicker">Data dell'evento*</label>
+                <div class="input-group">
+                    <input id="datepicker" #dataEvento="ngModel" name="dataEvento" type="date"
+                        [(ngModel)]="evento.dataEvento" placeholder="Data desiderata"
+                        class="form-control" required>
+                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                </div>
+                <div *ngIf="dataEvento.invalid && (dataEvento.dirty || dataEvento.touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="dataEvento.errors.required">
+                        Devi inserire una data.
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="descrizione">
             <label class="control-label" for="descrizione">Descrizione Evento</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
+            <input [(ngModel)]="evento.descrizione" name="descrizione" #descrizione="ngModel" class="form-control" required>
         </div>
 
-
-        <div class="form-group">
-            <label for="exampleFormControlFile1">Carica qui la locandina dell'evento</label>
-            <input type="file" class="form-control-file" id="exampleFormControlFile1" (change)="onFileChanged($event)"
-                #fileInput>
-            <!-- <button (click)="onUpload()">Upload!</button> -->
+        <div style="margin-bottom: 40px;" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <button [disabled]="!eventoForm.form.valid" type="submit" class="btn btn-primary">Crea Evento</button>
         </div>
-    </form>
 
-    <div>
-        <!-- <button [disabled]="!prenotazioneForm.form.valid" type="submit" class="btn btn-primary" (click)="onUpload()">Crea Evento</button> -->
-        <button type="submit" class="btn btn-primary" (click)="onUpload()">Crea Evento</button>
-    </div>
-    <!-- <div class="row" style="margin-top: 10px; width: 350px; height: 350px;" *ngIf="logRicevuto">
-        <div class="col-xs-12">
-            <div class="alert alert-success">
-                <p>
-                    <strong>Evento creato con successo</strong>
-                </p>
+        <div class="row" style="margin-top: 10px; width: 350px; height: 350px;" *ngIf="showMsg == true">
+            <div class="col-xs-12">
+                <div class="alert alert-success">
+                    <p>
+                        <strong>L'evento è stato registrato.</strong>
+                    </p>
+                    <a routerLink="/scelta-utente">Torna alla tua area riservata</a>
+                </div>
             </div>
         </div>
-    </div> -->
+    </form>
 </div>

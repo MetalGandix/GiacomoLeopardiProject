@@ -22,7 +22,9 @@
       <a mat-list-item routerLink="/socio"><mat-icon>edit</mat-icon> <span style="margin-left: 10px;" class="nav-caption"><i>Diventa un Socio</i></span></a>
       <mat-divider></mat-divider>
       <a *ngIf="!visitor && !admin" style="color: blue;" mat-list-item routerLink="/login"><mat-icon>person</mat-icon> <span style="margin-left: 10px;" class="nav-caption"><i>Area riservata</i></span></a>
-      <a *ngIf="visitor || admin" style="color: blue;" mat-list-item routerLink="/scelta-utente"><mat-icon>person</mat-icon> <span style="margin-left: 10px;" class="nav-caption"><i>{{ utente.name }}</i></span></a>
+      <a *ngIf="visitor" style="color: blue;" mat-list-item routerLink="/scelta-utente"><mat-icon>person</mat-icon> <span style="margin-left: 10px;" class="nav-caption"><i>{{ utente.name }}</i></span></a>
+      <mat-divider></mat-divider>
+      <a *ngIf="admin" style="color: blue;" mat-list-item routerLink="/scelta-utente"><mat-icon>person</mat-icon> <span style="margin-left: 10px;" class="nav-caption"><i>Admin</i></span></a>
       <mat-divider></mat-divider>
       <a (click)="logOut()" *ngIf="visitor || admin" style="color: red;" mat-list-item><mat-icon>exit_to_app</mat-icon><span style="margin-left: 10px;" class="nav-caption"><i>Log out</i></span></a>
     </mat-nav-list>

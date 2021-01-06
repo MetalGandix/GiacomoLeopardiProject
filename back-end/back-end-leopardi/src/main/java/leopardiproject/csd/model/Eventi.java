@@ -1,6 +1,6 @@
 package leopardiproject.csd.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import javax.persistence.*;
 
@@ -12,9 +12,7 @@ public class Eventi {
     
     private String nomeEvento;
 
-    private Date dataEvento;
-
-    private String tipoEvento;
+    private LocalDate dataEvento;
 
     private String descrizione;
 
@@ -34,27 +32,19 @@ public class Eventi {
         this.nomeEvento = nomeEvento;
     }
 
-    public Date getDataEvento() {
-        return dataEvento;
-    }
-
-    public void setDataEvento(Date dataEvento) {
-        this.dataEvento = dataEvento;
-    }
-
-    public String getTipoEvento() {
-        return tipoEvento;
-    }
-
-    public void setTipoEvento(String tipoEvento) {
-        this.tipoEvento = tipoEvento;
-    }
-
     public String getDescrizione() {
         return descrizione;
     }
 
     public void setDescrizione(String descrizione) {
         this.descrizione = descrizione;
+    }
+
+    public LocalDate getDataEvento() {
+        return dataEvento;
+    }
+
+    public void setDataEvento(LocalDate dataEvento) {
+        this.dataEvento = dataEvento;
     }
 }
