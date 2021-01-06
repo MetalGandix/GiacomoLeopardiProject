@@ -22,7 +22,7 @@ import org.springframework.web.multipart.MultipartFile;
 import leopardiproject.csd.model.ImageModel;
 import leopardiproject.csd.repository.ImageRepository;
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin
 @RequestMapping(path = "image")
 public class ImageUploadController {
 	@Autowired
@@ -38,8 +38,7 @@ public class ImageUploadController {
 	@GetMapping(path = { "/get/{imageName}" })
 	public ImageModel getImage(@PathVariable("imageName") String imageName) throws IOException {
 		final Optional<ImageModel> retrievedImage = imageRepository.findByName(imageName);
-		ImageModel img = new ImageModel(retrievedImage.get().getName(), retrievedImage.get().getType(),
-				decompressBytes(retrievedImage.get().getPicByte()));
+		ImageModel img = new ImageModel(retrievedImage.get().getName(), retrievedImage.get().getType(),decompressBytes(retrievedImage.get().getPicByte()));
 		return img;
 	}
 	// compress the image bytes before storing it in the database

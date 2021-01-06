@@ -1,12 +1,21 @@
 <div class="container">
     <h1>BACHECA EVENTI</h1>
 
-    <div *ngFor="let e of eventi"> 
-        {{ e.nomeEvento }}
-        {{ e.dataEvento }}
-        {{ e.descrizione }}
+    <div *ngFor="let e of eventi" style="margin-bottom:30px"> 
+        Nome evento: {{ e.nomeEvento }}
+        <hr>
+        Data evento: {{ e.dataEvento }}
+        <hr>
+        Descrizione evento: {{ e.descrizione }}
+        <hr>
+        {{ e.evento_immagine.name }}
+        {{ e.evento_immagine.type }}
+        {{ e.evento_immagine.pic_byte }}
+        <div *ngIf=retrievedImage>
+        <img style="max-width: -webkit-fill-available;" [src]="retrievedImage">
+        </div>
+        <hr>
     </div>
-
 </div>
 
 

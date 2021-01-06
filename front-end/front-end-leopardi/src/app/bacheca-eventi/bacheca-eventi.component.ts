@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Evento } from '../class/evento';
@@ -12,17 +13,34 @@ import { EventoService } from '../service/evento.service';
 })
 export class BachecaEventiComponent implements OnInit {
 
-  constructor(private service: EventoService, private router: Router) {
+  constructor(private httpClient: HttpClient, private service: EventoService, private router: Router) {
    }
 
   eventi: Evento[]
+  e: Evento
   prenotazioniEliminate: Prenotazione[]
   admin: boolean = false
+  selectedFile: File;
+  retrievedImage: any;
+  base64Data: any;
+  retrieveResonse: any;
+  message: string;
+  imageName: any;
 
   ngOnInit() {
     this.service.findEvents().subscribe(p => 
       {
         this.eventi = p
+        this.eventi.forEach(e => {
+          this.imageName = e.evento_immagine.name
+        })
+        this.httpClient.get("http://localhost:8080/image/get/" + this.imageName).subscribe(
+          res => {
+            this.retrieveResonse = res;
+            this.base64Data = this.retrieveResonse.picByte;
+            this.retrievedImage = 'data:image/jpeg;base64,' + this.base64Data;
+          }
+        )
         console.log(this.eventi)
       })
   }
