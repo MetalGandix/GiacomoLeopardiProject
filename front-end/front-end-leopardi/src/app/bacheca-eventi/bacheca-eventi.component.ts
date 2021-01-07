@@ -17,7 +17,6 @@ export class BachecaEventiComponent implements OnInit {
    }
 
   eventi: Evento[]
-  e: Evento
   prenotazioniEliminate: Prenotazione[]
   admin: boolean = false
   selectedFile: File;
@@ -26,22 +25,30 @@ export class BachecaEventiComponent implements OnInit {
   retrieveResonse: any;
   message: string;
   imageName: any;
+  array: any[];
 
   ngOnInit() {
     this.service.findEvents().subscribe(p => 
       {
         this.eventi = p
-        this.eventi.forEach(e => {
-          this.imageName = e.evento_immagine.name
-        })
-        this.httpClient.get("http://localhost:8080/image/get/" + this.imageName).subscribe(
-          res => {
-            this.retrieveResonse = res;
-            this.base64Data = this.retrieveResonse.picByte;
-            this.retrievedImage = 'data:image/jpeg;base64,' + this.base64Data;
-          }
-        )
+        this.getImmagini()
         console.log(this.eventi)
       })
   }
+
+  getImmagini(){
+    this.eventi.forEach(e => {
+      this.httpClient.get("http://localhost:8080/image/get/" + e.evento_immagine.name).subscribe(
+        res => {
+          this.retrieveResonse = res;
+          this.base64Data = this.retrieveResonse.picByte;
+          this.retrievedImage = 'data:image/jpeg;base64,' + this.base64Data;
+        }
+      )
+    })
+  }
+
+
 }
+
+

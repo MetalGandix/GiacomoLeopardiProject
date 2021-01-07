@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import leopardiproject.csd.model.Eventi;
+import leopardiproject.csd.model.ImageModel;
 import leopardiproject.csd.repository.EventiRepository;
 
 @RestController
@@ -26,6 +27,8 @@ public class EventiController {
 
     @PostMapping("/inserisciEventi")
     String addEvent(Authentication a, @RequestBody Eventi event) {
+
+        //event.setEvento_immagine(ImageModel);
         rep.save(event);
         return "Evento inserito correttamente";
     }
