@@ -65,6 +65,7 @@ import { PoesiaViaRomaComponent } from './link-poesie/poesia-via-roma/poesia-via
 import { EventoComponent } from './evento/evento.component';
 import { BachecaEventiComponent } from './bacheca-eventi/bacheca-eventi.component';
 import { SocioComponent } from './socio/socio.component';
+import { PoesiaSpecificaComponent } from './poesia-specifica/poesia-specifica.component';
 
 
 
@@ -113,7 +114,8 @@ import { SocioComponent } from './socio/socio.component';
     PoesiaViaRomaComponent,
     EventoComponent,
     BachecaEventiComponent,
-    SocioComponent
+    SocioComponent,
+    PoesiaSpecificaComponent
   ],
   imports: [
     HttpClientModule, 

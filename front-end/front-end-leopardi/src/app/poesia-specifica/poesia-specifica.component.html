@@ -1,0 +1,26 @@
+<div class="container">
+    <button (click)="bottoneTrue()">
+        Premi per vedere tutte le poesie
+    </button>
+    <button (click)="bottoneFalse()">
+        Premi per nascondere tutte le poesie
+    </button>
+    <input [(ngModel)]="titoloPoesia">
+    <button (click)="filtra()">Filtra</button>
+    <div *ngIf="boo2">
+        Capitolo: {{poesie.capitolo}}
+        Titolo: {{poesie.titolo}}
+        <hr>
+        Testo: {{poesie.testo}}
+        <hr>
+    </div>
+    <div *ngIf="boo1">
+        <div *ngFor="let p of poesie">
+            {{p.id}}
+            <hr>
+            {{p.titolo}}
+            <hr>
+            {{p.testo}}
+        </div>
+    </div>
+</div>
