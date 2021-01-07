@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { DiventaSocio } from '../class/diventa-socio';
+import { DiventaSocioService } from '../service/diventa-socio.service';
 
 @Component({
   selector: 'app-socio',
@@ -7,9 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SocioComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: DiventaSocioService, private route: ActivatedRoute,
+    private router: Router) {
+      this.modulo = new DiventaSocio()
+     }
+    
+    modulo: DiventaSocio
+    diventaSocio: DiventaSocio[]
+    logRicevuto: boolean = false
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this.service.vediModuli().subscribe(moduloSingolo => {
+      this.diventaSocio = moduloSingolo
+      console.log("Moduli: ",this.diventaSocio)
+    })
+  }
+
+  OnSubmit(){
+    this.service.mandaModulo(this.modulo).subscribe()
+    this.logRicevuto = true
   }
 
 }

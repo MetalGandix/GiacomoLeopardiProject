@@ -1,15 +1,15 @@
-<!-- <div class="container">
+<div class="container">
     <img class="img" src="\assets\images\LogoCentroCulturaleGL.png">
     <h1>In questa sezione potrai compilare la domanda per diventare un socio del Centro culturale Giacomo Leopardi</h1>
 
     <div class="card-body">
-        <form (ngSubmit)="onSubmit()" #userForm="ngForm" style="text-align: -webkit-center; ">
+        <form (ngSubmit)="OnSubmit()" #moduloForm="ngForm" style="text-align: -webkit-center; ">
             <h3>Al Consiglio direttivo del Centro culturale Giacomo Leopardi</h3>
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                 <div class="form-group">
                     <label class="control-label">Il sottoscritto Nome</label>
                     <input id="name" #nome="ngModel" name="nome" type="text" placeholder="Inserisci il tuo nome"
-                        [(ngModel)]="prenotazione.nome" class="form-control" required>
+                        [(ngModel)]="modulo.nome" class="form-control" required>
                 </div>
                 <div *ngIf="nome.invalid && (nome.dirty || nome.touched)" class="alert alert-danger">
                     <div *ngIf="nome.errors.required">
@@ -22,7 +22,7 @@
                 <div class="form-group">
                     <label class="control-label">Cognome</label>
                     <input id="name" #cognome="ngModel" type="text" name="cognome"
-                        placeholder="Inserisci il tuo cognome" [(ngModel)]="prenotazione.cognome" class="form-control"
+                        placeholder="Inserisci il tuo cognome" [(ngModel)]="modulo.cognome" class="form-control"
                         required>
                 </div>
                 <div *ngIf="cognome.invalid && (cognome.dirty || cognome.touched)" class="alert alert-danger">
@@ -35,51 +35,47 @@
 
             <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
                 <div class="form-group">
-                    <label class="control-label" for="city">nato a</label>
+                    <label class="control-label" for="city">Residente a</label>
                     <input id="city" #citta="ngModel" type="text" name="citta" placeholder="Inserisci la tua città"
-                        [(ngModel)]="prenotazione.citta" class="form-control" required>
+                        [(ngModel)]="modulo.citta" class="form-control" required>
                 </div>
                 <div *ngIf="citta.invalid && (citta.dirty || citta.touched)" class="alert alert-danger">
                     <div *ngIf="citta.errors.required">
-                        Inserisci la tua città
+                        Inserisci la tua città di residenza
                     </div>
                 </div>
             </div>
 
             <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
                 <div class="form-group">
-                    <label for="nasciata">il</label>
-                    <input type="date" [(ngModel)]="user.name" required minlength="2" class="form-control" id="name"
-                        name="name" required #name="ngModel">
-                    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
-                        <div *ngIf="name.errors.required">
-                            inserisci data di nascita
-                        </div>
+                    <label class="control-label" for="city">Nato a</label>
+                    <input id="city" #luogoDiNascita="ngModel" type="text" name="luogoDiNascita" placeholder="Inserisci la tua città"
+                        [(ngModel)]="modulo.luogoDiNascita" class="form-control" required>
+                </div>
+                <div *ngIf="luogoDiNascita.invalid && (luogoDiNascita.dirty || luogoDiNascita.touched)" class="alert alert-danger">
+                    <div *ngIf="luogoDiNascita.errors.required">
+                        Inserisci la tua città di nascita
                     </div>
                 </div>
             </div>
 
+
             <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
                 <div class="form-group">
-                    <label for="residenza">residente in</label>
-                    <input type="text" [(ngModel)]="user.name" required minlength="2" class="form-control" id="name"
-                        name="name" placeholder="Inserisci la tua residenza" required #name="ngModel">
-                    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
-                        <div *ngIf="name.errors.required">
-                            inserisci città di residenza
-                        </div>
-                    </div>
+                    <label>il giorno</label>
+                    <input type="date" [(ngModel)]="modulo.giornoDiNascita" required minlength="2" class="form-control"
+                        name="giornoDiNascita" required #giornoDiNascita="ngModel">
                 </div>
             </div>
 
             <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
                 <div class="form-group">
                     <label for="CAP">CAP</label>
-                    <input type="text" [(ngModel)]="user.name" required minlength="2" class="form-control" id="name"
-                        name="name" placeholder="Inserisci il codice postale" size="5" maxlength="5" required
-                        #name="ngModel">
-                    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
-                        <div *ngIf="name.errors.required">
+                    <input type="text" [(ngModel)]="modulo.cap" required minlength="2" class="form-control"
+                        name="cap" placeholder="Inserisci il codice postale" size="5" maxlength="5" required
+                        #cap="ngModel">
+                    <div *ngIf="cap.invalid && (cap.dirty || cap.touched)" class="alert alert-danger">
+                        <div *ngIf="cap.errors.required">
                             inserisci il codice postale della tua città
                         </div>
                     </div>
@@ -89,10 +85,10 @@
             <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
                 <div class="form-group">
                     <label for="via">in via</label>
-                    <input type="text" [(ngModel)]="user.name" required minlength="2" class="form-control" id="name"
-                        name="name" placeholder="Inserisci la via di residenza" required #name="ngModel">
-                    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
-                        <div *ngIf="name.errors.required">
+                    <input type="text" [(ngModel)]="modulo.via" required minlength="2" class="form-control"
+                        name="via" placeholder="Inserisci la via di residenza" required #via="ngModel">
+                    <div *ngIf="via.invalid && (via.dirty || via.touched)" class="alert alert-danger">
+                        <div *ngIf="via.errors.required">
                             Inserisci la via di residenza
                         </div>
                     </div>
@@ -102,10 +98,10 @@
             <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
                 <div class="form-group">
                     <label for="email">email</label>
-                    <input type="text" [(ngModel)]="user.name" required minlength="2" class="form-control" id="name"
-                        name="name" placeholder="Inserisci la tua email" required #name="ngModel">
-                    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
-                        <div *ngIf="name.errors.required">
+                    <input type="text" [(ngModel)]="modulo.email" required minlength="2" class="form-control"
+                        name="email" placeholder="Inserisci la tua email" required #email="ngModel">
+                    <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+                        <div *ngIf="email.errors.required">
                             Inserisci la tua email
                         </div>
                     </div>
@@ -115,12 +111,12 @@
             <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
                 <div class="form-group">
                     <label class="control-label" for="phone"> Numero di telefono*</label>
-                    <input id="phone" #cellulare="ngModel" type="text" name="cellulare"
-                        placeholder="Inserisci il tuo numero di cellulare" [(ngModel)]="prenotazione.cellulare"
+                    <input #numeroTelefono="ngModel" type="text" name="numeroTelefono"
+                        placeholder="Inserisci il tuo numero di cellulare" [(ngModel)]="modulo.numeroTelefono"
                         class="form-control" required>
                 </div>
-                <div *ngIf="cellulare.invalid && (cellulare.dirty || cellulare.touched)" class="alert alert-danger">
-                    <div *ngIf="cellulare.errors.required">
+                <div *ngIf="numeroTelefono.invalid && (numeroTelefono.dirty || numeroTelefono.touched)" class="alert alert-danger">
+                    <div *ngIf="numeroTelefono.errors.required">
                         Inserisci il numero di cellulare del visitatore.
                     </div>
                 </div>
@@ -129,10 +125,10 @@
             <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
                 <div class="form-group">
                     <label for="professione">professione</label>
-                    <input type="text" [(ngModel)]="user.name" required minlength="2" class="form-control" id="name"
-                        name="name" placeholder="Inserisci la tua professione" required #name="ngModel">
-                    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
-                        <div *ngIf="name.errors.required">
+                    <input type="text" [(ngModel)]="modulo.professione" required minlength="2" class="form-control"
+                        name="professione" placeholder="Inserisci la tua professione" required #professione="ngModel">
+                    <div *ngIf="professione.invalid && (professione.dirty || professione.touched)" class="alert alert-danger">
+                        <div *ngIf="professione.errors.required">
                             Inserisci la tua professione
                         </div>
                     </div>
@@ -142,27 +138,32 @@
             <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
                 <div class="form-group">
                     <label for="CF">Codice Fiscale</label>
-                    <input type="text" [(ngModel)]="user.name" required minlength="2" class="form-control" id="name"
-                        name="name" placeholder="Inserisci il tuo codice fiscale" size="16" maxlength="16" required
-                        #name="ngModel">
-                    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
-                        <div *ngIf="name.errors.required">
+                    <input type="text" [(ngModel)]="modulo.codiceFiscale" required minlength="2" class="form-control" id="name"
+                        name="codiceFiscale" placeholder="Inserisci il tuo codice fiscale" size="16" maxlength="16" required
+                        #codiceFiscale="ngModel">
+                    <div *ngIf="codiceFiscale.invalid && (codiceFiscale.dirty || codiceFiscale.touched)" class="alert alert-danger">
+                        <div *ngIf="codiceFiscale.errors.required">
                             Inserisci il tuo codice fiscale
                         </div>
                     </div>
                 </div>
             </div>
+
             <h2>CHIEDE</h2>
+
             <div class="form-group">
                 <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
-                    <label for="quota">di diventare socio del Centro culturale Giacomo Leopardi di Recanati versando la
-                        quota annuale di</label>
-                    <input type="radio" id="quotaUno" name="quota" value="quotaUno">
-                    <label for="quotaUno">20 Euro</label><br>
-                    <input type="radio" id="quotaDue" name="quota" value="quotaDue">
-                    <label for="quotaDue">50 Euro</label><br>
-                    <input type="radio" id="quotaTre" name="quota" value="quotaTre">
-                    <label for="quotaTre">100 Euro</label>
+                    <select [(ngModel)]="modulo.quotaAnnuale" name="quotaAnnuale">
+                        <option value="20">
+                            20 euro
+                        </option>
+                        <option value="50">
+                            50 euro
+                        </option>
+                        <option value="100">
+                            100 euro
+                        </option>
+                    </select>
                 </div>
             </div>
             
@@ -221,27 +222,22 @@
                 <div class="form-group">
                     <label class="control-label" for="datepicker">Data della compilazione</label>
                     <div class="input-group">
-                        <input id="datepicker" #data="ngModel" name="data" type="date" [(ngModel)]="socio.data"
+                        <input id="datepicker" #data="ngModel" name="dataCompilazione" type="date" [(ngModel)]="modulo.dataCompilazione"
                             placeholder="Data della compilazione" class="form-control" required>
                         <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                    </div>
-                    <div *ngIf="data.invalid && (data.dirty || data.touched)" class="alert alert-danger">
-                        <div *ngIf="data.errors.required">
-                            Devi inserire una data.
-                        </div>
                     </div>
                 </div>
             </div>
 
             <div style="margin-bottom: 10%;" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                <button [disabled]="!prenotazioneForm.form.valid" type="submit" class="btn btn-primary">Invia
+                <button [disabled]="!moduloForm.form.valid" type="submit" class="btn btn-primary">Invia
                     richiesta</button>
             </div>
             <div class="row" style="margin-top: 10%; width: 350px; height: 350px;" *ngIf="logRicevuto">
                 <div class="col-xs-12">
                     <div class="alert alert-success">
                         <p>
-                            <strong>La registrazione è andata a buon fine.</strong>
+                            <strong>Il modulo è stato correttamente inviato.</strong>
                         </p>
                         <a routerLink="/home">Torna alla home</a>
                     </div>
@@ -249,4 +245,4 @@
             </div>
         </form>
     </div>
-</div> -->
+</div>-->
