@@ -1,7 +1,7 @@
 <div *ngIf="admin" class="container">
-    Elenco degli utenti iscritti
+    <h1>In questa pagina è presente la lista degli utenti registrati</h1>
     <div class="card my-5">
-        <div class="overflow-auto">
+        <div style="z-index: 0;" class="overflow-auto">
             <div class="card-body">
                 <table class="table table-bordered table-striped">
                     <thead class="thead-dark">
@@ -9,6 +9,7 @@
                             <th scope="col">Email</th>
                             <th scope="col">Nome</th>
                             <th scope="col">Cognome</th>
+                            <th scope="col">Azione</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -16,6 +17,9 @@
                             <td>{{ u.username }}</td>
                             <td>{{ u.name }}</td>
                             <td>{{ u.lastname }}</td>
+                            <td><button><mat-icon class="elimina" >delete</mat-icon></button>
+                                <button><mat-icon class="changeRole">person</mat-icon></button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
