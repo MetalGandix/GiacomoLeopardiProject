@@ -1,11 +1,13 @@
 <div class="container">
 
-<h1><b><i>In questa sezione è possibile cercare un testo di Giacomo Leopardi e ascoltare la sua recitazione</i></b></h1>
+    <h1><b><i>In questa sezione è possibile cercare un testo di Giacomo Leopardi e ascoltare la sua recitazione</i></b>
+    </h1>
 
-    <button type="button" class="btn btn-outline-info" (click)="bottoneTrue()">
+    <button *ngIf="boo1==false" type="button" class="btn btn-outline-info" (click)="bottoneTrue()">
         Premi per vedere tutte le poesie
     </button>
-    <button type="button" class="btn btn-outline-success" style="margin-top: 5%;" (click)="bottoneFalse()">
+    <button *ngIf="boo1==true" type="button" class="btn btn-outline-success" style="margin-top: 5%;"
+        (click)="bottoneFalse()">
         Premi per nascondere tutte le poesie
     </button>
 
@@ -23,7 +25,18 @@
                     <mat-icon style="vertical-align: middle;">search</mat-icon>
                 </span></button>
         </div>
-        <input [(ngModel)]="titoloPoesia" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+        <input [(ngModel)]="titoloPoesia" type="text" class="form-control" placeholder="" aria-label=""
+            aria-describedby="basic-addon1">
+    </div>
+
+    <div *ngIf="boo1">
+        <div *ngFor="let p of poesie">
+            <hr>
+            Titolo: {{p.titolo}} - Capitolo: {{p.capitolo}}
+            <hr>
+            Testo: {{p.testo}}
+            <hr>
+        </div>
     </div>
 
     <div *ngIf="boo2">
@@ -70,13 +83,5 @@
         </div>
 
 
-        <div *ngIf="boo1">
-            <div *ngFor="let p of poesie">
-                {{p.id}}
-                <hr>
-                {{p.titolo}}
-                <hr>
-                {{p.testo}}
-            </div>
-        </div>
+
     </div>

@@ -23,6 +23,7 @@ export class PoesiaSpecificaComponent implements OnInit {
   ngOnInit() {
     this.service.findAll().subscribe(poesiaSingola => {
       this.poesie = poesiaSingola
+      console.log(this.poesie)
     })
   }
 
@@ -36,6 +37,7 @@ export class PoesiaSpecificaComponent implements OnInit {
 
   bottoneTrue() {
     this.boo1 = true
+    console.log(this.boo1)
   }
 
   bottoneFalse() {
