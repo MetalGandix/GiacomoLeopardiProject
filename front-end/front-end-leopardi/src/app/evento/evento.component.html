@@ -1,11 +1,13 @@
 <div class="container" *ngIf="admin">
     <h1>Crea un nuovo evento</h1>
     <form (ngSubmit)="onSubmit()" #eventoForm="ngForm">
-        <div class="title">
-            <div class="form-group">
-                <label class="control-label" for="textarea">Titolo Evento*</label>
-                <input [(ngModel)]="evento.nomeEvento" #nomeEvento="ngModel" name="nomeEvento" class="form-control"
-                    required>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+            <div class="title">
+                <div class="form-group">
+                    <label class="control-label" for="textarea">Titolo Evento*</label>
+                    <input [(ngModel)]="evento.nomeEvento" #nomeEvento="ngModel" name="nomeEvento" class="form-control"
+                        required>
+                </div>
             </div>
         </div>
 
@@ -25,10 +27,14 @@
             </div>
         </div>
 
-        <div class="descrizione">
-            <label class="control-label" for="descrizione">Descrizione Evento*</label>
-            <input [(ngModel)]="evento.descrizione" name="descrizione" #descrizione="ngModel" class="form-control"
-                required>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+            <div class="descrizione">
+                <label class="control-label" for="descrizione">Descrizione Evento*</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="evento.descrizione" name="descrizione" #descrizione="ngModel" class="form-control"
+                required></textarea>
+                <!-- <input [(ngModel)]="evento.descrizione" name="descrizione" #descrizione="ngModel" class="form-control"
+                    required> -->
+            </div>
         </div>
 
         <!--PROVA DI UPLOAD IMMAGINE-->
