@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import  * as L from 'leaflet';
 import 'mapbox-gl-leaflet';
+import { Contatti } from '../class/contatti';
+import { ContattiService } from '../service/contatti.service';
 
 @Component({
   selector: 'app-contatti',
@@ -10,13 +12,19 @@ import 'mapbox-gl-leaflet';
 export class ContattiComponent implements OnInit, AfterViewInit {
 
   private map: L.Map;
+  messagge: Contatti
 
   @ViewChild('map')
   private mapContainer: ElementRef<HTMLElement>;
 
-  constructor() { }
+  constructor(private service: ContattiService) { this.messagge = new Contatti() }
 
   ngOnInit() {
+
+  }
+
+  mandaMessaggio(){
+    this.service.mandaMessaggio(this.messagge).subscribe()
   }
 
   ngAfterViewInit() {
