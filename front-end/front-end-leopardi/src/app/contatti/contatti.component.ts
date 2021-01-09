@@ -13,6 +13,7 @@ export class ContattiComponent implements OnInit, AfterViewInit {
 
   private map: L.Map;
   messagge: Contatti
+  booleanMessaggio: boolean = false 
 
   @ViewChild('map')
   private mapContainer: ElementRef<HTMLElement>;
@@ -25,6 +26,7 @@ export class ContattiComponent implements OnInit, AfterViewInit {
 
   mandaMessaggio(){
     this.service.mandaMessaggio(this.messagge).subscribe()
+    this.booleanMessaggio = true
   }
 
   ngAfterViewInit() {
