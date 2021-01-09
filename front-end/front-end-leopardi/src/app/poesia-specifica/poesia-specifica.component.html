@@ -32,9 +32,10 @@
     <div *ngIf="boo1">
         <div *ngFor="let p of poesie">
             <hr>
-            Titolo: {{p.titolo}} - Capitolo: {{p.capitolo}}
+            Titolo: {{p.titolo}} <br>
+            Capitolo: {{p.capitolo}}
             <hr>
-            Testo: {{p.testo}}
+            <pre>{{p.testo}}</pre>
             <hr>
         </div>
     </div>
