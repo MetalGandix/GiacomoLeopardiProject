@@ -3,7 +3,13 @@
         <div class="overflow-auto">
             <div class="card-body">
                 <table class="table table-bordered table-striped" style="box-shadow: 15px 15px 10px #dedede;">
-
+                    <div *ngFor="let p of poesie">
+                    Capitolo: {{p.capitolo}}
+                    <hr>
+                    Titolo: {{p.titolo}}
+                    <hr>
+                    Testo: {{p.testo}}
+                    </div>
                     <!-- Capitolo: {{poesie.capitolo}} <br> -->
                     <!-- Titolo: {{poesie.titolo}} -->
                     <hr>

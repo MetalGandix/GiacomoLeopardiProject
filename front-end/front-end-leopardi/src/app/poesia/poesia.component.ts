@@ -1,5 +1,6 @@
 import { ViewChild } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PlyrComponent } from 'ngx-plyr';
 import * as Plyr from 'plyr';
 import { Poesia } from '../class/poesia';
@@ -12,7 +13,7 @@ import { PoesiaService } from '../service/poesia.service';
 })
 export class PoesiaComponent{
 
-  constructor(private service: PoesiaService){
+  constructor(private service: PoesiaService,private router: Router){
   }
 
   isTextVisible = true;
@@ -23,9 +24,11 @@ export class PoesiaComponent{
     if(valore == 1){
       this.service.findPoesiaSingolaByCapitolo(1).subscribe(poesieTrovate => {
         this.poesie = poesieTrovate
-      console.log(this.poesie)
+        this.router.navigate(['/mostra-poesia'], {
+          state: { poesie: this.poesie }
+        })
       })
-
+  
     }
     console.log(valore)
   }

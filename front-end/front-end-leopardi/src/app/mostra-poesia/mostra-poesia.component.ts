@@ -21,9 +21,8 @@ export class MostraPoesiaComponent implements OnInit {
   titoloPoesia: string
 
   ngOnInit() {
-    this.service.findAll().subscribe(poesiaSingola => {
-      this.poesie = poesiaSingola
-    })
+    this.poesie = window.history.state.poesie
+    console.log(this.poesie)
   }
 
   filtra() {
