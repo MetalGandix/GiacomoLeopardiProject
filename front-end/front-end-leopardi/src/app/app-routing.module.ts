@@ -41,6 +41,7 @@ import { EventoComponent } from './evento/evento.component';
 import { BachecaEventiComponent } from './bacheca-eventi/bacheca-eventi.component';
 import { SocioComponent } from './socio/socio.component';
 import { PoesiaSpecificaComponent } from './poesia-specifica/poesia-specifica.component';
+import { MostraPoesiaComponent } from './mostra-poesia/mostra-poesia.component';
 
 
 const routes: Routes = [
@@ -86,6 +87,7 @@ const routes: Routes = [
   { path: 'bacheca-eventi', component: BachecaEventiComponent},
   { path: 'socio', component: SocioComponent},
   { path: 'poesia-specifica', component: PoesiaSpecificaComponent},
+  { path: 'mostra-poesia', component: MostraPoesiaComponent},
 ];
 
 @NgModule({

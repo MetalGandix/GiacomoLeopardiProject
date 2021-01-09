@@ -19,6 +19,7 @@ h1 {
   text-align: center;
   font-family: 'Times New Roman', Times, serif;
 }
+
 p {
   text-align: center;
   font-size: x-large;
@@ -26,6 +27,7 @@ p {
   font-style: italic;
   font-family: 'Times New Roman', Times, serif;
 }
+
 pre {
   line-height: 30px;
   text-align: center;
@@ -34,6 +36,7 @@ pre {
   font-style: italic;
   font-family: 'Times New Roman', Times, serif;
 }
+
 .button {
   margin-left: 5px;
   color: #4CAF50;
@@ -41,6 +44,7 @@ pre {
   border: none;
   background: none;
 }
+
 .buttonClicked {
   margin-left: 5px;
   color: #4CAF50;
@@ -48,6 +52,7 @@ pre {
   background: #4caf4f56;
   border-radius: 100%;
 }
+
 .button1 {
   margin-left: 5px;
   color: #f8f32b;
@@ -55,6 +60,7 @@ pre {
   border: none;
   background: none;
 }
+
 .button1Clicked {
   margin-left: 5px;
   color: #f8f32b;
@@ -62,20 +68,24 @@ pre {
   background: #f8f52b60;
   border-radius: 100%;
 }
+
 .arrow {
   border: solid #4CAF50;
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 3px;
 }
+
 .down {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 }
+
 .up {
   transform: rotate(-135deg);
   -webkit-transform: rotate(-135deg);
 }
+
 .buttonCap {
   margin-left: 5%;
   vertical-align: middle;
@@ -84,9 +94,11 @@ pre {
   border: none;
   background: none;
 }
+
 .pMiddle {
   text-align: center;
 }
+
 img {
   width: 30%;
   height: 30%;
@@ -102,6 +114,12 @@ img {
     margin-top: 20px;
     margin-bottom: 20%;
   }
+  .overflow-auto {
+    z-index: 0;
+    width: responsive;
+    height: 450px;
+    box-shadow: 15px 15px 10px #dedede;
+}
   .bottone-class {
     margin-top: 10px;
     font-size: 13px;

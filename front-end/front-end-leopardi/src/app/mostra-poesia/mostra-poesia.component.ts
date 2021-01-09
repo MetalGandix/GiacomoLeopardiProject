@@ -5,12 +5,12 @@ import { Poesia } from '../class/poesia';
 import { PoesiaService } from '../service/poesia.service';
 
 @Component({
-  selector: 'app-poesia-specifica',
-  templateUrl: './poesia-specifica.component.html',
-  styleUrls: ['./poesia-specifica.component.css']
+  selector: 'app-mostra-poesia',
+  templateUrl: './mostra-poesia.component.html',
+  styleUrls: ['./mostra-poesia.component.css']
 })
-export class PoesiaSpecificaComponent implements OnInit {
-
+export class MostraPoesiaComponent implements OnInit {
+  
   constructor(private service: PoesiaService, private router: Router) {
   }
 

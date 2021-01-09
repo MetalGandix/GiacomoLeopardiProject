@@ -8,6 +8,11 @@
         margin-bottom: 10%;
         margin-top: 20px;
     }
+    .overflow-auto {
+        z-index: 0;
+        width: responsive;
+        height: 500px;
+    }
     h1 {
         font-size: x-large;
         font-family: 'Times New Roman', Times, serif;
