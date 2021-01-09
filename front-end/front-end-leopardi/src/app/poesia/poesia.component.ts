@@ -2,6 +2,8 @@ import { ViewChild } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { PlyrComponent } from 'ngx-plyr';
 import * as Plyr from 'plyr';
+import { Poesia } from '../class/poesia';
+import { PoesiaService } from '../service/poesia.service';
 
 @Component({
   selector: 'app-poesia',
@@ -10,7 +12,23 @@ import * as Plyr from 'plyr';
 })
 export class PoesiaComponent{
 
+  constructor(private service: PoesiaService){
+  }
+
   isTextVisible = true;
+  valore: number
+  poesie: Poesia[]
+
+  searchByCapitolo(valore: number){
+    if(valore == 1){
+      this.service.findPoesiaSingolaByCapitolo(1).subscribe(poesieTrovate => {
+        this.poesie = poesieTrovate
+      console.log(this.poesie)
+      })
+
+    }
+    console.log(valore)
+  }
   
   // get the component instance to have access to plyr instance
   @ViewChild(PlyrComponent, { static: true })

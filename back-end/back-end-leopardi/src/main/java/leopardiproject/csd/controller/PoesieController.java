@@ -29,10 +29,14 @@ public Poesie getPoesia(@PathVariable String titolo){
     return rep.findByTitolo(titolo);
 }
 
+@GetMapping("/poesia/{capitolo}")
+public List<Poesie> getPoesia(@PathVariable int capitolo){
+    return (List<Poesie>) rep.findByCapitolo(capitolo);
+}
+
 @PostMapping("/inserisciPoesia")
 String addPoesia(Authentication a, @RequestBody Poesie poesia){
     rep.save(poesia);
     return "Poesia aggiunta correttamente";
 }
-
 }
