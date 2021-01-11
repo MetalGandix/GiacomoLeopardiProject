@@ -4,46 +4,45 @@
             <div class="card-body">
                 <table class="table table-bordered table-striped" style="box-shadow: 15px 15px 10px #dedede;">
                     <div *ngFor="let p of poesie">
-                    Capitolo: {{p.capitolo}}
-                    <hr>
-                    Titolo: {{p.titolo}}
-                    <hr>
-                    Testo: {{p.testo}}
-                    </div>
-                    <!-- Capitolo: {{poesie.capitolo}} <br> -->
-                    <!-- Titolo: {{poesie.titolo}} -->
-                    <hr>
+                        Capitolo: {{p.capitolo}}
+                        <hr>
+                        Titolo: {{p.titolo}}
+                        <hr>
 
-                    <!-- <h1><b><i>{{poesie.titolo}}</i></b></h1> -->
+                        <!-- Capitolo: {{poesie.capitolo}} <br> -->
+                        <!-- Titolo: {{poesie.titolo}} -->
+                        <hr>
 
-                    <p style="text-align: center;">
-                        <button class="button" data-toggle="collapse" href="#testo" aria-expanded="false"
-                            aria-controls="testo" style="vertical-align:middle" (click)="enableDisableRule()"
-                            [ngClass]="{'button' : toggle, 'buttonClicked': !toggle}"><span>
-                                <mat-icon>menu_book</mat-icon>
-                            </span></button>
-                        <button class="button1" data-toggle="collapse" href="#audio" aria-expanded="false"
-                            aria-controls="audio" style="vertical-align:middle;" (click)="enableDisableRule1()"
-                            [ngClass]="{'button1' : toggle1, 'button1Clicked': !toggle1}"><span>
-                                <mat-icon>audiotrack</mat-icon>
-                            </span></button>
-                    </p>
-
-                    <div class="collapse multi-collapse" id="testo">
-
-                        <!-- <pre>{{poesie.testo}}</pre> -->
+                        <h1><b><i>{{p.titolo}}</i></b></h1>
 
                         <p style="text-align: center;">
                             <button class="button" data-toggle="collapse" href="#testo" aria-expanded="false"
-                                aria-controls="testo" (click)="enableDisableRule()"
-                                [ngClass]="{'button' : !toggle, 'buttonClicked': toggle}"
-                                style="vertical-align:middle;"><span>
-                                    <mat-icon>keyboard_arrow_up</mat-icon>
+                                aria-controls="testo" style="vertical-align:middle" (click)="enableDisableRule()"
+                                [ngClass]="{'button' : toggle, 'buttonClicked': !toggle}"><span>
+                                    <mat-icon>menu_book</mat-icon>
+                                </span></button>
+                            <button class="button1" data-toggle="collapse" href="#audio" aria-expanded="false"
+                                aria-controls="audio" style="vertical-align:middle;" (click)="enableDisableRule1()"
+                                [ngClass]="{'button1' : toggle1, 'button1Clicked': !toggle1}"><span>
+                                    <mat-icon>audiotrack</mat-icon>
                                 </span></button>
                         </p>
-                        <hr>
-                    </div>
 
+                        <div class="collapse multi-collapse" id="testo">
+
+                            <pre>{{p.testo}}</pre>
+
+                            <p style="text-align: center;">
+                                <button class="button" data-toggle="collapse" href="#testo" aria-expanded="false"
+                                    aria-controls="testo" (click)="enableDisableRule()"
+                                    [ngClass]="{'button' : !toggle, 'buttonClicked': toggle}"
+                                    style="vertical-align:middle;"><span>
+                                        <mat-icon>keyboard_arrow_up</mat-icon>
+                                    </span></button>
+                            </p>
+                            <hr>
+                        </div>
+                    </div>
                     <div class="collapse multi-collapse" id="audio">
                         <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column"
                             fxLayoutGap="32px">
@@ -54,7 +53,6 @@
                             </mat-card>
                         </div>
                     </div>
-
                 </table>
             </div>
         </div>

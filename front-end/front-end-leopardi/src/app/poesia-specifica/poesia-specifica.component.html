@@ -1,6 +1,6 @@
 <div class="container">
 
-    <h1><b><i>In questa sezione è possibile cercare un testo di Giacomo Leopardi e ascoltare la sua recitazione</i></b>
+    <h1><b><i>In questa sezione è possibile cercare un testo di Giacomo Leopardi ed ascoltarne la recitazione</i></b>
     </h1>
 
     <button *ngIf="boo1==false" type="button" class="btn btn-outline-info" (click)="bottoneTrue()">
@@ -35,6 +35,7 @@
             Titolo: {{p.titolo}} <br>
             Capitolo: {{p.capitolo}}
             <hr>
+            <h1><b><i>{{p.titolo}}</i></b></h1>
             <pre>{{p.testo}}</pre>
             <hr>
         </div>
@@ -60,9 +61,10 @@
                 </span></button>
         </p>
 
-        <div class="collapse multi-collapse" id="testo">
+        <div class="collapse multi-collapse" style="word-wrap: break-word;" id="testo">
 
             <pre>{{poesie.testo}}</pre>
+            <!-- <p style="text-align: justify;">{{poesie.testo}}</p> -->
 
             <p style="text-align: center;">
                 <button class="button" data-toggle="collapse" href="#testo" aria-expanded="false" aria-controls="testo"

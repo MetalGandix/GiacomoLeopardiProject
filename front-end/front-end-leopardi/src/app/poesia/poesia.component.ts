@@ -28,7 +28,86 @@ export class PoesiaComponent{
           state: { poesie: this.poesie }
         })
       })
-  
+    }
+    if(valore == 2){
+      this.service.findPoesiaSingolaByCapitolo(2).subscribe(poesieTrovate => {
+        this.poesie = poesieTrovate
+        this.router.navigate(['/mostra-poesia'], {
+          state: { poesie: this.poesie }
+        })
+      })
+    }
+    if(valore == 3){
+      this.service.findPoesiaSingolaByCapitolo(3).subscribe(poesieTrovate => {
+        this.poesie = poesieTrovate
+        this.router.navigate(['/mostra-poesia'], {
+          state: { poesie: this.poesie }
+        })
+      })
+    }
+    if(valore == 4){
+      this.service.findPoesiaSingolaByCapitolo(4).subscribe(poesieTrovate => {
+        this.poesie = poesieTrovate
+        this.router.navigate(['/mostra-poesia'], {
+          state: { poesie: this.poesie }
+        })
+      })
+    }
+    if(valore == 7){
+      this.service.findPoesiaSingolaByCapitolo(7).subscribe(poesieTrovate => {
+        this.poesie = poesieTrovate
+        this.router.navigate(['/mostra-poesia'], {
+          state: { poesie: this.poesie }
+        })
+      })
+    }
+    if(valore == 8){
+      this.service.findPoesiaSingolaByCapitolo(8).subscribe(poesieTrovate => {
+        this.poesie = poesieTrovate
+        this.router.navigate(['/mostra-poesia'], {
+          state: { poesie: this.poesie }
+        })
+      })
+    }
+    if(valore == 9){
+      this.service.findPoesiaSingolaByCapitolo(9).subscribe(poesieTrovate => {
+        this.poesie = poesieTrovate
+        this.router.navigate(['/mostra-poesia'], {
+          state: { poesie: this.poesie }
+        })
+      })
+    }
+    if(valore == 10){
+      this.service.findPoesiaSingolaByCapitolo(10).subscribe(poesieTrovate => {
+        this.poesie = poesieTrovate
+        this.router.navigate(['/mostra-poesia'], {
+          state: { poesie: this.poesie }
+        })
+      })
+    }
+    if(valore == 11){
+      this.service.findPoesiaSingolaByCapitolo(11).subscribe(poesieTrovate => {
+        this.poesie = poesieTrovate
+        this.router.navigate(['/mostra-poesia'], {
+          state: { poesie: this.poesie }
+        })
+      })
+    }
+    if(valore == 12){
+      this.service.findPoesiaSingolaByCapitolo(12).subscribe(poesieTrovate => {
+        this.poesie = poesieTrovate
+        this.router.navigate(['/mostra-poesia'], {
+          state: { poesie: this.poesie }
+        })
+      })
+    }
+    if(valore == 13){
+      this.service.findPoesiaSingolaByCapitolo(13).subscribe(poesieTrovate => {
+        this.poesie = poesieTrovate
+        this.router.navigate(['/mostra-poesia'], {
+          state: { poesie: this.poesie }
+        })
+      })
     }
     console.log(valore)
   }
