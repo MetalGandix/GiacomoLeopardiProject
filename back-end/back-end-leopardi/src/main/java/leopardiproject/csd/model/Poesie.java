@@ -17,6 +17,9 @@ public class Poesie {
     @Column
     private int capitolo;
 
+    @Column
+    private boolean isText;
+
     public long getId() {
         return id;
     }
@@ -47,5 +50,13 @@ public class Poesie {
 
     public void setCapitolo(int capitolo) {
         this.capitolo = capitolo;
+    }
+
+    public boolean getIsText() {
+        return isText;
+    }
+
+    public void setIsText(boolean isText) {
+        this.isText = isText;
     }
 }

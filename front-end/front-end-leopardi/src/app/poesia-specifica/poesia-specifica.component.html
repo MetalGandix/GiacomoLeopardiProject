@@ -36,7 +36,8 @@
             Capitolo: {{p.capitolo}}
             <hr>
             <h1><b><i>{{p.titolo}}</i></b></h1>
-            <pre>{{p.testo}}</pre>
+            <p style="text-align: justify; padding: 5%;" *ngIf=p.isText>{{p.testo}}</p>
+            <pre *ngIf=!p.isText>{{p.testo}}</pre>
             <hr>
         </div>
     </div>
@@ -61,10 +62,10 @@
                 </span></button>
         </p>
 
-        <div class="collapse multi-collapse" style="word-wrap: break-word;" id="testo">
+        <div class="collapse multi-collapse" id="testo">
 
-            <pre>{{poesie.testo}}</pre>
-            <!-- <p style="text-align: justify;">{{poesie.testo}}</p> -->
+            <p style="text-align: justify; padding: 5%;" *ngIf=poesie.isText>{{poesie.testo}}</p>
+            <pre *ngIf=!poesie.isText>{{poesie.testo}}</pre>
 
             <p style="text-align: center;">
                 <button class="button" data-toggle="collapse" href="#testo" aria-expanded="false" aria-controls="testo"

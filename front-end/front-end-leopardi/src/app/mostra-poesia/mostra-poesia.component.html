@@ -1,4 +1,7 @@
 <div class="container">
+    <p><button class="button" routerLink="/poesia" style="vertical-align:middle"><span>
+                <mat-icon>undo</mat-icon>
+            </span></button>Clicca sulla freccia per tornare indietro</p>
     <div class="card my-5">
         <div class="overflow-auto">
             <div class="card-body">
@@ -7,10 +10,6 @@
                         Capitolo: {{p.capitolo}}
                         <hr>
                         Titolo: {{p.titolo}}
-                        <hr>
-
-                        <!-- Capitolo: {{poesie.capitolo}} <br> -->
-                        <!-- Titolo: {{poesie.titolo}} -->
                         <hr>
 
                         <h1><b><i>{{p.titolo}}</i></b></h1>
@@ -30,7 +29,8 @@
 
                         <div class="collapse multi-collapse" id="testo">
 
-                            <pre>{{p.testo}}</pre>
+                            <p style="text-align: justify; padding: 5%;" *ngIf=p.isText>{{p.testo}}</p>
+                            <pre *ngIf=!p.isText>{{p.testo}}</pre>
 
                             <p style="text-align: center;">
                                 <button class="button" data-toggle="collapse" href="#testo" aria-expanded="false"

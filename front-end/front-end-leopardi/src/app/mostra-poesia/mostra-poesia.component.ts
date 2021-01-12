@@ -16,6 +16,8 @@ export class MostraPoesiaComponent implements OnInit {
 
   poesie: Poesia[]
   poesiaSpecifica: Poesia[]
+  isText: boolean
+
   boo1: boolean = false
   boo2: boolean = false
   titoloPoesia: string

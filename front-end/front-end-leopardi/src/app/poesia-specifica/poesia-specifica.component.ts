@@ -19,6 +19,7 @@ export class PoesiaSpecificaComponent implements OnInit {
   boo1: boolean = false
   boo2: boolean = false
   titoloPoesia: string
+  isText: boolean
 
   ngOnInit() {
     this.service.findAll().subscribe(poesiaSingola => {
