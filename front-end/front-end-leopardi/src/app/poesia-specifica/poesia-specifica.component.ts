@@ -28,6 +28,10 @@ export class PoesiaSpecificaComponent implements OnInit {
     })
   }
 
+  differenza(event){
+    console.log(event.target.id)
+  }
+
   filtra() {
     this.boo2 = true
     console.log(this.titoloPoesia)
