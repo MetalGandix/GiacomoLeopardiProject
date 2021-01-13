@@ -1,4 +1,7 @@
 <div class="container">
+
+    <!-- idea : mettere una freccia per tornare alla pagina di prima, momentaneamente e' brutto cosi' -->
+    
     <p><button class="button" routerLink="/poesia" style="vertical-align:middle"><span>
                 <mat-icon>undo</mat-icon>
             </span></button>Clicca sulla freccia per tornare indietro</p>
@@ -9,7 +12,7 @@
                     <div *ngFor="let p of poesie; let j = index">
                         Capitolo: {{p.capitolo}}
                         <hr>
-                        Titolo: {{p.titolo}}
+                        <h2 style="text-align: center;">Capitolo: {{p.capitolo}}</h2>
                         <hr>
                         <h1><b><i>{{p.titolo}}</i></b></h1>
                         <p style="text-align: center;">
