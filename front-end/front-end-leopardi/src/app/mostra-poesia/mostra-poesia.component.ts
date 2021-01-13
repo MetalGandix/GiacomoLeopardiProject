@@ -20,6 +20,8 @@ export class MostraPoesiaComponent implements OnInit {
 
   boo1: boolean = false
   boo2: boolean = false
+  prova: boolean = false
+  provaNumero: number
   titoloPoesia: string
 
   ngOnInit() {
@@ -34,6 +36,12 @@ export class MostraPoesiaComponent implements OnInit {
       this.poesie = a
     })
   }
+
+  differenza(event){
+    console.log("Evento: ", event)
+  }
+
+
 
   bottoneTrue() {
     this.boo1 = true
@@ -72,14 +80,4 @@ export class MostraPoesiaComponent implements OnInit {
 
   status = "";
   status1 = "";
-
-  enableDisableRule() {
-    this.toggle = !this.toggle;
-    this.status = this.toggle ? "" : "";
-  }
-
-  enableDisableRule1() {
-    this.toggle1 = !this.toggle1;
-    this.status1 = this.toggle1 ? "" : "";
-  }
 }
