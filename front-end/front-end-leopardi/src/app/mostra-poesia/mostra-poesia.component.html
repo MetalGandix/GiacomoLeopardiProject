@@ -1,4 +1,7 @@
 <div class="container">
+
+    <!-- idea : mettere una freccia per tornare alla pagina di prima, momentaneamente e' brutto cosi' -->
+    
     <p><button class="button" routerLink="/poesia" style="vertical-align:middle"><span>
                 <mat-icon>undo</mat-icon>
             </span></button>Clicca sulla freccia per tornare indietro</p>
@@ -7,12 +10,11 @@
             <div class="card-body">
                 <table class="table table-bordered table-striped" style="box-shadow: 15px 15px 10px #dedede;">
                     <div *ngFor="let p of poesie">
-                        Capitolo: {{p.capitolo}}
-                        <hr>
-                        Titolo: {{p.titolo}}
-                        <hr>
 
-                        <h1><b><i>{{p.titolo}}</i></b></h1>
+                        <h1 style="margin-top: 5%;"><b><i>{{p.titolo}}</i></b></h1>
+                        <hr>
+                        <h2 style="text-align: center;">Capitolo: {{p.capitolo}}</h2>
+                        <hr>
 
                         <p style="text-align: center;">
                             <button class="button" data-toggle="collapse" href="#testo" aria-expanded="false"
@@ -44,7 +46,7 @@
                         </div>
                     </div>
                     <div class="collapse multi-collapse" id="audio">
-                        <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column"
+                        <div style="margin-top: 5%; margin-bottom: 5%;" class="wrapper mat-typography" fxLayout="column"
                             fxLayoutGap="32px">
                             <mat-card style="width: responsive; height: 50px;">
                                 <div mat-card-image plyr plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true"
