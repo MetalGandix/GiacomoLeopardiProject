@@ -26,6 +26,7 @@ export class SocioComponent implements OnInit {
     })
   }
 
+
   OnSubmit(){
     this.service.mandaModulo(this.modulo).subscribe()
     this.logRicevuto = true

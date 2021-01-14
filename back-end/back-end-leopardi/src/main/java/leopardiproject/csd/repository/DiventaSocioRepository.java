@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import leopardiproject.csd.model.DiventaSocio;
 
-public interface DiventaSocioRepository extends JpaRepository<DiventaSocio, Integer>{
+public interface DiventaSocioRepository extends JpaRepository<DiventaSocio, Long>{
     
 }

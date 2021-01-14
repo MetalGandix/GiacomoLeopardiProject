@@ -21,4 +21,8 @@ export class DiventaSocioService {
   public mandaModulo(modulo: DiventaSocio) {
     return this.http.post<DiventaSocio>(this.url + "inserisciModulo", modulo);
   }
+
+  public eliminaModulo(id: number) {
+    return this.http.delete<DiventaSocio>(this.url + "cancellaModulo/" + id);
+  }
 }

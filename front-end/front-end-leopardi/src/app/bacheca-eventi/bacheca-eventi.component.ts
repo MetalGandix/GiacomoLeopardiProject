@@ -28,6 +28,7 @@ export class BachecaEventiComponent implements OnInit {
   array: any[];
 
   ngOnInit() {
+    this.admin = sessionStorage.getItem("Role") === "ROLE_ADMIN"
     this.service.findEvents().subscribe(p => 
       {
         this.eventi = p
@@ -46,6 +47,11 @@ export class BachecaEventiComponent implements OnInit {
         }
       )
     })
+  }
+
+  deleteEvento(id: number){
+    this.service.deleteEvent(id).subscribe()
+    window.location.reload()
   }
 
 

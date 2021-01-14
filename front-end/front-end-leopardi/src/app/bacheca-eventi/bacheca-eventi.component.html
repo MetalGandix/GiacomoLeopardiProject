@@ -1,9 +1,8 @@
 <div class="container">
     <h1>BACHECA EVENTI</h1>
-
     <div *ngFor="let e of eventi; let i = index" style="margin-bottom:30px">
         <div>
-            <img style="max-width: -webkit-fill-available;" [value]="nomeEvento" [src]="retrievedImage">
+            <img style="max-width: -webkit-fill-available;" [src]="retrievedImage">
         </div>
         <hr>
         Nome evento: {{ e.nomeEvento }}
@@ -12,5 +11,8 @@
         <hr>
         Descrizione evento: {{ e.descrizione }}
         <hr>
+        <button class="btn btn-danger" *ngIf="admin" (click)="deleteEvento(e.id)" style="margin-bottom: 15px;">
+            Premi qua per rimuovere l'evento
+        </button>
     </div>
 </div>

@@ -20,5 +20,10 @@ export class VediModuliSocioComponent{
       this.moduliCompilati = modulo
     })
   }
+    
+  deleteModulo(id: number){
+    this.service.eliminaModulo(id).subscribe()
+    window.location.reload()
+  }
 
 }

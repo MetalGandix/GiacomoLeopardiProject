@@ -22,4 +22,8 @@ export class EventoService {
   public saveEvents(evento: Evento) {
     return this.http.post<Evento>(this.url + "inserisciEventi", evento);
   }
+
+  public deleteEvent(id: number) {
+    return this.http.delete<Evento>(this.url + "cancellaEvento/" + id);
+  }
 }
