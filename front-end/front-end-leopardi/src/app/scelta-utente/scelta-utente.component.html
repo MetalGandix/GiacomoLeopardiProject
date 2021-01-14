@@ -16,6 +16,13 @@
         Crea un nuovo evento
     </button>
 
+    <button class="button" *ngIf="admin" routerLink="/vedi-moduli-socio">
+        <span>
+            <mat-icon>account_circle</mat-icon>
+        </span>
+        Vedi i moduli che hanno compilato i futuri soci
+    </button>
+
     <button class="button" *ngIf="visitor" routerLink="/prenotazione-visita">
         <span>
             <mat-icon style="color: orange;">location_on</mat-icon>

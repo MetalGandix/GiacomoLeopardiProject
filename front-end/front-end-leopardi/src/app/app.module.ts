@@ -67,6 +67,7 @@ import { BachecaEventiComponent } from './bacheca-eventi/bacheca-eventi.componen
 import { SocioComponent } from './socio/socio.component';
 import { PoesiaSpecificaComponent } from './poesia-specifica/poesia-specifica.component';
 import { MostraPoesiaComponent } from './mostra-poesia/mostra-poesia.component';
+import { VediModuliSocioComponent } from './vedi-moduli-socio/vedi-moduli-socio.component';
 
 
 
@@ -117,7 +118,8 @@ import { MostraPoesiaComponent } from './mostra-poesia/mostra-poesia.component';
     BachecaEventiComponent,
     SocioComponent,
     PoesiaSpecificaComponent,
-    MostraPoesiaComponent
+    MostraPoesiaComponent,
+    VediModuliSocioComponent
   ],
   imports: [
     HttpClientModule, 

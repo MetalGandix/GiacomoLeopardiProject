@@ -1,0 +1,24 @@
+<div class="container" *ngIf="admin">
+    <h1>Vedi qua sotto i moduli compilati</h1>
+    <div *ngFor="let modulo of moduliCompilati; index as i">
+        <p>
+        <b>INIZIO MODULO CON ID: {{modulo.id}}</b><br>
+        Nome: {{modulo.nome}}<br>
+        Cognome: {{modulo.cognome}}<br>
+        Luogo di nascita: {{modulo.luogoDiNascita}}<br>
+        Giorno di nascita: {{modulo.giornoDiNascita}}<br>
+        Città: {{modulo.citta}}<br>
+        Via: {{modulo.via}}<br>
+        Email: {{modulo.email}}<br>
+        Numero di telefono: {{modulo.numeroTelefono}}<br>
+        Professione: {{modulo.professione}}<br>
+        Codice fiscale: {{modulo.codiceFiscale}}<br>
+        Quota annuale: {{modulo.quotaAnnuale}}<br>
+        Data di compilazione: {{modulo.dataCompilazione}}<br>
+        <b>FINE MODULO</b>
+    </p>
+    <div style="margin-top: 10px">
+        .
+    </div>
+    </div>
+</div>
