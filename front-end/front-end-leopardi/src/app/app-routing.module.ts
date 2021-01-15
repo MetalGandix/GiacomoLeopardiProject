@@ -27,16 +27,6 @@ import { TariffaComponent } from './tariffa/tariffa.component';
 import { ContattiComponent } from './contatti/contatti.component';
 import { UtentiRegistratiComponent } from './utenti-registrati/utenti-registrati.component';
 import { InfoVisitatoreComponent } from './info-visitatore/info-visitatore.component';
-import { PoesiaColleInfinitoComponent } from './link-poesie/poesia-colle-infinito/poesia-colle-infinito.component';
-import { PoesiaCasaLeopardiComponent } from './link-poesie/poesia-casa-leopardi/poesia-casa-leopardi.component';
-import { PoesiaChiesaCappucciniComponent } from './link-poesie/poesia-chiesa-cappuccini/poesia-chiesa-cappuccini.component';
-import { PoesiaPalazzoVenieriComponent } from './link-poesie/poesia-palazzo-venieri/poesia-palazzo-venieri.component';
-import { PoesiaPiazzaTorreBorgoComponent } from './link-poesie/poesia-piazza-torre-borgo/poesia-piazza-torre-borgo.component';
-import { PoesiaSabatoVillaggioComponent } from './link-poesie/poesia-sabato-villaggio/poesia-sabato-villaggio.component';
-import { PoesiaTorrePasseroSolitarioComponent } from './link-poesie/poesia-torre-passero-solitario/poesia-torre-passero-solitario.component';
-import { PoesiaCentroNazionaleComponent } from './link-poesie/poesia-centro-nazionale/poesia-centro-nazionale.component';
-import { PoesiaCasaAdelaideComponent } from './link-poesie/poesia-casa-adelaide/poesia-casa-adelaide.component';
-import { PoesiaViaRomaComponent } from './link-poesie/poesia-via-roma/poesia-via-roma.component';
 import { EventoComponent } from './evento/evento.component';
 import { BachecaEventiComponent } from './bacheca-eventi/bacheca-eventi.component';
 import { SocioComponent } from './socio/socio.component';
@@ -74,16 +64,6 @@ const routes: Routes = [
   { path: 'contatti', component: ContattiComponent },
   { path: 'utenti-registrati', component: UtentiRegistratiComponent },
   { path: 'info-visitatore', component: InfoVisitatoreComponent },
-  { path: 'poesia-casa-leopardi', component: PoesiaCasaLeopardiComponent },
-  { path: 'poesia-chiesa-cappuccini', component: PoesiaChiesaCappucciniComponent},
-  { path: 'poesia-sabato-villaggio', component: PoesiaSabatoVillaggioComponent},
-  { path: 'poesia-colle-infinito', component: PoesiaColleInfinitoComponent},
-  { path: 'poesia-torre-passero-solitario', component: PoesiaTorrePasseroSolitarioComponent},
-  { path: 'poesia-palazzo-venieri', component: PoesiaPalazzoVenieriComponent},
-  { path: 'poesia-piazza-torre-borgo', component: PoesiaPiazzaTorreBorgoComponent},
-  { path: 'poesia-centro-nazionale', component: PoesiaCentroNazionaleComponent},
-  { path: 'poesia-casa-adelaide', component: PoesiaCasaAdelaideComponent},
-  { path: 'poesia-via-roma', component: PoesiaViaRomaComponent},
   { path: 'evento', component: EventoComponent},
   { path: 'bacheca-eventi', component: BachecaEventiComponent},
   { path: 'socio', component: SocioComponent},
