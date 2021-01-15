@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { PlyrComponent } from 'ngx-plyr';
 import { Poesia } from '../class/poesia';
 import { PoesiaService } from '../service/poesia.service';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-mostra-poesia',
@@ -11,8 +12,7 @@ import { PoesiaService } from '../service/poesia.service';
 })
 export class MostraPoesiaComponent implements OnInit {
   
-  constructor(private service: PoesiaService, private router: Router) {
-  }
+  constructor(private service: PoesiaService, private router: Router, private _location: Location) {  }
 
   poesie: Poesia[]
   poesiaSpecifica: Poesia[]
@@ -39,6 +39,10 @@ export class MostraPoesiaComponent implements OnInit {
 
   differenza(event){
     console.log("Evento: ", event)
+  }
+
+  goBack() {
+    this._location.back();
   }
 
 

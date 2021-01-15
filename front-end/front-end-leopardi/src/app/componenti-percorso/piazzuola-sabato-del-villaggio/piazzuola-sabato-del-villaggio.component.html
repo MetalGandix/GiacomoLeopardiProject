@@ -1,5 +1,8 @@
 <div class="container" style="text-align-last: center;">
-  <h1><i>Piazzuola del Sabato del Villaggio</i></h1>
+  <h1><i>Piazzuola del Sabato del Villaggio</i><br><button class="button" (click)="goBack()"
+      style="vertical-align:middle"><span>
+        <mat-icon>arrow_back</mat-icon>
+      </span></button></h1>
   <img class="card-img-top" style="width: 300px;margin-bottom: 30px;"
     src="assets\images\Piazzuola del Sabato del villaggio_IGP0946 copia_DxOFP.jpg" alt="Card image cap">
 
@@ -28,7 +31,7 @@
     alla sua parca mensa, fischiando, il zappatore.
     <p>
       Clicca sul libro per andare a leggere la poesia "Il sabato del villaggio"
-      <button class="button" routerLink="/poesia-sabato-villaggio">
+      <button class="button" (click)="searchByCapitolo(3)">
         <mat-icon>menu_book</mat-icon>
       </button>
     </p>

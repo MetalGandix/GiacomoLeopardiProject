@@ -1,5 +1,7 @@
 <div class="container" style="text-align-last: center;">
-    <h1><i>Palazzo Venieri</i></h1>
+    <h1><i>Palazzo Venieri</i><br><button class="button" (click)="goBack()" style="vertical-align:middle"><span>
+                <mat-icon>arrow_back</mat-icon>
+            </span></button></h1>
     <img class="card-img-top" style="width: 300px;margin-bottom: 30px;"
         src="assets\images\Palazzo Venieri_IGP1050_DxOFP.JPG" alt="Card image cap">
 
@@ -37,7 +39,7 @@
         quindi il canto alla bellezza con la B maiuscola quella che neanche il suo pessimismo riesce a cancellare.
         <p>
             Clicca sul libro per andare a leggere la poesia "Alla sua donna"
-            <button class="button" routerLink="/poesia-palazzo-venieri">
+            <button class="button" (click)="searchByCapitolo(12)">
                 <mat-icon>menu_book</mat-icon>
             </button>
         </p>

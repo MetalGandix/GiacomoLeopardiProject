@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
-import  * as L from 'leaflet';
+import * as L from 'leaflet';
 import 'mapbox-gl-leaflet';
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class PiazzaTorreDelBorgoComponent implements OnInit, AfterViewInit {
   @ViewChild('map')
   private mapContainer: ElementRef<HTMLElement>;
 
-  constructor() { }
+  constructor(private _location: Location) { }
 
   ngOnInit() {
   }
@@ -38,7 +39,7 @@ export class PiazzaTorreDelBorgoComponent implements OnInit, AfterViewInit {
     let icon = L.divIcon({
       iconSize: [30, 42],
       iconAnchor: [15, 42] // half of width + height
-  });
+    });
 
     map.attributionControl
       .setPrefix("")
@@ -56,8 +57,12 @@ export class PiazzaTorreDelBorgoComponent implements OnInit, AfterViewInit {
       html: "<div style='background-color:#c30b82;' class='marker-pin'></div><i class='material-icons'>place</i>",
       iconSize: [30, 42],
       iconAnchor: [15, 42]
-  });
-  
-L.marker([43.40370575976428, 13.548525612239967], { icon: icon }).addTo(map);
+    });
+
+    L.marker([43.40370575976428, 13.548525612239967], { icon: icon }).addTo(map);
+  }
+
+  goBack() {
+    this._location.back();
   }
 }
