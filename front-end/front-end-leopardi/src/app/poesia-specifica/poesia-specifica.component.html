@@ -34,29 +34,49 @@
             <div class="overflow-auto">
                 <div class="card-body">
                     <table class="table table-bordered table-striped" style="box-shadow: 15px 15px 10px #dedede;">
-                        <div *ngFor="let p of poesie">
+                        <div *ngFor="let p of poesie; let j = index">
 
                             <h1 style="margin-top: 5%;"><b><i>{{p.titolo}}</i></b></h1>
                             <hr>
                             <h2 style="text-align: center;">Capitolo: {{p.capitolo}}</h2>
                             <hr>
 
-                            <p style="text-align: justify; padding: 5%;" *ngIf=p.isText>{{p.testo}}</p>
-                            <pre *ngIf=!p.isText>{{p.testo}}</pre>
-                            <hr>
+                            <p style="text-align: center;">
+                                <a class="button" (click)="differenza(j)" data-toggle="collapse" href="#poesie-{{ j }}"
+                                    aria-expanded="false" style="vertical-align:middle"><span>
+                                        <mat-icon>menu_book</mat-icon>
+                                    </span></a>
+                                <a class="button1" (click)="differenza(j)" data-toggle="collapse" href="#audio-{{j}}"
+                                    aria-expanded="false" aria-controls="audio" style="vertical-align:middle;"><span>
+                                        <mat-icon>audiotrack</mat-icon>
+                                    </span></a>
+                            </p>
 
-                            <!-- <div class="collapse multi-collapse" id="audio"> -->
-                            <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column"
-                                fxLayoutGap="32px">
-                                <mat-card style="width: responsive; height: 50px;">
-                                    <div mat-card-image plyr plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true"
-                                        [plyrCrossOrigin]="true"
-                                        [plyrSources]="'./assets/audio/Inquietudine della vita.mp3'"></div>
-                                    <!-- in teoria qui ci andrebbe playsource = "{{ p.audio }}"  una volta 
-                                                inserita la colonna contenente gli audio?????? -->
-                                </mat-card>
+                            <div class="collapse" id="poesie-{{ j }}">
+
+                                <p style="text-align: justify; padding: 5%;" *ngIf=p.isText>{{p.testo}}</p>
+                                <pre *ngIf=!p.isText>{{p.testo}}</pre>
+
+                                <p style="text-align: center;">
+
+                                    <a class="button" (click)="differenza(j)" data-toggle="collapse"
+                                        href="#poesie-{{ j }}" aria-expanded="false"
+                                        style="vertical-align:middle"><span>
+                                            <mat-icon>keyboard_arrow_up</mat-icon>
+                                        </span></a>
+                                </p>
+                                <hr>
                             </div>
-                            <!-- </div> -->
+                            <div class="collapse" id="audio-{{j}}">
+                                <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column"
+                                    fxLayoutGap="32px">
+                                    <mat-card style="width: responsive; height: 50px;">
+                                        <div mat-card-image plyr plyrTitle="Audio" plyrType="audio"
+                                            [plyrPlaysInline]="true" [plyrCrossOrigin]="true"
+                                            [plyrSources]="'./assets/audio/Inquietudine della vita.mp3'"></div>
+                                    </mat-card>
+                                </div>
+                            </div>
                             <hr>
                         </div>
                     </table>
@@ -106,8 +126,8 @@
                         </div>
 
                         <div class="collapse multi-collapse" id="audio">
-                            <div style="margin-top: 5%; margin-bottom: 5%;" class="wrapper mat-typography" fxLayout="column"
-                                fxLayoutGap="32px">
+                            <div style="margin-top: 5%; margin-bottom: 5%;" class="wrapper mat-typography"
+                                fxLayout="column" fxLayoutGap="32px">
                                 <mat-card style="width: responsive; height: 50px;">
                                     <div mat-card-image plyr plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true"
                                         [plyrCrossOrigin]="true"
