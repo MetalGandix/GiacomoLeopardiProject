@@ -1,45 +1,60 @@
 <div class="container">
-  <div class="title">
-    Home Page
-  </div>
-  <div class="fraseLeopardi">
-    <h1>"Sempre caro mi fu quest’ermo colle,
 
-      E questa siepe, che da tanta parte
+  <h1 class="title"><b><i>Centro Culturale<br>Giacomo Leopardi<br>di Recanati</i></b></h1>
 
-      Dell’ultimo orizzonte il guardo esclude."</h1>
-  </div>
-  <img class="img" src="\assets\images\LogoCentroCulturaleGL.png">
-  <div class="sfondodivButton">
-    <div class="divButton">
-      <button class="button" routerLink="/mappa" style="margin-right: 4px">
-        <mat-icon class="icon">explore</mat-icon>ESPLORA IL PERCORSO
-      </button>
+  <div class="card my-5">
+    <div class="overflow-auto">
+      <div class="card-body">
+        <table class="table table-bordered table-striped" style="box-shadow: 15px 15px 10px #dedede;">
+
+          <p class="ermocolle">"Sempre caro mi fu quest’ermo colle,<br>E questa siepe, che da tanta parte<br>Dell’ultimo
+            orizzonte il guardo
+            esclude."</p>
+
+          <img class="img" src="\assets\images\LogoCentroCulturaleGL.png">
+
+          <p>
+            <button class="button" routerLink="/mappa" style="margin-right: 4px">
+              <mat-icon class="icon">explore</mat-icon>
+              <i style="font-family: 'Times New Roman', Times, serif; font-size: large;  margin-left: 5%;">Esplora il
+                percorso
+                leopardiano</i>
+            </button>
+          </p>
+
+          <p>
+            <button class="button" routerLink="/prenotazione-visita">
+              <mat-icon class="icon">add</mat-icon>
+              <i style="font-family: 'Times New Roman', Times, serif; font-size: large; margin-left: 5%;">Prenota una
+                visita</i>
+            </button>
+          </p>
+
+          <p class="desanctis">
+            "Leopardi produce l'effetto contrario a quello che si propone. Non crede al progresso, e te lo fa
+            desiderare; non crede alla libertà, e te la fa amare. Chiama illuisone l'amore, la gloria, la virtù, e te ne
+            accende un desiderio inesausto. E' scettico, e ti fa credente".<br>F. De Sanctis
+          </p>
+
+          <div class="player">
+            <youtube-player videoId="RSxppSKMqjY" suggestedQuality="standard" [height]="200" [width]="300"
+              [startSeconds]="1" [endSeconds]="200">
+            </youtube-player>
+          </div>
+
+          <p style="font-family: 'Times New Roman', Times, serif; font-size: x-large;text-align: center;">Ultimo Evento
+            Aggiunto</p>
+
+          <p>
+            <button class="button" routerLink="/bacheca-eventi">
+              <mat-icon class="icon">event_note</mat-icon>
+              <i style="font-family: 'Times New Roman', Times, serif; font-size: large; margin-left: 5%;">Vai alla
+                bacheca eventi</i>
+            </button>
+          </p>
+
+        </table>
+      </div>
     </div>
-    <div class="divButton">
-      <button class="button" routerLink="/prenotazione-visita">
-        <mat-icon class="icon">add</mat-icon>PRENOTA UNA VISITA
-      </button>
-    </div>
-  </div>
-  <div>
-    <h1 class="frase">
-      "Leopardi produce l'effetto contrario a quello che si propone. Non crede al progresso, e te lo fa desiderare; non
-      crede alla libertà, e te la fa amare. Chiama illuisone l'amore, la gloria, la virtù, e te ne accende un desiderio
-      inesausto. E' scettico, e ti fa credente".
-
-      F. De Sanctis
-    </h1>
-  </div>
-  <div class="player">
-    <youtube-player videoId="RSxppSKMqjY" suggestedQuality="standard" [height]="200" [width]="300" [startSeconds]="1"
-      [endSeconds]="200">
-    </youtube-player>
-  </div>
-  <div class="evento">
-    <p style="text-align: center;"> Ultimo Evento Aggiunto </p>
-    <button class="button" routerLink="/bacheca-eventi" style="margin-right: 4px">
-      <mat-icon class="icon">event_note</mat-icon>Vai alla bacheca eventi
-    </button>
   </div>
 </div>
