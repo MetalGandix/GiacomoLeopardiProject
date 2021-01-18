@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
-import  * as L from 'leaflet';
+import * as L from 'leaflet';
 import 'mapbox-gl-leaflet';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-autografo-inno',
@@ -14,7 +15,7 @@ export class AutografoInnoComponent implements OnInit, AfterViewInit {
   @ViewChild('map')
   private mapContainer: ElementRef<HTMLElement>;
 
-  constructor() { }
+  constructor(private _location: Location) { }
 
   ngOnInit() {
   }
@@ -37,7 +38,7 @@ export class AutografoInnoComponent implements OnInit, AfterViewInit {
     let icon = L.divIcon({
       iconSize: [30, 42],
       iconAnchor: [15, 42] // half of width + height
-  });
+    });
 
     map.attributionControl
       .setPrefix("")
@@ -55,8 +56,12 @@ export class AutografoInnoComponent implements OnInit, AfterViewInit {
       html: "<div style='background-color:#c30b82;' class='marker-pin'></div><i class='material-icons'>place</i>",
       iconSize: [30, 42],
       iconAnchor: [15, 42]
-  });
-  
-L.marker([43.4021, 13.55142], { icon: icon }).addTo(map);
+    });
+
+    L.marker([43.4021, 13.55142], { icon: icon }).addTo(map);
+  }
+
+  goBack() {
+    this._location.back();
   }
 }

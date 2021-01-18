@@ -28,14 +28,16 @@ export class PoesiaSpecificaComponent implements OnInit {
     })
   }
 
-
-
   filtra() {
     this.boo2 = true
     console.log(this.titoloPoesia)
     this.service.findPoesiaSingola(this.titoloPoesia).subscribe(a => {
       this.poesie = a
     })
+  }
+
+  differenza(event){
+    console.log("Evento: ", event)
   }
 
   bottoneTrue() {

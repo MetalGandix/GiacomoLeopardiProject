@@ -1,24 +1,29 @@
 <div class="container">
 
     <!-- idea : mettere una freccia per tornare alla pagina di prima, momentaneamente e' brutto cosi' -->
-    
-    <p><button class="button" routerLink="/poesia" style="vertical-align:middle"><span>
+
+    <!-- <p><button class="button" (click)="goBack()" style="vertical-align:middle"><span>
                 <mat-icon>undo</mat-icon>
-            </span></button>Clicca sulla freccia per tornare indietro</p>
+            </span></button>Clicca sulla freccia per tornare indietro</p> -->
+
     <div class="card my-5">
         <div class="overflow-auto">
             <div class="card-body">
                 <table class="table table-bordered table-striped" style="box-shadow: 15px 15px 10px #dedede;">
                     <div *ngFor="let p of poesie; let j = index">
-                        Capitolo: {{p.capitolo}}
-                        <hr>
-                        <h2 style="text-align: center;">Capitolo: {{p.capitolo}}</h2>
+
+                        <h2 style="text-align: center; margin-top: 5%;">
+                            <button class="button" (click)="goBack()" ><span>
+                                    <mat-icon style="vertical-align: middle;">keyboard_arrow_left</mat-icon>
+                                </span></button>
+                            Capitolo: {{p.capitolo}}
+                        </h2>
                         <hr>
                         <h1><b><i>{{p.titolo}}</i></b></h1>
+
                         <p style="text-align: center;">
-                            <a class="button" (click)="differenza(j)" data-toggle="collapse"
-                                href="#poesie-{{ j }}" aria-expanded="false"
-                                style="vertical-align:middle"><span>
+                            <a class="button" (click)="differenza(j)" data-toggle="collapse" href="#poesie-{{ j }}"
+                                aria-expanded="false" style="vertical-align:middle"><span>
                                     <mat-icon>menu_book</mat-icon>
                                 </span></a>
                             <a class="button1" (click)="differenza(j)" data-toggle="collapse" href="#audio-{{j}}"
@@ -28,12 +33,16 @@
                         </p>
 
                         <div class="collapse" id="poesie-{{ j }}">
+
                             <p style="text-align: justify; padding: 5%;" *ngIf=p.isText>{{p.testo}}</p>
                             <pre *ngIf=!p.isText>{{p.testo}}</pre>
+
                             <p style="text-align: center;">
-                                <button class="button" data-toggle="collapse" aria-expanded="false" style="vertical-align:middle;"><span>
+
+                                <a class="button" (click)="differenza(j)" data-toggle="collapse" href="#poesie-{{ j }}"
+                                    aria-expanded="false" style="vertical-align:middle"><span>
                                         <mat-icon>keyboard_arrow_up</mat-icon>
-                                    </span></button>
+                                    </span></a>
                             </p>
                             <hr>
                         </div>
@@ -47,6 +56,7 @@
                                 </mat-card>
                             </div>
                         </div>
+                        <hr>
                     </div>
                 </table>
             </div>

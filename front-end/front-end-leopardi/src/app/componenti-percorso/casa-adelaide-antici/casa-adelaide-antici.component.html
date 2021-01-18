@@ -1,5 +1,7 @@
 <div class="container" style="text-align-last: center;">
-    <h1><i>Casa di Adelaide Antici</i></h1>
+    <h1><i>Casa di Adelaide Antici</i><br><button class="button" (click)="goBack()" style="vertical-align:middle"><span>
+                <mat-icon>arrow_back</mat-icon>
+            </span></button></h1>
     <img class="card-img-top" style="width: 300px;margin-bottom: 30px;"
         src="assets\images\Casa di Adelaide Antici_IGP1012 copia_DxOFP.jpg" alt="Card image cap">
 
@@ -34,7 +36,7 @@
 
         <p>
             Clicca sul libro per andare a leggere la poesia "A Silvia"
-            <button class="button" routerLink="/poesia-casa-adelaide">
+            <button (click)="searchByCapitolo(8)" class="button">
                 <mat-icon>menu_book</mat-icon>
             </button>
         </p>

@@ -1,5 +1,8 @@
 <div class="container" style="text-align-last: center;">
-  <h1><i>Centro Nazionale Studi Leopardiani</i></h1>
+  <h1><i>Centro Nazionale Studi Leopardiani</i><br><button class="button" (click)="goBack()"
+      style="vertical-align:middle"><span>
+        <mat-icon>arrow_back</mat-icon>
+      </span></button></h1>
   <img class="card-img-top" style="width: 300px;margin-bottom: 30px;"
     src="assets\images\06_Centro_Nazionale_Leopardi_2_copia_DxOFP.jpg" alt="Card image cap">
 
@@ -37,7 +40,7 @@
     sentimento. Il poeta esprime questa sproporzione dell'animo di fronte alla realtà nel Pensiero LXVIII.
     <p>
       Clicca sul libro per andare a leggere il "Pensiero LXVIII"
-      <button class="button" routerLink="/poesia-centro-nazionale">
+      <button class="button" (click)="searchByCapitolo(4)">
         <mat-icon>menu_book</mat-icon>
       </button>
     </p>

@@ -1,6 +1,10 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Router } from '@angular/router';
 import  * as L from 'leaflet';
 import 'mapbox-gl-leaflet';
+import { Poesia } from 'src/app/class/poesia';
+import { PoesiaService } from 'src/app/service/poesia.service';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-casa-leopardi',
@@ -10,11 +14,14 @@ import 'mapbox-gl-leaflet';
 export class CasaLeopardiComponent implements OnInit, AfterViewInit {
 
   private map: L.Map;
+  valore: number
+  poesie: Poesia[]
 
   @ViewChild('map')
   private mapContainer: ElementRef<HTMLElement>;
 
-  constructor() { }
+  constructor(private service: PoesiaService, private router: Router, private _location: Location) {
+  }
 
   ngOnInit() {
   }
@@ -58,5 +65,18 @@ export class CasaLeopardiComponent implements OnInit, AfterViewInit {
   });
   
 L.marker([43.39816, 13.55196], { icon: icon }).addTo(map);
+  }
+
+  searchByCapitolo(valore: number) {
+    this.service.findPoesiaSingolaByCapitolo(1).subscribe(poesieTrovate => {
+      this.poesie = poesieTrovate
+      this.router.navigate(['/mostra-poesia'], {
+        state: { poesie: this.poesie }
+      })
+    })
+  }
+
+  goBack() {
+    this._location.back();
   }
 }

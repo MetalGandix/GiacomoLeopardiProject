@@ -52,16 +52,6 @@ import { MatCardModule } from '@angular/material/card';
 import { FooterComponent } from './footer/footer.component';
 import { UtentiRegistratiComponent } from './utenti-registrati/utenti-registrati.component';
 import { InfoVisitatoreComponent } from './info-visitatore/info-visitatore.component';
-import { PoesiaCasaLeopardiComponent } from './link-poesie/poesia-casa-leopardi/poesia-casa-leopardi.component';
-import { PoesiaChiesaCappucciniComponent } from './link-poesie/poesia-chiesa-cappuccini/poesia-chiesa-cappuccini.component';
-import { PoesiaColleInfinitoComponent } from './link-poesie/poesia-colle-infinito/poesia-colle-infinito.component';
-import { PoesiaPalazzoVenieriComponent } from './link-poesie/poesia-palazzo-venieri/poesia-palazzo-venieri.component';
-import { PoesiaPiazzaTorreBorgoComponent } from './link-poesie/poesia-piazza-torre-borgo/poesia-piazza-torre-borgo.component';
-import { PoesiaSabatoVillaggioComponent } from './link-poesie/poesia-sabato-villaggio/poesia-sabato-villaggio.component';
-import { PoesiaTorrePasseroSolitarioComponent } from './link-poesie/poesia-torre-passero-solitario/poesia-torre-passero-solitario.component';
-import { PoesiaCentroNazionaleComponent } from './link-poesie/poesia-centro-nazionale/poesia-centro-nazionale.component';
-import { PoesiaCasaAdelaideComponent } from './link-poesie/poesia-casa-adelaide/poesia-casa-adelaide.component';
-import { PoesiaViaRomaComponent } from './link-poesie/poesia-via-roma/poesia-via-roma.component';
 import { EventoComponent } from './evento/evento.component';
 import { BachecaEventiComponent } from './bacheca-eventi/bacheca-eventi.component';
 import { SocioComponent } from './socio/socio.component';
@@ -104,16 +94,6 @@ import { VediModuliSocioComponent } from './vedi-moduli-socio/vedi-moduli-socio.
     FooterComponent,
     UtentiRegistratiComponent,
     InfoVisitatoreComponent,
-    PoesiaCasaLeopardiComponent,
-    PoesiaChiesaCappucciniComponent,
-    PoesiaSabatoVillaggioComponent,
-    PoesiaColleInfinitoComponent,
-    PoesiaTorrePasseroSolitarioComponent,
-    PoesiaPalazzoVenieriComponent,
-    PoesiaPiazzaTorreBorgoComponent,
-    PoesiaCentroNazionaleComponent,
-    PoesiaCasaAdelaideComponent,
-    PoesiaViaRomaComponent,
     EventoComponent,
     BachecaEventiComponent,
     SocioComponent,

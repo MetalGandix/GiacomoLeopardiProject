@@ -16,7 +16,7 @@ export class PoesiaComponent{
   constructor(private service: PoesiaService,private router: Router){
   }
 
-  isTextVisible = true;
+  isTextVisible = true; //da controllare se questa variabile serve ancora
   valore: number
   poesie: Poesia[]
 

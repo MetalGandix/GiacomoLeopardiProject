@@ -1,5 +1,7 @@
 <div class="container" style="text-align-last: center;">
-  <h1><i>Chiesa dei Cappuccini</i></h1>
+  <h1><i>Chiesa dei Cappuccini</i><br><button class="button" (click)="goBack()" style="vertical-align:middle"><span>
+        <mat-icon>arrow_back</mat-icon>
+      </span></button></h1>
   <img class="card-img-top" style="width: 300px;margin-bottom: 30px;"
     src="assets\images\Chiesa dei Cappuccini_IGP0958 copia_DxOFP.jpg" alt="Card image cap">
 
@@ -52,7 +54,7 @@
     <p>
       Clicca sul libro per andare a leggere la poesia "Sopra il ritratto di una bella donna scolpito nel monumento
       sepolcrale della medesima"
-      <button class="button" routerLink="/poesia-chiesa-cappuccini">
+      <button class="button" (click)="searchByCapitolo(2)">
         <mat-icon>menu_book</mat-icon>
       </button>
     </p>

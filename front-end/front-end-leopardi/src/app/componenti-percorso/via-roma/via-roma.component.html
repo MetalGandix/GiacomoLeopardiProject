@@ -1,5 +1,7 @@
 <div class="container" style="text-align-last: center;">
-    <h1><i>Via Roma</i></h1>
+    <h1><i>Via Roma</i><br><button class="button" (click)="goBack()" style="vertical-align:middle"><span>
+                <mat-icon>arrow_back</mat-icon>
+            </span></button></h1>
     <img class="card-img-top" style="width: 300px;margin-bottom: 30px;"
         src="assets\images\Via Roma_IGP1017 copia_DxOFP.jpg" alt="Card image cap">
 
@@ -11,7 +13,7 @@
 
         <p>
             Clicca sul libro per andare a leggere il testo di Ungaretti
-            <button class="button" routerLink="/poesia-via-roma">
+            <button class="button" (click)="searchByCapitolo(9)">
                 <mat-icon>menu_book</mat-icon>
             </button>
         </p>
