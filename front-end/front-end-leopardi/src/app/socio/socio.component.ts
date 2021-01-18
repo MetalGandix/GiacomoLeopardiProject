@@ -10,6 +10,8 @@ import { DiventaSocioService } from '../service/diventa-socio.service';
 })
 export class SocioComponent implements OnInit {
 
+  today: number = Date.now();
+
   constructor(private service: DiventaSocioService, private route: ActivatedRoute,
     private router: Router) {
       this.modulo = new DiventaSocio()
@@ -26,10 +28,8 @@ export class SocioComponent implements OnInit {
     })
   }
 
-
   OnSubmit(){
     this.service.mandaModulo(this.modulo).subscribe()
     this.logRicevuto = true
   }
-
 }

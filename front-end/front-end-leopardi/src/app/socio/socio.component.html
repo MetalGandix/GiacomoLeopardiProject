@@ -227,8 +227,9 @@
                     <label class="control-label" for="datepicker">Data della compilazione</label>
                     <div class="input-group">
                         <input id="datepicker" #data="ngModel" name="dataCompilazione" type="date"
-                            [(ngModel)]="modulo.dataCompilazione" placeholder="Data della compilazione"
+                            [(ngModel)]="modulo.dataCompilazione" placeholder="inserisci una data"
                             class="form-control" required>
+                             <!-- {{today | date: 'dd-MM-yyyy'}} -->
                         <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                     </div>
                 </div>
