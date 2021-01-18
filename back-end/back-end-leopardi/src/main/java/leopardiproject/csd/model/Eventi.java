@@ -1,6 +1,7 @@
 package leopardiproject.csd.model;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import javax.persistence.*;
 
@@ -47,8 +48,9 @@ public class Eventi {
         this.descrizione = descrizione;
     }
 
-    public LocalDate getDataEvento() {
-        return dataEvento;
+    public String getDataEvento() {
+        String formattedDate = dataEvento.format(DateTimeFormatter.ofPattern("dd MMMM yyyy"));
+        return formattedDate;
     }
 
     public void setDataEvento(LocalDate dataEvento) {
