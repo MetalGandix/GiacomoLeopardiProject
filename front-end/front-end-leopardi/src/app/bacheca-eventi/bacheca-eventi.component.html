@@ -1,15 +1,18 @@
 <div class="container">
-    <h1>BACHECA EVENTI</h1>
+    <p class="title">BACHECA EVENTI</p>
     <div *ngFor="let e of eventi; let i = index" style="margin-bottom:30px">
         <div>
-            <img style="max-width: -webkit-fill-available;" [src]="retrievedImage">
+            <!-- <img style="max-width: -webkit-fill-available;" [src]="retrievedImage"> -->
+            <img style="max-width: -webkit-fill-available;" src="\assets\images\Casa Leopardi_IGP0936 copia_DxOFP.jpg">
         </div>
         <hr>
-        Nome evento: {{ e.nomeEvento }}
+        <h3 style="text-align: center; text-transform: uppercase; font-family: 'Times New Roman', Times, serif;">{{
+            e.nomeEvento }}</h3>
         <hr>
-        Data evento: {{ e.dataEvento }}
+        <p style="font-family:'Times New Roman', Times, serif">Data evento: {{ e.dataEvento }}</p>
         <hr>
-        Descrizione evento: {{ e.descrizione }}
+        <p style="text-align: justify; font-family: 'Times New Roman', Times, serif;">Descrizione evento:<br>{{
+            e.descrizione }}</p>
         <hr>
         <button class="btn btn-danger" *ngIf="admin" (click)="deleteEvento(e.id)" style="margin-bottom: 15px;">
             Premi qua per rimuovere l'evento
