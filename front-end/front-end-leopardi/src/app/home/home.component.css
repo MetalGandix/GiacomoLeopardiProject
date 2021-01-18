@@ -4,12 +4,12 @@
         text-align: -webkit-center;
         margin-top: 10px;
     }
-    .title{
+    .title {
         font-size: xx-large;
         font-family: 'Times New Roman', Times, serif;
         text-align: center;
     }
-    .ermocolle{
+    .ermocolle {
         margin-top: 5%;
         font-size: large;
         font-family: 'Times New Roman', Times, serif;
@@ -36,7 +36,7 @@
         vertical-align: middle;
         margin-left: 5%;
     }
-    .desanctis{
+    .desanctis {
         margin-top: 10%;
         font-size: large;
         font-family: 'Times New Roman', Times, serif;
@@ -45,10 +45,16 @@
         line-height: 200%;
         padding: 10%;
     }
-    .player{
+    .player {
         display: flex;
         justify-content: center;
         align-items: center;
         margin-bottom: 5%;
+    }
+    .imgEvento {
+        width: 300px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
 }

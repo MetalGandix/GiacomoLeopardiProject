@@ -53,6 +53,17 @@
             </button>
           </p>
 
+          <div *ngFor="let e of eventi | slice:eventi.length-1:eventi.length" style="margin-bottom:10%; margin-top: 10%;">
+            <div>
+              <img class="imgEvento" style="max-width: -webkit-fill-available;" [src]="retrievedImage">
+            </div>
+            <hr>
+            Nome evento: {{ e.nomeEvento }}
+            <hr>
+            Data evento: {{ e.dataEvento }}
+            <hr>
+            Descrizione evento: {{ e.descrizione }}
+          </div>
         </table>
       </div>
     </div>
