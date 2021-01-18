@@ -27,7 +27,6 @@ public class EventiController {
 
     @PostMapping("/inserisciEventi")
     String addEvent(Authentication a, @RequestBody Eventi event) {
-        //event.setEvento_immagine(ImageModel);
         rep.save(event);
         return "Evento inserito correttamente";
     }

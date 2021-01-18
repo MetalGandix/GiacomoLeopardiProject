@@ -25,4 +25,8 @@ export class UtentiRegistratiComponent implements OnInit {
     })
   }
 
+  deleteUtente(id: number){
+    this.service.deleteUser(id).subscribe()
+  }
+
 }

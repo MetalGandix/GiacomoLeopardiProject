@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import leopardiproject.csd.model.DAOUser;
 
 @Repository
-public interface UserDao extends JpaRepository<DAOUser, Integer> {
+public interface UserDao extends JpaRepository<DAOUser, Long> {
 	
 	DAOUser findByUsername(String username);
 }

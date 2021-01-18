@@ -14,7 +14,7 @@ import { EventoService } from '../service/evento.service';
 export class BachecaEventiComponent implements OnInit {
 
   constructor(private httpClient: HttpClient, private service: EventoService, private router: Router) {
-   }
+  }
 
   eventi: Evento[]
   prenotazioniEliminate: Prenotazione[]
@@ -28,33 +28,23 @@ export class BachecaEventiComponent implements OnInit {
   array: any[];
 
   ngOnInit() {
-    this.admin = sessionStorage.getItem("Role") === "ROLE_ADMIN"
-    this.service.findEvents().subscribe(p => 
-      {
-        this.eventi = p
-        this.getImmagini()
-        console.log(this.eventi)
+    this.service.findEvents().subscribe(p => {
+      this.eventi = p
+     this.eventi.forEach(e => {
+        this.httpClient.get("http://localhost:8080/image/get/" + e.evento_immagine.name).subscribe(
+          res => {
+            this.retrieveResonse = res;
+            this.base64Data = this.retrieveResonse.picByte;
+            this.retrievedImage = 'data:image/jpeg;base64,' + this.base64Data
+          }
+        )
       })
-  }
-
-  getImmagini(){
-    this.eventi.forEach(e => {
-      this.httpClient.get("http://localhost:8080/image/get/" + e.evento_immagine.name).subscribe(
-        res => {
-          this.retrieveResonse = res;
-          this.base64Data = this.retrieveResonse.picByte;
-          this.retrievedImage = 'data:image/jpeg;base64,' + this.base64Data;
-        }
-      )
+      console.log(this.eventi)
     })
   }
 
-  deleteEvento(id: number){
+  deleteEvento(id: number) {
     this.service.deleteEvent(id).subscribe()
     window.location.reload()
   }
-
-
 }
-
-

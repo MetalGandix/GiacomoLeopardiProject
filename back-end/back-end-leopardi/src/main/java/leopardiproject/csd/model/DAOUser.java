@@ -2,6 +2,8 @@ package leopardiproject.csd.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import org.hibernate.annotations.Cascade;
+
 import java.util.Set;
 
 import javax.persistence.*;
@@ -35,9 +37,10 @@ public class DAOUser{
 	private boolean checkbox3;
 
 	// role based
-	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "USER_ROLES", joinColumns = { @JoinColumn(name = "USER_ID") }, inverseJoinColumns = {
 			@JoinColumn(name = "ROLE_ID") })
+	@Cascade(value = org.hibernate.annotations.CascadeType.DELETE_ORPHAN)
 	private Set<Role> roles;
 
 	public long getId() {

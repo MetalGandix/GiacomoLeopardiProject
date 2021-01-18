@@ -22,5 +22,10 @@ export class GestioneUtenteService {
   public findUtenteSingolo(email: string): Observable<User[]> {
     return this.http.get<User[]>(this.url + "vediUtenti/" + email);
   }
+  
+  
+  public deleteUser(id: number){
+    return this.http.delete<User>(this.url + "eliminaUtente/"+id);
+  }
 
 }

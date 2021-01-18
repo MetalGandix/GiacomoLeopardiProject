@@ -17,7 +17,7 @@
                             <td>{{ u.username }}</td>
                             <td>{{ u.name }}</td>
                             <td>{{ u.lastname }}</td>
-                            <td><button><mat-icon class="elimina" >delete</mat-icon></button>
+                            <td><button><mat-icon class="elimina" (click)="deleteUtente(u.id)" >delete</mat-icon></button>
                                 <button><mat-icon class="changeRole">person</mat-icon></button>
                             </td>
                         </tr>
