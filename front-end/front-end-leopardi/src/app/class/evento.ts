@@ -6,4 +6,5 @@ export class Evento {
     dataEvento: Date
     descrizione: string
     evento_immagine: Immagine
+    retrievedImage: string
 }

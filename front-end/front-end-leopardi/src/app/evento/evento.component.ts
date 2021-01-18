@@ -35,6 +35,7 @@ export class EventoComponent implements OnInit {
     console.log(this.selectedFile);
     const uploadImageData = new FormData();
     uploadImageData.append('imageFile', this.selectedFile, this.selectedFile.name);
+    debugger
     this.httpClient.post('http://localhost:8080/image/upload', uploadImageData, { observe: 'response' })
       .subscribe((response) => {
         if (response.status === 200) {

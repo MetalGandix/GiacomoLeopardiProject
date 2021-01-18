@@ -57,9 +57,9 @@ public class PrenotazioneVisitaController {
     // Metodo per vedere TUTTE le visite (Deve essere accessibile solo all'admin)
     @GetMapping("/vediVisite")
     public List<PrenotazioneVisita> getVisite(Authentication a) {
-        return (List<PrenotazioneVisita>) visitaRep.findAll();
+        List<PrenotazioneVisita> prenotazione = visitaRep.findAll();
+        return prenotazione ;
     }
-
     // Metodo per vedere una singola visita dell'utente
     @GetMapping("/vediVisita/{id}")
     public Optional<PrenotazioneVisita> vediVisitaSingola(Authentication a, @PathVariable Long id) {

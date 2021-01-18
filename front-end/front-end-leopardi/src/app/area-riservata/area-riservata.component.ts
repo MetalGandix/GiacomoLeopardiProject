@@ -26,7 +26,6 @@ export class AreaRiservataComponent implements OnInit {
         this.prenotazione = p
         console.log(this.prenotazione)
       })
-
     this.service.findVisiteCancellate().subscribe(e => {
         this.prenotazioniEliminate = e
         console.log(this.prenotazioniEliminate)

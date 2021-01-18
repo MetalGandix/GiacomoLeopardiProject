@@ -3,7 +3,7 @@
     <div *ngFor="let e of eventi; let i = index" style="margin-bottom:30px">
         <div>
             <!-- <img style="max-width: -webkit-fill-available;" [src]="retrievedImage"> -->
-            <img style="max-width: -webkit-fill-available;" src="\assets\images\Casa Leopardi_IGP0936 copia_DxOFP.jpg">
+            <img style="max-width: -webkit-fill-available;" [src]="e.retrievedImage">
         </div>
         <hr>
         <h3 style="text-align: center; text-transform: uppercase; font-family: 'Times New Roman', Times, serif;">{{

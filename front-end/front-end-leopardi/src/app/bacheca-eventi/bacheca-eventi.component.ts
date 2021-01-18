@@ -33,9 +33,9 @@ export class BachecaEventiComponent implements OnInit {
      this.eventi.forEach(e => {
         this.httpClient.get("http://localhost:8080/image/get/" + e.evento_immagine.name).subscribe(
           res => {
-            this.retrieveResonse = res;
+            this.retrieveResonse = res
             this.base64Data = this.retrieveResonse.picByte;
-            this.retrievedImage = 'data:image/jpeg;base64,' + this.base64Data
+            e.retrievedImage = 'data:image/jpeg;base64,' + this.base64Data
           }
         )
       })
