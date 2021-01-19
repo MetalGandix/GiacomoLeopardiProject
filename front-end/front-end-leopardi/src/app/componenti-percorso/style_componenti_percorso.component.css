@@ -40,7 +40,8 @@
   }
   .text {
     font-family: "Times New Roman", Times, serif;
-    margin-top: 20px;
+    margin-top: 10%;
+    text-align: justify;
   }
   h1 {
     font-size: 30px;

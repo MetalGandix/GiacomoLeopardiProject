@@ -1,22 +1,85 @@
 <div class="container" *ngIf="admin">
-    <h1>Vedi qua sotto i moduli compilati</h1>
-    <div *ngFor="let modulo of moduliCompilati; index as i">
-        <p>
-        <b>INIZIO MODULO CON ID: {{modulo.id}}</b><br>
-        Nome: {{modulo.nome}}<br>
-        Cognome: {{modulo.cognome}}<br>
-        Luogo di nascita: {{modulo.luogoDiNascita}}<br>
-        Giorno di nascita: {{modulo.giornoDiNascita}}<br>
-        Città: {{modulo.citta}}<br>
-        Via: {{modulo.via}}<br>
-        Email: {{modulo.email}}<br>
-        Numero di telefono: {{modulo.numeroTelefono}}<br>
-        Professione: {{modulo.professione}}<br>
-        Codice fiscale: <i style="text-transform: uppercase;">{{modulo.codiceFiscale}}</i><br>
-        Quota annuale: {{modulo.quotaAnnuale}}<br>
-        Data di compilazione: {{modulo.dataCompilazione}}<br>
-        <b>FINE MODULO</b>
-    </p>
-    <button class="btn btn-outline-danger" style="margin-bottom: 40px;" (click)="deleteModulo(modulo.id)">Clicca per eliminare questo modulo</button>
+    <p class="title">In questa pagina è possibile visualizzare i moduli di richiesta socio</p>
+
+    <div>
+        <button class="btn btn-outline-warning" style="width: 200px; display: block; margin: 5% auto 5% ;"
+            (click)="moduliNonCofermati()">Lista moduli non confermati</button>
+        <button class="btn btn-outline-success" style="width: 200px; display: block; margin: 5% auto 5% ;"
+            (click)="moduliCofermati()">Lista moduli confermati</button>
+    </div>
+
+    <div *ngIf="moduliDaVedere">
+        <div *ngFor="let modulo of moduliCompilati; index as i">
+            <div class="card my-5">
+                <div class="overflow-auto">
+                    <div class="card-body">
+                        <table class="table table-bordered table-striped" style="box-shadow: 15px 15px 10px #dedede;">
+                            <div class="campiModulo">
+                                <p>ID: {{modulo.id}}</p>
+                                <p>Nome:<span style="text-transform: capitalize;"> {{modulo.nome}} </span> </p>
+                                <p>Cognome: <span style="text-transform: capitalize;">{{modulo.cognome}}</span></p>
+                                <p>Luogo di nascita:<span style="text-transform: capitalize;">
+                                        {{modulo.luogoDiNascita}}</span>
+                                </p>
+                                <p>Giorno di nascita: {{modulo.giornoDiNascita}}</p>
+                                <p>Città: <span style="text-transform: capitalize;">{{modulo.citta}}</span> </p>
+                                <p>Via:<span style="text-transform: capitalize;"> {{modulo.via}}</span></p>
+                                <p>Email: {{modulo.email}}</p>
+                                <p>Numero di telefono: {{modulo.numeroTelefono}}</p>
+                                <p>Professione: <span style="text-transform: capitalize;"> {{modulo.professione}}</span>
+                                </p>
+                                <p>Codice fiscale: <span style="text-transform: uppercase;"> {{modulo.codiceFiscale}}
+                                    </span>
+                                </p>
+                                <p>Quota annuale: {{modulo.quotaAnnuale}}</p>
+                                <p>Data di compilazione: {{modulo.dataCompilazione}}</p>
+                                <hr>
+
+                                <button class="btn btn-outline-success"
+                                    style="width: 200px; display: block; margin: 5% auto 5% ;"
+                                    (click)="deleteModulo(modulo.id)">Conferma richiesta socio</button>
+                                <button class="btn btn-outline-danger"
+                                    style="width: 200px; display: block; margin: 5% auto 5% ;"
+                                    (click)="deleteModulo(modulo.id)">Elimina richiesta socio</button>
+                            </div>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="moduliVisti">
+        <div *ngFor="let modulo of moduliCompilati; index as i">
+            <div class="card my-5">
+                <div class="overflow-auto">
+                    <div class="card-body">
+                        <table class="table table-bordered table-striped" style="box-shadow: 15px 15px 10px #dedede;">
+                            <div class="campiModulo">
+                                <p>ID: {{modulo.id}}</p>
+                                <p>Nome:<span style="text-transform: capitalize;"> {{modulo.nome}} </span> </p>
+                                <p>Cognome: <span style="text-transform: capitalize;">{{modulo.cognome}}</span></p>
+                                <p>Luogo di nascita:<span style="text-transform: capitalize;">
+                                        {{modulo.luogoDiNascita}}</span>
+                                </p>
+                                <p>Giorno di nascita: {{modulo.giornoDiNascita}}</p>
+                                <p>Città: <span style="text-transform: capitalize;">{{modulo.citta}}</span> </p>
+                                <p>Via:<span style="text-transform: capitalize;"> {{modulo.via}}</span></p>
+                                <p>Email: {{modulo.email}}</p>
+                                <p>Numero di telefono: {{modulo.numeroTelefono}}</p>
+                                <p>Professione: <span style="text-transform: capitalize;"> {{modulo.professione}}</span>
+                                </p>
+                                <p>Codice fiscale: <span style="text-transform: uppercase;"> {{modulo.codiceFiscale}}
+                                    </span>
+                                </p>
+                                <p>Quota annuale: {{modulo.quotaAnnuale}}</p>
+                                <p>Data di compilazione: {{modulo.dataCompilazione}}</p>
+                                <hr>
+                            </div>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

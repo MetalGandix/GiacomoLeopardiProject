@@ -13,6 +13,8 @@ export class VediModuliSocioComponent{
 
   admin: boolean = false
   moduliCompilati: DiventaSocio[]
+  moduliVisti: boolean
+  moduliDaVedere: boolean
 
   ngOnInit(){
     this.admin = sessionStorage.getItem("Role") === "ROLE_ADMIN"
@@ -26,4 +28,13 @@ export class VediModuliSocioComponent{
     window.location.reload()
   }
 
+  moduliNonCofermati(){
+    this.moduliDaVedere = true;
+    this.moduliVisti = false;
+  }
+
+  moduliCofermati(){
+    this.moduliDaVedere = false;
+    this.moduliVisti = true;
+  }
 }
