@@ -1,5 +1,7 @@
 package leopardiproject.csd.model;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -24,7 +26,7 @@ public class DiventaSocio {
     private String luogoDiNascita;
 
     @Column
-    private Date giornoDiNascita;
+    private LocalDate giornoDiNascita;
 
     @Column
     private String citta;
@@ -51,7 +53,7 @@ public class DiventaSocio {
     private int quotaAnnuale;
 
     @Column
-    private Date dataCompilazione;
+    private LocalDate dataCompilazione;
 
     public long getId() {
         return id;
@@ -85,11 +87,12 @@ public class DiventaSocio {
         this.luogoDiNascita = luogoDiNascita;
     }
 
-    public Date getGiornoDiNascita() {
-        return giornoDiNascita;
+    public String getGiornoDiNascita() {
+        String formattedDate = giornoDiNascita.format(DateTimeFormatter.ofPattern("dd MMMM yyyy"));
+        return formattedDate;
     }
 
-    public void setGiornoDiNascita(Date giornoDiNascita) {
+    public void setGiornoDiNascita(LocalDate giornoDiNascita) {
         this.giornoDiNascita = giornoDiNascita;
     }
 
@@ -149,11 +152,11 @@ public class DiventaSocio {
         this.quotaAnnuale = quotaAnnuale;
     }
 
-    public Date getDataCompilazione() {
+    public LocalDate getDataCompilazione() {
         return dataCompilazione;
     }
 
-    public void setDataCompilazione(Date dataCompilazione) {
+    public void setDataCompilazione(LocalDate dataCompilazione) {
         this.dataCompilazione = dataCompilazione;
     }
 

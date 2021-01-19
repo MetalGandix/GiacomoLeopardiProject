@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="font-family: 'Times New Roman', Times, serif;">
     <img class="img" src="\assets\images\LogoCentroCulturaleGL.png">
     <h1>In questa sezione potrai compilare la domanda per diventare un socio del Centro culturale Giacomo Leopardi</h1>
 
@@ -73,7 +73,7 @@
             <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
                 <div class="form-group">
                     <label for="CAP">CAP</label>
-                    <input type="text" [(ngModel)]="modulo.cap" required minlength="2" class="form-control" name="cap"
+                    <input type="text" [(ngModel)]="modulo.cap" required minlength="5" class="form-control" name="cap"
                         placeholder="Inserisci il codice postale" size="5" maxlength="5" required #cap="ngModel">
                     <div *ngIf="cap.invalid && (cap.dirty || cap.touched)" class="alert alert-danger">
                         <div *ngIf="cap.errors.required">
@@ -229,10 +229,16 @@
                         <input id="datepicker" #data="ngModel" name="dataCompilazione" type="date"
                             [(ngModel)]="modulo.dataCompilazione" placeholder="inserisci una data"
                             class="form-control" required>
-                             <!-- {{today | date: 'dd-MM-yyyy'}} -->
+                             {{today | date: 'dd-MM-yyyy'}}
                         <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                     </div>
                 </div>
+
+                <!-- <span>
+                <p [(ngModel)]="modulo.dataCompilazione" style="font-size: medium;font-family: 'Times New Roman', Times, serif;">
+                    <mat-icon style="vertical-align:middle;">today</mat-icon>
+                    {{today | date: 'dd-MM-yyyy'}}
+                </p></span> -->
             </div>
 
             <div style="margin-bottom: 10%;" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
