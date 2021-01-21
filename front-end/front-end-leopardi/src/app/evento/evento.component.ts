@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Evento } from '../class/evento';
+import { Immagine } from '../class/immagine';
 import { EventoService } from '../service/evento.service';
 
 @Component({
@@ -30,15 +31,13 @@ export class EventoComponent implements OnInit {
   }
 
   onSubmit() {
-    this.service.saveEvents(this.evento).subscribe()
-    console.log("Nuovo evento", this.evento)
-    console.log(this.selectedFile);
     const uploadImageData = new FormData();
     uploadImageData.append('imageFile', this.selectedFile, this.selectedFile.name);
-    debugger
-    this.httpClient.post('http://localhost:8080/image/upload', uploadImageData, { observe: 'response' })
+    this.httpClient.post<Immagine>('http://localhost:8080/image/upload', uploadImageData, { observe: 'response' })
       .subscribe((response) => {
         if (response.status === 200) {
+          console.log(response)
+          this.service.saveEvents({event: this.evento, imageId: response.body.id}).subscribe()
           this.message = 'Image uploaded successfully';
         } else {
           this.message = 'Image not uploaded successfully';

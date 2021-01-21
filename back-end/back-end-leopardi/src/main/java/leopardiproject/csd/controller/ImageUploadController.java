@@ -28,14 +28,16 @@ import leopardiproject.csd.repository.ImageRepository;
 public class ImageUploadController {
 	@Autowired
 	ImageRepository imageRepository;
+
 	@PostMapping("/upload")
-	public BodyBuilder uplaodImage(Authentication a,@RequestParam("imageFile") MultipartFile file) throws IOException {
+	public ImageModel uplaodImage(Authentication a,@RequestParam("imageFile") MultipartFile file) throws IOException {
 		System.out.println("Original Image Byte Size - " + file.getBytes().length);
 		ImageModel img = new ImageModel(file.getOriginalFilename(), file.getContentType(),
 				compressBytes(file.getBytes()));
 		imageRepository.save(img);
-		return ResponseEntity.status(HttpStatus.OK);
+		return img;
 	}
+
 	@GetMapping(path = { "/get/{imageName}" })
 	public ImageModel getImage(@PathVariable("imageName") String imageName) throws IOException {
 		final Optional<ImageModel> retrievedImage = imageRepository.findByName(imageName);

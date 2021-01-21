@@ -3,6 +3,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Evento } from '../class/evento';
 
+interface EventRequest {
+  event: Evento
+  imageId: number
+}
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +23,7 @@ export class EventoService {
     return this.http.get<Evento[]>(this.url + "vediEventi");
   }
 
-  public saveEvents(evento: Evento) {
+  public saveEvents(evento: EventRequest) {
     return this.http.post<Evento>(this.url + "inserisciEventi", evento);
   }
 

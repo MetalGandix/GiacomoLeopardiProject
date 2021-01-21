@@ -23,7 +23,6 @@ public class Eventi {
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     private ImageModel evento_immagine;
 
-
     public long getId() {
         return id;
     }
