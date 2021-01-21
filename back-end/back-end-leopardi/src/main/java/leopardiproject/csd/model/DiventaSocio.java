@@ -152,8 +152,9 @@ public class DiventaSocio {
         this.quotaAnnuale = quotaAnnuale;
     }
 
-    public LocalDate getDataCompilazione() {
-        return dataCompilazione;
+    public String getDataCompilazione() {
+        String formattedDate = dataCompilazione.format(DateTimeFormatter.ofPattern("dd MMMM yyyy"));
+        return formattedDate;
     }
 
     public void setDataCompilazione(LocalDate dataCompilazione) {

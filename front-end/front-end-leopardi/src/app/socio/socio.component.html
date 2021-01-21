@@ -225,20 +225,20 @@
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                 <div class="form-group">
                     <label class="control-label" for="datepicker">Data della compilazione</label>
-                    <div class="input-group">
+                    <!-- <div class="input-group">
                         <input id="datepicker" #data="ngModel" name="dataCompilazione" type="date"
                             [(ngModel)]="modulo.dataCompilazione" placeholder="inserisci una data"
                             class="form-control" required>
                              {{today | date: 'dd-MM-yyyy'}}
                         <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                    </div>
+                    </div> -->
                 </div>
 
-                <!-- <span>
-                <p [(ngModel)]="modulo.dataCompilazione" style="font-size: medium;font-family: 'Times New Roman', Times, serif;">
+                <span>
+                <p style="font-size: medium;font-family: 'Times New Roman', Times, serif;">
                     <mat-icon style="vertical-align:middle;">today</mat-icon>
-                    {{today | date: 'dd-MM-yyyy'}}
-                </p></span> -->
+                    {{todayHTML | date: 'dd-MM-yyyy'}}
+                </p></span>
             </div>
 
             <div style="margin-bottom: 10%;" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
