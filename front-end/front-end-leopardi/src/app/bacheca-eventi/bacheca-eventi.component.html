@@ -1,20 +1,31 @@
 <div class="container">
     <p class="title">BACHECA EVENTI</p>
+
     <div *ngFor="let e of eventi; let i = index" style="margin-bottom:30px">
-        <div>
-            <img style="max-width: -webkit-fill-available;" [src]="e.retrievedImage">
+        <div class="card my-5">
+            <div class="overflow-auto">
+                <div class="card-body">
+                    <table class="table table-bordered table-striped" style="box-shadow: 15px 15px 10px #dedede;">
+                        <div>
+                            <!-- <img style="max-width: -webkit-fill-available;" [src]="retrievedImage"> -->
+                            <img [src]="e.retrievedImage">
+                        </div>
+                    </table>
+                    <table class="table table-bordered table-striped" style="box-shadow: 15px 15px 10px #dedede;">
+                        <p class="nomeEvento"> {{e.nomeEvento }} </p>
+                        <hr>
+                        <p class="dataEvento">Data evento: {{ e.dataEvento }}</p>
+                        <hr>
+                        <p class="descrizioneEvento">Descrizione evento:<br>
+                            {{ e.descrizione }}</p>
+
+                        <button class="btn btn-danger" *ngIf="admin" (click)="deleteEvento(e.id)"
+                            style="margin: 10% auto 5%; display: block;">
+                            Premi per rimuovere l'evento
+                        </button>
+                    </table>
+                </div>
+            </div>
         </div>
-        <hr>
-        <h3 style="text-align: center; text-transform: uppercase; font-family: 'Times New Roman', Times, serif;">{{
-            e.nomeEvento }}</h3>
-        <hr>
-        <p style="font-family:'Times New Roman', Times, serif">Data evento: {{ e.dataEvento }}</p>
-        <hr>
-        <p style="text-align: justify; font-family: 'Times New Roman', Times, serif;">Descrizione evento:<br>{{
-            e.descrizione }}</p>
-        <hr>
-        <button class="btn btn-danger" *ngIf="admin" (click)="deleteEvento(e.id)" style="margin-bottom: 15px;">
-            Premi qua per rimuovere l'evento
-        </button>
     </div>
 </div>

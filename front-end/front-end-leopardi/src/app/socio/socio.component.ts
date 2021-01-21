@@ -10,25 +10,33 @@ import { DiventaSocioService } from '../service/diventa-socio.service';
 })
 export class SocioComponent implements OnInit {
 
-  today: number = Date.now();
+  today: string
+  todayHTML = Date.now()
 
   constructor(private service: DiventaSocioService, private route: ActivatedRoute,
     private router: Router) {
-      this.modulo = new DiventaSocio()
-     }
-    
-    modulo: DiventaSocio
-    diventaSocio: DiventaSocio[]
-    logRicevuto: boolean = false
+    this.modulo = new DiventaSocio()
+  }
 
-  ngOnInit(){
+  modulo: DiventaSocio
+  diventaSocio: DiventaSocio[]
+  logRicevuto: boolean = false
+
+  ngOnInit() {
     this.service.vediModuli().subscribe(moduloSingolo => {
       this.diventaSocio = moduloSingolo
-      console.log("Moduli: ",this.diventaSocio)
+      console.log("Moduli: ", this.diventaSocio)
     })
   }
 
-  OnSubmit(){
+  OnSubmit() {
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+
+    this.today = mm + '/' + dd + '/' + yyyy;
+    this.modulo.dataCompilazione = today;
     this.service.mandaModulo(this.modulo).subscribe()
     this.logRicevuto = true
   }
