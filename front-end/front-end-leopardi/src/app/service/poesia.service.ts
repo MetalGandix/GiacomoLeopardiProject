@@ -22,6 +22,10 @@ export class PoesiaService {
     return this.http.get<Poesia[]>(this.url + "getPoesia/" + titolo);
   }
 
+  public findPoesiaSingolaFiltrata(poesia: string): Observable<Poesia[]> {
+    return this.http.get<Poesia[]>(this.url + "poesiaLike/" + poesia)
+  }
+
   public findPoesiaSingolaByCapitolo(capitolo: number): Observable<Poesia[]> {
     return this.http.get<Poesia[]>(this.url + "poesia/" + capitolo);
   }
