@@ -3,14 +3,6 @@
     <h1><b><i>In questa sezione è possibile cercare un testo di Giacomo Leopardi ed ascoltarne la recitazione</i></b>
     </h1>
 
-    <button *ngIf="boo1==false" type="button" class="btn btn-outline-info" (click)="bottoneTrue()">
-        Premi per vedere tutte le poesie
-    </button>
-    <button *ngIf="boo1==true" type="button" class="btn btn-outline-success" style="margin-top: 5%;"
-        (click)="bottoneFalse()">
-        Premi per nascondere tutte le poesie
-    </button>
-
     <!-- <div style="margin-top: 5%;">
         <input [(ngModel)]="titoloPoesia">
         <button class="button" style="vertical-align:middle;" (click)="filtra()"><span>
@@ -29,7 +21,7 @@
             aria-describedby="basic-addon1">
     </div>
 
-    <div *ngIf="boo1">
+    <div>
         <div class="card my-5">
             <div class="overflow-auto">
                 <div class="card-body">
@@ -79,63 +71,6 @@
                             </div>
                             <hr>
                         </div>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div *ngIf="boo2">
-        <div class="card my-5">
-            <div class="overflow-auto">
-                <div class="card-body">
-                    <table class="table table-bordered table-striped" style="box-shadow: 15px 15px 10px #dedede;">
-
-                        <h1 style="margin-top: 5%; text-transform: uppercase;"><b><i>{{poesie.titolo}}</i></b></h1>
-                        <hr>
-                        <h2 style="text-align: center;">Capitolo: {{poesie.capitolo}}</h2>
-                        <hr>
-
-                        <p style="text-align: center;">
-                            <a class="button" data-toggle="collapse" href="#testo" aria-expanded="false"
-                                aria-controls="testo" style="vertical-align:middle" (click)="enableDisableRule()"
-                                [ngClass]="{'button' : toggle, 'buttonClicked': !toggle}"><span>
-                                    <mat-icon>menu_book</mat-icon>
-                                </span></a>
-                            <a class="button1" data-toggle="collapse" href="#audio" aria-expanded="false"
-                                aria-controls="audio" style="vertical-align:middle;" (click)="enableDisableRule1()"
-                                [ngClass]="{'button1' : toggle1, 'button1Clicked': !toggle1}"><span>
-                                    <mat-icon>audiotrack</mat-icon>
-                                </span></a>
-                        </p>
-
-                        <div class="collapse multi-collapse" id="testo">
-
-                            <p style="text-align: justify; padding: 5%;" *ngIf=poesie.isText>{{poesie.testo}}</p>
-                            <pre *ngIf=!poesie.isText>{{poesie.testo}}</pre>
-
-                            <p style="text-align: center;">
-                                <a class="button" data-toggle="collapse" href="#testo" aria-expanded="false"
-                                    aria-controls="testo" (click)="enableDisableRule()"
-                                    [ngClass]="{'button' : !toggle, 'buttonClicked': toggle}"
-                                    style="vertical-align:middle;"><span>
-                                        <mat-icon>keyboard_arrow_up</mat-icon>
-                                    </span></a>
-                            </p>
-                            <hr>
-                        </div>
-
-                        <div class="collapse multi-collapse" id="audio">
-                            <div style="margin-top: 5%; margin-bottom: 5%;" class="wrapper mat-typography"
-                                fxLayout="column" fxLayoutGap="32px">
-                                <mat-card style="width: responsive; height: 50px;">
-                                    <div mat-card-image plyr plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true"
-                                        [plyrCrossOrigin]="true"
-                                        [plyrSources]="'./assets/audio/Inquietudine della vita.mp3'"></div>
-                                </mat-card>
-                            </div>
-                        </div>
-
                     </table>
                 </div>
             </div>

@@ -29,7 +29,7 @@ export class PoesiaSpecificaComponent implements OnInit {
   }
 
   filtra() {
-    this.boo2 = true
+    this.boo1 = true
     console.log(this.titoloPoesia)
     this.service.findPoesiaSingolaFiltrata(this.titoloPoesia).subscribe(a => {
       this.poesie = a
