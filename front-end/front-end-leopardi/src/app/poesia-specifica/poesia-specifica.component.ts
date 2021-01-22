@@ -36,7 +36,7 @@ export class PoesiaSpecificaComponent implements OnInit {
     })
   }
 
-  differenza(event){
+  differenza(event) {
     console.log("Evento: ", event)
   }
 
@@ -87,5 +87,9 @@ export class PoesiaSpecificaComponent implements OnInit {
   enableDisableRule1() {
     this.toggle1 = !this.toggle1;
     this.status1 = this.toggle1 ? "" : "";
+  }
+
+  refresh(): void {
+    window.location.reload();
   }
 }
