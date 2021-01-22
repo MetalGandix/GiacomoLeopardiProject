@@ -4,7 +4,6 @@ import leopardiproject.csd.SmtpMailSender;
 import leopardiproject.csd.dto.UserDTO;
 import leopardiproject.csd.jwt.JwtUserDetailsService;
 import leopardiproject.csd.model.DAOUser;
-import leopardiproject.csd.model.Role;
 import leopardiproject.csd.model.UserRole;
 import leopardiproject.csd.repository.UserDao;
 import leopardiproject.csd.repository.UserRoleRepository;
