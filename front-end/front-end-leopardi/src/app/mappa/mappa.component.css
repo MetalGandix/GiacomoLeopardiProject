@@ -1,6 +1,18 @@
 .bottone-class{
     margin-right: 15px;
   }
+
+  p {
+    font-family: "Times New Roman", Times, serif;
+    font-size: large;
+    text-align: justify;
+  }
+
+  h1 {
+    font-size: xx-large;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+  }
   
   .container {
     margin-top: 20px;
