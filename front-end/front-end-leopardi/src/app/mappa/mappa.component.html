@@ -1,4 +1,5 @@
 <div class="container">
+  <div class="map-container" #map></div>
   <h1><i>Percorso Leopardiano</i></h1>
 
   <div style="margin-bottom:15px">
@@ -18,9 +19,6 @@
     piazza Giacomo Leopardi.
   </div>
 
-  <!-- this creates a google map on the page with the given lat/lng from -->
-  <!-- the component as the initial center of the map: -->
-
   <div *ngIf="bottoneCliccato == false">
     <button class="btn btn-success" style="margin-right: 20px" (click)="visitaSingolaMethod()">
       Visita autonoma
@@ -32,7 +30,6 @@
   </div>
 
   <div *ngIf="visita == true">
-
     <ul class="list-group" style="margin-top: 40px">
       <a routerLink="/casa-leopardi">
         <li class="list-group-item">Punto di interesse 1: Casa Leopardi</li>
