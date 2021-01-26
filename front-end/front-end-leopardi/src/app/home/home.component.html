@@ -57,7 +57,7 @@
           <div *ngFor="let e of eventi | slice:eventi.length-1:eventi.length"
             style="margin-bottom:10%; margin-top: 10%;">
             <div>
-              <img class="imgEvento" [src]="retrievedImage">
+              <img class="imgEvento" [src]="e.retrievedImage">
             </div>
 
             <p class="nomeEvento"> {{e.nomeEvento }} </p>
