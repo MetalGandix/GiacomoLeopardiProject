@@ -58,6 +58,7 @@ import { SocioComponent } from './socio/socio.component';
 import { PoesiaSpecificaComponent } from './poesia-specifica/poesia-specifica.component';
 import { MostraPoesiaComponent } from './mostra-poesia/mostra-poesia.component';
 import { VediModuliSocioComponent } from './vedi-moduli-socio/vedi-moduli-socio.component';
+import { CondizioniComponent } from './condizioni/condizioni.component';
 
 
 
@@ -99,7 +100,8 @@ import { VediModuliSocioComponent } from './vedi-moduli-socio/vedi-moduli-socio.
     SocioComponent,
     PoesiaSpecificaComponent,
     MostraPoesiaComponent,
-    VediModuliSocioComponent
+    VediModuliSocioComponent,
+    CondizioniComponent
   ],
   imports: [
     HttpClientModule, 

@@ -16,6 +16,7 @@ export class AreaRiservataComponent implements OnInit {
 
   prenotazione: Prenotazione[]
   prenotazioniEliminate: Prenotazione[]
+  prenotazioniAvvenute: Prenotazione[]
   p: Prenotazione
   admin: boolean = false
 
@@ -24,17 +25,28 @@ export class AreaRiservataComponent implements OnInit {
     this.service.findAll().subscribe(p => 
       {
         this.prenotazione = p
-        console.log(this.prenotazione)
+        console.log("Visite che devono avvenire: ",this.prenotazione)
       })
     this.service.findVisiteCancellate().subscribe(e => {
         this.prenotazioniEliminate = e
-        console.log(this.prenotazioniEliminate)
+        console.log("Visite eliminate: ",this.prenotazioniEliminate)
     })
+    this.service.findVisiteAvvenute().subscribe(e => {
+      this.prenotazioniAvvenute = e
+      console.log("Visite completate con successo: ",this.prenotazioniAvvenute)
+  })
   }
 
   cancellaPrenotazione(id: number){
     console.log("id: ",id)
     this.service.deletePrenotazione(id).subscribe()
+  }
+
+  PrenotazioneCompletata(p: Prenotazione){
+    this.service.saveVisiteAvvenute(p).subscribe()
+    this.router.navigate(['/area-riservata']).then(() => {
+      window.location.reload();
+    });
   }
 
   cancellaVisitaCancellata(id: number){
@@ -46,6 +58,13 @@ export class AreaRiservataComponent implements OnInit {
 
   send(p: Prenotazione){
     this.service.saveVisiteCancellate(p).subscribe()
+    this.router.navigate(['/area-riservata']).then(() => {
+      window.location.reload();
+    });
+  }
+
+  cancellaVisitaAvvenuta(id: number){
+    this.service.deleteVisiteAvvenute(id).subscribe()
     this.router.navigate(['/area-riservata']).then(() => {
       window.location.reload();
     });
