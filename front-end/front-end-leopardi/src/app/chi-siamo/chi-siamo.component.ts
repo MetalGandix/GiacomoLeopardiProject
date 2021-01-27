@@ -1,12 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
-import { Evento } from '../class/evento';
-import { Prenotazione } from '../class/prenotazione';
-import { AuthenticationService } from '../service/authentication.service';
-import { EventoService } from '../service/evento.service';
-import { User } from '../class/user';
-import { GestioneUtenteService } from '../service/gestione-utente.service';
+import { ImageCarouselService } from '../service/image-carousel.service'
+import { ImageCarousel } from '../class/image-carousel';
 
 @Component({
   selector: 'app-chi-siamo',
@@ -15,15 +9,8 @@ import { GestioneUtenteService } from '../service/gestione-utente.service';
 })
 export class ChiSiamoComponent implements OnInit {
 
-  admin: boolean = false
-  utente: User[]
-  refresha: number
-  visitor: boolean = false
+  imageCarousel: ImageCarousel[]
 
-  eventi: Evento[]
-  prenotazioniEliminate: Prenotazione[]
-
-  selectedFile: File;
   retrievedImage: any;
   base64Data: any;
   retrieveResonse: any;
@@ -32,21 +19,16 @@ export class ChiSiamoComponent implements OnInit {
   array: any[];
 
 
-  constructor(private auth: AuthenticationService, private gestioneUtente: GestioneUtenteService, private httpClient: HttpClient, private service: EventoService, private router: Router) { }
+  constructor(private service: ImageCarouselService) { }
 
-  ngOnInit(): void {
-    this.service.findEvents().subscribe(p => {
-      this.eventi = p
-      this.eventi.forEach(e => {
-        this.httpClient.get("http://localhost:8080/image/get/" + e.evento_immagine.name).subscribe(
-          res => {
-            this.retrieveResonse = res
-            this.base64Data = this.retrieveResonse.picByte;
-            e.retrievedImage = 'data:image/jpeg;base64,' + this.base64Data
-          }
-        )
+  ngOnInit() {
+    this.service.findImageCarousel().subscribe(i => {
+      this.imageCarousel = i
+      this.imageCarousel.forEach(a => {
+        this.retrieveResonse = a
+        this.base64Data = this.retrieveResonse.picByte
+        a.retrievedImage = 'data:image/jpeg;base64,' + this.base64Data
       })
-      console.log(this.eventi)
     })
   }
 }

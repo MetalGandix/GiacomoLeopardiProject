@@ -26,11 +26,6 @@ export class HomeComponent implements OnInit {
   array: any[];
 
   ngOnInit() {
-    // this.service.findEvents().subscribe(p => {
-    //   this.eventi = p
-    //   this.getImmagini()
-    //   console.log(this.eventi)
-    // })
     this.service.findEvents().subscribe(p => {
       this.eventi = p
       this.eventi.forEach(e => {
@@ -45,17 +40,4 @@ export class HomeComponent implements OnInit {
       console.log(this.eventi)
     })
   }
-
-  // getImmagini() {
-  //   this.eventi.forEach(e => {
-  //     this.httpClient.get("http://localhost:8080/image/get/" + e.evento_immagine.name).subscribe(
-  //       res => {
-  //         this.retrieveResonse = res;
-  //         this.base64Data = this.retrieveResonse.picByte;
-  //         this.retrievedImage = 'data:image/jpeg;base64,' + this.base64Data;
-  //       }
-  //     )
-  //   })
-  // }
-
 }
