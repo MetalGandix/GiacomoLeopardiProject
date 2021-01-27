@@ -9,13 +9,40 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './mappa.component.html',
   styleUrls: ['./mappa.component.css']
 })
-export class MappaComponent implements OnInit{
+export class MappaComponent implements OnInit, AfterViewInit {
 
   @ViewChild('map')
   private mapContainer: ElementRef<HTMLElement>;
-  mappa
+  private mappa
   constructor( private http: HttpClient) {
 
+  }
+  
+  ngAfterViewInit() {
+    const myAPIKey = "f1148686528a4ea488296c6f9f71041d";
+    const mapStyle = "https://maps.geoapify.com/v1/styles/osm-carto/style.json";
+
+    const initialState = {
+      lng: 13.55196,
+      lat: 43.39816,
+      zoom: 15
+    };
+
+    const map = new L.Map(this.mapContainer.nativeElement).setView(
+      [initialState.lat, initialState.lng],
+      initialState.zoom
+    );
+
+    map.attributionControl
+      .setPrefix("")
+      .addAttribution(
+        'Powered by <a href="https://www.geoapify.com/" target="_blank">Geoapify</a> | © OpenStreetMap <a href="https://www.openstreetmap.org/copyright" target="_blank">contributors</a>'
+      );
+
+    L.mapboxGL({
+      style: `${mapStyle}?apiKey=${myAPIKey}`,
+      accessToken: "no-token"
+    }).addTo(map);
   }
 
   bottoneCliccato: boolean = false

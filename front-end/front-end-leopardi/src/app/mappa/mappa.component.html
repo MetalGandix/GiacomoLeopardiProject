@@ -1,30 +1,40 @@
 <div class="container">
-  <img class="immagineMappa" width="600" height="400" src="https://api.geoapify.com/v1/routing?waypoints=43.3981713,13.5519596|43.3981415,13.5528702|43.397988308481956,13.551873093784934|43.39803201295075,13.551656134928862|43.39794916747729,13.551186681668128|43.3973867596313,13.550378307255414|43.39771624888235,13.550188073299523|43.39809170402481,13.549666815359387|43.39962677234598,13.552603069518|43.400688829187175,13.552380016680672|43.40182973979836,13.552144502578813|43.40239377083367,13.551448424660066|43.40250032674169,13.549999971909983&mode=walk&lang=it&apiKey=f1148686528a4ea488296c6f9f71041d" alt="Percorso Leopardiano">
+  <div class="map-container" #map></div>
   <h1><i>Percorso Leopardiano</i></h1>
-  <p>
-    Scopo del tour leopardiano proposto dal Centro Culturale Giacomo Leopardi è quello di
-    aiutare il turista a conoscere i luoghi in cui è vissuto il poeta e che alcuni suoi versi hanno
-    reso immortali ( Il colle de L’Infinito, la torre del passero solitario, la piazzuola del sabato
-    del villaggio….).
-  </p>
-  <p>
-    Il percorso verificherà anche l’effetto contrario che la produzione
-    leopardiana produce nel lettore secondo la geniale intuizione del critico Francesco De
-    Sanctis, il quale nel 1958 così ebbe a scrivere:
-  </p>
-  <p>
-    <i>
-      Leopardi produce l&#39;effetto contrario a quello che si propone. Non crede al progresso, e te
-      lo fa desiderare; non crede alla libertà, e te la fa amare. Chiama illusioni l&#39;amore, la
-      gloria, la virtù, e te ne accende un desiderio inesausto. … È scettico, e ti fa credente.
-    </i>
-  </p>
-  <p>
-    Il tour partendo da casa Leopardi si snoda per le vie del centro storico e si conclude in
-    piazza Giacomo Leopardi.
-    Per agevolare la comprensione a ciascun partecipante verrà consegnato un pieghevole con notizie sul poeta e la sua
-    famiglia.
-  </p>
+
+  <div style="margin-bottom:15px">
+    <div>
+      <p>
+        Scopo del tour leopardiano proposto dal Centro Culturale Giacomo Leopardi è quello di
+        aiutare il turista a conoscere i luoghi in cui è vissuto il poeta e che alcuni suoi versi hanno
+        reso immortali ( Il colle de L’Infinito, la torre del passero solitario, la piazzuola del sabato
+        del villaggio….).
+      </p>
+    </div>
+    <div>
+      <p>
+        Il percorso verificherà anche l’effetto contrario che la produzione
+        leopardiana produce nel lettore secondo la geniale intuizione del critico Francesco De
+        Sanctis, il quale nel 1958 così ebbe a scrivere:
+      </p>
+    </div>
+    <div>
+      <p>
+        <i>
+          Leopardi produce l&#39;effetto contrario a quello che si propone. Non crede al progresso, e te
+          lo fa desiderare; non crede alla libertà, e te la fa amare. Chiama illusioni l&#39;amore, la
+          gloria, la virtù, e te ne accende un desiderio inesausto. … È scettico, e ti fa credente.
+        </i>
+      </p>
+    </div>
+    <div>
+      <p>
+        Il tour partendo da casa Leopardi si snoda per le vie del centro storico e si conclude in
+        piazza Giacomo Leopardi.
+        Per agevolare la comprensione a ciascun partecipante verrà consegnato un pieghevole con notizie sul poeta e la sua famiglia.
+      </p>
+    </div>
+  </div>
 
   <div *ngIf="bottoneCliccato == false">
     <button class="btn btn-success" style="margin-right: 20px" (click)="visitaSingolaMethod()">
