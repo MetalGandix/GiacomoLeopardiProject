@@ -68,10 +68,6 @@ export class BachecaEventiComponent implements OnInit {
 
   deleteEvento(id: number) {
     this.service.deleteEvent(id).subscribe()
-    // window.location.reload()
-  }
-
-  reload(): void {
-    window.location.reload()
+    window.setTimeout('location.reload()', 100);
   }
 }
