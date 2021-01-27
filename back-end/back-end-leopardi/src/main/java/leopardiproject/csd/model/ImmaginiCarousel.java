@@ -19,8 +19,7 @@ public class ImmaginiCarousel {
 	private String name;
 	@Column(name = "type")
 	private String type;
-    //image bytes can have large lengths so we specify a value
-    //which is more than the default length for picByte column
+
 	@Column(name = "picByte", length = 1048576)
     private byte[] picByte;
     public String getName() {
