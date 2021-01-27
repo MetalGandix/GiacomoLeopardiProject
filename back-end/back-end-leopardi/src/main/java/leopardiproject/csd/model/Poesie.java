@@ -20,6 +20,9 @@ public class Poesie {
     @Column
     private boolean isText;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    private Audio poesia_audio;
+
     public long getId() {
         return id;
     }
