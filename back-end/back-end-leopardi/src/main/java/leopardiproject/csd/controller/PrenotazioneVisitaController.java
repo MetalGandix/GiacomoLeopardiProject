@@ -72,4 +72,11 @@ public class PrenotazioneVisitaController {
         visitaRep.delete(prenotazione);
         return "Prenotazione correttamente eliminata";
     }
+
+    @GetMapping("/prendiVisitaUtente/{prenotazioneVisitatore}")
+    public List<PrenotazioneVisita> prendiVisitaDaUtente(Authentication a) {
+        UserDetails userPrincipal = (UserDetails)a.getPrincipal();
+        DAOUser utente = userRepository.findUserByUsername(userPrincipal.getUsername());
+        return (List<PrenotazioneVisita>) visitaRep.findByPrenotazioneVisitatore(utente);
+    }
 }

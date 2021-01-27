@@ -16,4 +16,41 @@
             <td>{{ utente.lastname }} </td>
         </tr>
     </table>
+    
+    <div>LISTA DI VISITE PRENOTATE DA TE:</div>
+
+    <div class="overflow-auto">
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Data</th>
+                <th scope="col">Orario</th>
+                <th scope="col">Numero dei componenti</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Cognome</th>
+                <th scope="col">Professione</th>
+                <th scope="col">Numero di telefono</th>
+                <th scope="col">Paese</th>
+                <th scope="col">Città</th>
+                <th scope="col">Info aggiuntive</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of visita">
+                <td>{{ p.id }}</td>
+                <td name="data">{{ p.data }}</td>
+                <td name="orario" >{{ p.orario }}</td>
+                <td name="numcomponenti">{{ p.numcomponenti }}</td>
+                <td name="nome">{{ p.nome }}</td>
+                <td name="cognome">{{ p.cognome }}</td>
+                <td name="cognome">{{ p.professione }}</td>
+                <td name="cellulare">{{ p.cellulare }}</td>
+                <td name="paese">{{ p.paese }}</td>
+                <td name="citta">{{ p.citta }}</td>
+                <td name="infoAggiuntiva">{{ p.infoAggiuntiva }}</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
 </div>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Prenotazione } from '../class/prenotazione';
 import { User } from '../class/user';
 import { GestioneUtenteService } from '../service/gestione-utente.service';
+import { PrenotazioneService } from '../service/prenotazione.service';
 
 @Component({
   selector: 'app-info-visitatore',
@@ -10,8 +12,9 @@ import { GestioneUtenteService } from '../service/gestione-utente.service';
 export class InfoVisitatoreComponent implements OnInit {
 
   visitor: boolean = false
-  constructor(private gestioneUtente: GestioneUtenteService) { }
+  constructor(private gestioneUtente: GestioneUtenteService, private service: PrenotazioneService) { }
   utente: User[]
+  visita: Prenotazione[]
 
   ngOnInit(){
   this.visitor = sessionStorage.getItem("Role") === "ROLE_VISITATORE"
@@ -21,6 +24,8 @@ export class InfoVisitatoreComponent implements OnInit {
       console.log(this.utente)
     })
   console.log("Session storage",sessionStorage.getItem('username'))
+  this.service.prendiVisitaDalVisitatore(sessionStorage.getItem('username')).subscribe(p=>{
+    this.visita = p
+  })
   }
-
 }

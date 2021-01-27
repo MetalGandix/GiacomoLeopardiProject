@@ -50,4 +50,8 @@ export class PrenotazioneService {
     return this.http.delete<Prenotazione>(this.url + "cancellaVisitaAvvenuta/" + id);
   }
 
+  public prendiVisitaDalVisitatore(username: string): Observable<Prenotazione[]> {
+    return this.http.get<Prenotazione[]>(this.url + "prendiVisitaUtente/" + username)
+  }
+
 }
