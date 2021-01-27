@@ -30,8 +30,9 @@
         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
             <div class="descrizione">
                 <label class="control-label" for="descrizione">Descrizione Evento*</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="evento.descrizione" name="descrizione" #descrizione="ngModel" class="form-control"
-                required></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                    [(ngModel)]="evento.descrizione" name="descrizione" #descrizione="ngModel" class="form-control"
+                    required></textarea>
                 <!-- <input [(ngModel)]="evento.descrizione" name="descrizione" #descrizione="ngModel" class="form-control"
                     required> -->
             </div>
@@ -51,21 +52,30 @@
         <hr />
         <div class="container row">
             <div class="col-md-12">
-                <div *ngIf=message>{{message}}</div>
+                <div *ngIf=message style="font-family: 'Times New Roman', Times, serif;">{{message}}</div>
             </div>
         </div>
 
         <div style="margin-bottom: 40px;" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-            <button [disabled]="!eventoForm.form.valid" type="submit" class="btn btn-primary">Crea Evento</button>
+            <button [disabled]="!eventoForm.form.valid" type="submit" class="btn btn-primary" data-toggle="modal"
+                data-target="#creaEvento">Crea Evento</button>
         </div>
 
-        <div class="row" style="margin-top: 10px; width: 350px; height: 350px;" *ngIf="showMsg == true">
-            <div class="col-xs-12">
-                <div class="alert alert-success">
-                    <p>
-                        <strong>L'evento è stato registrato.</strong>
-                    </p>
-                    <a routerLink="/scelta-utente">Torna alla tua area riservata</a>
+        <!-- Modal -->
+        <div class="modal fade" id="creaEvento" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title" id="exampleModalLongTitle">Evento creato con successo</h1>
+                    </div>
+                    <div class="modal-body">
+                        <p>Il tuo evento è stato creato con successo e visualizzabile nella bacheca eventi</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                            routerLink="/scelta-utente">Area Riservata</button>
+                    </div>
                 </div>
             </div>
         </div>

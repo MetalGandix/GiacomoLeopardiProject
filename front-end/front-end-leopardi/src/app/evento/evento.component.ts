@@ -38,9 +38,9 @@ export class EventoComponent implements OnInit {
         if (response.status === 200) {
           console.log(response)
           this.service.saveEvents({event: this.evento, imageId: response.body.id}).subscribe()
-          this.message = 'Image uploaded successfully';
+          this.message = 'Immagine caricata correttamente';
         } else {
-          this.message = 'Image not uploaded successfully';
+          this.message = 'Immagine non caricata correttamente';
         }
       }
     )
