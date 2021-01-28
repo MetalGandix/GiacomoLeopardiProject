@@ -4,5 +4,3 @@ export class Audio {
     type: string
     pic_byte
 }
-}
-

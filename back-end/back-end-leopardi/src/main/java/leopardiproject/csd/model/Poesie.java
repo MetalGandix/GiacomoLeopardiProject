@@ -62,4 +62,12 @@ public class Poesie {
     public void setIsText(boolean isText) {
         this.isText = isText;
     }
+
+    public Audio getPoesia_audio() {
+        return poesia_audio;
+    }
+
+    public void setPoesia_audio(Audio poesia_audio) {
+        this.poesia_audio = poesia_audio;
+    }
 }

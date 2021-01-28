@@ -20,10 +20,21 @@ export class PoesiaSpecificaComponent implements OnInit {
   boo2: boolean = false
   titoloPoesia: string
   isText: boolean
+  retrievedAudio: any;
+  base64Data: any;
+  retrieveResonse: any;
+  message: string;
+  imageName: any;
 
   ngOnInit() {
     this.service.findAll().subscribe(poesiaSingola => {
       this.poesie = poesiaSingola
+      this.poesie.forEach(a => {
+        debugger
+        this.retrieveResonse = a.poesia_audio
+        this.base64Data = this.retrieveResonse.picByte
+        a.retrievedAudio = 'data:audio/mp3;base64,' + this.base64Data
+      })
       console.log(this.poesie)
     })
   }
