@@ -1,11 +1,4 @@
 <div class="container">
-
-    <!-- idea : mettere una freccia per tornare alla pagina di prima, momentaneamente e' brutto cosi' -->
-
-    <!-- <p><button class="button" (click)="goBack()" style="vertical-align:middle"><span>
-                <mat-icon>undo</mat-icon>
-            </span></button>Clicca sulla freccia per tornare indietro</p> -->
-
     <div class="card my-5">
         <div class="overflow-auto">
             <div class="card-body">
@@ -13,7 +6,7 @@
                     <div *ngFor="let p of poesie; let j = index">
 
                         <h2 style="text-align: center; margin-top: 5%;">
-                            <button class="button" (click)="goBack()" ><span>
+                            <button class="button" (click)="goBack()"><span>
                                     <mat-icon style="vertical-align: middle;">keyboard_arrow_left</mat-icon>
                                 </span></button>
                             Capitolo: {{p.capitolo}}
@@ -22,7 +15,7 @@
                         <h1><b><i>{{p.titolo}}</i></b></h1>
 
                         <p style="text-align: center;">
-                            <a class="button" (click)="differenza(j)" data-toggle="collapse" href="#poesie-{{ j }}"
+                            <a class="button" (click)="differenza(j)" data-toggle="modal" href="#poesie-{{ j }}"
                                 aria-expanded="false" style="vertical-align:middle"><span>
                                     <mat-icon>menu_book</mat-icon>
                                 </span></a>
@@ -32,7 +25,47 @@
                                 </span></a>
                         </p>
 
-                        <div class="collapse" id="poesie-{{ j }}">
+                        <!-- Modal -->
+                        <div class="modal fade" id="poesie-{{ j }}" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title" id="exampleModalLongTitle"
+                                            style="margin-top: 5%; text-transform: uppercase;">
+                                            <b><i>{{p.titolo}}</i></b>
+                                        </h1>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <div *ngIf="!audioNotExist" style="margin-bottom: 10%;">
+                                            <div style="margin-top: 5%;" class="wrapper mat-typography"
+                                                fxLayout="column" fxLayoutGap="32px">
+                                                <mat-card style="width: responsive; height: 50px;">
+                                                    <div mat-card-image plyr plyrTitle="Audio" plyrType="audio"
+                                                        [plyrPlaysInline]="true" [plyrCrossOrigin]="true"
+                                                        [plyrSources]="'./assets/audio/Inquietudine della vita.mp3'">
+                                                    </div>
+                                                </mat-card>
+                                            </div>
+                                        </div>
+
+                                        <p style="text-align: justify; padding: 5%;" *ngIf=p.isText>{{p.testo}}</p>
+                                        <pre *ngIf=!p.isText>{{p.testo}}</pre>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Chiudi</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="collapse" id="poesie-{{ j }}">
 
                             <p style="text-align: justify; padding: 5%;" *ngIf=p.isText>{{p.testo}}</p>
                             <pre *ngIf=!p.isText>{{p.testo}}</pre>
@@ -45,14 +78,25 @@
                                     </span></a>
                             </p>
                             <hr>
-                        </div>
-                        <div class="collapse" id="audio-{{j}}">
+                        </div> -->
+
+                        <div *ngIf="!audioNotExist" class="collapse" id="audio-{{j}}">
                             <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column"
                                 fxLayoutGap="32px">
                                 <mat-card style="width: responsive; height: 50px;">
                                     <div mat-card-image plyr plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true"
                                         [plyrCrossOrigin]="true"
                                         [plyrSources]="'./assets/audio/Inquietudine della vita.mp3'"></div>
+                                </mat-card>
+                            </div>
+                        </div>
+
+                        <!-- audioNotExist non esiste ma pensavo fosse utile una volta implementati gli audio far capire se c'è o meno la recitazione del testo poetico -->
+                        <div *ngIf="audioNotExist" class="collapse" id="audio-{{j}}">
+                            <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column"
+                                fxLayoutGap="32px">
+                                <mat-card style="width: responsive; height: 50px;">
+                                    <p>La recitazione di questa testo poetico non esiste</p>
                                 </mat-card>
                             </div>
                         </div>
