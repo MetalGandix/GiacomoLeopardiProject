@@ -10,8 +10,7 @@
             </span></button>
     </div> -->
 
-    <button type="button" class="btn btn-outline-success" style="margin-top: 5%;"
-        (click)="refresh()">
+    <button type="button" class="btn btn-outline-success" style="margin-top: 5%;" (click)="refresh()">
         Elimina filtro
     </button>
 
@@ -35,7 +34,8 @@
 
                             <h1 style="margin-top: 5%; text-transform: uppercase;"><b><i>{{p.titolo}}</i></b></h1>
                             <hr>
-                            <h2 style="text-align: center;">Capitolo: {{p.capitolo}}</h2>
+                            <h2 *ngIf="p.capitolo != 0" style="text-align: center;">Capitolo: {{p.capitolo}}</h2>
+                            <h2 *ngIf="p.capitolo == 0" style="text-align: center;">Capitolo: nessun capitolo</h2>
                             <hr>
 
                             <p style="text-align: center;">
@@ -64,7 +64,7 @@
                                 </p>
                                 <hr>
                             </div>
-                            <div class="collapse" id="audio-{{j}}">
+                            <div *ngIf="!audioNotExist" class="collapse" id="audio-{{j}}">
                                 <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column"
                                     fxLayoutGap="32px">
                                     <mat-card style="width: responsive; height: 50px;">
@@ -74,6 +74,17 @@
                                     </mat-card>
                                 </div>
                             </div>
+
+                            <!-- audioNotExist non esiste ma pensavo fosse utile una volta implementati gli audio far capire se c'è o meno la recitazione del testo poetico -->
+                            <div *ngIf="audioNotExist" class="collapse" id="audio-{{j}}">
+                                <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column"
+                                    fxLayoutGap="32px">
+                                    <mat-card style="width: responsive; height: 50px;">
+                                        <p>La recitazione di questa testo poetico non esiste</p>
+                                    </mat-card>
+                                </div>
+                            </div>
+
                             <hr>
                         </div>
                     </table>
