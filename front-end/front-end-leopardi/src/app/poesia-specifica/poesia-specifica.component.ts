@@ -30,7 +30,6 @@ export class PoesiaSpecificaComponent implements OnInit {
     this.service.findAll().subscribe(poesiaSingola => {
       this.poesie = poesiaSingola
       this.poesie.forEach(a => {
-        debugger
         this.retrieveResonse = a.poesia_audio
         this.base64Data = this.retrieveResonse.picByte
         a.retrievedAudio = 'data:audio/mp3;base64,' + this.base64Data
