@@ -23,17 +23,30 @@ export class MostraPoesiaComponent implements OnInit {
   prova: boolean = false
   provaNumero: number
   titoloPoesia: string
+  retrievedAudio: any;
+  base64Data: any;
+  retrieveResonse: any;
 
   ngOnInit() {
     this.poesie = window.history.state.poesie
+    this.poesie.forEach(a => {
+      this.retrieveResonse = a.poesia_audio
+      this.base64Data = this.retrieveResonse.picByte
+      a.retrievedAudio = 'data:audio/mp3;base64,' + this.base64Data
+    })
     console.log(this.poesie)
   }
 
   filtra() {
     this.boo2 = true
     console.log(this.titoloPoesia)
-    this.service.findPoesiaSingola(this.titoloPoesia).subscribe(a => {
-      this.poesie = a
+    this.service.findPoesiaSingola(this.titoloPoesia).subscribe(poesiaSingola => {
+      this.poesie = poesiaSingola
+      this.poesie.forEach(a => {
+        this.retrieveResonse = a.poesia_audio
+        this.base64Data = this.retrieveResonse.picByte
+        a.retrievedAudio = 'data:audio/mp3;base64,' + this.base64Data
+      })
     })
   }
 

@@ -41,8 +41,13 @@ export class PoesiaSpecificaComponent implements OnInit {
   filtra() {
     this.boo1 = true
     console.log(this.titoloPoesia)
-    this.service.findPoesiaSingolaFiltrata(this.titoloPoesia).subscribe(a => {
-      this.poesie = a
+    this.service.findPoesiaSingolaFiltrata(this.titoloPoesia).subscribe(poesiaSingola => {
+      this.poesie = poesiaSingola
+      this.poesie.forEach(a => {
+        this.retrieveResonse = a.poesia_audio
+        this.base64Data = this.retrieveResonse.picByte
+        a.retrievedAudio = 'data:audio/mp3;base64,' + this.base64Data
+      })
     })
   }
 
