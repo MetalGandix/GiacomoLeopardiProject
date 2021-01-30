@@ -30,18 +30,16 @@
                             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title" id="exampleModalLongTitle"
-                                            style="margin-top: 5%; text-transform: uppercase;">
-                                            <b><i>{{p.titolo}}</i></b>
-                                        </h1>
+                                    <div class="modal-body">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
-                                    </div>
-                                    <div class="modal-body">
+                                        <h1 style="text-align:center; text-transform: uppercase;">
+                                            <b><i>{{p.titolo}}</i></b>
 
-                                        <div *ngIf="!audioNotExist" style="margin-bottom: 10%;">
+                                        </h1>
+                                        <hr>
+                                        <div *ngIf="!p.audioNotExist" style="margin-bottom: 10%;">
                                             <div style="margin-top: 5%;" class="wrapper mat-typography"
                                                 fxLayout="column" fxLayoutGap="32px">
                                                 <mat-card style="width: responsive; height: 50px;">
@@ -80,23 +78,21 @@
                             <hr>
                         </div> -->
 
-                        <div *ngIf="!audioNotExist" class="collapse" id="audio-{{j}}">
+                        <div *ngIf="!p.audioNotExist" class="collapse" id="audio-{{j}}">
                             <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column"
                                 fxLayoutGap="32px">
                                 <mat-card style="width: responsive; height: 50px;">
                                     <div mat-card-image plyr plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true"
-                                        [plyrCrossOrigin]="true"
-                                        [plyrSources]="p.retrievedAudio"></div>
+                                        [plyrCrossOrigin]="true" [plyrSources]="p.retrievedAudio"></div>
                                 </mat-card>
                             </div>
                         </div>
 
-                        <!-- audioNotExist non esiste ma pensavo fosse utile una volta implementati gli audio far capire se c'è o meno la recitazione del testo poetico -->
-                        <div *ngIf="audioNotExist" class="collapse" id="audio-{{j}}">
+                        <div *ngIf="p.audioNotExist" class="collapse" id="audio-{{j}}">
                             <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column"
                                 fxLayoutGap="32px">
                                 <mat-card style="width: responsive; height: 50px;">
-                                    <p>La recitazione di questa testo poetico non esiste</p>
+                                    <p>La recitazione di questo testo poetico non esiste</p>
                                 </mat-card>
                             </div>
                         </div>

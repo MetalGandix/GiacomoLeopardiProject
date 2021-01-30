@@ -23,6 +23,7 @@ export class MostraPoesiaComponent implements OnInit {
   prova: boolean = false
   provaNumero: number
   titoloPoesia: string
+
   retrievedAudio: any;
   base64Data: any;
   retrieveResonse: any;
@@ -57,8 +58,6 @@ export class MostraPoesiaComponent implements OnInit {
   goBack() {
     this._location.back();
   }
-
-
 
   bottoneTrue() {
     this.boo1 = true

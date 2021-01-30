@@ -20,6 +20,9 @@ public class Poesie {
     @Column
     private boolean isText;
 
+    @Column
+    private boolean audioNotExist;
+
     @OneToOne(cascade = CascadeType.ALL)
     private Audio poesia_audio;
 
@@ -61,6 +64,14 @@ public class Poesie {
 
     public void setIsText(boolean isText) {
         this.isText = isText;
+    }
+
+    public boolean getAudioNotExist() {
+        return audioNotExist;
+    }
+
+    public void setAudioNotExist(boolean audioNotExist) {
+        this.audioNotExist = audioNotExist;
     }
 
     public Audio getPoesia_audio() {
