@@ -20,6 +20,7 @@ export class PoesiaSpecificaComponent implements OnInit {
   boo2: boolean = false
   titoloPoesia: string
   isText: boolean
+
   retrievedAudio: any;
   base64Data: any;
   retrieveResonse: any;
