@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
-import  * as L from 'leaflet';
+import * as L from 'leaflet';
 import 'mapbox-gl-leaflet';
 import { Poesia } from 'src/app/class/poesia';
 import { PoesiaService } from 'src/app/service/poesia.service';
-import {Location} from '@angular/common';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-casa-leopardi',
@@ -41,11 +41,6 @@ export class CasaLeopardiComponent implements OnInit, AfterViewInit {
       initialState.zoom
     );
 
-    let icon = L.divIcon({
-      iconSize: [30, 42],
-      iconAnchor: [15, 42] // half of width + height
-  });
-
     map.attributionControl
       .setPrefix("")
       .addAttribution(
@@ -57,15 +52,17 @@ export class CasaLeopardiComponent implements OnInit, AfterViewInit {
       accessToken: "no-token"
     }).addTo(map);
 
-    icon = L.divIcon({
-      className: 'custom-div-icon',
-      html: "<div style='background-color:#c30b82;' class='marker-pin'></div><i class='material-icons'>place</i>",
-      iconSize: [30, 42],
-      iconAnchor: [15, 42]
-  });
-  
-L.marker([43.39816, 13.55196], { icon: icon }).addTo(map);
-console.log("MAPPA LEOPARDI: ", this.mapContainer)
+    var redIcon = new L.Icon({
+      iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+      shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      shadowSize: [41, 41]
+    });
+
+    L.marker([43.39816, 13.55196], { icon: redIcon }).addTo(map);
+    console.log("MAPPA LEOPARDI: ", this.mapContainer)
   }
 
   searchByCapitolo(valore: number) {

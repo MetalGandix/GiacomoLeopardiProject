@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import  * as L from 'leaflet';
 import 'mapbox-gl-leaflet';
 import { HttpClient } from '@angular/common/http';
@@ -34,8 +33,6 @@ export class MappaComponent implements OnInit, AfterViewInit{
     this.bottoneCliccato = true
   }
   
-  // Routing del percorso
-
   ngAfterViewInit() {
     const myAPIKey = "f1148686528a4ea488296c6f9f71041d";
     const mapStyle = "https://maps.geoapify.com/v1/styles/osm-carto/style.json";
@@ -51,11 +48,6 @@ export class MappaComponent implements OnInit, AfterViewInit{
       initialState.zoom
     );
 
-    let icon = L.divIcon({
-      iconSize: [30, 42],
-      iconAnchor: [15, 42] // half of width + height
-    });
-
     map.attributionControl
       .setPrefix("")
       .addAttribution(
@@ -67,26 +59,28 @@ export class MappaComponent implements OnInit, AfterViewInit{
       accessToken: "no-token"
     }).addTo(map);
 
-    icon = L.divIcon({
-      className: 'custom-div-icon',
-      html: "<div style='background-color:#c30b82;' class='marker-pin'></div><i class='material-icons'>place</i>",
-      iconSize: [30, 42],
-      iconAnchor: [15, 42]
+    var redIcon = new L.Icon({
+      iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+      shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      shadowSize: [41, 41]
     });
 
-    L.marker([43.3981713, 13.5519596], { icon: icon }).addTo(map);
-    L.marker([43.3981415, 13.5528702], { icon: icon }).addTo(map);
-    L.marker([43.397988308481956, 13.551873093784934], { icon: icon }).addTo(map);
-    L.marker([43.39803201295075, 13.551656134928862], { icon: icon }).addTo(map);
-    L.marker([43.39794916747729, 13.551186681668128], { icon: icon }).addTo(map);
-    L.marker([43.3973867596313, 13.550378307255414], { icon: icon }).addTo(map);
-    L.marker([43.39771624888235, 13.550188073299523], { icon: icon }).addTo(map);
-    L.marker([43.39809170402481, 13.549666815359387], { icon: icon }).addTo(map);
-    L.marker([43.39962677234598, 13.552603069518], { icon: icon }).addTo(map);
-    L.marker([43.400688829187175, 13.552380016680672], { icon: icon }).addTo(map);
-    L.marker([43.40182973979836, 13.552144502578813], { icon: icon }).addTo(map);
-    L.marker([43.40239377083367, 13.551448424660066], { icon: icon }).addTo(map);
-    L.marker([43.40250032674169, 13.549999971909983], { icon: icon }).addTo(map);
+    L.marker([43.3981713, 13.5519596], { icon: redIcon }).addTo(map).bindPopup("Casa Leopardi");
+    L.marker([43.3981415, 13.5528702], { icon: redIcon }).addTo(map).bindPopup("Chiesa dei Cappuccini");
+    L.marker([43.397988308481956, 13.551873093784934], { icon: redIcon }).addTo(map).bindPopup("Piazza Sabato del Villaggio");
+    L.marker([43.39803201295075, 13.551656134928862], { icon: redIcon }).addTo(map).bindPopup("Centro Nazionale Studi Leopardiani");
+    L.marker([43.39794916747729, 13.551186681668128], { icon: redIcon }).addTo(map).bindPopup("Monte Tabor");
+    L.marker([43.3973867596313, 13.550378307255414], { icon: redIcon }).addTo(map).bindPopup("Monti Azzurri");
+    L.marker([43.39771624888235, 13.550188073299523], { icon: redIcon }).addTo(map).bindPopup("Colle dell'Infinito");
+    L.marker([43.39809170402481, 13.549666815359387], { icon: redIcon }).addTo(map).bindPopup("Casa Adelaide Antici");
+    L.marker([43.39962677234598, 13.552603069518], { icon: redIcon }).addTo(map).bindPopup("Via Roma");
+    L.marker([43.400688829187175, 13.552380016680672], { icon: redIcon }).addTo(map).bindPopup("Torre del Passero Solitario");
+    L.marker([43.40182973979836, 13.552144502578813], { icon: redIcon }).addTo(map).bindPopup("Lettera della Befana");
+    L.marker([43.40239377083367, 13.551448424660066], { icon: redIcon }).addTo(map).bindPopup("Palazzo Venieri");
+    L.marker([43.40250032674169, 13.549999971909983], { icon: redIcon }).addTo(map).bindPopup("Piazza Torre del Borgo");
     
     fetch(
       `https://api.geoapify.com/v1/routing?waypoints=43.3981713,13.5519596|43.3981415,13.5528702|43.397988308481956,13.551873093784934|43.39803201295075,13.551656134928862|43.39794916747729,13.551186681668128|43.3973867596313,13.550378307255414|43.39771624888235,13.550188073299523|43.39809170402481,13.549666815359387|43.39962677234598,13.552603069518|43.400688829187175,13.552380016680672|43.40182973979836,13.552144502578813|43.40239377083367,13.551448424660066|43.40250032674169,13.549999971909983&mode=walk&lang=it&apiKey=f1148686528a4ea488296c6f9f71041d`
@@ -96,11 +90,11 @@ export class MappaComponent implements OnInit, AfterViewInit{
       style: (feature) => {
         return {
           stroke: true,
-          color: "#9933ff",
+          color: "#CB2B3E",
           weight: 2,
           opacity: 0.7,
           fill: true,
-          fillColor: "#7300e6",
+          fillColor: "#982E40",
           fillOpacity: 0.15,
           smoothFactor: 0.5,
           interactive: false,
@@ -110,9 +104,7 @@ export class MappaComponent implements OnInit, AfterViewInit{
   })
 }
 
-  
    ngOnInit() {   
    }
-
 
 }

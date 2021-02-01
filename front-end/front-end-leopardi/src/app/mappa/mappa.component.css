@@ -2,15 +2,6 @@
   margin-right: 15px;
 }
 
-.map-container {
-  height: 180px;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  z-index: 0;
-}
-
 #my-map {
   position: absolute;
   top: 0;
@@ -48,29 +39,20 @@ a {
     margin-top: 20px;
     margin-bottom: 10%;
   }
+  
   .bottone-class {
     margin-top: 10px;
     font-size: 13px;
     margin-bottom: -20px;
   }
+
   .map-container {
-    height: 180px;
-    width: 80%;
+    height: 300px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     display: block;
     z-index: 0;
   }
-  #in {
-    width: 50px;
-  }
-  #out {
-    width: 50px;
-  }
-  #log {
-    width: 50px;
-  }
-  #marker {
-    width: 50px;
-  }
+
 }

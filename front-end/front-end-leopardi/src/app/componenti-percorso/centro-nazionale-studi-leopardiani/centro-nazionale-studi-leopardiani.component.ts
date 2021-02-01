@@ -41,11 +41,6 @@ export class CentroNazionaleStudiLeopardianiComponent implements OnInit, AfterVi
       initialState.zoom
     );
 
-    let icon = L.divIcon({
-      iconSize: [30, 42],
-      iconAnchor: [15, 42] // half of width + height
-    });
-
     map.attributionControl
       .setPrefix("")
       .addAttribution(
@@ -57,14 +52,16 @@ export class CentroNazionaleStudiLeopardianiComponent implements OnInit, AfterVi
       accessToken: "no-token"
     }).addTo(map);
 
-    icon = L.divIcon({
-      className: 'custom-div-icon',
-      html: "<div style='background-color:#c30b82;' class='marker-pin'></div><i class='material-icons'>place</i>",
-      iconSize: [30, 42],
-      iconAnchor: [15, 42]
+    var redIcon = new L.Icon({
+      iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+      shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      shadowSize: [41, 41]
     });
 
-    L.marker([43.39799, 13.55112], { icon: icon }).addTo(map);
+    L.marker([43.39799, 13.55112], { icon: redIcon }).addTo(map);
   }
   searchByCapitolo(valore: number) {
     this.service.findPoesiaSingolaByCapitolo(4).subscribe(poesieTrovate => {
