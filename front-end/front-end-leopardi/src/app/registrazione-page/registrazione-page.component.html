@@ -9,6 +9,9 @@
           <input type="text" [(ngModel)]="user.username" class="form-control" id="username" name="username"
             placeholder="Enter your email address" required #username="ngModel" (keyup)="existUser()"
             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+            <div *ngIf="b2 == true" style="margin-top: 10px;" class="alert alert-danger">
+              L'email esiste già, scegline un'altra.
+            </div>
           <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
             <div *ngIf="username.errors.required">
               Devi scrivere una e-mail.

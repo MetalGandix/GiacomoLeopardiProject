@@ -15,6 +15,7 @@ export class RegistrazionePageComponent{
   showMsg: boolean = false;
   userExist: boolean = false;
   b1: boolean = false
+  b2: boolean = false
 
   constructor(
     private route: ActivatedRoute,
@@ -38,11 +39,12 @@ export class RegistrazionePageComponent{
       this.registrazione.existUser(this.user.username).subscribe(res=>{
         if(res){
           this.userExist=true;
-          alert("Email già presente nel database, inseriscine una diversa.")
           if(this.userExist == true){
             this.b1 = false
+            this.b2 = true
           }
         }else{
+          this.b2 = false
           this.userExist=false;
           this.b1 = true
         }
