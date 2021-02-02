@@ -41,6 +41,9 @@ public class DAOUser implements Serializable{
 	@Column
 	private boolean checkbox3;
 
+	@Column
+	private boolean isEnabled;
+
 	// role based
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "USER_ROLES", joinColumns = { @JoinColumn(name = "USER_ID") }, inverseJoinColumns = {
@@ -114,6 +117,14 @@ public class DAOUser implements Serializable{
 
 	public void setCheckbox3(boolean checkbox3) {
 		this.checkbox3 = checkbox3;
+	}
+
+	public boolean isEnabled() {
+		return isEnabled;
+	}
+
+	public void setEnabled(boolean isEnabled) {
+		this.isEnabled = isEnabled;
 	}
 
 }

@@ -3,11 +3,15 @@ package leopardiproject.csd.controller;
 import leopardiproject.csd.SmtpMailSender;
 import leopardiproject.csd.dto.UserDTO;
 import leopardiproject.csd.jwt.JwtUserDetailsService;
+import leopardiproject.csd.model.ConfirmationToken;
 import leopardiproject.csd.model.DAOUser;
 import leopardiproject.csd.model.UserRole;
+import leopardiproject.csd.repository.ConfirmationTokenRepository;
 import leopardiproject.csd.repository.UserDao;
 import leopardiproject.csd.repository.UserRoleRepository;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 
 import javax.mail.MessagingException;
@@ -22,6 +26,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -39,16 +46,44 @@ public class UserController {
 
     @Autowired
     private UserRoleRepository userRoleRepository;
-    
+
     @Autowired
-	private PasswordEncoder bcryptEncoder;
+    private ConfirmationTokenRepository confirmationTokenRepository;
+
+    @Autowired
+    private PasswordEncoder bcryptEncoder;
 
     @PostMapping("/user")
-    String addUser(@RequestBody UserDTO user) throws MessagingException {
-        smtpMailSender.send(user.getUsername(), "Prova", "Conferma la tua email");
-        userRepository.save(user);
-        return "ciao";
+    String addUser(@RequestBody UserDTO user) throws MessagingException, MalformedURLException {
+        ConfirmationToken confirmationToken = new ConfirmationToken(userRepository.save(user));
+        confirmationTokenRepository.save(confirmationToken);
+        String stringaMail = "Per confermare l'account, per favore clicca " 
+        + "<a href=\"" + "http://localhost:8080/confirm-account?token="
+        +confirmationToken.getConfirmationToken() + "\">" + "qua" + "</a>";
+        smtpMailSender.send(user.getUsername(), "Conferma la tua email", stringaMail);
+        System.out.println(stringaMail);
+        return "Mail mandata";
     }
+
+    @RequestMapping(value="/confirm-account", method= {RequestMethod.GET, RequestMethod.POST})
+    public String confirmUserAccount(@RequestParam("token")String confirmationToken)
+    {
+        ConfirmationToken token = confirmationTokenRepository.findByConfirmationToken(confirmationToken);
+        if(token != null)
+        {
+            DAOUser user = userRepository.findUserByUsername(token.getUser().getUsername());
+            user.setEnabled(true);
+            //userRepository.save(user);
+        }
+        else
+        {
+           return "Il link non funziona";
+        }
+        return "Mail verificata";
+    }
+
+
+
 
     @GetMapping("/existUser/{username}")
     public boolean existUser(@PathVariable String username) {
@@ -81,7 +116,7 @@ public class UserController {
         return "Utente eliminato correttamente";
     }
 
-    @PutMapping("/nominaAdmin/{id}")
+    /*@PutMapping("/nominaAdmin/{id}")
     public DAOUser nominaAdmin(Authentication a, @RequestBody UserDTO user){
         DAOUser newUser = new DAOUser();
 		newUser.setUsername(user.getUsername());
@@ -96,5 +131,7 @@ public class UserController {
         newUserRole.setUser_id(newUser.getId());
 		userRoleRepository.save(newUserRole);
         return newUser;
-    }
+    }*/
+
+
 }
