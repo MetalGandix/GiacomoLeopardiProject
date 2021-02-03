@@ -19,7 +19,7 @@
                                 aria-expanded="false" style="vertical-align:middle"><span>
                                     <mat-icon>menu_book</mat-icon>
                                 </span></a>
-                            <a class="button1" (click)="differenza(j)" data-toggle="collapse" href="#audio-{{j}}"
+                            <a *ngIf="!p.audioNotExist" class="button1" (click)="differenza(j)" data-toggle="collapse" href="#audio-{{j}}"
                                 aria-expanded="false" aria-controls="audio" style="vertical-align:middle;"><span>
                                     <mat-icon>audiotrack</mat-icon>
                                 </span></a>
@@ -63,21 +63,6 @@
                             </div>
                         </div>
 
-                        <!-- <div class="collapse" id="poesie-{{ j }}">
-
-                            <p style="text-align: justify; padding: 5%;" *ngIf=p.isText>{{p.testo}}</p>
-                            <pre *ngIf=!p.isText>{{p.testo}}</pre>
-
-                            <p style="text-align: center;">
-
-                                <a class="button" (click)="differenza(j)" data-toggle="collapse" href="#poesie-{{ j }}"
-                                    aria-expanded="false" style="vertical-align:middle"><span>
-                                        <mat-icon>keyboard_arrow_up</mat-icon>
-                                    </span></a>
-                            </p>
-                            <hr>
-                        </div> -->
-
                         <div *ngIf="!p.audioNotExist" class="collapse" id="audio-{{j}}">
                             <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column"
                                 fxLayoutGap="32px">
@@ -88,14 +73,6 @@
                             </div>
                         </div>
 
-                        <div *ngIf="p.audioNotExist" class="collapse" id="audio-{{j}}">
-                            <div style="margin-top: 5%;" class="wrapper mat-typography" fxLayout="column"
-                                fxLayoutGap="32px">
-                                <mat-card style="width: responsive; height: 50px;">
-                                    <p>La recitazione di questo testo poetico non esiste</p>
-                                </mat-card>
-                            </div>
-                        </div>
                         <hr>
                     </div>
                 </table>

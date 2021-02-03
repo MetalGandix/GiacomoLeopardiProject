@@ -2,46 +2,58 @@
 
     <h1>Salve e benvenuto nella tua area riservata</h1>
 
-    <button class="button" *ngIf="admin" routerLink="/area-riservata">
-        <span>
-            <mat-icon>account_circle</mat-icon>
-        </span>
-        Vai alla tua area riservata
-    </button>
+    <p>
+        <button class="button" *ngIf="admin" routerLink="/area-riservata">
+            <span>
+                <mat-icon>account_circle</mat-icon>
+            </span>
+            Area Riservata
+        </button>
+    </p>
 
-    <button class="button" *ngIf="admin" routerLink="/evento">
-        <span>
-            <mat-icon>event_note</mat-icon>
-        </span>
-        Crea un nuovo evento
-    </button>
+    <p>
+        <button class="button" *ngIf="admin" routerLink="/evento">
+            <span>
+                <mat-icon>event_note</mat-icon>
+            </span>
+            Nuovo Evento
+        </button>
+    </p>
 
-    <button class="button" *ngIf="admin" routerLink="/vedi-moduli-socio">
-        <span>
-            <mat-icon>view_list</mat-icon>
-        </span>
-        Vedi i moduli che hanno compilato i futuri soci
-    </button>
+    <p>
+        <button class="button" *ngIf="admin" routerLink="/vedi-moduli-socio">
+            <span>
+                <mat-icon>view_list</mat-icon>
+            </span>
+            Modulistica
+        </button>
+    </p>
 
-    <button class="button" *ngIf="visitor" routerLink="/prenotazione-visita">
-        <span>
-            <mat-icon style="color: orange;">location_on</mat-icon>
-        </span>
-        Vai alla prenotazione visita
-    </button>
+    <p>
+        <button class="button" *ngIf="visitor" routerLink="/prenotazione-visita">
+            <span>
+                <mat-icon style="color: orange;">location_on</mat-icon>
+            </span>
+            Prenotazione Visita
+        </button>
+    </p>
+    <p>
+        <button class="button" *ngIf="visitor" routerLink="/info-visitatore">
+            <span>
+                <mat-icon>account_circle</mat-icon>
+            </span>
+            Informazioni
+        </button>
+    </p>
 
-    <button class="button" *ngIf="visitor" routerLink="/info-visitatore">
-        <span>
-            <mat-icon>account_circle</mat-icon>
-        </span>
-        Informazioni account e visite prenotate
-    </button>
+    <p>
+        <button class="button" *ngIf="admin" routerLink="/utenti-registrati">
+            <span>
+                <mat-icon>supervisor_account</mat-icon>
+            </span>
+            Utenti Registrati
+        </button>
+    </p>
 
-    <button class="button" *ngIf="admin" routerLink="/utenti-registrati">
-        <span>
-            <mat-icon>supervisor_account</mat-icon>
-        </span>
-        Vai alla pagina di utenti registrati
-    </button>
     <img src="\assets\images\Giacomo_Leopardi_Morelli.jpg" alt="Leopardi Morelli">
 </div>
