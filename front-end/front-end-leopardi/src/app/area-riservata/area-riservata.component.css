@@ -3,6 +3,11 @@
     margin-bottom: 10%;
     font-family: 'Times New Roman', Times, serif;
 }
+.overflow-auto {
+    z-index: 0;
+    width: responsive;
+    height: 400px;
+}
 
 @media all and (max-width: 500px) {
     .container {

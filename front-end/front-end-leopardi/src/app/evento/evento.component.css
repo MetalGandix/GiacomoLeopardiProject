@@ -16,6 +16,14 @@ h1 {
     vertical-align: middle;
     margin-right: 10%;
 }
+.titolo {
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+.descrizione {
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
 
 @media all and (max-width: 500px) {
     .container {

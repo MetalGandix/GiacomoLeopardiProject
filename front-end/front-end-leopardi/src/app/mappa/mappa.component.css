@@ -33,19 +33,31 @@ a {
 .bottoneScelta {
   margin-right: 20px;
 }
+.bottone-class {
+  margin-top: 10px;
+  font-size: 13px;
+  margin-bottom: -20px;
+}
+
+.map-container {
+  height: 300px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  z-index: 0;
+}
 
 @media all and (max-width: 500px) {
   .container {
     margin-top: 20px;
     margin-bottom: 10%;
   }
-  
   .bottone-class {
     margin-top: 10px;
     font-size: 13px;
     margin-bottom: -20px;
   }
-
   .map-container {
     height: 300px;
     width: 100%;
@@ -54,5 +66,4 @@ a {
     display: block;
     z-index: 0;
   }
-
 }
