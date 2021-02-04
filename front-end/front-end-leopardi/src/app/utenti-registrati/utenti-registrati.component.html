@@ -1,28 +1,35 @@
 <div *ngIf="admin" class="container">
     <h1>In questa pagina è presente la lista degli utenti registrati</h1>
     <div class="card my-5">
-         <div class="overflow-auto"> <!--spostato lo style nel CSS -->
+        <div class="overflow-auto">
+            <!--spostato lo style nel CSS -->
             <div class="card-body">
-                <table class="table table-bordered table-striped">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th scope="col">Email</th>
-                            <th scope="col">Nome</th>
-                            <th scope="col">Cognome</th>
-                            <th scope="col">Azione</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let u of utente">
-                            <td>{{ u.username }}</td>
-                            <td>{{ u.name }}</td>
-                            <td>{{ u.lastname }}</td>
-                            <td><button><mat-icon class="elimina" (click)="deleteUtente(u.id)" >delete</mat-icon></button>
-                                <button><mat-icon class="changeRole">person</mat-icon></button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead class=".table-bordered">
+                            <tr>
+                                <th scope="col">Email</th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Cognome</th>
+                                <th scope="col">Azione</th>
+                            </tr>
+                        </thead>
+                        <tbody class=".table-bordered">
+                            <tr *ngFor="let u of utente">
+                                <td>{{ u.username }}</td>
+                                <td>{{ u.name }}</td>
+                                <td>{{ u.lastname }}</td>
+                                <td><button>
+                                        <mat-icon class="elimina" (click)="deleteUtente(u.id)">delete</mat-icon>
+                                    </button>
+                                    <button>
+                                        <mat-icon class="changeRole">person</mat-icon>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
