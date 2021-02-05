@@ -33,6 +33,8 @@ import { SocioComponent } from './socio/socio.component';
 import { PoesiaSpecificaComponent } from './poesia-specifica/poesia-specifica.component';
 import { MostraPoesiaComponent } from './mostra-poesia/mostra-poesia.component';
 import { VediModuliSocioComponent } from './vedi-moduli-socio/vedi-moduli-socio.component';
+import { DataPrivacyComponent } from './data-privacy/data-privacy.component';
+
 
 
 const routes: Routes = [
@@ -70,6 +72,8 @@ const routes: Routes = [
   { path: 'poesia-specifica', component: PoesiaSpecificaComponent},
   { path: 'mostra-poesia', component: MostraPoesiaComponent},
   { path: 'vedi-moduli-socio', component: VediModuliSocioComponent},
+  { path: 'data-privacy', component: DataPrivacyComponent},
+
 ];
 
 @NgModule({
