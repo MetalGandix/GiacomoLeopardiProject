@@ -1,7 +1,6 @@
 package leopardiproject.csd.model;
 
 import java.time.LocalDate;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -11,6 +10,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 @Entity
 @Table(name = "prenotazione")
@@ -50,8 +52,9 @@ public class PrenotazioneVisita {
     private String infoAggiuntiva;
 
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "USER_USERNAME", referencedColumnName="username")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private DAOUser prenotazioneVisitatore;
 
 

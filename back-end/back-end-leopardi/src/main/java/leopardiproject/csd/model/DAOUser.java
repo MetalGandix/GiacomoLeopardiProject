@@ -1,13 +1,8 @@
 package leopardiproject.csd.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
-
-import ch.qos.logback.core.subst.Token.Type;
-
 import java.io.Serializable;
 import java.util.Set;
 
