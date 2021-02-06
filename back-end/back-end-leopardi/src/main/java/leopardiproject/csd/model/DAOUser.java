@@ -3,6 +3,10 @@ package leopardiproject.csd.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
+import ch.qos.logback.core.subst.Token.Type;
 
 import java.io.Serializable;
 import java.util.Set;
@@ -48,7 +52,7 @@ public class DAOUser implements Serializable{
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "USER_ROLES", joinColumns = { @JoinColumn(name = "USER_ID") }, inverseJoinColumns = {
 			@JoinColumn(name = "ROLE_ID") })
-	@Cascade(value = org.hibernate.annotations.CascadeType.DELETE_ORPHAN)
+	@OnDelete(action = OnDeleteAction.CASCADE)
 	private Set<Role> roles;
 
 	public long getId() {

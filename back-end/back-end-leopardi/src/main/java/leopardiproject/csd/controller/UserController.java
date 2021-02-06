@@ -6,13 +6,18 @@ import leopardiproject.csd.jwt.JwtUserDetailsService;
 import leopardiproject.csd.model.ConfirmationToken;
 import leopardiproject.csd.model.DAOUser;
 import leopardiproject.csd.model.UserRole;
+import leopardiproject.csd.model.Role;
 import leopardiproject.csd.repository.ConfirmationTokenRepository;
+import leopardiproject.csd.repository.RoleRepository;
 import leopardiproject.csd.repository.UserDao;
 import leopardiproject.csd.repository.UserRoleRepository;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
+import java.util.Set;
 
 import javax.mail.MessagingException;
 
@@ -22,6 +27,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -37,6 +43,12 @@ public class UserController {
 
     @Autowired
     private JwtUserDetailsService userRepository;
+
+    @Autowired
+    private UserDao repositoryUtente;
+    
+    @Autowired
+    private RoleRepository roleRepository;
 
     @Autowired
     private UserDao rep;
@@ -71,9 +83,9 @@ public class UserController {
         ConfirmationToken token = confirmationTokenRepository.findByConfirmationToken(confirmationToken);
         if(token != null)
         {
-            DAOUser user = userRepository.findUserByUsername(token.getUser().getUsername());
+            DAOUser user = repositoryUtente.findByUsername(token.getUser().getUsername());
             user.setEnabled(true);
-            //userRepository.save(user);
+            repositoryUtente.save(user);
         }
         else
         {
@@ -116,22 +128,22 @@ public class UserController {
         return "Utente eliminato correttamente";
     }
 
-    /*@PutMapping("/nominaAdmin/{id}")
-    public DAOUser nominaAdmin(Authentication a, @RequestBody UserDTO user){
-        DAOUser newUser = new DAOUser();
-		newUser.setUsername(user.getUsername());
-		newUser.setName(user.getName());
-		newUser.setlastname(user.getLastname());
-		newUser.setCheckbox1(user.isCheckbox1());
-		newUser.setCheckbox2(user.isCheckbox2());
-		newUser.setCheckbox3(user.isCheckbox3());
-        newUser.setPassword(bcryptEncoder.encode(user.getPassword()));
-        UserRole newUserRole = new UserRole();
-		newUserRole.setRole_id(2);
-        newUserRole.setUser_id(newUser.getId());
-		userRoleRepository.save(newUserRole);
-        return newUser;
-    }*/
+    @PatchMapping("/nominaAdmin/{id}")
+    public String nominaAdmin(Authentication a, @PathVariable long id){
+        Optional<DAOUser> user = userRepository.findById(id);
+        if(user.isPresent()){
+            DAOUser userRuolo = user.get();
+            Role ruolo = roleRepository.findById(2);
+            HashSet<Role> roles = new HashSet<Role>();
+            roles.add(ruolo);
+            userRuolo.setRoles(roles);
+            repositoryUtente.save(userRuolo);
+            return "Utente aggiornato";
+        }
+        else{
+            return "Utente non aggiornato";
+        }
+    }
 
 
 }

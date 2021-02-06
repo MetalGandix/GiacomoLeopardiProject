@@ -28,4 +28,8 @@ export class GestioneUtenteService {
     return this.http.delete<User>(this.url + "eliminaUtente/"+id);
   }
 
+  public changeRole(id: number){
+    return this.http.patch<User>(this.url + "nominaAdmin/"+id, {});
+  }
+
 }

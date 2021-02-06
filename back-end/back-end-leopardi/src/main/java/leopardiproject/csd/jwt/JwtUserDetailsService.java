@@ -47,6 +47,10 @@ public class JwtUserDetailsService implements UserDetailsService {
 		return userDao.findByUsername(username);
 	}
 
+	public Optional<DAOUser> findById(Long id) {
+		return userDao.findById(id);
+	}
+
 	public List<DAOUser> findAllTheUser(){
 		return (List<DAOUser>) userDao.findAll();
 	}

@@ -29,4 +29,8 @@ export class UtentiRegistratiComponent implements OnInit {
     this.service.deleteUser(id).subscribe()
   }
 
+  cambiaRuolo(id: number){
+    this.service.changeRole(id).subscribe()
+  }
+
 }
