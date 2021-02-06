@@ -2,16 +2,9 @@ package leopardiproject.csd;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class CsdApplication extends SpringBootServletInitializer {
-
-	@Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(CsdApplication.class);
-    }
+public class CsdApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CsdApplication.class, args);
