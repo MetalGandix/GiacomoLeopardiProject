@@ -22,12 +22,17 @@
                             <input type="checkbox" class="custom-control-input" id="customCheck1">
                         </div>
 
+                              
+                        <div *ngIf="booleanErrorToken" style="color: red;">
+                            Devi confermare la tua mail prima di poter accedere.
+                        </div>
+                        
                         <div style="margin-bottom: 20px; color: red; text-align: center;" *ngIf="message1">
                             Il login è errato
                         </div>
                         <button class="btn btn-lg btn-primary btn-block text-uppercase" (click)=checkLogin() type="submit">Login</button>
                         <hr class="my-4">
-                     
+               
                     </form>
 
                     <form class="form-signin">

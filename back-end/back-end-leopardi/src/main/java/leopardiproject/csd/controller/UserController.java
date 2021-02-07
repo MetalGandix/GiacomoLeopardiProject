@@ -5,22 +5,16 @@ import leopardiproject.csd.dto.UserDTO;
 import leopardiproject.csd.jwt.JwtUserDetailsService;
 import leopardiproject.csd.model.ConfirmationToken;
 import leopardiproject.csd.model.DAOUser;
-import leopardiproject.csd.model.UserRole;
 import leopardiproject.csd.model.Role;
 import leopardiproject.csd.repository.ConfirmationTokenRepository;
 import leopardiproject.csd.repository.RoleRepository;
 import leopardiproject.csd.repository.UserDao;
 import leopardiproject.csd.repository.UserRoleRepository;
-
 import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
-
 import javax.mail.MessagingException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -73,7 +67,6 @@ public class UserController {
         + "<a href=\"" + "http://localhost:8080/confirm-account?token="
         +confirmationToken.getConfirmationToken() + "\">" + "qua" + "</a>";
         smtpMailSender.send(user.getUsername(), "Conferma la tua email", stringaMail);
-        System.out.println(stringaMail);
         return "Mail mandata";
     }
 

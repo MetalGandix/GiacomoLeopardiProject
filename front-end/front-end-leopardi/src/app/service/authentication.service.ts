@@ -20,6 +20,7 @@ export class User{
     public checkbox1: boolean,
     public checkbox2: boolean,
     public checkbox3: boolean,
+    public enabled: boolean
   ) {}
 }
 
