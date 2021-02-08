@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../class/user';
 import { GestioneUtenteService } from '../service/gestione-utente.service';
+import { Role } from '../class/role';
+
 
 @Component({
   selector: 'app-utenti-registrati',

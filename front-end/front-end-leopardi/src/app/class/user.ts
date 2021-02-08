@@ -1,3 +1,5 @@
+import { Role } from "./role"
+
 export class User {
     username: string
     password: string
@@ -7,4 +9,5 @@ export class User {
     checkbox2: boolean
     checkbox3: boolean
     enabled: boolean
+    roles: Role
 }

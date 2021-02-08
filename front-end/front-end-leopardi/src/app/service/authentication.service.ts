@@ -4,6 +4,7 @@ import { Location } from '@angular/common';
 import { map } from 'rxjs/operators';
 import { CanActivate, RouteConfigLoadEnd, Router } from '@angular/router';
 import jwt_decode from 'jwt-decode';
+import { Role } from '../class/role';
 
 export class JwtResponse{
   constructor(
@@ -20,7 +21,8 @@ export class User{
     public checkbox1: boolean,
     public checkbox2: boolean,
     public checkbox3: boolean,
-    public enabled: boolean
+    public enabled: boolean,
+    public roles: Role
   ) {}
 }
 
