@@ -17,7 +17,7 @@ export class UtentiRegistratiComponent implements OnInit {
 
   admin: boolean = false
   utente: User[]
-
+  bottone:boolean = false
 
   ngOnInit() {
     this.admin = sessionStorage.getItem("Role") === "ROLE_ADMIN"
@@ -29,10 +29,11 @@ export class UtentiRegistratiComponent implements OnInit {
 
   deleteUtente(id: number){
     this.service.deleteUser(id).subscribe()
+    window.location.reload();
   }
 
   cambiaRuolo(id: number){
     this.service.changeRole(id).subscribe()
+    window.location.reload();
   }
-
 }
