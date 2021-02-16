@@ -14,6 +14,6 @@ export class ContattiService {
   }
 
   public mandaMessaggio(modulo: Contatti) {
-    return this.http.post<Contatti>(this.url + "mandaMessaggioContatti", modulo);
+    return this.http.post<Contatti>(this.url + "inserisciMessaggioContatti", modulo);
   }
 }

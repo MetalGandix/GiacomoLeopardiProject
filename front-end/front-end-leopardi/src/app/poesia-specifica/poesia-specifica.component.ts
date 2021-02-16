@@ -15,12 +15,15 @@ export class PoesiaSpecificaComponent implements OnInit {
   }
 
   poesie: Poesia[]
+  contatore: number
   poesiaSpecifica: Poesia[]
+  poesiaAudio: Poesia
   boo1: boolean = false
   boo2: boolean = false
   titoloPoesia: string
   isText: boolean
-
+  audio: any
+  chiudiAudio: boolean = false
   retrievedAudio: any;
   base64Data: any;
   retrieveResonse: any;
@@ -30,13 +33,20 @@ export class PoesiaSpecificaComponent implements OnInit {
   ngOnInit() {
     this.service.findAll().subscribe(poesiaSingola => {
       this.poesie = poesiaSingola
-      this.poesie.forEach(a => {
-        this.retrieveResonse = a.poesia_audio
-        this.base64Data = this.retrieveResonse.picByte
-        a.retrievedAudio = 'data:audio/mp3;base64,' + this.base64Data
-      })
       console.log(this.poesie)
     })
+  }
+
+  prendiAudio(id: number){
+    this.service.findPoesiaSingolaById(id).subscribe(a => {
+      console.log("id: ",id);
+      console.log("a: ",a);
+      this.poesiaAudio = a
+      this.retrieveResonse = a.poesia_audio
+      this.base64Data = this.retrieveResonse.picByte
+      a.retrievedAudio = 'data:audio/mp3;base64,' + this.base64Data
+      this.audio = a.retrievedAudio
+    })     
   }
 
   filtra() {
@@ -53,6 +63,7 @@ export class PoesiaSpecificaComponent implements OnInit {
   }
 
   differenza(event) {
+    this.contatore = 0
     console.log("Evento: ", event)
   }
 
