@@ -15,11 +15,12 @@
                         <h1><b><i>{{p.titolo}}</i></b></h1>
 
                         <p style="text-align: center;">
-                            <a class="button" (click)="prendiAudio(p.id)" (click)="differenza(j)" data-toggle="modal" href="#poesie-{{ j }}"
-                                aria-expanded="false" style="vertical-align:middle"><span>
+                            <a class="button" (click)="prendiAudio(p.id)" (click)="differenza(j)" data-toggle="modal"
+                                href="#poesie-{{ j }}" aria-expanded="false" style="vertical-align:middle"><span>
                                     <mat-icon>menu_book</mat-icon>
                                 </span></a>
-                            <a *ngIf="!p.audioNotExist" class="button1" (click)="prendiAudio(p.id)" (click)="differenza(j)" data-toggle="collapse" href="#poesie-{{ j }}"
+                            <a *ngIf="!p.audioNotExist" class="button1" (click)="prendiAudio(p.id)"
+                                (click)="differenza(j)" data-toggle="modal" href="#poesie-{{ j }}"
                                 aria-expanded="false" aria-controls="audio-{{j}}" style="vertical-align:middle;"><span>
                                     <mat-icon>audiotrack</mat-icon>
                                 </span></a>
