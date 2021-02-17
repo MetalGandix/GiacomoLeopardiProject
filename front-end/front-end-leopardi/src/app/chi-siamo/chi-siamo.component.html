@@ -36,25 +36,31 @@
         in modo da conoscere le iniziative in programmazione e poter partecipare.
     </p>
 
+
+
     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleCaptions" *ngFor="let i of imageCarousel;let index = index"
-                [attr.data-slide-to]="index"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item" *ngFor="let i of imageCarousel;let index = index;let isFirst = first"
-                [ngClass]="{active:isFirst}">
-                <img [src]="i.retrievedImage" class="d-block w-100" [alt]="i.name">
+        <ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="square-jelly-box"
+            [fullScreen]="false">
+            <p style="color: white"> Loading... </p>
+            </ngx-spinner>
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleCaptions" *ngFor="let i of imageCarousel;let index = index"
+                    [attr.data-slide-to]="index"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item" *ngFor="let i of imageCarousel;let index = index;let isFirst = first"
+                    [ngClass]="{active:isFirst}">
+                    <img [src]="i.retrievedImage" class="d-block w-100" [alt]="i.name">
+                </div>
             </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
+            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
     </div>
 
 </div>

@@ -4,6 +4,7 @@ import { PlyrComponent } from 'ngx-plyr';
 import { Poesia } from '../class/poesia';
 import { PoesiaService } from '../service/poesia.service';
 import {Location} from '@angular/common';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-mostra-poesia',
@@ -12,7 +13,7 @@ import {Location} from '@angular/common';
 })
 export class MostraPoesiaComponent implements OnInit {
   
-  constructor(private service: PoesiaService, private router: Router, private _location: Location) {  }
+  constructor(private service: PoesiaService, private router: Router, private _location: Location, private spinner: NgxSpinnerService) {  }
 
   poesie: Poesia[]
   poesiaSpecifica: Poesia[]
@@ -28,12 +29,16 @@ export class MostraPoesiaComponent implements OnInit {
   base64Data: any;
   retrieveResonse: any;
 
+  spinnerIsRunning: boolean = true
+
   ngOnInit() {
     this.poesie = window.history.state.poesie
     console.log(this.poesie)
   }
 
   prendiAudio(id: number){
+    this.spinner.show();
+    this.spinnerIsRunning = true
     this.service.findPoesiaSingolaById(id).subscribe(a => {
       console.log("id: ",id);
       console.log("a: ",a);
@@ -42,6 +47,8 @@ export class MostraPoesiaComponent implements OnInit {
       this.base64Data = this.retrieveResonse.picByte
       a.retrievedAudio = 'data:audio/mp3;base64,' + this.base64Data
       this.audio = a.retrievedAudio
+      this.spinner.hide();
+      this.spinnerIsRunning = false
     })    
   }) 
   }
