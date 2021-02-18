@@ -24,7 +24,7 @@ public class ModuliConfermati {
     private String luogoDiNascita;
 
     @Column
-    private LocalDate giornoDiNascita;
+    private String giornoDiNascita;
 
     @Column
     private String citta;
@@ -51,7 +51,7 @@ public class ModuliConfermati {
     private int quotaAnnuale;
 
     @Column
-    private LocalDate dataCompilazione;
+    private String dataCompilazione;
 
     public long getId() {
         return id;
@@ -83,15 +83,6 @@ public class ModuliConfermati {
 
     public void setLuogoDiNascita(String luogoDiNascita) {
         this.luogoDiNascita = luogoDiNascita;
-    }
-
-    public String getGiornoDiNascita() {
-        String formattedDate = giornoDiNascita.format(DateTimeFormatter.ofPattern("dd MMMM yyyy"));
-        return formattedDate;
-    }
-
-    public void setGiornoDiNascita(LocalDate giornoDiNascita) {
-        this.giornoDiNascita = giornoDiNascita;
     }
 
     public String getCitta() {
@@ -150,20 +141,27 @@ public class ModuliConfermati {
         this.quotaAnnuale = quotaAnnuale;
     }
 
-    public String getDataCompilazione() {
-        String formattedDate = dataCompilazione.format(DateTimeFormatter.ofPattern("dd MMMM yyyy"));
-        return formattedDate;
-    }
-
-    public void setDataCompilazione(LocalDate dataCompilazione) {
-        this.dataCompilazione = dataCompilazione;
-    }
-
     public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getGiornoDiNascita() {
+        return giornoDiNascita;
+    }
+
+    public void setGiornoDiNascita(String giornoDiNascita) {
+        this.giornoDiNascita = giornoDiNascita;
+    }
+
+    public String getDataCompilazione() {
+        return dataCompilazione;
+    }
+
+    public void setDataCompilazione(String dataCompilazione) {
+        this.dataCompilazione = dataCompilazione;
     }
 }
