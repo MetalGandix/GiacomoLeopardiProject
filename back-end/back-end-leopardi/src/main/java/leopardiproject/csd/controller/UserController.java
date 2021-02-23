@@ -117,6 +117,8 @@ public class UserController {
     @DeleteMapping("/eliminaUtente/{id}")
     public String eliminaUtente(Authentication a, @PathVariable long id){
         DAOUser user = rep.getOne(id);
+        ConfirmationToken tokenToDelete = confirmationTokenRepository.findByUser(user);
+        confirmationTokenRepository.delete(tokenToDelete);
         rep.delete(user);
         return "Utente eliminato correttamente";
     }
